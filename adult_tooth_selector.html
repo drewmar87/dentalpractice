@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Tooth Game</title>
+   <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Header Styles */
+header {
+  background-color: #9370DB; /* Light Purple */
+  padding: 0px;
+  text-align: center;
+}
+
+h1 {
+  color: #FFF; /* White */
+}
+    
+    nav {
+      margin-top: 20px;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: row; /* Change to horizontal */
+      justify-content: center; /* Center align items */
+    }
+    
+li {
+  margin: 10px; /* Add horizontal and vertical margin */
+  position: relative; /* Position relative for submenu */
+}
+.correct-answer {
+  color: green;
+  size: 36px;
+  font-weight: bold;
+  text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+}
+
+.wrong-answer {
+  color: red;
+  font-weight: bold;
+  text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+}
+
+    
+    /* Button Styles */
+    a.button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #FFF; /* White */
+      color: #9370DB; /* Light Purple */
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      min-width: 150px; /* Set a minimum width */
+      text-align: center; /* Center the text */
+    }
+    
+    a.button:hover {
+      background-color: #F0E6FA; /* Lighter Purple */
+    }
+    
+    a.button:active {
+      background-color: #8A2BE2; /* Dark Purple */
+      color: #FFF; /* White */
+    }
+    
+ /* Submenu Styles */
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #FFF; /* White */
+  padding: 10px;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  top: 100%; /* Position below the parent li */
+  left: 50%; /* Center the submenu horizontally */
+  transform: translateX(-50%); /* Adjust horizontal position */
+  margin-top: 5px; /* Add space between button and submenu */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: max-content; /* Set width based on content */
+}
+    
+    li.active .submenu {
+      display: block;
+    }
+    
+    .submenu a {
+      display: block;
+      margin: 5px 0;
+      transition: background-color 0.3s ease; /* Add transition effect */
+      color: #9370DB; /* Light Purple */
+      text-decoration: none;
+    }
+    
+    .submenu a:hover {
+      background-color: #F0E6FA; /* Lighter Purple */
+    }
+    
+    .submenu a:visited {
+      color: #9370DB; /* Light Purple */
+    }
+    
+    .submenu a:hover,
+    .submenu a:active {
+      text-decoration: none;
+    }
+    
+    /* Add margin to the Help button */
+    ul li:last-child {
+      margin-bottom: 10px;
+    }
+
+    .tooth-container {
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+	  
+    }
+
+    .tooth {
+      padding: 5px;
+    }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-gap: 10px;
+  grid-row-gap: 100px; /* This adds a 100px gap between rows */
+  transform: scale(0.35);
+    margin: 0 auto; /* Center the grid horizontally */
+  justify-content: center; /* Align the grid to the center horizontally */
+  align-content: flex-start; /* Align the grid to the top vertically */
+    position: relative; /* Add relative positioning */
+  top: -150px; /* Adjust the value to bring the grid up */
+}
+
+	.grid-container .tooth {
+    transform: scale(1.5);
+  }
+      .grid-container::before {
+      content: "";
+      position: absolute;
+      top: 42.5%;
+      left: -5%;
+      right: 0;
+      border-top: 2px solid black;
+	  margin-top: 0;
+    }
+
+    .grid-container::after {
+      content: "";
+      position: absolute;
+      top: -15%;
+      bottom: 0%;
+      left: 49%;
+      border-left: 2px solid black;
+    }
+	
+	    .tooth img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+    .scoreboard {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 1.2em;
+    }
+
+    .scoreboard span {
+      margin-right: 10px;
+    }
+
+    .scoreboard .right {
+      color: green;
+    }
+
+    .scoreboard .wrong {
+      color: red;
+    }
+
+
+  </style>
+</head>
+<body>
+ <div style="text-align: center;">
+ <header>
+    <h1>Select the correct tooth:</h1>
+  </header>
+  
+ 
+    <div class="grid-container">
+      <div class="tooth" id="tooth-1"><img class="tooth-img" src="images/Adulttooth/1.png"></div>
+      <div class="tooth" id="tooth-2"><img class="tooth-img" src="images/Adulttooth/2.png"></div>
+      <div class="tooth" id="tooth-3"><img class="tooth-img" src="images/Adulttooth/3.png"></div>
+      <div class="tooth" id="tooth-4"><img class="tooth-img" src="images/Adulttooth/4.png"></div>
+      <div class="tooth" id="tooth-5"><img class="tooth-img" src="images/Adulttooth/5.png"></div>
+      <div class="tooth" id="tooth-6"><img class="tooth-img" src="images/Adulttooth/6.png"></div>
+      <div class="tooth" id="tooth-7"><img class="tooth-img" src="images/Adulttooth/7.png"></div>
+      <div class="tooth" id="tooth-8"><img class="tooth-img" src="images/Adulttooth/8.png"></div>
+      <div class="tooth" id="tooth-9"><img class="tooth-img" src="images/Adulttooth/9.png"></div>
+      <div class="tooth" id="tooth-10"><img class="tooth-img" src="images/Adulttooth/10.png"></div>
+      <div class="tooth" id="tooth-11"><img class="tooth-img" src="images/Adulttooth/11.png"></div>
+      <div class="tooth" id="tooth-12"><img class="tooth-img" src="images/Adulttooth/12.png"></div>
+      <div class="tooth" id="tooth-13"><img class="tooth-img" src="images/Adulttooth/13.png"></div>
+      <div class="tooth" id="tooth-14"><img class="tooth-img" src="images/Adulttooth/14.png"></div>
+      <div class="tooth" id="tooth-15"><img class="tooth-img" src="images/Adulttooth/15.png"></div>
+      <div class="tooth" id="tooth-16"><img class="tooth-img" src="images/Adulttooth/16.png"></div>
+      <div class="tooth" id="tooth-32"><img class="tooth-img" src="images/Adulttooth/17.png"></div>
+      <div class="tooth" id="tooth-31"><img class="tooth-img" src="images/Adulttooth/18.png"></div>
+      <div class="tooth" id="tooth-30"><img class="tooth-img" src="images/Adulttooth/19.png"></div>
+      <div class="tooth" id="tooth-29"><img class="tooth-img" src="images/Adulttooth/20.png"></div>
+      <div class="tooth" id="tooth-28"><img class="tooth-img" src="images/Adulttooth/21.png"></div>
+      <div class="tooth" id="tooth-27"><img class="tooth-img" src="images/Adulttooth/22.png"></div>
+      <div class="tooth" id="tooth-26"><img class="tooth-img" src="images/Adulttooth/23.png"></div>
+      <div class="tooth" id="tooth-25"><img class="tooth-img" src="images/Adulttooth/24.png"></div>
+      <div class="tooth" id="tooth-24"><img class="tooth-img" src="images/Adulttooth/25.png"></div>
+      <div class="tooth" id="tooth-23"><img class="tooth-img" src="images/Adulttooth/26.png"></div>
+      <div class="tooth" id="tooth-22"><img class="tooth-img" src="images/Adulttooth/27.png"></div>
+      <div class="tooth" id="tooth-21"><img class="tooth-img" src="images/Adulttooth/28.png"></div>
+      <div class="tooth" id="tooth-20"><img class="tooth-img" src="images/Adulttooth/29.png"></div>
+      <div class="tooth" id="tooth-19"><img class="tooth-img" src="images/Adulttooth/30.png"></div>
+      <div class="tooth" id="tooth-18"><img class="tooth-img" src="images/Adulttooth/31.png"></div>
+      <div class="tooth" id="tooth-17"><img class="tooth-img" src="images/Adulttooth/32.png"></div>
+    </div>
+  </div>
+    <div class="scoreboard" style="text-align: center; position: relative; top: -300px; left: 10px;">
+      <span class="right">Right: <span id="right-score">0</span></span>
+      <span class="wrong">Wrong: <span id="wrong-score">0</span></span>
+    </div>
+
+  <div id="question-container" style="text-align: center; position: relative; top: -300px;">
+    <h2 id="question"></h2>
+    <p id="result"></p>
+
+
+  </div>
+  
+<script>
+  const questions = [
+    { question: 'Tooth #1', answer: 'tooth-1' },
+    { question: 'Tooth #2', answer: 'tooth-2' },
+    { question: 'Tooth #3', answer: 'tooth-3' },
+    { question: 'Tooth #4', answer: 'tooth-4' },
+    { question: 'Tooth #5', answer: 'tooth-5' },
+	{ question: 'Tooth #6', answer: 'tooth-6' },
+	{ question: 'Tooth #7', answer: 'tooth-7' },
+	{ question: 'Tooth #8', answer: 'tooth-8' },
+	{ question: 'Tooth #9', answer: 'tooth-9' },
+	{ question: 'Tooth #10', answer: 'tooth-10' },
+	{ question: 'Tooth #11', answer: 'tooth-11' },
+	{ question: 'Tooth #12', answer: 'tooth-12' },
+	{ question: 'Tooth #13', answer: 'tooth-13' },
+	{ question: 'Tooth #14', answer: 'tooth-14' },
+	{ question: 'Tooth #15', answer: 'tooth-15' },
+	{ question: 'Tooth #16', answer: 'tooth-16' },
+	{ question: 'Tooth #17', answer: 'tooth-17' },
+	{ question: 'Tooth #18', answer: 'tooth-18' },
+	{ question: 'Tooth #19', answer: 'tooth-19' },
+	{ question: 'Tooth #20', answer: 'tooth-20' },
+	{ question: 'Tooth #21', answer: 'tooth-21' },
+	{ question: 'Tooth #22', answer: 'tooth-22' },
+	{ question: 'Tooth #23', answer: 'tooth-23' },
+	{ question: 'Tooth #24', answer: 'tooth-24' },
+	{ question: 'Tooth #25', answer: 'tooth-25' },
+	{ question: 'Tooth #26', answer: 'tooth-26' },
+	{ question: 'Tooth #27', answer: 'tooth-27' },
+	{ question: 'Tooth #28', answer: 'tooth-28' },
+	{ question: 'Tooth #29', answer: 'tooth-29' },
+	{ question: 'Tooth #30', answer: 'tooth-30' },
+	{ question: 'Tooth #31', answer: 'tooth-31' },
+	{ question: 'Tooth #32', answer: 'tooth-32' },
+  ];
+
+  let currentQuestionIndex = 0;
+  let rightScore = 0;
+  let wrongScore = 0;
+  let isAnswered = false;  // This variable keeps track of whether the current question has been answered
+  
+  const questionElement = document.getElementById('question');
+  const resultElement = document.getElementById('result');
+  const rightScoreElement = document.getElementById('right-score');
+  const wrongScoreElement = document.getElementById('wrong-score');
+
+  function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+    [array[i], array[j]] = [array[j], array[i]]; // swap elements
+  }
+}
+
+shuffleArray(questions); // This will shuffle your questions array
+
+  
+  function renderQuestion(index) {
+    const question = questions[index];
+    questionElement.textContent = question.question;
+    resultElement.textContent = '';
+    isAnswered = false; // Reset this variable to false when a new question is rendered
+  }
+
+function handleAnswer(answer) {
+  if (!isAnswered) { // Check if the question has been answered
+    if (questions[currentQuestionIndex].answer === answer) {
+      resultElement.textContent = 'CORRECT';
+      rightScore++;
+      rightScoreElement.textContent = rightScore;
+      // Add the 'correct-answer' class and remove the 'wrong-answer' class
+      resultElement.classList.add('correct-answer');
+      resultElement.classList.remove('wrong-answer');
+    } else {
+      resultElement.textContent = 'WRONG';
+      wrongScore++;
+      wrongScoreElement.textContent = wrongScore;
+      // Add the 'wrong-answer' class and remove the 'correct-answer' class
+      resultElement.classList.add('wrong-answer');
+      resultElement.classList.remove('correct-answer');
+    }
+    isAnswered = true; // Set this variable to true after an answer has been selected
+    if (currentQuestionIndex < questions.length - 1) {
+      currentQuestionIndex++;
+      setTimeout(() => { renderQuestion(currentQuestionIndex); }, 1000); // Wait for 1 seconds before rendering the next question
+    } else {
+      resultElement.textContent = 'You have finished the game!';
+    }
+  }
+}
+
+
+
+  const toothElements = document.querySelectorAll('.tooth');
+  toothElements.forEach(function(tooth) {
+    tooth.onclick = function(event) {
+      const element = event.target;
+      const id = element.id || element.parentElement.id;
+      handleAnswer(id);
+    };
+  });
+
+  renderQuestion(currentQuestionIndex);
+</script>
+
+</body>
+</html>
