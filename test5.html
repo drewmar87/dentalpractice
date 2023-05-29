@@ -60,6 +60,7 @@
       grid-template-rows: repeat(3, 1fr);
       grid-gap: 0px;
       margin-top: 0px;
+
     }
     .image-grid2 {
       display: grid;
@@ -67,11 +68,23 @@
       grid-template-rows: repeat(3, 1fr);
       grid-gap: 0px;
       margin-top: 0px;
+	      margin-bottom: 0;
+    padding-bottom: 0;
+	    margin-bottom: 0;
+    padding-bottom: 0;
+
     }
 	
-    .image-slot {
+.image-slot {
+    height: auto; /* Adjust as needed */
+    position: relative;
       border: 2px dashed #9370DB; /* Light Purple */
       border-radius: 0px;
+}
+    .image-slot.small {
+	  height: 80%; /* change this to what you need */
+	  width: 80%; /* change this to what you need */
+	  margin: auto;
     }
     
     .image-slot.correct {
@@ -87,13 +100,15 @@
     .image-slot img {
       width: 100%;
       height: 100%;
-      object-fit: fill;
+      object-fit: contain;
       border-radius: 0px;
+	      line-height: 0; /* Add this */
     }
 	.image-slot-holder {
       border: 0px dashed #9370DB; /* Light Purple */
       border-radius: 0px;
       height: 150px;
+	      line-height: 0; /* Add this */
 
     }
 
@@ -103,11 +118,21 @@
       margin-top: 0px;
     }
 	#image-container {
-    transform: scale(0.85);
-    transform-origin: middle;
+    transform: scale(0.65);
+    transform-origin: top;
 	align: center;
 	valign: center;
 }
+#image3, #image4, #image5, #image10, #image11, #image12 {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;  /* Center horizontally */
+    margin-bottom: -100px; /* adjust this value as per your requirement */
+}
+
+
   </style>
  
 <script>
@@ -256,7 +281,7 @@ function shuffleImages() {
   <main>
     <button id="beginButton" class="button"><b>Begin</b></button><p/>
 	<div id="instructions" class="button" style="display: none;"></div>
-	<p id="messageText" style="display: none;"></p>
+	<p id="messageText" style="display: none;"><p>
 <div id="image-container">   
     <div class="image-grid">
       <div class="image-slot"></div>
@@ -296,59 +321,59 @@ function shuffleImages() {
 
     <div class="image-grid2">
       <div class="image-slot" draggable="true">
-        <img src="1.png" alt="Image 1" id="image1">
+        <img src="images/patient1fmx/1.png" alt="Image 1" id="image1">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="2.png" alt="Image 2" id="image2">
+        <img src="images/patient1fmx/2.png" alt="Image 2" id="image2">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="3.png" alt="Image 3" id="image3">
+        <img src="images/patient1fmx/3.png" alt="Image 3" id="image3">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 4" id="image4">
+        <img src="images/patient1fmx/4.png" alt="Image 4" id="image4">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 5" id="image5">
+        <img src="images/patient1fmx/5.png" alt="Image 5" id="image5">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 6" id="image6">
+        <img src="images/patient1fmx/6.png" alt="Image 6" id="image6">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 7" id="image7">
+        <img src="images/patient1fmx/7.png" alt="Image 7" id="image7">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 8" id="image8">
+        <img src="images/patient1fmx/8.png" alt="Image 8" id="image8">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 9" id="image9">
+        <img src="images/patient1fmx/9.png" alt="Image 9" id="image9">
       </div>
   
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 10" id="image10">
+        <img src="images/patient1fmx/10.png" alt="Image 10" id="image10">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 11" id="image11">
+        <img src="images/patient1fmx/11.png" alt="Image 11" id="image11">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 12" id="image12">
+        <img src="images/patient1fmx/12.png" alt="Image 12" id="image12">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 13" id="image13">
+        <img src="images/patient1fmx/13.png" alt="Image 13" id="image13">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 14" id="image14">
+        <img src="images/patient1fmx/14.png" alt="Image 14" id="image14">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 15" id="image15">
+        <img src="images/patient1fmx/15.png" alt="Image 15" id="image15">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 16" id="image16">
+        <img src="images/patient1fmx/16.png" alt="Image 16" id="image16">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 17" id="image17">
+        <img src="images/patient1fmx/17.png" alt="Image 17" id="image17">
       </div>
       <div class="image-slot" draggable="true">
-        <img src="4.png" alt="Image 18" id="image18">
+        <img src="images/patient1fmx/18.png" alt="Image 18" id="image18">
       </div>
     </div>
 </div>
