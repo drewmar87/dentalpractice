@@ -854,6 +854,13 @@ function checkConditions() {
     resultMessages.push(`${message} `);
   }
 
+  // If no conditions were met, push default message
+  if (resultMessages.length === 0) {
+    resultMessages.push("Your selection didn't match anything, see an instructor for help.");
+  }
+}
+
+
 
 
 
