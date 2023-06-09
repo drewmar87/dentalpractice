@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAP Grading</title>
+  
+<style>
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #9370DB; /* Light Purple */
+    padding: 0px;
+    text-align: center;
+}
+
+h1 {
+    color: #FFF; /* White */
+}
+
+h2 {
+    color: #9370DB; /* Light Purple */
+    align-items: center; /* Add this */
+}
+
+/* Main Styles */
+main {
+    background-color: #FFF; /* White */
+    padding: 20px;
+    display: flex; /* Add this */
+    flex-direction: column; /* Add this */
+    align-items: center; /* Add this */
+}
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+	width: 75%;
+        margin: 20px auto;
+    }
+
+    .grid-item {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .grid-item .question {
+        background-color: #e0f7fa;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #b2ebf2;
+    }
+
+    .grid-item .question .question-text {
+        font-weight: bold;
+        color: #00796b;
+    }
+
+    .grid-item .question p {
+        margin: 10px 0;
+    }
+
+    .grid-item .question p label {
+        font-weight: normal;
+        color: #000;
+    }
+
+    .grid-item .question input[type=radio] {
+        margin-right: 5px;
+    }
+
+    .grid-item .question input[type=number] {
+        width: 50px;
+    }
+
+    .grid-item .question details {
+        margin-top: 10px;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #b2ebf2;
+    }
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9370DB; /* Light Purple */
+    color: #FFF; /* White */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    border: 2px solid black;
+}
+
+.button:hover {
+    background-color: #8A2BE2; /* Dark Purple */
+}
+
+.button:active {
+    background-color: violet;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+#button-container .button {
+    width: 125px; /* adjust as needed */
+    height: 50px; /* adjust as needed */
+    text-align: center;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #9370DB;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #9370DB;
+    color: white;
+}
+#table-container {
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+#results-table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+#results-table th, #results-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+#results-table th {
+    background-color: #9370DB;
+    color: white;
+    font-size: 14px;
+}
+
+#results-table td {
+    font-size: 12px;
+}
+
+#results-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+table#results-table th {
+    width: 250px; /* Adjust this value to your liking */
+}
+
+</style>
+</head>
+<body>
+	<header>
+		<h1>Periodontal Classification: Grading</h1>
+	</header>
+
+	<main>
+
+
+
+    <!-- Additional buttons -->
+    <button onclick="location.href='index.html'" class="button">Home</button><p>
+      <div id="button-container">
+    <button onclick="location.href='aapTxPlan.html'" class="button">AAP Staging</button>
+    <button onclick="location.href='aapGrading.html'" class="button">AAP Grading</button>
+    <button onclick="location.href='txPlan.html'" class="button">Treatment Planning</button>
+</div>
+
+ 
+<h2>This is only to be used as a guide. As always use your best clinical judgement.</h2>
+
+
+	<form>
+	<div class="grid-container">
+
+
+
+
+
+
+
+
+
+
+
+<!-- 6. Radiographic Bone loss 0, 15, 15-33, 33 -->
+
+<div class="grid-item" id="question6">
+    <div class="question">
+        <div class="question-text">Radiographic bone loss for the <b><u>entire dentition</b></u>.</div>
+        <p>
+            <label>Radiographic Bone Loss (%): </label>
+            <input type="number" id="answer6" name="answer6" min="0" max="200">
+        </p>
+        <p id="error6" style="color: red;"></p>
+    <details>
+        <summary style="cursor: pointer; color: #00796b; font-weight: bold;">More Information...</summary>
+        <p>
+            1. Measure the distance from the cementoenamel junction (CEJ) to the apex of the root at the sites of greatest loss. Keep in mind a 2mm distance on average from the CEJ to the alveolar bone crest is considered normal bone-level height, so subtract 2mm from the CEJ to apex measurement to determine where the bone levels should be in health. 
+            <br>
+            2. Next measure the current bone level at the site (bone height to apex of the root). 
+            <br>
+            3. Subtract the current bone level from healthy bone level number, and this will give you the bone level loss.
+            <br>
+            4. Once you have the bone level loss number, divide it by the healthy bone level number and multiply it by 100. This will give you a percentage of bone loss for staging severity when using RBL as a determinant (i.e., Stage I <15%, Stage II 15%–33%, Stage III and IV >33%).
+            <p>
+                <u>Example:</u><br> CEJ to Apex = 27mm – 2mm = 25mm healthy bone height.<br>
+                Current bone level at site of greatest loss = 12mm.<br>
+                25mm (healthy bone) – 12mm (current bone level) = 13mm bone loss.<br>
+                13mm (bone loss) ÷ 25mm (healthy bone level) = .52 x 100 = 52% bone loss
+            </p>
+            <p>
+                <u>Grading using Indirect Progression Calculation:</u>
+                <br>
+                % Bone Loss ÷ age = Indirect Evidence of progression
+            </p>
+        </p>
+    </details>
+</div></div>
+
+		
+
+
+
+
+
+<!-- Question 10 Smoking -->  
+
+
+		<div class="grid-item" id="question10">
+			<div class="question">
+  				<div class="question-text">Is the patient a smoker or vaper with nicotine?</div><p>
+  				<label><input type="radio" name="answer10" value="A"> No</label><br>
+  				<label><input type="radio" name="answer10" value="B"> Yes (< 10 Cigarettes or Vape uses a day.)</label><br>
+  				<label><input type="radio" name="answer10" value="C"> Yes (≥ 10 Cigarettes or Vape uses a day.)</label><br>
+			</div>
+		</div>
+
+
+
+
+<!-- Question 11 Diabetes -->
+
+
+		<div class="grid-item" id="question11">
+			<div class="question">
+  				<div class="question-text">Is the patient a Diabetic?</div><p>
+  				<label><input type="radio" name="answer11" value="A"> No</label><br>
+  				<label><input type="radio" name="answer11" value="B"> Yes (HbA1C < 7.0)</label><br>
+  				<label><input type="radio" name="answer11" value="C"> Yes (HbA1c ≥ 7.0)</label><br>
+			</div>
+		</div>
+
+
+<!-- Question 12 Biofilm -->
+
+
+
+		<div class="grid-item" id="question12">
+			<div class="question">
+  				<div class="question-text">Looking at the <b><u>entire dentition</b></u> what is the severity of the biofilm?</div><p>
+  				<label><input type="radio" name="answer12" value="D"> No biofilm destruction.</label><br>
+  				<label><input type="radio" name="answer12" value="A"> Heavy biofilm deposits with low levels of destruction.</label><br>
+  				<label><input type="radio" name="answer12" value="B"> Destruction commensurates with biofilm deposits.</label><br>
+  				<label><input type="radio" name="answer12" value="C"> Destruction exceeds expectation given biofilm deposits.</label><br>
+			</div>
+		</div>
+
+
+
+
+
+
+<!-- Question 15 CAL over time -->
+
+
+  <div class="grid-item" id="question15">
+<div class="question">
+  <div class="question-text">Direct evidentce of Radiographic boneloss or CAL over time?</div><p>
+  <label><input type="radio" name="answer15" value="D"> No loss over 5 years</label><br>
+  <label><input type="radio" name="answer15" value="A"> Minimal or negligible loss over 5 years</label><br>
+  <label><input type="radio" name="answer15" value="B"> < 2mm over 5 years</label><br>
+  <label><input type="radio" name="answer15" value="C"> ≥ 2mm over 5 years</label><br>
+
+</div></div>
+
+
+
+<!-- 1. Patient's Age -->
+
+		<div class="grid-item" id="question1">
+  			<div class="question">
+    				<div class="question-text">Patient's Age</div>
+    				<p>
+      				<label>1. Age: </label>
+      				<input type="number" id="answer1" name="answer1" min="1" max="200"> Years Old
+    				</p>
+				<p id="ageError" style="color: red;"></p>
+  			</div>
+		</div>
+
+    </div>
+</form>
+<h2>Please fill out all the answers, failure to do so will give you an incorrect or incomplete result.</h2>
+</main>
+
+<div id="button-container">
+    <button id="calculate-button" class="button">Calculate</button>
+</div>
+<p id="output"></p>
+
+
+<div id="table-container"></div>
+
+
+
+<script>
+
+document.getElementById("calculate-button").addEventListener("click", function() {
+
+let outputElement = document.getElementById("output");
+outputElement.textContent = "";
+
+let answer1 = document.querySelector('input[name="answer1"]').value;
+let answer6 = document.querySelector('input[name="answer6"]').value;
+
+let answer10Element = document.querySelector('input[name="answer10"]:checked');
+let answer10 = answer10Element ? answer10Element.value : null;
+
+let answer11Element = document.querySelector('input[name="answer11"]:checked');
+let answer11 = answer11Element ? answer11Element.value : null;
+
+let answer12Element = document.querySelector('input[name="answer12"]:checked');
+let answer12 = answer12Element ? answer12Element.value : null;
+
+let answer15Element = document.querySelector('input[name="answer15"]:checked');
+let answer15 = answer15Element ? answer15Element.value : null;
+
+let answer3YesElement = document.querySelector('input[name="answer3"]:checked');
+let answer3Yes = answer3YesElement ? answer3YesElement.value === "Yes" : false;
+
+
+ // Checking  Bone-loss Input      
+
+if (answer6 < 1 || answer6 > 100) {
+	document.getElementById('error6').innerHTML = 'The Radiographic Bone Loss must be a number between 1 and 100.';
+        	return; // Early return
+	}
+
+// End Checking Bone-loss Input
+    
+
+
+
+// BEGIN GRADING CLASSIFICATION
+
+
+
+// Process the data
+
+var blResult = answer6 / answer1;
+
+// Parse numbers and calculate result
+answer1 = parseInt(answer1);
+answer6 = parseInt(answer6);
+
+// Initialize array to hold potential factors
+let factors = [];
+
+// Assign factors
+if(answer15 === 'C') {
+    factors.push({factor: "Over 2mm of radiographic boneloss or clinical attachment loss over 5 years time.", grade: 'C'});
+}
+if(answer12 === 'C') {
+    factors.push({factor: "Destruction exceeds expectations given biofilm deposits.", grade: 'C'});
+}
+if(blResult >= 1.0) {
+    factors.push({factor: "Indirect evidence of radiographic boneloss (% boneloss divided by age) is over 1.0.", grade: 'C'});
+}
+if(answer15 === 'B') {
+    factors.push({factor: "Less than 2mm of radiographic boneloss of clinical attachment loss over 5 years time.", grade: 'B'});
+}
+if(answer12 === 'B') {
+    factors.push({factor: "Destruction commensurates with biofilm deposits", grade: 'B'});
+}
+if(blResult >= 0.25 && blResult <= 0.99) {
+    factors.push({factor: "Indirect evidence of radiographic boneloss (% boneloss divided by age) is between .25 and 1.0. Please use your discretion with indirect evidence of progression for grading classification. Consider all factors when finalizing grading of the patient.", grade: 'B'});
+}
+if(answer15 === 'A') {
+    factors.push({factor: "Minimal or negligible boneloss over 5 years time.", grade: 'A'});
+}
+if(answer12 === 'A') {
+    factors.push({factor: "Heavy biofilm deposits with low levels of destruction.", grade: 'A'});
+}
+if(blResult >= 0.05 && blResult <= 0.24) {
+    factors.push({factor: "Indirect evidence of radiopgraphic boneloss (% boneloss divided by age) is between .025  and .24. Please use your discretion with indirect evidence of progression for grading classification. Consider all factors when finalizing grading of the patient.", grade: 'A'});
+}
+if(answer15 === 'D') {
+    factors.push({factor: "No boneloss or clinical attachment loss over 5 years time.", grade: 'No Grade'});
+}
+if(answer12 === 'D') {
+    factors.push({factor: "No biofilm destruction.", grade: 'No Grade'});
+}
+if(blResult >= 0 && blResult <= 0.049) {
+    factors.push({factor: "Indirect evidence of radiographic Boneloss is negligible.", grade: 'No Grade'});
+}
+
+
+let additionalFactors = [];
+
+if(answer10 === 'C') {
+    additionalFactors.push({factor: "The patient is a smoker or vaper with nicotine usage (≥ 10 Cigarettes or Vape uses a day).", grade: 'C'});
+} else if(answer10 === 'B') {
+    additionalFactors.push({factor: "The patient is a smoker or vaper with nicotine usage (< 10 Cigarettes or Vape uses a day).", grade: 'B'});
+} else if(answer10 === 'A') {
+    additionalFactors.push({factor: "Patient is not a smoker or vaper.", grade: 'No Grade'});
+}
+
+if(answer11 === 'C') {
+    additionalFactors.push({factor: "The patient is diabetic (HbA1c ≥ 7.0).", grade: 'C'});
+} else if(answer11 === 'B') {
+    additionalFactors.push({factor: "The patient is diabetic (HbA1C < 7.0).", grade: 'B'});
+} else if(answer11 === 'A') {
+    additionalFactors.push({factor: "Patient is not diabetic.", grade: 'No Grade'});
+}
+
+additionalFactors.sort((a, b) => ['C', 'B', 'No Grade'].indexOf(a.grade) - ['C', 'B', 'No Grade'].indexOf(b.grade));
+
+// Sort additional factors based on priority and display
+additionalFactors.sort((a, b) => ['C', 'B', 'No Grade'].indexOf(a.grade) - ['C', 'B', 'No Grade'].indexOf(b.grade));
+
+// End Data Processing
+
+// Determine Grade
+
+let grade = '';
+if (answer15 === 'C' || answer12 === 'C' || blResult >= 1.0) {
+    grade = 'C';
+} else if (answer15 === 'B' || answer12 === 'B' || (blResult >= 0.25 && blResult <= 0.99)) {
+    grade = 'B';
+} else if (answer15 === 'A' || answer12 === 'A' || (blResult >= 0.05 && blResult <= 0.24)) {
+    grade = 'A';
+} else if (answer15 === 'D' || answer12 === 'D' || (blResult >= 0 && blResult <= 0.049)) {
+    grade = 'No Grade';
+} else {
+    grade = `Invalid or no input detected`;
+}
+
+// Sort factors based on priority and display
+factors.sort((a, b) => ['C', 'B', 'A', 'No Grade'].indexOf(a.grade) - ['C', 'B', 'A', 'No Grade'].indexOf(b.grade));
+
+
+
+
+
+// End Determine Grade
+
+// Begin Table Display
+
+// The div where you will insert the table
+let tableContainer = document.getElementById("table-container");
+
+// Clear the tableContainer for a fresh start
+tableContainer.innerHTML = '';
+
+// Create a title for the first table
+let title1 = document.createElement("h2");
+title1.textContent = "Primary Criteria: Deciding Factor";
+tableContainer.appendChild(title1);
+
+// Create a table for the deciding factor
+let table1 = document.createElement("table");
+table1.id = "results-table";
+
+// Create and append a row for the deciding factor
+let tr1 = document.createElement("tr");
+let th1 = document.createElement("th");
+th1.textContent = `Factor 1 (Grade: ${factors[0].grade}):`;
+let td1 = document.createElement("td");
+td1.textContent = factors[0].factor;
+tr1.appendChild(th1);
+tr1.appendChild(td1);
+table1.appendChild(tr1);
+
+// Add the table to the div
+tableContainer.appendChild(table1);
+
+// Create a title for the second table
+let title2 = document.createElement("h2");
+title2.textContent = "Other Factors to Consider";
+tableContainer.appendChild(title2);
+
+// Create a table for the other factors
+let table2 = document.createElement("table");
+table2.id = "results-table";
+
+// Iterate over the factors to create a row for each one, skipping the first
+for (let i = 1; i < factors.length; i++) {
+    let tr = document.createElement("tr");
+
+    let th = document.createElement("th");
+    th.textContent = `Factor ${i+1} (Grade: ${factors[i].grade}):`;
+    tr.appendChild(th);
+
+    let td = document.createElement("td");
+    td.textContent = factors[i].factor;
+    tr.appendChild(td);
+
+    // Add the row to the table
+    table2.appendChild(tr);
+}
+
+// Add the table to the div
+tableContainer.appendChild(table2);
+
+// Create a title for the third table
+let title3 = document.createElement("h2");
+title3.textContent = "Grade Modifiers to Consider";
+tableContainer.appendChild(title3);
+
+// Create a table for the additional patient information
+let table3 = document.createElement("table");
+table3.id = "results-table";
+
+// Iterate over the additional factors to create a row for each one
+for (let i = 0; i < additionalFactors.length; i++) {
+    let tr = document.createElement("tr");
+
+    let th = document.createElement("th");
+    th.textContent = `Factor ${i+1} (Grade: ${additionalFactors[i].grade}):`;
+    tr.appendChild(th);
+
+    let td = document.createElement("td");
+    td.textContent = additionalFactors[i].factor;
+    tr.appendChild(td);
+
+    // Add the row to the table
+    table3.appendChild(tr);
+}
+
+// Add the table to the div
+tableContainer.appendChild(table3);
+
+// End Table Display
+
+
+});
+
+  
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+

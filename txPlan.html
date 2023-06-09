@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treatment Planning</title>
+  
+<style>
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #9370DB; /* Light Purple */
+    padding: 0px;
+    text-align: center;
+}
+
+h1 {
+    color: #FFF; /* White */
+}
+
+h2 {
+    color: #9370DB; /* Light Purple */
+}
+
+/* Main Styles */
+main {
+    background-color: #FFF; /* White */
+    padding: 20px;
+    display: flex; /* Add this */
+    flex-direction: column; /* Add this */
+    align-items: center; /* Add this */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 75%;
+    margin: 20px auto;
+}
+
+.grid-container > :nth-child(-n+4) {
+    grid-column: span 1;
+}
+
+.grid-container > :nth-child(n+5):nth-child(-n+6),
+.grid-container > :nth-child(n+7):nth-child(-n+8) {
+    grid-column: span 2 / auto;
+}
+
+
+
+
+    .grid-item {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .grid-item .question {
+        background-color: #e0f7fa;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #b2ebf2;
+    }
+
+    .grid-item .question .question-text {
+        font-weight: bold;
+        color: #00796b;
+    }
+
+    .grid-item .question p {
+        margin: 10px 0;
+    }
+
+    .grid-item .question p label {
+        font-weight: normal;
+        color: #000;
+    }
+
+    .grid-item .question input[type=radio] {
+        margin-right: 5px;
+    }
+
+    .grid-item .question input[type=number] {
+        width: 50px;
+    }
+
+    .grid-item .question details {
+        margin-top: 10px;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #b2ebf2;
+    }
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9370DB; /* Light Purple */
+    color: #FFF; /* White */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    border: 2px solid black;
+}
+
+.button:hover {
+    background-color: #8A2BE2; /* Dark Purple */
+}
+
+.button:active {
+    background-color: violet;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+#table-container {
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+#results-table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+#results-table th, #results-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+#results-table th {
+    background-color: #9370DB;
+    color: white;
+    font-size: 14px;
+}
+
+#results-table td {
+    font-size: 12px;
+}
+
+#results-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+#button-container .button {
+    width: 125px; /* adjust as needed */
+    height: 50px; /* adjust as needed */
+    text-align: center;
+}
+     
+</style>
+</head>
+<body>
+<header>
+	<h1>Treatment Planning</h1>
+</header>
+
+<main>
+
+
+ 
+    
+    <!-- Additional buttons -->
+    <button onclick="location.href='index.html'" class="button">Home</button><p>
+      <div id="button-container">
+    <button onclick="location.href='aapTxPlan.html'" class="button">AAP Staging</button>
+    <button onclick="location.href='aapGrading.html'" class="button">AAP Grading</button>
+    <button onclick="location.href='txPlan.html'" class="button">Treatment Planning</button>
+</div>
+
+<h2>This is only to be used as a guide. As always use your best clinical judgement.</h2>
+
+<form>
+<div class="grid-container">
+
+<!-- Question 14 Teeth Erupted -->
+
+<div class="grid-item" id="question14">
+	<div class="question">
+		<div class="question-text">Total number of teeth in the dentition erupted and able to be probed:</div>
+		<p>
+		<input type="number" id="answer14" name="answer14" min="1" max="40"> Erupted Teeth
+		</p>	
+		<p id="error14" style="color: red;"></p>
+		<p id="errorSum" style="color: red;"></p>
+	</div>
+</div>
+<!-- 5. BoP -->
+
+<div class="grid-item">
+ 	<div class="question">
+    		<div class="question-text">Looking at <b><u>BoP</b></u> for the <b><u>entire dentition</b></u>, how many sites of BoP are present for the entire dentition?</div>
+   		<p>
+     		<input type="number" id="answer5" name="answer5" min="1" max="200"> Individual sites of BoP.
+    		</p>
+		<p id="error5" style="color: red;"></p>
+  	</div>
+</div>
+
+<!-- Question 13 Perio Maint -->
+
+<div class="grid-item" id="question13">
+	<div class="question">
+		<div class="question-text">Does the patient have a history of periodontal therapy?</div>
+		<p>
+		<input type="radio" name="answer13" value="Yes">Yes<br>
+		<input type="radio" name="answer13" value="No">No
+		</p>
+	</div>
+</div>
+
+<!--Question 20 URQ -->
+
+
+<!-- Instructional Block -->
+
+<div class="grid-item">
+	<div class="question">
+		<div class="question-text">Treament Planning</div>
+		Each treatment plan is designed carefully, made to fit each patient's unique needs and circumstances. This tool is meant to be a helpful guide only.
+	</div>
+</div>
+
+<!--Question 20 URQ -->
+
+
+<div class="grid-item" id="question20">
+	<div class="question">
+		<div class="question-text">Total missing teeth in Upper Right Quadrant</div>
+		<p>
+		<input type="number" id="answer20" name="answer20" min="0" max="5">
+		</p>
+		<p id="error20" style="color: red;"></p>
+	</div>
+	<div class="question">
+		<div class="question-text">Number of remaining teeth with the following criteria: ≥ 4mm PD; ≥ 1mm CAL; Bleeding</div>
+		<p>
+		<input type="number" id=answer22" name="answer22" min="0" max="4">
+		</p>
+	</div>
+</div>
+
+<!-- Question 30 ULQ -->
+
+<div class="grid-item" id="question30">
+	<div class="question">
+		<div class="question-text">Total missing teeth in Upper Left Quadrant</div>
+		<p>
+		<input type="number" id="answer30" name="answer30" min="0" max="5">
+		</p>
+		<p id="error30" style="color: red;"></p>
+	</div>
+	<div class="question">
+		<div class="question-text">Number of remaining teeth with the following criteria: ≥ 4mm PD; ≥ 1mm CAL; Bleeding</div>
+		<p>
+		<input type="number" id=answer32" name="answer32" min="0" max="4">
+		</p>
+	</div>
+</div>
+
+<!-- Quesiton 40 LLQ -->
+
+<div class="grid-item" id="question40">
+	<div class="question">
+		<div class="question-text">Total missing teeth in Lower Left Quadrant</div>
+		<p>
+		<input type="number" id="answer40" name="answer40" min="0" max="5">
+		</p>
+		<p id="error40" style="color: red;"></p>
+	</div>
+	<div class="question">
+		<div class="question-text">Number of remaining teeth with the following criteria: ≥ 4mm PD; ≥ 1mm CAL; Bleeding</div>
+		<p>
+		<input type="number" id=answer42" name="answer42" min="0" max="4">
+		</p>
+	</div>
+</div>
+
+<!-- Question 50 LRQ -->
+
+<div class="grid-item" id="question50">
+	<div class="question">
+		<div class="question-text">Total missing teeth in Lower Right Quadrant</div>
+		<p>
+		<input type="number" id="answer50" name="answer50" min="0" max="5">
+		</p>
+		<p id="error50" style="color: red;"></p>
+	</div>
+	<div class="question">
+		<div class="question-text">Number of remaining teeth with the following criteria: ≥ 4mm PD; ≥ 1mm CAL; Bleeding</div>
+		<p>
+		<input type="number" id=answer52" name="answer52" min="0" max="4">
+		</p>
+	</div>
+</div>
+
+
+
+<!-- 1. Patient's Age 
+
+<div class="grid-item" id="question1">
+	<div class="question">
+		<div class="question-text">Patient's Age</div>
+		<p>
+		<label>1. Age: </label>
+		<input type="number" id="answer1" name="answer1" min="1" max="200"> Years Old
+		</p>
+		<p id="ageError" style="color: red;"></p>
+	</div>
+</div>
+-->
+
+<!-- End Questions -->
+    </div>
+</form>
+<h2>Please fill out all the answers, failure to do so will give you an incorrect or incomplete result.</h2>
+</main>
+<div id="button-container">
+    <button id="calculate-button" class="button">Calculate</button>
+</div>
+<p id="output"></p>
+
+<p id="table-container"></p>
+
+
+<!-- Begin Javascript -->
+
+<script>
+
+  // Age validation
+  //var ageInput = document.getElementById('answer1');
+  //var ageError = document.getElementById('ageError');
+
+ // ageInput.addEventListener('input', function() {
+  //  var age = ageInput.value;
+
+   // if (age < 1 || age > 110) {
+   //   ageError.textContent = "Please enter a number between 1 and 110.";
+  //  } else {
+    //  ageError.textContent = "";
+  //  }
+  //});
+
+document.getElementById("calculate-button").addEventListener("click", function() {
+    // Clear previous errors
+    document.getElementById('error14').innerHTML = '';
+    document.getElementById('error5').innerHTML = '';
+    document.getElementById('errorSum').innerHTML = '';
+    document.getElementById('error20').innerHTML = '';
+    document.getElementById('error30').innerHTML = '';
+    document.getElementById('error40').innerHTML = '';
+    document.getElementById('error50').innerHTML = '';
+
+    let answer14 = getAnswer("answer14");
+    let answer5 = getAnswer("answer5");
+    let answer20 = getAnswer("answer20");
+    let answer22 = getAnswer("answer22");
+    let answer30 = getAnswer("answer30");
+    let answer32 = getAnswer("answer32");
+    let answer40 = getAnswer("answer40");
+    let answer42 = getAnswer("answer42");
+    let answer50 = getAnswer("answer50");
+    let answer52 = getAnswer("answer52");
+
+    let answer13Element = document.querySelector('input[name="answer13"]:checked');
+    let answer13 = answer13Element ? answer13Element.value === "Yes" : false;
+    let outputElement = document.getElementById("output");
+    outputElement.textContent = "";
+
+    let answerNames = ["answer20", "answer30", "answer40", "answer50"];
+    let txPlanNames = ["answer22", "answer32", "answer42", "answer52"];
+    let quadPlan = [], quadFinishPlan = [];
+   // let answer1 = document.querySelector('input[name="answer1"]').value;
+    let answer10Element = document.querySelector('input[name="answer10"]:checked');
+
+    // Validate Question 14
+    if (answer14 < 1 || answer14 > 32) {
+        document.getElementById('error14').innerHTML = 'The number of teeth must be between 1 and 32.';
+        return; // Early return
+    }
+
+    // Validate the sum of answers from questions 20, 30, 40, and 50 compared to Question 14
+    if (32 - (answer20 + answer30 + answer40 + answer50) !== answer14) {
+        document.getElementById('errorSum').innerHTML = 'The total number of teeth does not match the total of the missing teeth listed in each quadrant. Please re-evaluate.';
+        return; // Early return
+    }
+
+    // Validate questions 20, 22, 30, 32, 40, 42, 50 and 52
+    validateRangeAndPositivity(answer20, answer22, 'error20');
+    validateRangeAndPositivity(answer30, answer32, 'error30');
+    validateRangeAndPositivity(answer40, answer42, 'error40');
+    validateRangeAndPositivity(answer50, answer52, 'error50');
+
+    // Validate Question 5
+    if (answer5 > answer14 * 6) {
+        document.getElementById('error5').innerHTML = 'The number of BoP sites must be equal to or less than six times the number of teeth.';
+        return; // Early return
+    }
+  
+    // Variables for testing, you can replace these with actual values.
+    var answerNamesTest = ['one', 'two', 'three', 'four'], answer13Test = true, txPlanNamesTest = ['a', 'b', 'c', 'd'];
+
+    let tableContainer = document.getElementById("table-container");
+    let existingTable = document.getElementById("results-table");
+    if (existingTable) {
+        tableContainer.removeChild(existingTable);
+    }
+    let quadPlanTest = [];
+    let quadFinishPlanTest = [];
+
+for (let i = 0; i < 4; i++) {
+    let step1 = answer14 * 6;
+    let step2 = answer5 / step1;
+    let step3 = 8 - getAnswer(answerNames[i]);
+    let [txPlan, txPlanFinish] = getTxPlan(step2, step3, getAnswer(txPlanNames[i]), answer13);
+
+    quadPlan.push(txPlan);
+    quadFinishPlan.push(txPlanFinish);
+}
+
+
+
+let table = document.createElement("table");
+table.id = "results-table";
+
+function addRow(head, data) {
+    let tr = document.createElement("tr");
+    let th = document.createElement("th");
+    let td = document.createElement("td");
+    th.textContent = head;
+    td.innerHTML = data; // Use .innerHTML instead of .textContent to render HTML tags
+    tr.appendChild(th);
+    tr.appendChild(td);
+    table.appendChild(tr);
+}
+
+let isAllQuadFinishPlanBlank = quadFinishPlan.every(function(plan) { return plan === ""; });
+let isAllQuadPlanTwo = quadPlan.every(function(plan) { return plan === 2; });
+let isAllQuadPlanZero = quadPlan.every(function(plan) { return plan === 0; });
+
+if (!isAllQuadFinishPlanBlank) {
+    const quads = ['URQ', 'ULQ', 'LLQ', 'LRQ'];
+    addRow("Treatment Plan:", "");
+
+    quadFinishPlan.forEach(function(plan, index) {
+        if (plan !== "") {
+            let quadrant = quads[index];
+            addRow(`SRP Code ${index+1}: ${quadrant}`, plan);
+        }
+    });
+
+    var result = (answer5) / (answer14 * 6);
+    if (quadFinishPlan.some(function(plan) { return plan === ""; })) {
+      if (result > 0.3) {
+        addRow("", "D4346 - Scaling in the Presence of Gingival Inflammation - Code to encompass remaining teeth.");
+      } else if (result <= 0.3 && answer13) {
+        addRow("", "D4910 - Periodontal Maintenance - Code to encompass remaining teeth.");
+      } else if (result <= 0.3 && !answer13) {
+        addRow("", "D1110 - Adult Prophylaxis - Code to encompass remaining teeth. <br/>D1120 - Child Prophylaxis if the patient is under 21 per DACC Clinic Manual.");
+      }
+    }
+
+function addRow(head, data) {
+    let tr = document.createElement("tr");
+    let th = document.createElement("th");
+    let td = document.createElement("td");
+    th.textContent = head;
+    td.innerHTML = data; // Use .innerHTML instead of .textContent to render HTML tags
+    tr.appendChild(th);
+    tr.appendChild(td);
+    table.appendChild(tr);
+}
+
+    addRow("Possible Adjuncts", `
+        <ul>
+            <li>3 MRC - for the next 3 Month Recare.</li>
+            <li>D0150 - Comprehensive Evaluation if a Dental Exam was completed.</li>
+            <li>D1206 - Topical Application of Fluoride Varnish.</li>
+            <li>D9631 - CHX Oral Rinse.</li>
+            <li>PBWX - Post Bitewing Radiographs.</li>
+           <li>D9215 - Local Anesthesia</li> 
+        </ul>
+    `);
+}
+
+else if (isAllQuadFinishPlanBlank) {
+    var result = (answer5) / (answer14 * 6);
+    if (isAllQuadPlanZero && !answer13 && result < 0.3) {
+        addRow("Treatment Plan:", "D1110 - Adult Prophylaxis<br/> D1120 - Child Prophylaxis if the patient is under 21 per DACC Clinic Manual.");
+    } else if (answer13 && result < 0.3) {
+        addRow("Treatment Plan:", "D4910 - Perio Maintenance");
+    } else if (isAllQuadPlanTwo) {
+        addRow("Treatment Plan:", "D4346 - Scaling in the Presence of Gingival Inflammation");
+    }
+}
+
+tableContainer.appendChild(table);
+
+
+});
+
+  
+function getAnswer(name) {
+    var elements = document.getElementsByName(name);
+    if (elements.length > 0) {
+        return parseInt(elements[0].value);
+    } else {
+        console.error(`Element with name ${name} not found`);
+        return null;
+    }
+}
+
+function getTxPlan(step2, step3, answer, answer13) {
+    let txPlanFinish = "";
+
+    if (answer >= 1 && answer <= 3) {
+        txPlanFinish = "D4342 - Periodontal Scaling and Root Planing 1-3 Teeth. [List Teeth Numbers in Chart]";
+    }
+    if (step3 <= 3) {
+        txPlanFinish = "D4342 - Periodontal Scaling and Root Planing 1-3. [List Teeth Numbers in Chart]";
+    }
+    if (answer >= 4 && step3 >= 4) {
+        txPlanFinish = "D4341 - Periodontal Scaling and Root Planing 4+ Teeth";
+    }
+
+    let txPlan = null;
+    if (step2 < 0.3 && !answer13) {
+        txPlan = 0;
+    } else if (step2 < 0.3 && answer13) {
+        txPlan = 1;
+    } else if (step2 >= 0.3) {
+        txPlan = 2;
+    }
+
+    return [txPlan, txPlanFinish];
+}
+
+function validateRangeAndPositivity(questionA, questionB, errorID) {
+    if (questionA < 0 || questionA > 8 || questionB < 0 || questionB > 8) {
+        document.getElementById(errorID).innerHTML = 'The value must be between 1 and 8.';
+        return;
+    }
+    
+    if ((8 - questionA) - questionB < 0) {
+        document.getElementById(errorID).innerHTML = 'With 8 teeth in a quadrant the number of teeth needing treatment should not exceed 8 - (Total Missing Teeth)';
+        return;
+    }
+}
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
