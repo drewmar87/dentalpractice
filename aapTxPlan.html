@@ -518,15 +518,26 @@ window.onload = function() {
     });
 };
 
-    const question3Radios = document.querySelectorAll('input[name="answer3"]');
-    question3Radios.forEach(radio => {
-        radio.addEventListener('change', () => {
-            const question4Radios = document.querySelectorAll('input[name="answer4"]');
-            question4Radios.forEach(radio => {
+const question3Radios = document.querySelectorAll('input[name="answer3"]');
+question3Radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+        const radioQuestionsToReset = [4, 9, 13, 8, 2];
+        const textQuestionsToReset = [16];
+
+        radioQuestionsToReset.forEach(questionNumber => {
+            const radios = document.querySelectorAll(`input[name="answer${questionNumber}"]`);
+            radios.forEach(radio => {
                 radio.checked = false;
             });
         });
+
+        textQuestionsToReset.forEach(questionNumber => {
+            const textInput = document.querySelector(`input[name="answer${questionNumber}"]`);
+            if (textInput) textInput.value = '';
+        });
     });
+});
+
 
 
 // Declaring and checking variables
