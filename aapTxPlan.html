@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAP Staging</title>
+  
+<style>
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #9370DB; /* Light Purple */
+    padding: 0px;
+    text-align: center;
+}
+
+h1 {
+    color: #FFF; /* White */
+}
+
+h2 {
+    color: #9370DB; /* Light Purple */
+}
+
+/* Main Styles */
+main {
+    background-color: #FFF; /* White */
+    padding: 20px;
+    display: flex; /* Add this */
+    flex-direction: column; /* Add this */
+    align-items: center; /* Add this */
+}
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+	width: 75%;
+        margin: 20px auto;
+    }
+
+    .grid-item {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .grid-item .question {
+        background-color: #e0f7fa;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #b2ebf2;
+    }
+
+    .grid-item .question .question-text {
+        font-weight: bold;
+        color: #00796b;
+    }
+
+    .grid-item .question p {
+        margin: 10px 0;
+    }
+
+    .grid-item .question p label {
+        font-weight: normal;
+        color: #000;
+    }
+
+    .grid-item .question input[type=radio] {
+        margin-right: 5px;
+    }
+
+    .grid-item .question input[type=number] {
+        width: 50px;
+    }
+
+    .grid-item .question details {
+        margin-top: 10px;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #b2ebf2;
+    }
+.grid-item.disabled {
+    border-color: red;
+    background-color: black;
+    opacity: .5;
+    pointer-events: none;
+  }
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9370DB; /* Light Purple */
+    color: #FFF; /* White */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    border: 2px solid black;
+}
+
+.button:hover {
+    background-color: #8A2BE2; /* Dark Purple */
+}
+
+.button:active {
+    background-color: violet;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #9370DB;
+    padding: 8px;
+    text-align: left;
+}
+#results-table td:nth-child(1) {
+    width: 25%;
+}
+
+#results-table td:nth-child(2) {
+    width: 75%;
+}
+
+th {
+    background-color: #9370DB;
+    color: white;
+}
+#table-container {
+    width: 60%; /* Set the width of the container to 60% */
+    margin: 0 auto; /* This centers the table */
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+#results-table {
+    width: 100%; /* Set width of table to 100% to fill its container */
+    border-collapse: collapse;
+}
+
+#results-table th, #results-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+#results-table th {
+    background-color: #9370DB;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+#results-table td {
+    font-size: 15px; 
+}
+
+#results-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table#results-table th {
+    width: 250px; /* Adjust this value to your liking */
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+#button-container .button {
+    width: 125px; /* adjust as needed */
+    height: 50px; /* adjust as needed */
+    text-align: center;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>Periodontal Classification: Staging</h1>
+	</header>
+
+	<main>
+
+
+
+
+    
+    <!-- Additional buttons -->
+    <button onclick="location.href='index.html'" class="button">Home</button><p>
+      <div id="button-container">
+    <button onclick="location.href='aapTxPlan.html'" class="button">AAP Staging</button>
+    <button onclick="location.href='aapGrading.html'" class="button">AAP Grading</button>
+    <button onclick="location.href='txPlan.html'" class="button">Treatment Planning</button>
+</div>
+
+
+<h2>This is only to be used as a guide. As always use your best clinical judgement.</h2>
+
+
+	<form>
+	<div class="grid-container">
+
+
+
+
+<!-- Question 14 Teeth Erupted -->
+
+
+<div class="grid-item" id="question14" data-question="14">
+  <div class="question">
+    <div class="question-text">14. Total number of teeth in the dentition erupted and able to be probed:</div>
+    <p>
+      <input type="number" id="answer14" name="answer14" min="0" max="32"> Teeth
+    </p> 
+  </div>
+</div>
+
+
+
+
+<!--- 3. Perio Interdental CAL -->
+
+		<div class="grid-item" data-question="3">
+			<div class="question">
+				<div class="question-text">Looking at the <b><u>entire dentition</b></u>, is there ≥ 2 sites of <b><u>inderdental periodontal-associated CAL</b></u>.</div><p>
+  				<label><input type="radio" id="answer3No" name="answer3" value="A"> No</label><br>
+  				<label><input type="radio" id="answer3Yes" name="answer3" value="B"> Yes, ≥ 2 Non-adjacent teeth, not including third molars</label><br>
+			
+  			
+    			<details>
+<summary style="cursor: pointer; color: #00796b; font-weight: bold;">More Information...</summary>
+				**Defined as inderdental CAL not attributed to traumatic factors or non-periodontitis related etiologies observed at ≥ 2 different, non-adjacent teeth. Third molars are not taken into account.
+			</details>
+		</div></div>
+
+
+
+<!-- 4. Non-Perio Interdental CAL -->
+
+		<div class="grid-item" id="question4" data-question="4">
+			<div class="question">
+  				<div class="question-text">Looking at the <b><u>entire dentition</b></u>, is there ≥ 2 sites of <b><u>non-periodontal-associated</u></b> sites of CAL.</div><p>
+  				<label><input type="radio" id="answer4No" name="answer4" value="A"> No</label><br>
+  				<label><input type="radio" id="answer4Yes" name="answer4" value="B"> Yes, ≥ 2 Non-adjacent teeth, not including third molars</label></br>
+			
+  			
+    			<details>
+<summary style="cursor: pointer; color: #00796b; font-weight: bold;">More Information...</summary>
+				<b><u>Examples:</b></u> 
+				<ul>
+					<li>Gingival recession of traumatic or iatrogenic reason </li> 
+					<li>Dental caries or restoration extending into the cervical area of the tooth</li>
+					<li>CAL on the distal aspect of the second molar and associated with malposition or extraction of a third molar</li> 
+					<li>Endodontic lesion draining through the marginal periodontium</li>
+					<li>Vertical root fracture.</li>
+			</details>
+		</div></div>
+
+
+
+
+<!-- 16. CAL -->
+		<div class="grid-item" id="question16" data-question="16">
+ 			<div class="question">
+    				<div class="question-text">Looking at the 2 most severe sites of <b><u>ACTIVE CAL</b></u>, what are the <b><u>Clinical Attachment Loss numbers</b></u> for those sites?</div>
+   				<p>
+     				<label>Worst CAL Site:</label>
+      				<input type="number" id="worstCALsite" name="worstCALsite" min="0" max="20">mm
+    				</p>
+    				<p>
+      				<label>Second Worst CAL Site:</label>
+      				<input type="number" id="secondWorstCALsite" name="secondWorstCALsite" min="0" max="20">mm
+    				</p>
+	
+
+  			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 2. Perio Teeth Ext. -->
+
+<div class="grid-item" id="question2" data-question="2">
+  <div class="question">
+    <div class="question-text">2. Extracted teeth <u><b>specifically</b></u> due to periodontal disease in this quadrant, or teeth planned to be extracted <b><u>due to periodontits.</b></u></div>
+    <p>
+      <label><input type="radio" id="answer2" name="answer2" value="A"> 0</label><br>              
+      <label><input type="radio" id="answer2" name="answer2" value="B"> ≤4</label><br>
+      <label><input type="radio" id="answer2" name="answer2" value="C"> 5+</label><br>
+    </p>
+  </div>
+</div>
+
+
+<!-- Question 7 Pocket Depth -->
+
+		<div class="grid-item" id="question7" data-question="7">
+ 			<div class="question">
+    				<div class="question-text">What are the 2 most severe pocket depths in the dentition?</div>
+   				<p>
+      				<label>Worst PD Site:</label>
+      				<input type="number" id="worstProbe" name="worstProbe" min="0" max="20">mm
+    				</p>
+    				<p>
+      				<label>Second Worst PD Site:</label>
+      				<input type="number" id="secondWorstProbe" name="secondWorstProbe" min="0" max="20">mm
+    				</p>
+
+
+
+			</div>
+		</div>
+
+
+<!-- question 75 -->
+<div class="grid-item" id="question75" data-question="75">
+		<div class="question">
+  				<div class="question-text">Is there bleeding on 2 or more sites of 4mm pockets or greater?</div><p>
+  				<label><input type="radio" id="answer75Yes" name="answer75" value="A"> Yes</label><br>
+  				<label><input type="radio" id="answer75No" name="answer75" value="B"> No</label>
+			</div></div>
+
+
+
+<!-- 5. BoP -->
+
+ 		<div class="grid-item" data-question="5">
+ 			<div class="question">
+    				<div class="question-text">Looking at <b><u>BoP</b></u> for the <b><u>entire dentition</b></u>, how many sites of BoP are present for the entire dentition?</div>
+   				<p>
+     				<input type="number" id="answer5" name="answer5" min="0" max="192"> Sites of BoP
+    				</p>
+
+  			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+<!-- 6. Radiographic Bone loss 0, 15, 15-33, 33 -->
+
+		<div class="grid-item" id="question6" data-question="6">
+ 			<div class="question">
+   				<div class="question-text">Radiographic bone loss for the <b><u>entire dentition</b></u>.</div>
+    				<p>
+      				<label>Radiographic Bone Loss (%): </label>
+      				<input type="number" id="answer6" name="answer6" min="0" max="100"> 
+    				</p>
+
+  				
+  				
+    				<details>
+<summary style="cursor: pointer; color: #00796b; font-weight: bold;">More Information...</summary>
+1. Measure the distance from the cementoenamel junction (CEJ) to the apex of the root at the sites of greatest loss. Keep in mind a 2mm distance on average from the CEJ to the alveolar bone crest is considered normal bone-level height, so subtract 2mm from the CEJ to apex measurement to determine where the bone levels should be in health. <br>2. Next measure the current bone level at the site (bone height to apex of the root). <br>3. Subtract the current bone level from healthy bone level number, and this will give you the bone level loss.<br>4. Once you have the bone level loss number, divide it by the healthy bone level number and multiply it by 100. This will give you a percentage of bone loss for staging severity when using RBL as a determinant (i.e., Stage I <15%, Stage II 15%–33%, Stage III and IV >33%).<p><b><u>Example:</u></b><br> 
+1. CEJ to Apex (Determines Control Group) = 27mm – 2mm (Biologic Width) = 25mm healthy bone height.<p/>
+2. Current bone level at site of greatest loss (Crest of Bone Measured to Apex) = 12mm.<p/>
+3. 25mm (healthy bone) – 12mm (current bone level) = 13mm bone loss.<p/>
+4. 13mm (bone loss) ÷ 25mm (healthy bone level) = .52 x 100 = 52% bone loss
+
+				<p>
+				<u><b>Grading using Indirect Progression Calculation:</b></u>
+				<br>
+				% Bone Loss ÷ age = Indirect Evidence of progression
+				</details>
+			</div></div>
+		
+
+
+
+
+
+
+<!-- Question 8 Furcations -->
+
+
+
+		<div class="grid-item" id="question8" data-question="8">
+  			<div class="question">
+    				<div class="question-text">Does that patient have 2 or more teeth with class 2 or 3 furcations?</div><p>
+    				<label><input type="radio" name="answer8" id="answer8Yes" value="A"> Yes</label><br>
+    				<label><input type="radio" name="answer8" id="answer8No" value="B"> No</label><p>
+
+  				
+    				<details>
+<summary style="cursor: pointer; color: #00796b; font-weight: bold;">More Information...</summary>
+      				Class I<br/>
+      				Incipient lesion. There is slightly horizontal attachment loss in the furcation area. The examiner probe penetrates two millimeters or less from the entrance of furcation.
+    				<p/>
+
+    
+      				Class II<br/>
+      				Partial horizontal bone loss. The examiner probe penetrates three millimeters or more from the entrance of furcation, but there is not a total attachment loss with a through and 				through opening of the furcation.
+    				<p/>
+
+    
+      				Class III<br/>
+     				Total horizontal attachment loss with a through and through opening of the furcation. The inter-radicular bone is completely absent.<p>
+    
+
+    				<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6162379/">Furcation Involvement Classification (NIH, National Library of Medicine)</a>
+
+   				 </details><p>
+  			</div>
+		</div>
+
+
+
+
+
+
+
+
+<!-- Question 13 Perio Maint -->
+
+<div class="grid-item" id="question13" data-question="13">
+  <div class="question">
+    <div class="question-text">Does the patient have a history of periodontal therapy</div>
+    <p>
+      <input type="radio" id="answer13Yes" name="answer13" value="Yes">Yes<br>
+      <input type="radio" id="answer13No" name="answer13" value="No">No
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Question 9 Teeth Pairs -->
+
+
+		<div class="grid-item" id="question9" data-question="9">
+			<div class="question">
+  				<div class="question-text">Does the patient have ≤ 20 teeth (10 opposing pairs)?</div><p>
+  				<label><input type="radio" id="answer9Yes" name="answer9" value="A"> Yes</label><br>
+  				<label><input type="radio" id="answer9No" name="answer9" value="B"> No</label>
+			</div>
+		</div>
+
+
+
+
+    </div>
+</form>
+<h2>Please fill out all the answers, failure to do so will give you an incorrect or incomplete result.</h2>
+</main>
+<div id="button-container">
+    <button id="calculate-button" class="button">Calculate</button>
+</div>
+<p id="output"></p>
+
+
+
+<script>
+window.onload = function() {
+    const disableRules = {
+        answer3No: [16, 8, 2, 9,13],
+        answer3Yes: [4],
+        answer4No: [16, 8, 9,6,75],
+        answer4Yes: [9,6]
+    };
+
+    function updateQuestions() {
+        Object.keys(disableRules).forEach(key => {
+            const rb = document.getElementById(key);
+            if (rb && rb.checked) {
+                disableRules[key].forEach(qNum => {
+                    const qDiv = document.querySelector(`div[data-question="${qNum}"]`);
+                    if (qDiv) {
+                        qDiv.classList.add('disabled');
+                    }
+                });
+            }
+        });
+
+
+    }
+
+    updateQuestions();
+
+    document.querySelectorAll('input[type="radio"]').forEach(rb => {
+        rb.addEventListener('change', () => {
+            document.querySelectorAll('.grid-item').forEach(div => {
+                div.classList.remove('disabled');
+            });
+            updateQuestions();
+        });
+    });
+};
+
+    const question3Radios = document.querySelectorAll('input[name="answer3"]');
+    question3Radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            const question4Radios = document.querySelectorAll('input[name="answer4"]');
+            question4Radios.forEach(radio => {
+                radio.checked = false;
+            });
+        });
+    });
+
+
+// Declaring and checking variables
+
+const conditions = {
+    question3IsNo: () => document.getElementById('answer3No').checked,
+    question4IsNo: () => document.getElementById('answer4No').checked,
+    question4IsYes: () => document.getElementById('answer4Yes').checked,
+    question2IsA: () => {
+        const checkedRadio = document.querySelector('input[name="answer2"]:checked');
+        return checkedRadio !== null && checkedRadio.value === 'A';
+    },
+    question3IsYes: () => document.getElementById('answer3Yes').checked,
+    question7WorstProbeIsLessOrEqualFour: () => Number(document.getElementById('worstProbe').value) <= 4,
+    question7SecondWorstProbeIsLessOrEqualFour: () => Number(document.getElementById('secondWorstProbe').value) <= 4,
+    question75IsNo: () => {
+        const checkedRadio = document.querySelector('input[name="answer75"]:checked');
+        return checkedRadio !== null && checkedRadio.value === 'B';
+    },
+    question6IsGreaterOrEqualPointOne: () => Number(document.getElementById('answer6').value) >= 0.1,
+    question13IsYes: () => document.getElementById('answer13Yes').checked,
+    question13IsNo: () => document.getElementById('answer13No').checked,
+    question7WorstProbeIsLessOrEqualThree: () => Number(document.getElementById('worstProbe').value) <= 3,
+    question7SecondWorstProbeIsLessOrEqualThree: () => Number(document.getElementById('secondWorstProbe').value) <= 3,
+    question2IsC: () => {
+        const checkedRadio = document.querySelector('input[name="answer2"]:checked');
+        return checkedRadio !== null && checkedRadio.value === 'C';
+    },
+    question9IsYes: () => {
+        const checkedRadio = document.querySelector('input[name="answer9"]:checked');
+        return checkedRadio !== null && checkedRadio.value === 'A';
+    },
+    question2IsB: () => {
+        const checkedRadio = document.querySelector('input[name="answer2"]:checked');
+        return checkedRadio !== null && checkedRadio.value === 'B';
+    },
+    question16IsFiveOrMore: () => {
+        const worstCALsite = Number(document.getElementById('worstCALsite').value);
+        const secondWorstCALsite = Number(document.getElementById('secondWorstCALsite').value);
+        return (worstCALsite >= 5 && secondWorstCALsite >= 5);
+    },
+    question6Is34OrHigher: () => Number(document.getElementById('answer6').value) >= 34,
+    question8IsYes: () => document.getElementById('answer8Yes').checked,
+    question7WorstProbeAndSecondWorstProbeIs6OrHigher: () => {
+        const worstProbe = Number(document.getElementById('worstProbe').value);
+        const secondWorstProbe = Number(document.getElementById('secondWorstProbe').value);
+        return (worstProbe >= 6 && secondWorstProbe >= 6);
+    },
+    question16IsThreeOrFour: () => {
+        const worstCALsite = Number(document.getElementById('worstCALsite').value);
+        const secondWorstCALsite = Number(document.getElementById('secondWorstCALsite').value);
+        return ((worstCALsite === 3 || worstCALsite === 4) && (secondWorstCALsite === 3 || secondWorstCALsite === 4));
+    },
+    question6IsBetween16And33: () => {
+        const question6Value = Number(document.getElementById('answer6').value);
+        return (question6Value >= 16 && question6Value <= 33);
+    },
+    question7WorstProbeAndSecondWorstProbeIs5: () => {
+        const worstProbe = Number(document.getElementById('worstProbe').value);
+        const secondWorstProbe = Number(document.getElementById('secondWorstProbe').value);
+        return (worstProbe === 5 && secondWorstProbe === 5);
+    },
+    question16IsOneOrTwo: () => {
+        const worstCALsite = Number(document.getElementById('worstCALsite').value);
+        const secondWorstCALsite = Number(document.getElementById('secondWorstCALsite').value);
+        return ((worstCALsite === 1 || worstCALsite === 2) && (secondWorstCALsite === 1 || secondWorstCALsite === 2));
+    },
+    question6Is15OrUnder: () => Number(document.getElementById('answer6').value) <= 15,
+    question7WorstProbeAndSecondWorstProbeIs4OrLower: () => {
+        const worstProbe = Number(document.getElementById('worstProbe').value);
+        const secondWorstProbe = Number(document.getElementById('secondWorstProbe').value);
+        return (worstProbe <= 4 && secondWorstProbe <= 4);
+    },
+    question7IsSixOrHigher: () => {
+        const worstProbe = Number(document.getElementById('worstProbe').value);
+        const secondWorstProbe = Number(document.getElementById('secondWorstProbe').value);
+        return (worstProbe >= 6 || secondWorstProbe >= 6);
+    },
+question7IsFive: () => {
+    const worstProbe = Number(document.getElementById('worstProbe').value);
+    const secondWorstProbe = Number(document.getElementById('secondWorstProbe').value);
+    return (worstProbe === 5 && secondWorstProbe === 5);
+},
+question7IsFourOrLower: () => {
+    const worstProbe = Number(document.getElementById('worstProbe').value);
+    const secondWorstProbe = Number(document.getElementById('secondWorstProbe').value);
+    return (worstProbe <= 4 && secondWorstProbe <= 5);
+},
+question2IsAorB: function() {
+    return this.question2IsA() || this.question2IsB();
+},
+
+	question5DivQuestion14IsLessThanTen: () => {
+		const question5Value = Number(document.getElementById('answer5').value);
+		const question14Value = Number(document.getElementById('answer14').value);
+		return (question5Value / (question14Value * 6)) < 0.1;
+	},
+
+	question5DivQuestion14IsGreaterThanThreeTenths: () => {
+		const question5Value = Number(document.getElementById('answer5').value);
+		const question14Value = Number(document.getElementById('answer14').value);
+		return (question5Value / (question14Value * 6)) >= 0.1;
+	},
+
+	question5DivQuestion14IsGreaterThanPointOne: () => {
+		const question5Value = Number(document.getElementById('answer5').value);
+		const question14Value = Number(document.getElementById('answer14').value);
+		return (question5Value / (question14Value * 6)) > 0.1;
+	},
+	question5DivQuestion14: () => {
+		const question5Value = Number(document.getElementById('answer5').value);
+		const question14Value = Number(document.getElementById('answer14').value);
+		return (question5Value / (question14Value * 6));
+	},
+question2IsNotC: () => {
+    const question2 = document.getElementById('question2').value;
+    return question2 !== 'C';
+},
+
+question7IsFiveOrMore: () => {
+    const worstProbe = Number(document.getElementById('worstProbe').value);
+    const secondWorstProbe = Number(document.getElementById('secondWorstProbe').value);
+    return (worstProbe >= 5 || secondWorstProbe >= 5);
+},
+
+calculateStage: () => {
+    const worstCALsite = Number(document.getElementById('worstCALsite').value);
+    const secondWorstCALsite = Number(document.getElementById('secondWorstCALsite').value);
+    let stage = 0;
+
+    const lowerSite = Math.min(worstCALsite, secondWorstCALsite);
+
+    if (lowerSite <= 2) {
+        stage = 1;
+    } else if (lowerSite <= 4) {
+        stage = 2;
+    } else {
+        stage = (document.getElementById('question2').value === 'C') ? 4 : 3;
+    }
+
+    return stage;
+},
+
+
+calculateStageIsOne: () => conditions.calculateStage() === 1,
+calculateStageIsTwo: () => conditions.calculateStage() === 2,
+calculateStageIsThree: () => conditions.calculateStage() === 3,
+calculateStageIsFour: () => conditions.calculateStage() === 4,
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Displaying Results
+
+const results = [
+	{
+		conditions: ['question3IsNo', 'question4IsNo', 'question5DivQuestion14IsLessThanTen'],
+		message: 'Clinical Gingival Health on an Intact Periodontium'
+	},
+	{
+		conditions: ['question3IsNo', 'question4IsNo', 'question5DivQuestion14IsGreaterThanThreeTenths'],
+		message: 'Gingivitis on an Intact Periodontium'
+	},
+	{
+		conditions: ['question3IsNo', 'question4IsYes', 'question5DivQuestion14IsLessThanTen'],
+		message: 'Clinical Gingival Health on a Reduced Periodontium in a Non-Periodontitis Patient'
+	},
+	{
+		conditions: ['question3IsNo', 'question4IsYes',  'question5DivQuestion14IsGreaterThanThreeTenths'],
+		message: 'Gingivitis on a Reduced Periodontium in a Non-Periodontitis Patient'
+	},
+	{
+		conditions: ['question3IsNo', 'question5DivQuestion14IsLessThanTen', 'question7WorstProbeIsLessOrEqualFour', 'question7SecondWorstProbeIsLessOrEqualFour', 'question75IsNo', 						'question6IsGreaterOrEqualPointOne','question13IsYes'],
+		message: 'Clinical Gingival Health on a Reduced Periodontium in a Stable Periodontitis Patient'
+	},
+	{
+		conditions: ['question3IsNo', 'question5DivQuestion14IsGreaterThanPointOne', 'question7WorstProbeIsLessOrEqualThree', 'question7SecondWorstProbeIsLessOrEqualThree', 'question75IsNo', 					'question6IsGreaterOrEqualPointOne', 'question13IsYes'],
+		message: 'Gingivitis on a Reduced Periodontium in a Stable Periodontitis Patient'
+ 	 },
+
+{
+	conditions: ['question3IsYes', 'question16IsFiveOrMore', 'question2IsC'],
+	message: '<b><u>Tentatively: Stage 4 Periodontitis.</b> Review Hierarchy as a guide for final staging.</u>'
+},
+ 
+
+
+
+
+
+
+   {
+        conditions: ['question3IsYes', 'question2IsAorB', 'calculateStageIsThree'],
+        message: 'Tentatively: Stage 3 Periodontitis. Review Hierarchy as a guide for final staging.'
+    },
+    {
+        conditions: ['question3IsYes', 'question2IsA', 'calculateStageIsTwo'],
+        message: 'Tentatively: Stage 2 Periodontitis. Review Hierarchy as a guide for final staging.'
+    },
+    {
+        conditions: ['question3IsYes', 'question2IsA', 'calculateStageIsOne'],
+        message: 'Tentatively: Stage 1 Periodontitis. Review Hierarchy as a guide for final staging.'
+    },
+
+{
+    conditions: ['question3IsYes', 'question2IsC', 'calculateStageIsFour'],
+    message: 'Tentatively: Stage 4 Periodontitis. Review Hierarchy as a guide for final staging.'
+},
+
+
+
+
+
+
+    ];
+
+
+
+function getStageMessage(conditions, results) {
+  let messages = [];
+  // Loop through each possible result
+  for (let result of results) {
+    // Check if all conditions for this result are met
+    let allConditionsMet = result.conditions.every(condition => {
+      if (!conditions.hasOwnProperty(condition)) {
+        console.error("Condition key not found:", condition);
+        return false;
+      }
+
+      if (typeof conditions[condition] !== "function") {
+        console.error("Not a function:", condition);
+        return false;
+      }
+
+      return conditions[condition]();
+    });
+
+    // If all conditions for this result are met, add its message to messages
+    if (allConditionsMet) {
+      messages.push(result.message);
+    }
+  }
+
+  // return all messages
+  return messages;
+}
+
+
+
+
+
+let resultMessages = [];
+
+function checkConditions() {
+  // clear any previous results
+  resultMessages = [];
+  
+  // Get the stage messages
+  let stageMessages = getStageMessage(conditions, results);
+  
+  // Create an object to store message counts
+  let messageCounts = {};
+  
+  // Count the occurrences of each message in stageMessages
+  stageMessages.forEach(message => {
+    if (messageCounts.hasOwnProperty(message)) {
+      messageCounts[message]++;
+    } else {
+      messageCounts[message] = 1;
+    }
+  });
+  
+  // Add the unique messages along with their counts to resultMessages
+  for (let message in messageCounts) {
+    resultMessages.push(`${message} `);
+  }
+
+
+
+
+
+
+//let resultMessages = [];
+
+//function checkConditions() {
+  // clear any previous results
+ // resultMessages = [];  
+  // Get the stage messages
+ // let stageMessages = getStageMessage(conditions, results);
+  // Merge stageMessages into resultMessages
+ // resultMessages = [...resultMessages, ...stageMessages];
+ 
+       // Priority 1
+    if (conditions.question13IsYes() && conditions.question3IsYes()) {
+	resultMessages.push("<b>Stage 1-4: </b>Relapse of Periodontal Disease.");
+	}
+    // Priority 2
+    if (conditions.question2IsC() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 4: </b>5 or More Teeth Lost due to Periodontal Disease");
+    }
+    // Priority 3
+    if (conditions.question9IsYes() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 4: </b>10 Opposing Pairs of Teeth or Less; Occlusal Dysfunction");
+    }
+    // Priority 5
+    if (conditions.calculateStageIsFour() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 3: </b>Evidence of Severe Progression of Periodontal Disease with 5mm or more CAL.");
+    }
+	// Priority 5.5
+    // Priority 5
+    if (conditions.calculateStageIsThree() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 3: </b>Evidence of Severe Progression of Periodontal Disease with 5mm or more CAL.");
+	}
+    // Priority 6
+    if (conditions.question6Is34OrHigher() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 3: </b>Horizontal Pattern of Bone Loss of: 34% or More.");
+    }
+    // Priority 7
+    if (conditions.question8IsYes() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 3: </b>Class 2 and 3 Fucations Exist");
+    }
+    // Priority 4
+    if (conditions.question2IsB() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 3: </b>1-4 Lost due to Periodontal Disease");
+    }
+    // Priority 8
+    if (conditions.question7IsSixOrHigher() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 3: </b>Probing Depths of 6mm Starting to Arise; **Clinical judgement should be applied to use this criterion to upgrade to Stage 3. Example: Presence of pseudo pockets.");
+    }
+    // Priority 9
+    if (conditions.calculateStageIsTwo() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 2: </b>Evidence of Moderate Progression of Periodontal Disease with 3-4mm CAL.");
+    }
+    // Priority 10
+    if (conditions.question6IsBetween16And33() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 2: </b>Horizontal Pattern of Bone Loss of: 16-33% .");
+    }
+    // Priority 11
+    if (conditions.question7IsFive() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 2: </b>Probing Depths of 5mm Starting to Arise"; **Clinical judgement should be applied to use this criterion to upgrade to Stage 2. Example: Presence of pseudo pockets.);
+    }
+    // Priority 12
+    if (conditions.calculateStageIsOne() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 1: </b>Evidence of Early Stages of Periodontal Disease with 1-2mm CAL.");
+    }
+    // Priority 13
+    if (conditions.question6Is15OrUnder() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 1: </b>Horizontal Pattern of Bone Loss of: 15% or less.");
+    }
+    // Priority 14
+    if (conditions.question7IsFourOrLower() && conditions.question3IsYes()) {
+        resultMessages.push("<b>Stage 1: </b>Probing Depths of 4mm Starting to Arise.");
+    }
+    // Priority 20
+    if (conditions.question7IsFiveOrMore() && conditions.question4IsNo()) {
+	resultMessages.push("Be careful with Perio Pockets, 5mm or more with no CAL present seems concerning.");
+	}
+
+
+
+    // Join all messages together and display the result
+  let resultTable = generateTable(resultMessages);
+  document.getElementById('output').innerHTML = resultTable;
+}
+
+// Attach the checkConditions function to the button
+document.getElementById('calculate-button').addEventListener('click', checkConditions);
+
+
+function generateTable(data) {
+    let table = `
+        <div id="table-container">
+        <table id="results-table">
+            <thead>
+                <tr>
+                    <th>Consideration Priorities:</th>
+                    <th>Severity Hierarchy:</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    for (let i = 0; i < data.length; i++) {
+        table += `
+            <tr>
+                <td>Priority ${i + 1}</td>
+                <td>${data[i]}</td>
+            </tr>
+        `;
+    }
+
+    table += `
+            </tbody>
+        </table>
+        </div>
+    `;
+
+    return table;
+}
+
+
+// Question Limitations
+
+function enforceRange(e) {
+  const max = parseInt(e.target.max);
+  const min = parseInt(e.target.min);
+
+  if (e.target.value > max) {
+    e.target.value = max;
+  }
+
+  if (e.target.value < min) {
+    e.target.value = min;
+  }
+}
+
+document.getElementById('answer14').addEventListener('input', enforceRange);
+document.getElementById('worstCALsite').addEventListener('input', enforceRange);
+document.getElementById('secondWorstCALsite').addEventListener('input', enforceRange);
+document.getElementById('answer5').addEventListener('input', enforceRange);
+document.getElementById('answer6').addEventListener('input', enforceRange);
+document.getElementById('worstProbe').addEventListener('input', enforceRange);
+document.getElementById('secondWorstProbe').addEventListener('input', enforceRange);
+
+// End Question limitations
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
