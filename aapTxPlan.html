@@ -522,7 +522,7 @@ const question3Radios = document.querySelectorAll('input[name="answer3"]');
 question3Radios.forEach(radio => {
     radio.addEventListener('change', () => {
         const radioQuestionsToReset = [4, 9, 13, 8, 2];
-        const textQuestionsToReset = [16];
+        const textQuestionsToReset = [worstCALsite, secondWorstCALsite];
 
         radioQuestionsToReset.forEach(questionNumber => {
             const radios = document.querySelectorAll(`input[name="answer${questionNumber}"]`);
