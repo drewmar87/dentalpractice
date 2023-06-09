@@ -225,9 +225,11 @@ table#results-table th {
 
 <div class="grid-item" id="question14" data-question="14">
   <div class="question">
-    <div class="question-text">14. Total number of teeth in the dentition erupted and able to be probed:</div>
+    <div class="question-text">Total number of teeth in the dentition erupted and able to be probed:</div>
     <p>
       <input type="number" id="answer14" name="answer14" min="0" max="32"> Teeth
+      <div id="error-message" style="color: red;"></div>
+
     </p> 
   </div>
 </div>
@@ -306,7 +308,7 @@ table#results-table th {
 
 <div class="grid-item" id="question2" data-question="2">
   <div class="question">
-    <div class="question-text">2. Extracted teeth <u><b>specifically</b></u> due to periodontal disease in this quadrant, or teeth planned to be extracted <b><u>due to periodontits.</b></u></div>
+    <div class="question-text">Extracted teeth <u><b>specifically</b></u> due to periodontal disease, or teeth planned to be extracted <b><u>due to periodontits.</b></u></div>
     <p>
       <label><input type="radio" id="answer2" name="answer2" value="A"> 0</label><br>              
       <label><input type="radio" id="answer2" name="answer2" value="B"> ≤4</label><br>
@@ -522,7 +524,7 @@ const question3Radios = document.querySelectorAll('input[name="answer3"]');
 question3Radios.forEach(radio => {
     radio.addEventListener('change', () => {
         const radioQuestionsToReset = [4, 9, 13, 8, 2];
-        const textQuestionsToReset = [worstCALsite, secondWorstCALsite];
+        const textQuestionsToReset = ["worstCALsite", "secondWorstCALsite"];
 
         radioQuestionsToReset.forEach(questionNumber => {
             const radios = document.querySelectorAll(`input[name="answer${questionNumber}"]`);
@@ -531,8 +533,8 @@ question3Radios.forEach(radio => {
             });
         });
 
-        textQuestionsToReset.forEach(questionNumber => {
-            const textInput = document.querySelector(`input[name="answer${questionNumber}"]`);
+        textQuestionsToReset.forEach(questionId => {
+            const textInput = document.querySelector(`input[id="${questionId}"]`);
             if (textInput) textInput.value = '';
         });
     });
@@ -662,6 +664,27 @@ question7IsFiveOrMore: () => {
     const secondWorstProbe = Number(document.getElementById('secondWorstProbe').value);
     return (worstProbe >= 5 || secondWorstProbe >= 5);
 },
+    question7WorstProbeAndSecondWorstProbeIs4OrHigher: () => {
+        const worstProbe = Number(document.getElementById('worstProbe').value);
+        const secondWorstProbe = Number(document.getElementById('secondWorstProbe').value);
+        return (worstProbe >= 4 || secondWorstProbe >= 4);
+    },
+
+
+
+    question16IsZero: () => {
+        const worstCALsite = Number(document.getElementById('worstCALsite').value);
+        const secondWorstCALsite = Number(document.getElementById('secondWorstCALsite').value);
+        return (worstCALsite === 0 || secondWorstCALsite === 0);
+    },
+    question16IsNotZero: () => {
+        const worstCALsite = Number(document.getElementById('worstCALsite').value);
+        const secondWorstCALsite = Number(document.getElementById('secondWorstCALsite').value);
+        return (worstCALsite != 0 && secondWorstCALsite != 0);
+    },
+
+
+
 
 calculateStage: () => {
     const worstCALsite = Number(document.getElementById('worstCALsite').value);
@@ -757,32 +780,46 @@ const results = [
 		message: 'Gingivitis on a Reduced Periodontium in a Stable Periodontitis Patient'
  	 },
 
-{
-	conditions: ['question3IsYes', 'question16IsFiveOrMore', 'question2IsC'],
-	message: '<b><u>Tentatively: Stage 4 Periodontitis.</b> Review Hierarchy as a guide for final staging.</u>'
-},
+	{
+		conditions: ['question3IsYes', 'question5DivQuestion14IsLessThanTen', 'question7WorstProbeIsLessOrEqualFour', 'question7SecondWorstProbeIsLessOrEqualFour', 'question75IsNo', 						'question6IsGreaterOrEqualPointOne','question13IsYes','question16IsZero'],
+		message: 'Clinical Gingival Health on a Reduced Periodontium in a Stable Periodontitis Patient'
+	},
+	{
+		conditions: ['question3IsYes', 'question5DivQuestion14IsGreaterThanPointOne', 'question7WorstProbeIsLessOrEqualThree', 'question7SecondWorstProbeIsLessOrEqualThree', 'question75IsNo', 					'question6IsGreaterOrEqualPointOne', 'question13IsYes','question16IsZero'],
+		message: 'Gingivitis on a Reduced Periodontium in a Stable Periodontitis Patient'
+ 	 },
+	{
+		conditions: ['question3IsYes', 'question5DivQuestion14IsGreaterThanPointOne', 'question6IsGreaterOrEqualPointOne', 													'question13IsYes','question16IsZero','question7WorstProbeAndSecondWorstProbeIs4OrHigher'],
+		message: 'Check GM/CEJ for correct CAL. Possibly a case of Periodontal Disease Relapse. See Instructor.'
+ 	 },
+
+
+
+	{
+		conditions: ['question3IsYes', 'question16IsFiveOrMore', 'question2IsC','question16IsNotZero'],
+		message: '<b><u>Tentatively: Stage 4 Periodontitis.</b> Review Hierarchy as a guide for final staging.</u>'
+	},
  
 
 
 
 
 
-
    {
-        conditions: ['question3IsYes', 'question2IsAorB', 'calculateStageIsThree'],
+        conditions: ['question3IsYes', 'question2IsAorB', 'calculateStageIsThree','question16IsNotZero'],
         message: 'Tentatively: Stage 3 Periodontitis. Review Hierarchy as a guide for final staging.'
     },
     {
-        conditions: ['question3IsYes', 'question2IsA', 'calculateStageIsTwo'],
+        conditions: ['question3IsYes', 'question2IsA', 'calculateStageIsTwo','question16IsNotZero'],
         message: 'Tentatively: Stage 2 Periodontitis. Review Hierarchy as a guide for final staging.'
     },
     {
-        conditions: ['question3IsYes', 'question2IsA', 'calculateStageIsOne'],
+        conditions: ['question3IsYes', 'question2IsA', 'calculateStageIsOne','question16IsNotZero'],
         message: 'Tentatively: Stage 1 Periodontitis. Review Hierarchy as a guide for final staging.'
     },
 
 {
-    conditions: ['question3IsYes', 'question2IsC', 'calculateStageIsFour'],
+    conditions: ['question3IsYes', 'question2IsC', 'calculateStageIsFour','question16IsNotZero'],
     message: 'Tentatively: Stage 4 Periodontitis. Review Hierarchy as a guide for final staging.'
 },
 
@@ -831,6 +868,10 @@ function getStageMessage(conditions, results) {
 let resultMessages = [];
 
 function checkConditions() {
+// Error out if teeth are blank  
+if (!checkQuestion14()) {
+    return;
+}
   // clear any previous results
   resultMessages = [];
   
@@ -877,64 +918,64 @@ function checkConditions() {
  // resultMessages = [...resultMessages, ...stageMessages];
  
        // Priority 1
-    if (conditions.question13IsYes() && conditions.question3IsYes()) {
+    if (conditions.question13IsYes() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
 	resultMessages.push("<b>Stage 1-4: </b>Relapse of Periodontal Disease.");
 	}
     // Priority 2
-    if (conditions.question2IsC() && conditions.question3IsYes()) {
+    if ((conditions.question2IsC() && conditions.question3IsYes()) && (conditions.question16IsZero() || conditions.question16IsNotZero())) {
         resultMessages.push("<b>Stage 4: </b>5 or More Teeth Lost due to Periodontal Disease");
     }
     // Priority 3
-    if (conditions.question9IsYes() && conditions.question3IsYes()) {
+    if ((conditions.question9IsYes() && conditions.question3IsYes()) && (conditions.question16IsZero() || conditions.question16IsNotZero())) {
         resultMessages.push("<b>Stage 4: </b>10 Opposing Pairs of Teeth or Less; Occlusal Dysfunction");
     }
     // Priority 5
-    if (conditions.calculateStageIsFour() && conditions.question3IsYes()) {
+    if (conditions.calculateStageIsFour() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 3: </b>Evidence of Severe Progression of Periodontal Disease with 5mm or more CAL.");
     }
 	// Priority 5.5
     // Priority 5
-    if (conditions.calculateStageIsThree() && conditions.question3IsYes()) {
+    if (conditions.calculateStageIsThree() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 3: </b>Evidence of Severe Progression of Periodontal Disease with 5mm or more CAL.");
 	}
     // Priority 6
-    if (conditions.question6Is34OrHigher() && conditions.question3IsYes()) {
+    if (conditions.question6Is34OrHigher() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 3: </b>Horizontal Pattern of Bone Loss of: 34% or More.");
     }
     // Priority 7
-    if (conditions.question8IsYes() && conditions.question3IsYes()) {
+    if (conditions.question8IsYes() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 3: </b>Class 2 and 3 Fucations Exist");
     }
     // Priority 4
-    if (conditions.question2IsB() && conditions.question3IsYes()) {
+    if ((conditions.question2IsB() && conditions.question3IsYes()) && ((conditions.question16IsZero() || conditions.question16IsNotZero()))) {
         resultMessages.push("<b>Stage 3: </b>1-4 Lost due to Periodontal Disease");
     }
     // Priority 8
-    if (conditions.question7IsSixOrHigher() && conditions.question3IsYes()) {
+    if (conditions.question7IsSixOrHigher() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 3: </b>Probing Depths of 6mm Starting to Arise; **Clinical judgement should be applied to use this criterion to upgrade to Stage 3. Example: Presence of pseudo pockets.");
     }
     // Priority 9
-    if (conditions.calculateStageIsTwo() && conditions.question3IsYes()) {
+    if (conditions.calculateStageIsTwo() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 2: </b>Evidence of Moderate Progression of Periodontal Disease with 3-4mm CAL.");
     }
     // Priority 10
-    if (conditions.question6IsBetween16And33() && conditions.question3IsYes()) {
+    if (conditions.question6IsBetween16And33() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 2: </b>Horizontal Pattern of Bone Loss of: 16-33% .");
     }
     // Priority 11
-    if (conditions.question7IsFive() && conditions.question3IsYes()) {
+    if (conditions.question7IsFive() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 2: </b>Probing Depths of 5mm Starting to Arise; **Clinical judgement should be applied to use this criterion to upgrade to Stage 2. Example: Presence of pseudo pockets.");
     }
     // Priority 12
-    if (conditions.calculateStageIsOne() && conditions.question3IsYes()) {
+    if (conditions.calculateStageIsOne() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 1: </b>Evidence of Early Stages of Periodontal Disease with 1-2mm CAL.");
     }
     // Priority 13
-    if (conditions.question6Is15OrUnder() && conditions.question3IsYes()) {
+    if (conditions.question6Is15OrUnder() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 1: </b>Horizontal Pattern of Bone Loss of: 15% or less.");
     }
     // Priority 14
-    if (conditions.question7IsFourOrLower() && conditions.question3IsYes()) {
+    if (conditions.question7IsFourOrLower() && conditions.question3IsYes() && conditions.question16IsNotZero()) {
         resultMessages.push("<b>Stage 1: </b>Probing Depths of 4mm Starting to Arise.");
     }
     // Priority 20
@@ -987,6 +1028,7 @@ function generateTable(data) {
 
 // Question Limitations
 
+// Question Limitations
 function enforceRange(e) {
   const max = parseInt(e.target.max);
   const min = parseInt(e.target.min);
@@ -1009,6 +1051,39 @@ document.getElementById('worstProbe').addEventListener('input', enforceRange);
 document.getElementById('secondWorstProbe').addEventListener('input', enforceRange);
 
 // End Question limitations
+
+
+// Check if the answer14 is empty
+function checkQuestion14(){
+  let answer14 = document.getElementById('answer14');
+  let errorMessage = document.getElementById('error-message'); //Assuming you have an HTML element with this id for displaying the error
+
+  if(answer14.value == ''){
+    errorMessage.textContent = "Please do not leave this field blank";
+    return false;
+  } else {
+    errorMessage.textContent = ""; //clear the error message if the field is not empty
+    return true;
+  }
+}
+
+
+// Attach the checkConditions function to the button
+document.getElementById('calculate-button').addEventListener('click', function() {
+  if(checkQuestion14()){
+    checkConditions();
+  }
+});
+
+// Rest of your code...
+
+
+
+
+
+
+
+// End Question limitations
 </script>
 
 
@@ -1018,6 +1093,11 @@ document.getElementById('secondWorstProbe').addEventListener('input', enforceRan
 
 </body>
 </html>
+
+
+
+
+
 
 
 
