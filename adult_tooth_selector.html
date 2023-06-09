@@ -127,12 +127,12 @@ a.button {
     .tooth-container {
       display: flex;
       justify-content: center;
-      padding: 5px;
+      padding: 7.5px;
 	  
     }
 
     .tooth {
-
+	border: .5px dashed #9370DB;
       padding: 5px;
     }
 .grid-container {
@@ -146,7 +146,7 @@ a.button {
   align-content: flex-start; /* Align the grid to the top vertically */
     position: relative; /* Add relative positioning */
   top: 0px; /* Adjust the value to bring the grid up */
-	border: 1px dashed #9370DB;
+
 }
 
 	.grid-container .tooth {
@@ -165,7 +165,7 @@ a.button {
 
     .grid-container::after {
       content: "";
-      position: absolute;
+      position: relative;
       top: -7.5%;
       bottom: 0%;
       left: 50%;
