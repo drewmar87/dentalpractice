@@ -896,13 +896,7 @@ if (!checkQuestion14()) {
   }
 
   // If no conditions were met, push default message
- 	if ((resultMessages.length === 0) && (answer2IsC)) {
-    resultMessages.push("C");
-  }
- 	else if ((resultMessages.length === 0) && (answer2IsB)) {
-    resultMessages.push("B");
-  }	
-	else (resultMessages.length === 0) {
+	if (resultMessages.length === 0) {
     resultMessages.push("Could not make a determination based on input. See an Instructor and use heirarchy breakdown for staging purposes.");
   }
 
