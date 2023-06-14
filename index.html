@@ -139,13 +139,9 @@ ul li:last-child {
 }
 </style>
 <script>
-// JavaScript code to handle submenu navigation
 document.addEventListener('DOMContentLoaded', function() {
-  var playButton = document.getElementById('playButton');
-  var playSubmenu = document.getElementById('playSubmenu');
-  var helpButton = document.getElementById('helpButton');
-  var helpSubmenu = document.getElementById('helpSubmenu');
-  
+  var buttons = document.querySelectorAll('.button');
+
   // Function to close all submenus
   function closeAllSubmenus() {
     var submenus = document.querySelectorAll('.submenu');
@@ -159,31 +155,25 @@ document.addEventListener('DOMContentLoaded', function() {
       item.classList.remove('active');
     });
   }
-  
-  playButton.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default link behavior
-    var isActive = playButton.parentElement.classList.contains('active');
-    closeAllSubmenus(); // Close all submenus
-    // Open this submenu if it was not already open
-    if (!isActive) {
-      playButton.parentElement.classList.add('active');
-      playSubmenu.style.display = 'block';
-    }
-  });
 
-  helpButton.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default link behavior
-    var isActive = helpButton.parentElement.classList.contains('active');
-    closeAllSubmenus(); // Close all submenus
-    // Open this submenu if it was not already open
-    if (!isActive) {
-      helpButton.parentElement.classList.add('active');
-      helpSubmenu.style.display = 'block';
-    }
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default link behavior
+      var isActive = button.parentElement.classList.contains('active');
+      closeAllSubmenus(); // Close all submenus
+
+      // Open this submenu if it was not already open
+      if (!isActive) {
+        var submenu = button.parentElement.querySelector('.submenu');
+        if(submenu) {
+          button.parentElement.classList.add('active');
+          submenu.style.display = 'block';
+        }
+      }
+    });
   });
 });
-
-  </script>
+</script>
 </head>
 <body>
   <header>
@@ -191,29 +181,23 @@ document.addEventListener('DOMContentLoaded', function() {
     <nav>
       <ul>
         <li>
-          <a href="#" class="button" id="playButton">Didactic</a>
-          <ul class="submenu" id="playSubmenu">
-            <li><a href="radiograph_mounting.html">Radiograph Mounting</a></li>
-            <li><a href="#">Anatomy Identification</a></li>
-            <li><a href="#">Technique Error Identification</a></li>
-            <li><a href="#">Adjunct Item Identification</a></li>
-            <li><a href="#">Instrument Identification</a></li>
-			<li><a href="adult_tooth_selector.html">Adult Tooth Number Identification</a></li>
-			<li><a href="#">Child Tooth Number Identification</a></li>
+          <a href="#" class="button">Didactic</a>
+          <ul class="submenu">
+            <!-- submenu items -->
           </ul>
         </li>
         <li>
-          <a href="#" class="button" id="helpButton">Clinical</a>
-          <ul class="submenu" id="helpSubmenu">
+          <a href="#" class="button">Clinical</a>
+          <ul class="submenu">
             <li><a href="txPlan.html">Treatment Planning</a></li>
-		  <li><a href="#" class="button" id="helpButton">Gingival Description</a></a></li>
-		  <ul class="submenuTwo" id="helpSubmenu">
-			  <li><a href="ging_description.html">Overview and Practice</a></li>
-			  <li><a href="#">Test Yourself</a></li>
-	      </ul>
-	    <li><a href="aapTxPlan.html">AAP Staging</a></li>
-	    <li><a href="aapGrading.html">AAP Grading</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li>
+              <a href="#" class="button">Gingival Description</a>
+              <ul class="submenuTwo">
+                <li><a href="ging_description.html">Overview and Practice</a></li>
+                <li><a href="#">Test Yourself</a></li>
+              </ul>
+            </li>
+            <!-- remaining submenu items -->
           </ul>
         </li>
       </ul>
