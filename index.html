@@ -93,7 +93,11 @@ a.button:active {
 li.active .submenu {
 	display: block;
 }
-    
+	 
+.indented {
+    padding-left: 20px;
+}    
+	 
 .submenu a {
 	display: block;
 	margin: 5px 0;
@@ -186,18 +190,19 @@ document.addEventListener('DOMContentLoaded', function() {
 			<li><a href="#">Child Tooth Number Identification</a></li>
           </ul>
         </li>
-        <li>
-          <a href="#" class="button" id="helpButton">Clinical</a>
-          <ul class="submenu" id="helpSubmenu">
-            <li><a href="txPlan.html">Treatment Planning</a></li>
-            <li>Gingival Description</li>
-		  <li><a href="ging_description.html">Practice</a></li>
-		  <li><a href="#">Test Yourself</a></li>
-		  <li><a href="aapTxPlan.html">AAP Staging</a></li>
-		  <li><a href="aapGrading.html">AAP Grading</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </li>
+<li>
+    <a href="#" class="button" id="helpButton">Clinical</a>
+    <ul class="submenu" id="helpSubmenu">
+        <li><a href="txPlan.html">Treatment Planning</a></li>
+        <li>Gingival Description</li>
+        <li class="indented"><a href="ging_description.html">Practice</a></li>
+        <li class="indented"><a href="#">Test Yourself</a></li>
+        <li><a href="aapTxPlan.html">AAP Staging</a></li>
+        <li><a href="aapGrading.html">AAP Grading</a></li>
+        <li><a href="#">FAQ</a></li>
+    </ul>
+</li>
+
       </ul>
     </nav>
   </header>
