@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>DACC Tutoring Site</title>
-   <style>
-    /* Global Styles */
+ <style>
+/* Global Styles */
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
@@ -27,7 +27,7 @@ nav {
 	width: 100%;
 	z-index: 100; /* Ensures the navigation is always on top */
 	background-color: #9370DB; /* Light Purple */
-	padding: 0px;
+	padding: 10px 0px;
 	text-align: center;
 	margin-top: 0px; 
 }
@@ -52,15 +52,16 @@ li {
 /* Button Styles */
 a.button {
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 15px 25px;  /* Increase padding for more space */
 	background-color: #FFF; /* White */
 	color: #9370DB; /* Light Purple */
 	font-weight: bold;
 	text-decoration: none;
-	border-radius: 4px;
+	border-radius: 10px; /* Increase border radius for more rounded corners */
 	transition: background-color 0.3s ease;
 	min-width: 150px; /* Set a minimum width */
 	text-align: center; /* Center the text */
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }  
 	   
 a.button:hover {
@@ -77,10 +78,10 @@ a.button:active {
 	display: none;
 	position: absolute;
 	background-color: #FFF; /* White */
-	padding: 10px;
+	padding: 15px;  /* Increase padding for more space */
 	z-index: 1;
-	border-radius: 4px;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 10px; /* Increase border radius for more rounded corners */
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 	top: 100%; /* Position below the parent li */
 	left: 50%; /* Center the submenu horizontally */
 	transform: translateX(-50%); /* Adjust horizontal position */
@@ -99,6 +100,7 @@ li.active .submenu {
 	transition: background-color 0.3s ease; /* Add transition effect */
 	color: #9370DB; /* Light Purple */
 	text-decoration: none;
+	padding: 5px;  /* Add padding for more space */
 }
     
 .submenu a:hover {
@@ -113,31 +115,13 @@ li.active .submenu {
 .submenu a:active {
 	text-decoration: none;
 }
-.submenuTwo a {
-	display: block;
-	margin: 5px 0;
-	transition: background-color 0.3s ease; /* Add transition effect */
-	color: #ADD8E6; /* Light Purple */
-	text-decoration: none;
-}
-    
-.submenuTwo a:hover {
-	background-color: #F0E6FA; /* Lighter Purple */
-}
-    
-.submenuTwo a:visited {
-	color: #ADD8E6; /* Light Purple */
-}
-    
-.submenuTwo a:hover,
-.submenuTwo a:active {
-	text-decoration: none;
-}	   
+
 /* Add margin to the Help button */
 ul li:last-child {
 	margin-bottom: 10px;
 }
 </style>
+
 <script>
 // JavaScript code to handle submenu navigation
 document.addEventListener('DOMContentLoaded', function() {
