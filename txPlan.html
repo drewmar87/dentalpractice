@@ -279,6 +279,25 @@ main {
 	</div>
 </div>
 
+<!-- Question 50 LRQ -->
+
+<div class="grid-item" id="question50">
+	<div class="question">
+		<div class="question-text">Total missing teeth in Lower Right Quadrant</div>
+		<p>
+		<input type="number" id="answer50" name="answer50" min="0" max="5">
+		</p>
+		<p id="error50" style="color: red;"></p>
+	</div>
+	<div class="question">
+		<div class="question-text">Number of remaining teeth with the following criteria: ≥ 4mm PD; ≥ 1mm CAL; Bleeding</div>
+		<p>
+		<input type="number" id=answer52" name="answer52" min="0" max="4">
+		</p>
+	</div>
+</div>	
+	
+	
 <!-- Quesiton 40 LLQ -->
 
 <div class="grid-item" id="question40">
@@ -297,23 +316,7 @@ main {
 	</div>
 </div>
 
-<!-- Question 50 LRQ -->
 
-<div class="grid-item" id="question50">
-	<div class="question">
-		<div class="question-text">Total missing teeth in Lower Right Quadrant</div>
-		<p>
-		<input type="number" id="answer50" name="answer50" min="0" max="5">
-		</p>
-		<p id="error50" style="color: red;"></p>
-	</div>
-	<div class="question">
-		<div class="question-text">Number of remaining teeth with the following criteria: ≥ 4mm PD; ≥ 1mm CAL; Bleeding</div>
-		<p>
-		<input type="number" id=answer52" name="answer52" min="0" max="4">
-		</p>
-	</div>
-</div>
 
 
 
@@ -472,13 +475,14 @@ if (!isAllQuadFinishPlanBlank) {
 
     var result = (answer5) / (answer14 * 6);
     if (quadFinishPlan.some(function(plan) { return plan === ""; })) {
-      if (result > 0.3) {
+      if (result > 0.3 && !answer13) {
         addRow("", "D4346 - Scaling in the Presence of Gingival Inflammation - Code to encompass remaining teeth.");
       } else if (result <= 0.3 && answer13) {
         addRow("", "D4910 - Periodontal Maintenance - Code to encompass remaining teeth.");
       } else if (result <= 0.3 && !answer13) {
         addRow("", "D1110 - Adult Prophylaxis - Code to encompass remaining teeth. <br/>D1120 - Child Prophylaxis if the patient is under 21 per DACC Clinic Manual.");
-      }
+      } else if (result >= 0.3 && answer13) {
+        addRow("", "D4910 - Periodontal Maintenance - Code to encompass remaining teeth.");
     }
 
 function addRow(head, data) {
