@@ -5,125 +5,126 @@
  <style>
 /* Global Styles */
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-}
-	   
-/* Header Styles */
-header {
-	background-color: #9370DB; /* Light Purple */
-	padding: 20px;
-	text-align: center;
-}
-    
-h1 {
-	color: #FFF; /* White */
-}
-    
-nav {
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 100; /* Ensures the navigation is always on top */
-	background-color: #9370DB; /* Light Purple */
-	padding: 10px 0px;
-	text-align: center;
-	margin-top: 0px; 
-}
-	   
-main {
-	margin-top: 100px; 
-}   
-	   
-ul {
-	list-style: none;
-	padding: 0;
-	display: flex;
-	flex-direction: row; /* Change to horizontal */
-	justify-content: center; /* Center align items */
-}
-    
-li {
-	margin: 10px; /* Add horizontal and vertical margin */
-	position: relative; /* Position relative for submenu */
-}
-    
-/* Button Styles */
-a.button {
-	display: inline-block;
-	padding: 15px 25px;  /* Increase padding for more space */
-	background-color: #FFF; /* White */
-	color: #9370DB; /* Light Purple */
-	font-weight: bold;
-	text-decoration: none;
-	border-radius: 10px; /* Increase border radius for more rounded corners */
-	transition: background-color 0.3s ease;
-	min-width: 150px; /* Set a minimum width */
-	text-align: center; /* Center the text */
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-}  
-	   
-a.button:hover {
-	background-color: #F0E6FA; /* Lighter Purple */
-}
-    
-a.button:active {
-	background-color: #8A2BE2; /* Dark Purple */
-	color: #FFF; /* White */
-}
-    
- /* Submenu Styles */
-.submenu {
-	display: none;
-	position: absolute;
-	background-color: #FFF; /* White */
-	padding: 15px;  /* Increase padding for more space */
-	z-index: 1;
-	border-radius: 10px; /* Increase border radius for more rounded corners */
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-	top: 100%; /* Position below the parent li */
-	left: 50%; /* Center the submenu horizontally */
-	transform: translateX(-50%); /* Adjust horizontal position */
-	margin-top: 5px; /* Add space between button and submenu */
-	white-space: nowrap; /* Prevent text wrapping */
-	width: max-content; /* Set width based on content */
-}
-    
-li.active .submenu {
-	display: block;
-}
-	 
-.indented {
-    padding-left: 20px;
-}    
-	 
-.submenu a {
-	display: block;
-	margin: 5px 0;
-	transition: background-color 0.3s ease; /* Add transition effect */
-	color: #9370DB; /* Light Purple */
-	text-decoration: none;
-	padding: 5px;  /* Add padding for more space */
-}
-    
-.submenu a:hover {
-	background-color: #F0E6FA; /* Lighter Purple */
-}
-    
-.submenu a:visited {
-	color: #9370DB; /* Light Purple */
-}
-    
-.submenu a:hover,
-.submenu a:active {
-	text-decoration: none;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Add margin to the Help button */
-ul li:last-child {
-	margin-bottom: 10px;
+/* Header Styles */
+header {
+    background-color: #9370DB; /* Light Purple */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
 }
+
+h1 {
+    color: #FFF; /* White */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100; /* Ensures the navigation is always on top */
+    background-color: #9370DB; /* Light Purple */
+    padding: 0px;
+    text-align: center;
+    margin-top: 0px; 
+}
+
+main {
+    margin-top: 100px; 
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Change to horizontal */
+    justify-content: center; /* Center align items */
+}
+
+li {
+    margin: 10px; /* Add horizontal and vertical margin */
+    position: relative; /* Position relative for submenu */
+}
+
+/* Button Styles */
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9370DB; /* Light Purple */
+    color: #FFF; /* White */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    min-width: 150px; /* Set a minimum width */
+    text-align: center; /* Center the text */
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+a.button:hover {
+    background-color: #F0E6FA; /* Lighter Purple */
+    color: #9370DB; /* Light Purple */
+}
+
+a.button:active {
+    background-color: #8A2BE2; /* Dark Purple */
+    color: #FFF; /* White */
+}
+
+/* Submenu Styles */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #FFF; /* White */
+    padding: 10px;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    top: 100%; /* Position below the parent li */
+    left: 50%; /* Center the submenu horizontally */
+    transform: translateX(-50%); /* Adjust horizontal position */
+    margin-top: 5px; /* Add space between button and submenu */
+    white-space: nowrap; /* Prevent text wrapping */
+    width: max-content; /* Set width based on content */
+}
+
+li.active .submenu {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    margin: 5px 0;
+    transition: background-color 0.3s ease; /* Add transition effect */
+    color: #9370DB; /* Light Purple */
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    background-color: #F0E6FA; /* Lighter Purple */
+    color: #9370DB; /* Light Purple */
+}
+
+.submenu a:visited {
+    color: #9370DB; /* Light Purple */
+}
+
+.submenu a:active {
+    background-color: #8A2BE2; /* Dark Purple */
+    color: #FFF; /* White */
+}
+
+.submenu ul {
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 1px solid #9370DB; /* Light Purple */
+}
+
 </style>
 
 <script>
@@ -195,8 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <ul class="submenu" id="helpSubmenu">
         <li><a href="txPlan.html">Treatment Planning</a></li>
         <li>Gingival Description</li>
-        <li class="indented"><a href="ging_description.html">Practice</a></li>
-        <li class="indented"><a href="#">Test Yourself</a></li>
+        <li><a href="ging_description.html">GD - Practice</a></li>
+        <li><a href="#">GD - Test Yourself</a></li>
         <li><a href="aapTxPlan.html">AAP Staging</a></li>
         <li><a href="aapGrading.html">AAP Grading</a></li>
         <li><a href="#">FAQ</a></li>
