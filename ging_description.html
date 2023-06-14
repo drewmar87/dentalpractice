@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 
       { 
         question: "Exudate / Exudate on Probing", 
-        options: ["Very Minor", "Slight to Moderate", "Severe"], 
+        options: ["No", "Slight to Moderate", "Severe"], 
         images: ["images/ging_description_images/HealthyGums.jpg", "images/ging_description_images/moderateexudate.jpg", "images/ging_description_images/severeexudate.jpg"], 
         savedAnswer: "Saved Answer 9"
       },
@@ -481,7 +481,7 @@ document.getElementById("generate-description").onclick = function() {
         + ((answers[6] || "[answer 7]").toLowerCase())
         + ". Then patient presents with " 
         + ((answers[7] || "[answer 8]").toLowerCase())
-        + " bleeding on probing and has visably " 
+        + " bleeding on probing and " 
         + ((answers[8] || "[answer 9]").toLowerCase())
         + " exudate. Lastly, the patient presents with " 
         + ((answers[9] || "[answer 10]").toLowerCase())
