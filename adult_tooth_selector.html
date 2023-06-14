@@ -149,28 +149,33 @@ a.button {
   top: 0px;
 }
 
+.grid-container::before, .grid-container::after {
+  content: "";
+  position: absolute;
+  background: #9370DB; /* Use your preferred color */
+}
+
+.grid-container::before {
+  /* Horizontal line */
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust thickness */
+}
+
+.grid-container::after {
+  /* Vertical line */
+  top: 0;
+  left: 50%;
+  width: 2px; /* Adjust thickness */
+  height: 100%;
+}
+
 .grid-item {
   border: 1px solid black;
+  width: 100%; /* Force image to take full width */
+  height: 100%; /* Force image to take full height */
 }
-
-/* Remove the outside borders */
-.grid-container::before,
-.grid-container::after,
-.grid-item:first-child {
-  border: none;
-}
-
-/* Remove the left border of each row */
-.grid-item:nth-child(16n+1) {
-  border-left: none;
-}
-
-/* Remove the top border of each column */
-.grid-item:nth-child(-n + 16) {
-  border-top: none;
-}
-
-
 	   
 	   
 	   
