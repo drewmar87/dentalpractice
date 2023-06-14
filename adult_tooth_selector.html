@@ -236,7 +236,40 @@ a.button:active {
 .tooth.incorrect {
 	background-color: rgba(255, 0, 0, 0.5); /* Translucent red */
 }
-	
+#table-container {
+    width: 25%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+#results-table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+#results-table th, #results-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+#results-table th {
+    background-color: #9370DB;
+    color: white;
+    font-size: 14px;
+}
+
+#results-table td {
+    font-size: 12px;
+}
+
+#results-table tr:nth-child(even) {
+    background-color: #9370DB;
+    color: white;
+}	
 
 </style>
 
@@ -367,10 +400,23 @@ document.addEventListener('DOMContentLoaded', function() {
   <div id="question-container" style="text-align: center; position: relative; top: 0px;">
     <h2 id="question"></h2>
     <p id="result"></p>
-	<a href="index.html" id="homeButton" class="button" style="margin-left: 0"><b>Home</b></a><p/>
 
   </div>
   
+<div id="input-div" style="display: flex; justify-content: center; align-items: center;">
+    <input type="text" id="name-input" placeholder="Enter your name">
+    <button onclick="generateReport()">Create Score Report</button>
+</div>
+
+<div id="table-container" style="display: none;">
+    <table id="results-table">
+        <tbody id="results-tbody">
+        </tbody>
+    </table><br/>
+    <button style="display: block; margin: 0 auto;" onclick="window.print()">Print</button>
+
+</div>	   
+	   
 <script>
   const questions = [
     { question: 'Tooth #1', answer: 'tooth-1' },
@@ -501,9 +547,11 @@ function handleAnswer(answer) {
             setTimeout(() => { renderQuestion(currentQuestionIndex); }, 1000); // Wait for 1 seconds before rendering the next question
         } else {
             resultElement.textContent = 'You have finished the game!';
+            generateReport();  // Call the generateReport function when the game ends
         }
     }
 }
+
 
 const toothElements = document.querySelectorAll('.tooth');
 toothElements.forEach(function(tooth) {
@@ -517,6 +565,50 @@ toothElements.forEach(function(tooth) {
 });
 
 renderQuestion(currentQuestionIndex);
+
+function generateReport() {
+    let name = document.getElementById("name-input").value;
+    let date = new Date();
+    let totalScore = rightScore + wrongScore;
+    let percentCorrect = (rightScore / totalScore) * 100;
+
+    // Remove previous report if exists
+    document.getElementById("results-tbody").innerHTML = '';
+
+    let data = [
+	{label: "Adult Dentition Tooth Identification"},
+        {label: "Name", value: name},
+        {label: "Date", value: date.toLocaleDateString()},
+        {label: "Right Score", value: rightScore},
+        {label: "Wrong Score", value: wrongScore},
+        {label: "Percent Correct", value: percentCorrect.toFixed(2) + "%"},
+    ]
+
+    for (let item of data) {
+        // Create a new table row
+        let tr = document.createElement('tr');
+
+        // Create and set the values for each table cell
+        let labelTd = document.createElement('td');
+        labelTd.textContent = item.label;
+        tr.appendChild(labelTd);
+
+        let valueTd = document.createElement('td');
+        valueTd.textContent = item.value;
+        tr.appendChild(valueTd);
+
+        // Add the new table row to the table
+        document.getElementById("results-tbody").appendChild(tr);
+    }
+
+    document.getElementById("input-div").style.display = "none";
+    document.getElementById("table-container").style.display = "block";
+}
+
+
+
+
+
 </script>
 
 </body>
