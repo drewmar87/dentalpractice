@@ -23,21 +23,7 @@ h1 {
   color: #FFF; /* White */
 }
     
-    nav {
-      margin-top: 20px;
-    }
-    
-    ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: row; /* Change to horizontal */
-      justify-content: center; /* Center align items */
-    }
-    
-li {
-  margin: 10px; /* Add horizontal and vertical margin */
-  position: relative; /* Position relative for submenu */
+
 }
 .correct-answer {
   color: green;
@@ -75,54 +61,8 @@ a.button {
     a.button:active {
       background-color: #8A2BE2; /* Dark Purple */
       color: #FFF; /* White */
-    }
-    
- /* Submenu Styles */
-.submenu {
-  display: none;
-  position: absolute;
-  background-color: #FFF; /* White */
-  padding: 10px;
-  z-index: 1;
-  border-radius: 4px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  top: 100%; /* Position below the parent li */
-  left: 50%; /* Center the submenu horizontally */
-  transform: translateX(-50%); /* Adjust horizontal position */
-  margin-top: 5px; /* Add space between button and submenu */
-  white-space: nowrap; /* Prevent text wrapping */
-  width: max-content; /* Set width based on content */
-}
-    
-    li.active .submenu {
-      display: block;
-    }
-    
-    .submenu a {
-      display: block;
-      margin: 5px 0;
-      transition: background-color 0.3s ease; /* Add transition effect */
-      color: #9370DB; /* Light Purple */
-      text-decoration: none;
-    }
-    
-    .submenu a:hover {
-      background-color: #F0E6FA; /* Lighter Purple */
-    }
-    
-    .submenu a:visited {
-      color: #9370DB; /* Light Purple */
-    }
-    
-    .submenu a:hover,
-    .submenu a:active {
-      text-decoration: none;
-    }
-    
-    /* Add margin to the Help button */
-    ul li:last-child {
-      margin-bottom: 10px;
-    }
+	   }
+
 
     .tooth-container {
       display: flex;
