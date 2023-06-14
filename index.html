@@ -9,115 +9,117 @@ body {
 	margin: 0;
 	padding: 0;
 }
+	   
 /* Header Styles */
 header {
-background-color: #9370DB; /* Light Purple */
-padding: 20px;
-text-align: center;
+	background-color: #9370DB; /* Light Purple */
+	padding: 20px;
+	text-align: center;
 }
     
 h1 {
-color: #FFF; /* White */
+	color: #FFF; /* White */
 }
     
 nav {
-position: fixed;
-top: 0;
-width: 100%;
-z-index: 100; /* Ensures the navigation is always on top */
-background-color: #9370DB; /* Light Purple */
-padding: 20px;
-text-align: center;
-margin-top: 20px; 
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100; /* Ensures the navigation is always on top */
+	background-color: #9370DB; /* Light Purple */
+	padding: 20px;
+	text-align: center;
+	margin-top: 20px; 
 }
 	   
 main {
-margin-top: 100px; 
-	   }   
-    ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: row; /* Change to horizontal */
-      justify-content: center; /* Center align items */
-    }
-    
-li {
-  margin: 10px; /* Add horizontal and vertical margin */
-  position: relative; /* Position relative for submenu */
+	margin-top: 100px; 
+}   
+	   
+ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-direction: row; /* Change to horizontal */
+	justify-content: center; /* Center align items */
 }
     
-    /* Button Styles */
-    a.button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #FFF; /* White */
-      color: #9370DB; /* Light Purple */
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-      min-width: 150px; /* Set a minimum width */
-      text-align: center; /* Center the text */
-    }
+li {
+	margin: 10px; /* Add horizontal and vertical margin */
+	position: relative; /* Position relative for submenu */
+}
     
-    a.button:hover {
-      background-color: #F0E6FA; /* Lighter Purple */
-    }
+/* Button Styles */
+a.button {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #FFF; /* White */
+	color: #9370DB; /* Light Purple */
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+	min-width: 150px; /* Set a minimum width */
+	text-align: center; /* Center the text */
+}  
+	   
+a.button:hover {
+	background-color: #F0E6FA; /* Lighter Purple */
+}
     
-    a.button:active {
-      background-color: #8A2BE2; /* Dark Purple */
-      color: #FFF; /* White */
-    }
+a.button:active {
+	background-color: #8A2BE2; /* Dark Purple */
+	color: #FFF; /* White */
+}
     
  /* Submenu Styles */
 .submenu {
-  display: none;
-  position: absolute;
-  background-color: #FFF; /* White */
-  padding: 10px;
-  z-index: 1;
-  border-radius: 4px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  top: 100%; /* Position below the parent li */
-  left: 50%; /* Center the submenu horizontally */
-  transform: translateX(-50%); /* Adjust horizontal position */
-  margin-top: 5px; /* Add space between button and submenu */
-  white-space: nowrap; /* Prevent text wrapping */
-  width: max-content; /* Set width based on content */
+	display: none;
+	position: absolute;
+	background-color: #FFF; /* White */
+	padding: 10px;
+	z-index: 1;
+	border-radius: 4px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+	top: 100%; /* Position below the parent li */
+	left: 50%; /* Center the submenu horizontally */
+	transform: translateX(-50%); /* Adjust horizontal position */
+	margin-top: 5px; /* Add space between button and submenu */
+	white-space: nowrap; /* Prevent text wrapping */
+	width: max-content; /* Set width based on content */
 }
     
-    li.active .submenu {
-      display: block;
-    }
+li.active .submenu {
+	display: block;
+}
     
-    .submenu a {
-      display: block;
-      margin: 5px 0;
-      transition: background-color 0.3s ease; /* Add transition effect */
-      color: #9370DB; /* Light Purple */
-      text-decoration: none;
-    }
+.submenu a {
+	display: block;
+	margin: 5px 0;
+	transition: background-color 0.3s ease; /* Add transition effect */
+	color: #9370DB; /* Light Purple */
+	text-decoration: none;
+}
     
-    .submenu a:hover {
-      background-color: #F0E6FA; /* Lighter Purple */
-    }
+.submenu a:hover {
+	background-color: #F0E6FA; /* Lighter Purple */
+}
     
-    .submenu a:visited {
-      color: #9370DB; /* Light Purple */
-    }
+.submenu a:visited {
+	color: #9370DB; /* Light Purple */
+}
     
-    .submenu a:hover,
-    .submenu a:active {
-      text-decoration: none;
-    }
-    
-    /* Add margin to the Help button */
-    ul li:last-child {
-      margin-bottom: 10px;
-    }
-  </style>
-  <script>
+.submenu a:hover,
+.submenu a:active {
+	text-decoration: none;
+}
+	   
+/* Add margin to the Help button */
+ul li:last-child {
+	margin-bottom: 10px;
+}
+</style>
+<script>
 // JavaScript code to handle submenu navigation
 document.addEventListener('DOMContentLoaded', function() {
   var playButton = document.getElementById('playButton');
