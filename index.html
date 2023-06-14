@@ -113,7 +113,26 @@ li.active .submenu {
 .submenu a:active {
 	text-decoration: none;
 }
-	   
+.submenuTwo a {
+	display: block;
+	margin: 5px 0;
+	transition: background-color 0.3s ease; /* Add transition effect */
+	color: #000000; /* Light Purple */
+	text-decoration: none;
+}
+    
+.submenuTwo a:hover {
+	background-color: #F0E6FA; /* Lighter Purple */
+}
+    
+.submenuTwo a:visited {
+	color: #000000; /* Light Purple */
+}
+    
+.submenuTwo a:hover,
+.submenuTwo a:active {
+	text-decoration: none;
+}	   
 /* Add margin to the Help button */
 ul li:last-child {
 	margin-bottom: 10px;
@@ -187,8 +206,8 @@ document.addEventListener('DOMContentLoaded', function() {
           <a href="#" class="button" id="helpButton">Clinical</a>
           <ul class="submenu" id="helpSubmenu">
             <li><a href="txPlan.html">Treatment Planning</a></li>
-            <li>Gingival Description</a></li>
-		  <ul class="submenu" id="helpSubmenu">
+		  <li><a href="#" class="button" id="helpButton">Gingival Description</a></a></li>
+		  <ul class="submenuTwo" id="helpSubmenu">
 			  <li><a href="ging_description.html">Overview and Practice</a></li>
 			  <li><a href="#">Test Yourself</a></li>
 	      </ul>
