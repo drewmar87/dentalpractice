@@ -2,91 +2,88 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <title>Tooth Game</title>
-   <style>
+<meta charset="UTF-8">
+<title>Tooth Game</title>
+<style>
     /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
     
     /* Header Styles */
 header {
-  background-color: #9370DB; /* Light Purple */
-  padding: 0px;
-  text-align: center;
+	background-color: #9370DB; /* Light Purple */
+	padding: 0px;
+	text-align: center;
 }
 
 h1 {
-  color: #FFF; /* White */
+	color: #FFF; /* White */
 }
-    
-
-}
+    	   
 .correct-answer {
-  color: green;
-  size: 36px;
-  font-weight: bold;
-  text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+	color: green;
+	size: 36px;
+	font-weight: bold;
+	text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
 }
 
 .wrong-answer {
-  color: red;
-  font-weight: bold;
-  text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+	color: red;
+	font-weight: bold;
+	text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
 }
 
     
     /* Button Styles */
 a.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #9370DB; /* Light Purple */
-  color: #FFF; /* White */
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-    font-size: 12px;
-  border: 2px solid black; /* Add this line */
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #9370DB; /* Light Purple */
+	color: #FFF; /* White */
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+	font-size: 12px;
+	border: 2px solid black; /* Add this line */
 }
     
-    a.button:hover {
-      background-color: #F0E6FA; /* Lighter Purple */
-    }
+a.button:hover {
+	background-color: #F0E6FA; /* Lighter Purple */
+}
     
-    a.button:active {
-      background-color: #8A2BE2; /* Dark Purple */
-      color: #FFF; /* White */
-	   }
+a.button:active {
+	background-color: #8A2BE2; /* Dark Purple */
+	color: #FFF; /* White */
+}
 
+.tooth-container {
+	display: flex;
+	justify-content: center;
+	padding: 7.5px;	  
+}
 
-    .tooth-container {
-      display: flex;
-      justify-content: center;
-      padding: 7.5px;
-	  
-    }
-
-    .tooth {
+.tooth {
 	border-bottom: .5px dashed #9370DB;
-	    border-top: .5px dashed #9370DB;
-      padding: 5px;
-    }
+	border-top: .5px dashed #9370DB;
+	padding: 5px;
+}
+	   
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-gap: 10px;
-  grid-row-gap: 100px;
-  transform: scale(0.85);
-  margin: 0 auto;
-  justify-content: center;
-  align-content: flex-start;
-  position: relative;
-  top: 0px;
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	grid-gap: 10px;
+	grid-row-gap: 100px;
+	transform: scale(0.85);
+	margin: 0 auto;
+	justify-content: center;
+	align-content: flex-start;
+	position: relative;
+	top: 0px;
 }
 
 .grid-container::before, .grid-container::after {
@@ -105,81 +102,70 @@ a.button {
 
 .grid-container::after {
   /* Vertical line */
-  top: 0;
-  left: 50%;
-  width: 2px; /* Adjust thickness */
-  height: 100%;
+	top: 0;
+	left: 50%;
+	width: 2px; /* Adjust thickness */
+	height: 100%;
 }
 
 .grid-item {
-  border: 1px solid black;
-  width: 100%; /* Force image to take full width */
-  height: 100%; /* Force image to take full height */
-align-items: center;
-justify-content: center;
+	border: 1px solid black;
+	width: 100%; /* Force image to take full width */
+	height: 100%; /* Force image to take full height */
+	align-items: center;
+	justify-content: center;
 }
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	.grid-container .tooth {
-		align-items: center;
-justify-content: center;
-    transform: scale(1);
-  }
-
-	   
-	   
-	 
-	   
-	   
-	   
+	   	  	   	  	 	   	   	   	   
+.grid-container .tooth {
+	align-items: center;
+	justify-content: center;
+	transform: scale(1);
+}	   	   	 	   
+	  
 .tooth {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: .5px dashed #9370DB;
-  border-top: .5px dashed #9370DB;
-  padding: 5px;
-}	   
-
-	   
-	   
-	   
-	   
-	   
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: .5px dashed #9370DB;
+	border-top: .5px dashed #9370DB;
+	padding: 5px;
+}	   	     	   	   
 	
 .tooth img {
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
+	max-width: 80%;
+	max-height: 80%;
+	object-fit: contain;
 }
-    .scoreboard {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      font-size: 1.2em;
-    }
+	   
+.scoreboard {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 1.2em;
+}
 
-    .scoreboard span {
-      margin-right: 10px;
-    }
+.scoreboard span {
+	margin-right: 10px;
+}
 
-    .scoreboard .right {
-      color: green;
-    }
+.scoreboard .right {
+	color: green;
+}
 
-    .scoreboard .wrong {
-      color: red;
-    }
+.scoreboard .wrong {
+	color: red;
+}
+	
+.tooth.correct {
+	background-color: rgba(0, 255, 0, 0.5); /* Translucent green */
+}
 
+.tooth.incorrect {
+	background-color: rgba(255, 0, 0, 0.5); /* Translucent red */
+}
+	
 
-  </style>
+</style>
 </head>
 <body>
  <div style="text-align: center;">
@@ -303,72 +289,84 @@ justify-content: center;
 	{ question: 'Lower Right Third Molar', answer: 'tooth-32' },
   ];
 
-  let currentQuestionIndex = 0;
-  let rightScore = 0;
-  let wrongScore = 0;
-  let isAnswered = false;  // This variable keeps track of whether the current question has been answered
-  
-  const questionElement = document.getElementById('question');
-  const resultElement = document.getElementById('result');
-  const rightScoreElement = document.getElementById('right-score');
-  const wrongScoreElement = document.getElementById('wrong-score');
+let currentQuestionIndex = 0;
+let rightScore = 0;
+let wrongScore = 0;
+let isAnswered = false;  // This variable keeps track of whether the current question has been answered
+let selectedToothElement; // This variable keeps track of the selected tooth
 
-  function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
-    [array[i], array[j]] = [array[j], array[i]]; // swap elements
-  }
+const questionElement = document.getElementById('question');
+const resultElement = document.getElementById('result');
+const rightScoreElement = document.getElementById('right-score');
+const wrongScoreElement = document.getElementById('wrong-score');
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+        [array[i], array[j]] = [array[j], array[i]]; // swap elements
+    }
 }
 
 shuffleArray(questions); // This will shuffle your questions array
 
-  
-  function renderQuestion(index) {
+function renderQuestion(index) {
+    // Remove 'correct' and 'incorrect' classes from all teeth before rendering new question
+    const toothElements = document.querySelectorAll('.tooth');
+    toothElements.forEach((tooth) => {
+        tooth.classList.remove('correct', 'incorrect');
+    });
+
     const question = questions[index];
     questionElement.textContent = question.question;
     resultElement.textContent = '';
     isAnswered = false; // Reset this variable to false when a new question is rendered
-  }
-
-function handleAnswer(answer) {
-  if (!isAnswered) { // Check if the question has been answered
-    if (questions[currentQuestionIndex].answer === answer) {
-      resultElement.textContent = 'CORRECT';
-      rightScore++;
-      rightScoreElement.textContent = rightScore;
-      // Add the 'correct-answer' class and remove the 'wrong-answer' class
-      resultElement.classList.add('correct-answer');
-      resultElement.classList.remove('wrong-answer');
-    } else {
-      resultElement.textContent = 'WRONG';
-      wrongScore++;
-      wrongScoreElement.textContent = wrongScore;
-      // Add the 'wrong-answer' class and remove the 'correct-answer' class
-      resultElement.classList.add('wrong-answer');
-      resultElement.classList.remove('correct-answer');
-    }
-    isAnswered = true; // Set this variable to true after an answer has been selected
-    if (currentQuestionIndex < questions.length - 1) {
-      currentQuestionIndex++;
-      setTimeout(() => { renderQuestion(currentQuestionIndex); }, 1000); // Wait for 1 seconds before rendering the next question
-    } else {
-      resultElement.textContent = 'You have finished the game!';
-    }
-  }
 }
 
+function handleAnswer(answer) {
+    if (!isAnswered) { // Check if the question has been answered
+        if (questions[currentQuestionIndex].answer === answer) {
+            resultElement.textContent = 'CORRECT';
+            rightScore++;
+            rightScoreElement.textContent = rightScore;
+            // Add the 'correct-answer' class and remove the 'wrong-answer' class
+            resultElement.classList.add('correct-answer');
+            resultElement.classList.remove('wrong-answer');
+            // Add the 'correct' class and remove the 'incorrect' class for the selected tooth
+            selectedToothElement.classList.add('correct');
+            selectedToothElement.classList.remove('incorrect');
+        } else {
+            resultElement.textContent = 'WRONG';
+            wrongScore++;
+            wrongScoreElement.textContent = wrongScore;
+            // Add the 'wrong-answer' class and remove the 'correct-answer' class
+            resultElement.classList.add('wrong-answer');
+            resultElement.classList.remove('correct-answer');
+            // Add the 'incorrect' class and remove the 'correct' class for the selected tooth
+            selectedToothElement.classList.add('incorrect');
+            selectedToothElement.classList.remove('correct');
+        }
+        isAnswered = true; // Set this variable to true after an answer has been selected
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            setTimeout(() => { renderQuestion(currentQuestionIndex); }, 1000); // Wait for 1 seconds before rendering the next question
+        } else {
+            resultElement.textContent = 'You have finished the game!';
+        }
+    }
+}
 
-
-  const toothElements = document.querySelectorAll('.tooth');
-  toothElements.forEach(function(tooth) {
+const toothElements = document.querySelectorAll('.tooth');
+toothElements.forEach(function(tooth) {
     tooth.onclick = function(event) {
-      const element = event.target;
-      const id = element.id || element.parentElement.id;
-      handleAnswer(id);
+        const element = event.target;
+        const id = element.id || element.parentElement.id;
+        
+        selectedToothElement = element.classList.contains('tooth') ? element : element.parentElement;
+        handleAnswer(id);
     };
-  });
+});
 
-  renderQuestion(currentQuestionIndex);
+renderQuestion(currentQuestionIndex);
 </script>
 
 </body>
