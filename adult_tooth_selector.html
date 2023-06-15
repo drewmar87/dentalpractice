@@ -575,13 +575,22 @@ function generateReport() {
     // Remove previous report if exists
     document.getElementById("results-tbody").innerHTML = '';
 
+    // Generate the unique identifier code
+    let nameLength = name.replace(/\s/g, '').length;  // Removing spaces from name to get true length
+    let firstLetter = name.charAt(0).toUpperCase();
+    let lastLetter = name.charAt(name.length - 1).toUpperCase();
+    let paddingLength = Math.ceil(nameLength / 2) - 1; // Subtract 1 for the 2 characters in the middle
+
+    let identifierCode = 'X'.repeat(paddingLength) + firstLetter + lastLetter + 'X'.repeat(paddingLength);
+
     let data = [
-	{label: "Adult Dentition Tooth Identification"},
+        {label: "Adult Dentition Tooth Identification"},
         {label: "Name", value: name},
         {label: "Date", value: date.toLocaleDateString()},
         {label: "Right Score", value: rightScore},
         {label: "Wrong Score", value: wrongScore},
         {label: "Percent Correct", value: percentCorrect.toFixed(2) + "%"},
+        {label: "Identifier Code", value: identifierCode}  // Add the unique identifier code to the table
     ]
 
     for (let item of data) {
@@ -604,6 +613,7 @@ function generateReport() {
     document.getElementById("input-div").style.display = "none";
     document.getElementById("table-container").style.display = "block";
 }
+
 
 
 
