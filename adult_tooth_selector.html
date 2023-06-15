@@ -582,9 +582,10 @@ function generateReport() {
     let paddingLength = Math.ceil(nameLength / 2) - 1; // Subtract 1 for the 2 characters in the middle
 
     let possibleChars = 'abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*';
-    let randomChars = Array(paddingLength).fill('').map(() => possibleChars[Math.floor(Math.random() * possibleChars.length)]).join('');
+    let randomCharsPrefix = Array(paddingLength).fill('').map(() => possibleChars[Math.floor(Math.random() * possibleChars.length)]).join('');
+    let randomCharsSuffix = Array(paddingLength).fill('').map(() => possibleChars[Math.floor(Math.random() * possibleChars.length)]).join('');
 
-    let identifierCode = randomChars + firstLetter + lastLetter + randomChars;
+    let identifierCode = randomCharsPrefix + firstLetter + lastLetter + randomCharsSuffix;
 
     let data = [
         {label: "Adult Dentition Tooth Identification"},
@@ -616,6 +617,7 @@ function generateReport() {
     document.getElementById("input-div").style.display = "none";
     document.getElementById("table-container").style.display = "block";
 }
+
 
 
 
