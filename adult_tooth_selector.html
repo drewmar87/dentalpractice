@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <tbody id="results-tbody">
         </tbody>
     </table><br/>
-    <button style="display: block; margin: 0 auto;" onclick="window.print()">Print</button>
+    <button style="display: block; margin: 0 auto;" onclick="window.print()">Save PDF</button>
 
 </div>	   
 	   
@@ -581,7 +581,10 @@ function generateReport() {
     let lastLetter = name.charAt(name.length - 1).toUpperCase();
     let paddingLength = Math.ceil(nameLength / 2) - 1; // Subtract 1 for the 2 characters in the middle
 
-    let identifierCode = 'X'.repeat(paddingLength) + firstLetter + lastLetter + 'X'.repeat(paddingLength);
+    let possibleChars = 'abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*';
+    let randomChars = Array(paddingLength).fill('').map(() => possibleChars[Math.floor(Math.random() * possibleChars.length)]).join('');
+
+    let identifierCode = randomChars + firstLetter + lastLetter + randomChars;
 
     let data = [
         {label: "Adult Dentition Tooth Identification"},
