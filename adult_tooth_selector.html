@@ -585,7 +585,12 @@ function generateReport() {
     let randomCharsPrefix = Array(paddingLength).fill('').map(() => possibleChars[Math.floor(Math.random() * possibleChars.length)]).join('');
     let randomCharsSuffix = Array(paddingLength).fill('').map(() => possibleChars[Math.floor(Math.random() * possibleChars.length)]).join('');
 
-    let identifierCode = randomCharsPrefix.toUpperCase() + firstLetter + lastLetter + randomCharsSuffix.toUpperCase();
+    let identifierCode;
+    if (totalScore >= 5) {
+        identifierCode = randomCharsPrefix + firstLetter + lastLetter + randomCharsSuffix;
+    } else {
+        identifierCode = randomCharsPrefix + lastLetter + firstLetter + randomCharsSuffix;
+    }
 
     let data = [
         {label: "Adult Dentition Tooth Identification"},
