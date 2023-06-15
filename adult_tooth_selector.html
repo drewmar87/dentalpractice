@@ -587,9 +587,9 @@ function generateReport() {
 
     let identifierCode;
     if (totalScore >= 5) {
-        identifierCode = randomCharsPrefix + firstLetter + lastLetter + randomCharsSuffix;
+        identifierCode = randomCharsPrefix.toUpperCase() + firstLetter + lastLetter + randomCharsSuffix.toUpperCase();
     } else {
-        identifierCode = randomCharsPrefix + lastLetter + firstLetter + randomCharsSuffix;
+        identifierCode = randomCharsPrefix.toUpperCase() + lastLetter + firstLetter + randomCharsSuffix.toUpperCase();
     }
 
     let data = [
