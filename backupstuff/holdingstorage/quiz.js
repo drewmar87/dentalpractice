@@ -230,7 +230,15 @@ function shuffleArray(array) {
     [array[i], array[j]] = [array[j], array[i]];  // Swap elements
   }
 }
-
+// Shuffle both questions and their answers
+function shuffleQuestionsAndAnswers(questions) {
+  shuffleArray(questions);
+  questions.forEach(question => {
+    const correctAnswer = question.answers[question.correct];
+    shuffleArray(question.answers);
+    question.correct = question.answers.indexOf(correctAnswer);
+  });
+}
 
 let currentQuestion = 0;
 let correct = 0;
@@ -324,7 +332,7 @@ function nextQuestion() {
 
 // Now, before starting the quiz, shuffle the questions:
 shuffleArray(questions);
-
+shuffleQuestionsAndAnswers(questions);
 // Then call showQuestion() to start the quiz:
 showQuestion();
 
