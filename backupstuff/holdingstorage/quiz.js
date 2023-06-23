@@ -196,19 +196,13 @@ let questions = [
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Shuffle function (Fisher-Yates algorithm)
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];  // Swap elements
+  }
+}
 
 
 let currentQuestion = 0;
@@ -301,5 +295,9 @@ function nextQuestion() {
   }
 }
 
+// Now, before starting the quiz, shuffle the questions:
+shuffleArray(questions);
 
+// Then call showQuestion() to start the quiz:
 showQuestion();
+
