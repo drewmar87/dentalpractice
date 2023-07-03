@@ -211,6 +211,8 @@ li.active .submenu {
 
 
   </style>
+
+<script src="radiographscript.js"></script>
 <script>
 // JavaScript code to handle submenu navigation
 document.addEventListener('DOMContentLoaded', function() {
@@ -218,6 +220,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var playSubmenu = document.getElementById('playSubmenu');
   var helpButton = document.getElementById('helpButton');
   var helpSubmenu = document.getElementById('helpSubmenu');
+  var tutorialButton = document.getElementById('tutorialButton'); // New button
+  var tutorialSubmenu = document.getElementById('tutorialSubmenu'); // New submenu
   
   // Function to close all submenus
   function closeAllSubmenus() {
@@ -254,27 +258,49 @@ document.addEventListener('DOMContentLoaded', function() {
       helpSubmenu.style.display = 'block';
     }
   });
+
+  tutorialButton.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default link behavior
+    var isActive = tutorialButton.parentElement.classList.contains('active');
+    closeAllSubmenus(); // Close all submenus
+    // Open this submenu if it was not already open
+    if (!isActive) {
+      tutorialButton.parentElement.classList.add('active');
+      tutorialSubmenu.style.display = 'block';
+    }
+
+  });
 });
 
   </script>
-<script src="radiographscript.js"></script>
 
 </head>
+
 <body>
-   <nav>
-      <ul>
-        <li>
+    <nav>
+        <ul>
+
+
+<li>
+                <a href="#" class="button" id="tutorialButton">Tutorial / FAQ</a>
+                <ul class="submenu" id="tutorialSubmenu">
+                    <!-- Add your submenu items here -->
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Tutorial 1</a></li>
+                    <li><a href="#">Tutorial 2</a></li>
+                </ul>
+</li>
+
+<li>
           <a href="#" class="button" id="playButton">Didactic</a>
           <ul class="submenu" id="playSubmenu">
             <li><a href="radiograph_mounting.html">Radiograph Mounting</a></li>
-            <li><a href="#">Anatomy Identification</a></li>
-            <li><a href="#">Technique Error Identification</a></li>
-            <li><a href="#">Adjunct Item Identification</a></li>
-            <li><a href="#">Instrument Identification</a></li>
-			<li><a href="adult_tooth_selector.html">Adult Tooth Number Identification</a></li>
-			<li><a href="#">Child Tooth Number Identification</a></li>
+            <li><a href="identificationExercise.html">Identification Exercises</a></li>
+	<li><a href="adult_tooth_selector.html">Adult Tooth Number Identification</a></li>
+	<li><a href="#">Child Tooth Number Identification</a></li>
           </ul>
-        </li>
+</li>
+
 <li>
     <a href="#" class="button" id="helpButton">Clinical</a>
     <ul class="submenu" id="helpSubmenu">
@@ -286,8 +312,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </ul>
 </li>
 
-      </ul>
-    </nav>
+</ul>
+</nav>
 
   <header>
     <h1>Radiograph Mounting</h1>
