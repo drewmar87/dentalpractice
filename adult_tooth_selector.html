@@ -437,7 +437,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <tbody id="results-tbody">
         </tbody>
     </table><br/>
-    <button style="display: block; margin: 0 auto;" onclick="window.print()">Save PDF</button>
+<button style="display: block; margin: 0 auto;" onclick="printTable()">Save PDF</button>
 
 </div>	   
 	   
@@ -651,6 +651,44 @@ function generateReport() {
 }
 
 
+function printTable() {
+    var printWindow = window.open('', '_blank');
+    var tableHtml = document.getElementById('results-table').outerHTML;
+
+    printWindow.document.write(`
+        <html>
+            <head>
+                <title>Print</title>
+                <style type="text/css">
+                    body {
+                        font-family: Arial, sans-serif;
+                    }
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    th, td {
+                        border: 1px solid #000;
+                        padding: 10px;
+                    }
+                    th {
+                        background-color: #4CAF50;
+                        color: white;
+                    }
+                    tr:nth-child(even) {
+                        background-color: #f2f2f2;
+                    }
+                </style>
+            </head>
+            <body>
+                ${tableHtml}
+            </body>
+        </html>
+    `);
+
+    printWindow.document.close();
+    printWindow.print();
+}
 
 
 
