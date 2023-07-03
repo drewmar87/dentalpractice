@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REF Tutorial</title>
+  
+<style>
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 75px;
+}
+
+header {
+    background-color: #9370DB; /* Light Purple */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100; /* Ensures the navigation is always on top */
+    background-color: #e0f7fa; /* Light Purple */
+    padding: 0px;
+    text-align: center;
+    margin-top: 0px; 
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Change to horizontal */
+    justify-content: center; /* Center align items */
+}
+
+li {
+    margin: 10px; /* Add horizontal and vertical margin */
+    position: relative; /* Position relative for submenu */
+}
+
+/* Submenu Styles */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #FFF; /* White */
+    padding: 10px;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    top: 100%; /* Position below the parent li */
+    left: 50%; /* Center the submenu horizontally */
+    transform: translateX(-50%); /* Adjust horizontal position */
+    margin-top: 5px; /* Add space between button and submenu */
+    white-space: nowrap; /* Prevent text wrapping */
+    width: max-content; /* Set width based on content */
+}
+
+li.active .submenu {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    margin: 5px 0;
+    transition: background-color 0.3s ease; /* Add transition effect */
+    color: #9370DB; /* Light Purple */
+    text-decoration: none;
+}
+
+.submenu a:hover {
+    background-color: #F0E6FA; /* Lighter Purple */
+    color: #9370DB; /* Light Purple */
+}
+
+.submenu a:visited {
+    color: #9370DB; /* Light Purple */
+}
+
+.submenu a:active {
+    background-color: #8A2BE2; /* Dark Purple */
+    color: #FFF; /* White */
+}
+
+.submenu ul {
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 1px solid #9370DB; /* Light Purple */
+}
+
+
+h1 {
+    color: #FFFFFF; /* White */
+}
+
+h2 {
+    color: #9370DB; /* Light Purple */
+    display: flex;
+    justify-content: center;
+}
+
+/* --- Main Styles --- */
+main {
+    background-color: #FFF;
+    padding: 20px;
+    margin-top: 000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Button Styles --- */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9370DB;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    border: 2px solid black;
+}
+
+.button:hover {
+    background-color: #8A2BE2;
+}
+
+.button:active {
+    background-color: violet;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- Table Styles --- */
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #9370DB;
+    padding: 0px;
+    text-align: left;
+}
+
+th {
+    background-color: #9370DB;
+    color: white;
+}
+
+/* --- Table Container Styles --- */
+#table-container {
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+/* --- Results Table Styles --- */
+#results-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#results-table th, #results-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+#results-table th {
+    background-color: #9370DB;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+#results-table td {
+    font-size: 14px;
+    padding: 0px;
+    padding-right: 0px; /* Adjust this value to your preference */
+    text-align: left;
+}
+
+
+#results-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table#results-table th {
+    width: 250px;
+}
+
+/* --- Results Table Header Styles --- */
+#results-table .header {
+    background-color: #9370DB;
+    color: white;
+    cursor: pointer;
+}
+
+#results-table .header th {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* --- Results Table Section Styles --- */
+#results-table .section {
+    font-size: 14px;
+    background-color: #f2f2f2;
+}
+.header:hover th {
+    background-color: violet;
+    color: #FFF; 
+}
+
+#results-table .header:hover th {
+    background-color: violet;
+    color: #FFF; 
+}
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+.tutorial {
+    width: 100%;
+}
+
+/* New Styles */
+.tutorial {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;  /* Add padding to prevent inner content touching the border */
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #9370DB;
+    border-radius: 20px;
+    margin: 10px 0; /* change here */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+
+
+.step:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.step-text {
+    flex: 0.60;
+    text-align: center; /* Change this */
+}
+
+.step-img {
+    flex: 0.35;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    margin: 0 20px;
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    align-items: center;  /* Change this */
+    justify-content: center; 
+}
+
+#results-table .section td {
+    font-size: 14px;
+    background-color: #f2f2f2;
+    padding: 20px; /* Adjust this value to create space around the tutorial content */
+}
+
+  .my-ul {
+    list-style-type: disc; /* Set bullet point style */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Display items vertically */
+    align-items: left; /* Align items to the start */
+  }
+
+  .my-li {
+
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Display items vertically */
+    align-items: flex-start; /* Align items to the start */
+ text-align: left;
+  }
+
+
+</style>
+
+
+<script>
+// JavaScript code to handle submenu navigation
+document.addEventListener('DOMContentLoaded', function() {
+  var playButton = document.getElementById('playButton');
+  var playSubmenu = document.getElementById('playSubmenu');
+  var helpButton = document.getElementById('helpButton');
+  var helpSubmenu = document.getElementById('helpSubmenu');
+  var tutorialButton = document.getElementById('tutorialButton'); // New button
+  var tutorialSubmenu = document.getElementById('tutorialSubmenu'); // New submenu
+  
+  // Function to close all submenus
+  function closeAllSubmenus() {
+    var submenus = document.querySelectorAll('.submenu');
+    var activeItems = document.querySelectorAll('.active');
+    
+    submenus.forEach(function(submenu) {
+      submenu.style.display = 'none';
+    });
+    
+    activeItems.forEach(function(item) {
+      item.classList.remove('active');
+    });
+  }
+  
+  playButton.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default link behavior
+    var isActive = playButton.parentElement.classList.contains('active');
+    closeAllSubmenus(); // Close all submenus
+    // Open this submenu if it was not already open
+    if (!isActive) {
+      playButton.parentElement.classList.add('active');
+      playSubmenu.style.display = 'block';
+    }
+  });
+
+  helpButton.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default link behavior
+    var isActive = helpButton.parentElement.classList.contains('active');
+    closeAllSubmenus(); // Close all submenus
+    // Open this submenu if it was not already open
+    if (!isActive) {
+      helpButton.parentElement.classList.add('active');
+      helpSubmenu.style.display = 'block';
+    }
+  });
+
+  tutorialButton.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default link behavior
+    var isActive = tutorialButton.parentElement.classList.contains('active');
+    closeAllSubmenus(); // Close all submenus
+    // Open this submenu if it was not already open
+    if (!isActive) {
+      tutorialButton.parentElement.classList.add('active');
+      tutorialSubmenu.style.display = 'block';
+    }
+
+  });
+});
+
+  </script>
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+
+
+<li>
+                <a href="#" class="button" id="tutorialButton">Tutorial / FAQ</a>
+                <ul class="submenu" id="tutorialSubmenu">
+                    <!-- Add your submenu items here -->
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Tutorial 1</a></li>
+                    <li><a href="#">Tutorial 2</a></li>
+                </ul>
+</li>
+
+<li>
+          <a href="#" class="button" id="playButton">Didactic</a>
+          <ul class="submenu" id="playSubmenu">
+            <li><a href="radiograph_mounting.html">Radiograph Mounting</a></li>
+            <li><a href="identificationExercise.html">Identification Exercises</a></li>
+	<li><a href="adult_tooth_selector.html">Adult Tooth Number Identification</a></li>
+	<li><a href="#">Child Tooth Number Identification</a></li>
+          </ul>
+</li>
+
+<li>
+    <a href="#" class="button" id="helpButton">Clinical</a>
+    <ul class="submenu" id="helpSubmenu">
+        <li><a href="txPlan.html">Treatment Planning</a></li>
+        <li><a href="ging_description_choice.html">Gingival Description<a></li>
+        <li><a href="aapTxPlan.html">AAP Staging</a></li>
+        <li><a href="aapGrading.html">AAP Grading</a></li>
+        <li><a href="#">FAQ</a></li>
+    </ul>
+</li>
+
+</ul>
+</nav>
+
+	<header>
+		<h1>Tutorial: Radiographic Evaluation Forms</h1>
+	</header>
+
+	<main>
+
+<div id="table-container">
+  <table id="results-table">
+
+
+<!-- SECTION 1 -->
+
+        <tr class="header">
+            <th>Section 1: Initial Faculty</th>
+        </tr>
+<tr class="section">
+    <td>
+        <h2>Initial Faculty Tutorial</h2>
+        <div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wKIbTySBOpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Add a wrapper div here -->
+        <div class="tutorial-wrapper">
+            <div class="tutorial">
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 1:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Navigate to Ascend Academic.</li>
+      			<li class="my-li">2. Select the drop down labeled Academic.</li>
+      			<li class="my-li">3. Select Faculty Evaluations from the drop down.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/initialfaculty-1.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 2:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Select Create New Evaluation in the upper right.</li>
+      			<li class="my-li">2. Select competency from the drop-down menu.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/initialfaculty-2.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 3:
+    			<ul class="my-ul">
+      			<li class="my-li">1. In the 'Student' section please type out and select the appropriate student.</li>
+     
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/initialfaculty-3.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 4:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Type in the appropriate procedure code to connect to the evaluation be it for FMX, BWX, VBWX, Pano, etc.</li>
+     
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/initialfaculty-4.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 5:
+    			<ul class="my-ul">
+      			<li class="my-li">1. In the 'Pick a Form' section type out REF and select the appropriate form for grading.</li>
+			<li class="my-li">2. Select the Create button for the form to be created.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/initialfaculty-5.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 6:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Take note and write down the REF-FMX evaluation ID to be able to give to the student.</li>
+     			<li class="my-li">2. Select 'Start' on the right side of that form.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/initialfaculty-6.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 7:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Make sure to fill out sections 1,2 and 4-6 as needed (Form Dependant).</li>
+     			<li class="my-li">2. Take special note of the FMX form, question 2 declares whether or not the BWX can stand alone.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/initialfaculty-7.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 8:
+    			<ul class="my-ul">
+      			<li class="my-li">1. After filling out the appropriate heading sections please hit Save and Exit, NOT submit.</li>
+     			<li class="my-li">2. Again, make sure the student is given the appropriate REF Evaluation ID to fill out for Teams.  </li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/initialfaculty-8.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+                <!-- Add more steps as needed -->
+            </div>
+        </div>
+        <!-- End wrapper div -->
+    </td>
+</tr>
+
+<!-- SECTION 2 -->
+
+        <tr class="header">
+            <th>Section 2: Student Grading</th>
+        </tr>
+<tr class="section">
+    <td>
+        <h2>Student Grading Tutorial</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QsKh7CmUCoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Add a wrapper div here -->
+        <div class="tutorial-wrapper">
+            <div class="tutorial">
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 1:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Navigate teams to the Radiograph Exposure-Prescription Dispensed Logs.</li>
+      			<li class="my-li">2. Fill out all of the relevant information including the IDs that were given to you.</li>
+      			<li class="my-li">3. Take special note of the REF ID.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-1.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 2:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Navigate back to Ascend Academic.</li>
+      			<li class="my-li">2. Select the blue Evaluations block on the right side of the home screen.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/student-2.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 3:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Take note of the appropriate Evaluation ID and then select 'Start' under 'Self Evaluation'.</li>
+     
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-6.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 4:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Follow the step by step form to grade your radiographic series. Do note that you will be unable to see anything the faculty has written.</li>
+     			<li class="my-li">2. Make sure nothing is left blank, fill out each comment box and remember to use "None", "NSF", etc if needed.</li>
+     			<li class="my-li">3. Submit the Self Evaluation.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-7.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 5:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Navigate back to teams in the Radiograph Exposure-Precription Dispensed Logs.</li>
+     			<li class="my-li">1. Fill out the sections at the end and make sure you REF is graded within a week of exposure for full credit.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/student-3.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+    </td>
+</tr>
+
+<!-- SECTION 3 -->
+        <tr class="header">
+            <th>Section 3: Grading Faculty</th>
+        </tr>
+<tr class="section">
+    <td>
+        <h2>Grading Faculty Tutorial</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/X6CUUOGwy9g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Add a wrapper div here -->
+        <div class="tutorial-wrapper">
+            <div class="tutorial">
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 1:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Navigate teams to the Radiograph Exposure-Prescription Dispensed Logs.</li>
+      			<li class="my-li">2. Filter the logs down to the student that you're looking for.</li>
+      			<li class="my-li">3. Take note of the Patient ID and the REF ID.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-1.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 2:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Navigate back to Ascend Academic.</li>
+      			<li class="my-li">2. Select the Academic drop down menu and select Faculty Evaluations.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-2.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 3:
+    			<ul class="my-ul">
+      			<li class="my-li">1. In the upper left put in the exact date of the REF Evaluation or a date range that it would fall into.</li>
+     
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-3.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 4:
+    			<ul class="my-ul">
+      			<li class="my-li">1. In the 'Views' section, select DACC Dental Hygiene Pending Evaluations.</li>
+     
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-4.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 5:
+    			<ul class="my-ul">
+      			<li class="my-li">1. In the Student List section type out the correct student for selection.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-5.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 6:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Compare form ID numbers to make sure you have the correct one selected.</li>
+     			<li class="my-li">2. Select Resume or Start on the right hand side.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-6.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 7:
+    			<ul class="my-ul">
+      			<li class="my-li">1. In this are you should be able to see and compare all inputs from previous faculty and students alike to compare and contrast.</li>
+     			<li class="my-li">2. Grade the entire form like normal, check the comments and leave new ones as needed.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-7.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 8:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Do not forget to calculate and input the students grade for the evaluation.</li>
+     			<li class="my-li">2. [(Total Questions - Missed Points) / (Total Questions)] * 100  </li>
+			<li class="my-li">3. Ex.  [(190-10) / (190)] * 100 = 94.7%</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-8.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 9:
+    			<ul class="my-ul">
+      			<li class="my-li">1. After complete hit the SUBMIT button at the bottom left of the evaluation form.</li>
+     			<li class="my-li">2. Click OK on the popup, the score is written but ignore the pass/fail.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-9.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+                <div class="step">
+                    <div class="step-text">
+			<ul class="my-ul">
+  			<li class="my-li">
+    			Step 10:
+    			<ul class="my-ul">
+      			<li class="my-li">1. Navigate back to the Radiograph Exposure-Prescription Dispensed Logs.</li>
+     			<li class="my-li">2. Fill out the Date Graded/Faculty Initials and the Verified Dental chart after everything is completed and close out of teams.</li>
+    			</ul>
+			</div>
+                    <img class="step-img" src="images/refTutorial/gradingfaculty-10.jpg" alt="Image 1" style="width: 65%; height: auto;">
+                </div>
+
+                <!-- Add more steps as needed -->
+            </div>
+        </div>
+        <!-- End wrapper div -->
+    </td>
+</tr>
+
+    </table>
+</div>
+
+
+
+
+</main>
+
+<script>
+  // Get all the headers
+  const headers = document.querySelectorAll(".header");
+
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      // The next sibling in the DOM is the .section row
+      const section = header.nextElementSibling;
+
+      // Toggle the visibility of the .section row
+      section.style.display = section.style.display === "none" ? "" : "none";
+    });
+
+    // Start with all sections hidden
+    header.nextElementSibling.style.display = "none";
+  });
+</script>
+
+
+</body>
+</html>
+		
