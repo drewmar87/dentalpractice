@@ -40,7 +40,9 @@ ul {
     flex-direction: row; /* Change to horizontal */
     justify-content: center; /* Center align items */
 }
-
+.ulnormal {
+	flex-direction: column;
+}
 li {
     margin: 10px; /* Add horizontal and vertical margin */
     position: relative; /* Position relative for submenu */
@@ -672,13 +674,12 @@ function addRow(head, data) {
 }
 
     addRow("Possible Adjuncts", `
-        <ul>
-            <li>3 MRC - for the next 3 Month Recare.</li>
+        <ul class="ulnormal">
             <li>D0150 - Comprehensive Evaluation if a Dental Exam was completed.</li>
             <li>D1206 - Topical Application of Fluoride Varnish.</li>
             <li>D9631 - CHX Oral Rinse.</li>
             <li>PBWX - Post Bitewing Radiographs.</li>
-           <li>D9215 - Local Anesthesia</li> 
+            <li>D9215 - Local Anesthesia</li> 
         </ul>
     `);
 }
