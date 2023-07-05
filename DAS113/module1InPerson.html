@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+	background-color: rgba(191, 205, 224, .15);
+    }
+
+    h1, h2, h3 {
+        color: #404040;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #a399c2;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.tab-button:active {
+    transform: scale(0.9);
+}
+
+    .tab-content {
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #5d5d81;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        left: 100%;
+        top: 50%;
+        margin-top: -30px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext,
+    .highlighted .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Styling for table */
+    table {
+        width: auto;
+        border-collapse: collapse;
+        border: 0px solid #999999;
+        margin-bottom: 20px;
+	margin-left: 20px;
+    }
+
+    th, td {
+        padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+        text-align: left;
+        border-bottom: 1px dotted #999999;
+        width: 100%;
+    }
+
+    th {
+        background-color: #a399c2;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+    tr:hover {
+        background-color: #bfcde0;
+        color: 000505;
+    }
+
+</style>
+
+</head>
+<body>
+    <h1>Module Objectives</h1>
+
+    <div class="tabs">
+ <!--       <div id="tab1-button" class="tab-button" onclick="changeTab('tab1')">Syllabus and Orientation</div> -->
+        <div id="tab2-button" class="tab-button" onclick="changeTab('tab2')">Wednesday</div>
+        <div id="tab3-button" class="tab-button" onclick="changeTab('tab3')">Friday</div>
+    </div>
+
+
+<!-- TAB 1 -->
+
+    <div id="tab1" class="tab-content hidden">
+        <!-- Tab 1 Content -->
+    </div>
+
+
+
+<!-- TAB 2 -->
+
+<div id="tab2" class="tab-content">
+Subject: Welcome to DAS 113 – Tooth Anatomy and Identification (8/16/23) <p/>
+
+Good Day Everyone,<p/>
+
+Welcome to our first day of DAS 113, where we'll be sinking our teeth into Tooth Anatomy and Identification! Here's a rundown of what we'll be doing today.
+
+We'll kick things off with introductions. I'd love for each of you to share your name and what sparked your interest in dental assisting.
+
+Following that, we'll dive into our syllabus and course schedule. You'll get a clear understanding of our course expectations, grading criteria, and what lies ahead in our learning journey. We will also dedicate some time for any questions and feedback you may have.
+
+After a short break, we'll immerse ourselves in tooth identification. You'll be learning about dental arches, quadrants, and the types of teeth. We'll also take a sneak peek at the universal numbering system.
+
+Our next phase will take us deeper into tooth anatomy. You'll learn about substances like enamel, dentin, cementum, and pulp. We'll follow this up with a group activity to label these components on a tooth. The groups will then share their findings, and we'll rectify any misconceptions.
+
+Post another break, we'll explore the five surfaces of a tooth. To reinforce this learning, we'll have an interactive online quiz for immediate formative assessment.
+
+We'll round off our class with a recap of today's key learning points and a brief glimpse into our next class. There will be plenty of time for you to ask any questions about today's session or the course in general.
+
+Let's kickstart this exciting journey in dental assisting! Looking forward to seeing you all in class today!
+
+Best,
+Andrew Margarit
+
+</div>
+
+
+
+
+<!-- TAB 3 -->
+
+
+    <div id="tab3" class="tab-content hidden">
+        No in class activities today, Calibration Meeting (8/18/23)
+    </div>
+
+    <script>
+        function changeTab(tabId) {
+            // hide all tabs
+            document.getElementById('tab1').classList.add('hidden');
+            document.getElementById('tab2').classList.add('hidden');
+            document.getElementById('tab3').classList.add('hidden');
+
+            // show selected tab
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        // initialize first tab
+        changeTab('tab1');
+
+        // Add event listeners to highlight and remove highlight on table cells
+        var objectives = document.getElementsByClassName('objective');
+        for (var i = 0; i < objectives.length; i++) {
+            objectives[i].addEventListener('mouseover', function () {
+                this.classList.add('highlighted');
+            });
+            objectives[i].addEventListener('mouseout', function () {
+                this.classList.remove('highlighted');
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>
