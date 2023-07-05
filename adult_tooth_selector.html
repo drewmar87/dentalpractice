@@ -44,55 +44,6 @@ li {
     position: relative; /* Position relative for submenu */
 }
 
-/* Submenu Styles */
-.submenu {
-    display: none;
-    position: absolute;
-    background-color: #FFF; /* White */
-    padding: 10px;
-    z-index: 1;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
-    top: 100%; /* Position below the parent li */
-    left: 50%; /* Center the submenu horizontally */
-    transform: translateX(-50%); /* Adjust horizontal position */
-    margin-top: 5px; /* Add space between button and submenu */
-    white-space: nowrap; /* Prevent text wrapping */
-    width: max-content; /* Set width based on content */
-}
-
-li.active .submenu {
-    display: block;
-}
-
-.submenu a {
-    display: block;
-    margin: 5px 0;
-    transition: background-color 0.3s ease; /* Add transition effect */
-    color: #9370DB; /* Light Purple */
-    text-decoration: none;
-}
-
-.submenu a:hover {
-    background-color: #F0E6FA; /* Lighter Purple */
-    color: #9370DB; /* Light Purple */
-}
-
-.submenu a:visited {
-    color: #9370DB; /* Light Purple */
-}
-
-.submenu a:active {
-    background-color: #8A2BE2; /* Dark Purple */
-    color: #FFF; /* White */
-}
-
-.submenu ul {
-    margin-left: 15px;
-    padding-left: 15px;
-    border-left: 1px solid #9370DB; /* Light Purple */
-}
-
 h1 {
 	color: #FFF; /* White */
 }
@@ -272,112 +223,10 @@ a.button:active {
 }	
 
 </style>
-
-
-<script>
-// JavaScript code to handle submenu navigation
-document.addEventListener('DOMContentLoaded', function() {
-  var playButton = document.getElementById('playButton');
-  var playSubmenu = document.getElementById('playSubmenu');
-  var helpButton = document.getElementById('helpButton');
-  var helpSubmenu = document.getElementById('helpSubmenu');
-  var tutorialButton = document.getElementById('tutorialButton'); // New button
-  var tutorialSubmenu = document.getElementById('tutorialSubmenu'); // New submenu
-  
-  // Function to close all submenus
-  function closeAllSubmenus() {
-    var submenus = document.querySelectorAll('.submenu');
-    var activeItems = document.querySelectorAll('.active');
-    
-    submenus.forEach(function(submenu) {
-      submenu.style.display = 'none';
-    });
-    
-    activeItems.forEach(function(item) {
-      item.classList.remove('active');
-    });
-  }
-  
-  playButton.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default link behavior
-    var isActive = playButton.parentElement.classList.contains('active');
-    closeAllSubmenus(); // Close all submenus
-    // Open this submenu if it was not already open
-    if (!isActive) {
-      playButton.parentElement.classList.add('active');
-      playSubmenu.style.display = 'block';
-    }
-  });
-
-  helpButton.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default link behavior
-    var isActive = helpButton.parentElement.classList.contains('active');
-    closeAllSubmenus(); // Close all submenus
-    // Open this submenu if it was not already open
-    if (!isActive) {
-      helpButton.parentElement.classList.add('active');
-      helpSubmenu.style.display = 'block';
-    }
-  });
-
-  tutorialButton.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default link behavior
-    var isActive = tutorialButton.parentElement.classList.contains('active');
-    closeAllSubmenus(); // Close all submenus
-    // Open this submenu if it was not already open
-    if (!isActive) {
-      tutorialButton.parentElement.classList.add('active');
-      tutorialSubmenu.style.display = 'block';
-    }
-
-  });
-});
-
-  </script>
-
-</head>
-
 <body>
-    <nav>
-        <ul>
-
-
-<li>
-                <a href="#" class="button" id="tutorialButton">Tutorial / FAQ</a>
-                <ul class="submenu" id="tutorialSubmenu">
-                    <!-- Add your submenu items here -->
-                    <li><a href="refTutorial.html">REF Tutorial</a></li>
-                    <li><a href="#">Placeholder</a></li>
-                    <li><a href="#">Placeholder</a></li>
-                </ul>
-</li>
-
-<li>
-          <a href="#" class="button" id="playButton">Didactic</a>
-          <ul class="submenu" id="playSubmenu">
-            <li><a href="radiograph_mounting.html">Radiograph Mounting</a></li>
-            <li><a href="identificationExercise.html">Identification Exercises</a></li>
-	<li><a href="adult_tooth_selector.html">Adult Tooth Number Identification</a></li>
-	<li><a href="#">Child Tooth Number Identification</a></li>
-          </ul>
-</li>
-
-<li>
-    <a href="#" class="button" id="helpButton">Clinical</a>
-    <ul class="submenu" id="helpSubmenu">
-        <li><a href="txPlan.html">Treatment Planning</a></li>
-        <li><a href="ging_description_choice.html">Gingival Description<a></li>
-        <li><a href="aapTxPlan.html">AAP Staging</a></li>
-        <li><a href="aapGrading.html">AAP Grading</a></li>
-        <li><a href="#">FAQ</a></li>
-    </ul>
-</li>
-
-</ul>
-</nav>
  <div style="text-align: center;">
  <header>
-    <h1>Select The Correct Tooth:</h1>
+    <h1>Tooth Identification</h1>
   </header>
   
  
