@@ -30,6 +30,49 @@
         .hidden {
             display: none;
         }
+                .tooltip .tooltiptext {
+            visibility: hidden;
+            background-color: #5d5d81;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            
+            /* Position the tooltip text */
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;  /* Place the tooltip above the text */
+            left: 50%;
+            margin-left: -60px;  /* Use half the width to center the tooltip */
+            
+            /* Fade in tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Style the list of objectives */
+        .objectives {
+            margin: 10px 0;
+        }
+
+        /* Highlight objectives and associated CLO/MLO on hover */
+        .objective:hover, .objective:hover + .clo-mlo {
+            background-color: #a399c2;
+            color: #fff;
+            cursor: default;
+        }
+
+        /* CLO/MLO associations */
+        .clo-mlo {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -41,8 +84,19 @@
         <div id="tab3-button" class="tab-button" onclick="changeTab('tab3')">Friday</div>
     </div>
 
-    <div id="tab1" class="tab-content">
-        <!-- Tuesday's content here -->No Class
+   <div id="tab1" class="tab-content">
+        <h2>Tuesday - Chapter 1: History of Dentistry</h2>
+        <h3>Learning Objectives:</h3>
+        <div class="objectives">
+            <div class="objective tooltip">
+                1. Pronounce, define, and spell the key terms.
+                <span class="tooltiptext">CLO-1, MLO-1</span>
+            </div>
+            <div class="clo-mlo">CLO-1: Identify the duties of the dental office manager and management staff.</div>
+            <div class="clo-mlo">MLO-1: Placeholder</div>
+
+            <!-- repeat for each objective -->
+        </div>
     </div>
     <div id="tab2" class="tab-content hidden">
         <!-- Wednesday's content here -->vvv
