@@ -1,76 +1,67 @@
 <html>
 <head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: rgba(191, 205, 224, .15);
     }
-
-    table {
-      width: 100%; 
-      border-collapse: collapse; 
-      box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15); 
+    .card {
       border-radius: 10px; 
-      overflow: hidden;
-      background-color: #bfcde0;
+      box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15); 
       color: #000505;
     }
-
-    th {
-      text-align: left; 
-      padding: 20px; 
+    .card-header {
       background-color: #5d5d81;
       color: #bfcde0;
     }
-    
-    td {
-      text-align: left; 
-      padding: 20px; 
+    .nav-tabs .nav-link {
+      border: 1px solid #a399c2;
       background-color: #a399c2;
       color: #000505;
     }
-
-    tr:nth-child(even) td {
+    .nav-tabs .nav-link.active {
+      background-color: #bfcde0;
+      color: #000505;
+    }
+    .tab-content {
       background-color: #bfcde0;
     }
   </style>
 </head>
-  <body>
-<!-- 
-Colors: 
-    #5d5d81 - Dark grey
-    #a399c2 - Lilac
-    #bfcde0 - Pale Blue
-    #000505 - Black/Blue
--->
-    
-    <table>
-      <tbody>
-        <tr>
-          <th>Module Objectives:</th>
-        </tr>
-        <tr>
-          <td>Upon completion of this module, the student should be able to:</td>
-        </tr>
-        <tr>
-          <th>Lesson 1.1: History of Dentistry</th>
-        </tr>
-        <tr>
-          <td>1. Pronounce, define, and spell the key terms.<br />2. Summarize the main historical evolution of dental history by its century.<br />&emsp; a. Name the four major ancient civilizations that practiced dentistry.<br />&emsp; b. Describe the role of barbers in dentistry during the renaissance period.<br />&emsp; c. Explain how dentists learned their profession in the 18th century.<br />&emsp; d. Explain the meaning &ldquo;Birth of a Profession&rdquo; from the 19th century.<br />&emsp; e. Recall the dental specialties that were formative during the 20th century.<br />&emsp; f. List the advances in dentistry from the 21st century, and what these advances hope to improve in oral health care.<br />3. Explain why dentistry has lagged behind in recruiting a more divers population.<br />&emsp; a. Describe why women are a good fit for the profession of dentistry.<br />&emsp; b. Discuss how the American Dental Association took leadership in recruiting a more diverse population in dentistry.<br />4. Explain how the term &ldquo;allied health&rdquo; plays into the history of dental assisting and dental hygiene.<br />&emsp; a. Describe how dental assisting came about in the late 1800s.<br />&emsp; b. Explain the role of the dental hygienist from the beginning of its profession.</td>
-        </tr>
-        <tr>
-          <th>Course Learning Objectives Aligned to Module 1:</th>
-        </tr>
-        <tr>
-          <td>1. Identify the duties of the dental office manager and management staff.</td>
-        </tr>
-        <tr>
-          <th>Program Learning Objectives Aligned to Module 1:</th>
-        </tr>
-        <tr>
-          <td>2. Placeholder</td>
-        </tr>
-      </tbody>
-    </table>
-  </body>
-
+<body>
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="text-center">Module Objectives</h2>
+      </div>
+      <div class="card-body">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="tuesday-tab" data-toggle="tab" href="#tuesday" role="tab" aria-controls="tuesday" aria-selected="true">Tuesday</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#wednesday" role="tab" aria-controls="wednesday" aria-selected="false">Wednesday</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="friday-tab" data-toggle="tab" href="#friday" role="tab" aria-controls="friday" aria-selected="false">Friday</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="tuesday" role="tabpanel" aria-labelledby="tuesday-tab">
+            <!-- Tuesday's content here -->
+          </div>
+          <div class="tab-pane fade" id="wednesday" role="tabpanel" aria-labelledby="wednesday-tab">
+            <!-- Wednesday's content here -->
+          </div>
+          <div class="tab-pane fade" id="friday" role="tabpanel" aria-labelledby="friday-tab">
+            <!-- Friday's content here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
