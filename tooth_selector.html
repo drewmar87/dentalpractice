@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Tooth Game</title>
+<style>
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #9370DB; /* Light Purple */
+    padding: 0px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Change to horizontal */
+    justify-content: center; /* Center align items */
+}
+
+li {
+    margin: 10px; /* Add horizontal and vertical margin */
+    position: relative; /* Position relative for submenu */
+}
+
+h1 {
+	color: #FFF; /* White */
+}
+    	   
+.correct-answer {
+	color: green;
+	size: 36px;
+	font-weight: bold;
+	text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+}
+
+.wrong-answer {
+	color: red;
+	font-weight: bold;
+	text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+}
+
+    
+    /* Button Styles */
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9370DB; /* Light Purple */
+    color: #FFF; /* White */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    border: 2px solid black;
+}
+    
+a.button:hover {
+    background-color: #8A2BE2; /* Dark Purple */
+}
+    
+a.button:active {
+    background-color: violet;
+}
+
+.tooth-container {
+	display: flex;
+	justify-content: center;
+	padding: 7.5px;	  
+}
+
+.tooth {
+	border-bottom: .5px dashed #9370DB;
+	border-top: .5px dashed #9370DB;
+	padding: 5px;
+}
+	   
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	grid-gap: 10px;
+	grid-row-gap: 100px;
+	transform: scale(0.85);
+	margin: 0 auto;
+	justify-content: center;
+	align-content: flex-start;
+	position: relative;
+	top: 0px;
+}
+
+.grid-container::before, .grid-container::after {
+  content: "";
+  position: absolute;
+  background: #9370DB; /* Use your preferred color */
+}
+
+.grid-container::before {
+  /* Horizontal line */
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust thickness */
+}
+
+.grid-container::after {
+  /* Vertical line */
+	top: 0;
+	left: 50%;
+	width: 2px; /* Adjust thickness */
+	height: 100%;
+}
+
+.grid-item {
+	border: 1px solid black;
+	width: 100%; /* Force image to take full width */
+	height: 100%; /* Force image to take full height */
+	align-items: center;
+	justify-content: center;
+}
+	   	  	   	  	 	   	   	   	   
+.grid-container .tooth {
+	align-items: center;
+	justify-content: center;
+	transform: scale(1);
+}	   	   	 	   
+	  
+.tooth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: .5px dashed #9370DB;
+	border-top: .5px dashed #9370DB;
+	padding: 5px;
+}	   	     	   	   
+	
+.tooth img {
+	max-width: 80%;
+	max-height: 80%;
+	object-fit: contain;
+}
+	   
+.scoreboard {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 1.2em;
+}
+
+.scoreboard span {
+	margin-right: 10px;
+}
+
+.scoreboard .right {
+	color: green;
+}
+
+.scoreboard .wrong {
+	color: red;
+}
+	
+.tooth.correct {
+	background-color: rgba(0, 255, 0, 0.5); /* Translucent green */
+}
+
+.tooth.incorrect {
+	background-color: rgba(255, 0, 0, 0.5); /* Translucent red */
+}
+#table-container {
+    width: 25%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+#results-table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+#results-table th, #results-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+#results-table th {
+    background-color: #9370DB;
+    color: white;
+    font-size: 14px;
+}
+
+#results-table td {
+    font-size: 12px;
+}
+
+#results-table tr:nth-child(even) {
+    background-color: #9370DB;
+    color: white;
+}	
+
+</style>
+<body>
+ <div style="text-align: center;">
+ <header>
+    <h1>Tooth Identification</h1>
+  </header>
+  
+ 
+    <div class="grid-container">
+      <div class="tooth" id="tooth-1"><img class="tooth-img" src="images/Adulttooth/1.png"></div>
+      <div class="tooth" id="tooth-2"><img class="tooth-img" src="images/Adulttooth/2.png"></div>
+      <div class="tooth" id="tooth-3"><img class="tooth-img" src="images/Adulttooth/3.png"></div>
+      <div class="tooth" id="tooth-4"><img class="tooth-img" src="images/Adulttooth/4.png"></div>
+      <div class="tooth" id="tooth-5"><img class="tooth-img" src="images/Adulttooth/5.png"></div>
+      <div class="tooth" id="tooth-6"><img class="tooth-img" src="images/Adulttooth/6.png"></div>
+      <div class="tooth" id="tooth-7"><img class="tooth-img" src="images/Adulttooth/7.png"></div>
+      <div class="tooth" id="tooth-8"><img class="tooth-img" src="images/Adulttooth/8.png"></div>
+      <div class="tooth" id="tooth-9"><img class="tooth-img" src="images/Adulttooth/9.png"></div>
+      <div class="tooth" id="tooth-10"><img class="tooth-img" src="images/Adulttooth/10.png"></div>
+      <div class="tooth" id="tooth-11"><img class="tooth-img" src="images/Adulttooth/11.png"></div>
+      <div class="tooth" id="tooth-12"><img class="tooth-img" src="images/Adulttooth/12.png"></div>
+      <div class="tooth" id="tooth-13"><img class="tooth-img" src="images/Adulttooth/13.png"></div>
+      <div class="tooth" id="tooth-14"><img class="tooth-img" src="images/Adulttooth/14.png"></div>
+      <div class="tooth" id="tooth-15"><img class="tooth-img" src="images/Adulttooth/15.png"></div>
+      <div class="tooth" id="tooth-16"><img class="tooth-img" src="images/Adulttooth/16.png"></div>
+      <div class="tooth" id="tooth-32"><img class="tooth-img" src="images/Adulttooth/17.png"></div>
+      <div class="tooth" id="tooth-31"><img class="tooth-img" src="images/Adulttooth/18.png"></div>
+      <div class="tooth" id="tooth-30"><img class="tooth-img" src="images/Adulttooth/19.png"></div>
+      <div class="tooth" id="tooth-29"><img class="tooth-img" src="images/Adulttooth/20.png"></div>
+      <div class="tooth" id="tooth-28"><img class="tooth-img" src="images/Adulttooth/21.png"></div>
+      <div class="tooth" id="tooth-27"><img class="tooth-img" src="images/Adulttooth/22.png"></div>
+      <div class="tooth" id="tooth-26"><img class="tooth-img" src="images/Adulttooth/23.png"></div>
+      <div class="tooth" id="tooth-25"><img class="tooth-img" src="images/Adulttooth/24.png"></div>
+      <div class="tooth" id="tooth-24"><img class="tooth-img" src="images/Adulttooth/25.png"></div>
+      <div class="tooth" id="tooth-23"><img class="tooth-img" src="images/Adulttooth/26.png"></div>
+      <div class="tooth" id="tooth-22"><img class="tooth-img" src="images/Adulttooth/27.png"></div>
+      <div class="tooth" id="tooth-21"><img class="tooth-img" src="images/Adulttooth/28.png"></div>
+      <div class="tooth" id="tooth-20"><img class="tooth-img" src="images/Adulttooth/29.png"></div>
+      <div class="tooth" id="tooth-19"><img class="tooth-img" src="images/Adulttooth/30.png"></div>
+      <div class="tooth" id="tooth-18"><img class="tooth-img" src="images/Adulttooth/31.png"></div>
+      <div class="tooth" id="tooth-17"><img class="tooth-img" src="images/Adulttooth/32.png"></div>
+    </div>
+  </div>
+
+
+  <div id="question-container" style="text-align: center; position: relative; top: 0px;">
+    <h2 id="question"></h2>
+    <p id="result"></p>
+  </div>
+	
+    <div class="scoreboard" style="text-align: center; position: relative; top: 0px; left: 10px;">
+      <span class="right">Correct: <span id="right-score">0</span></span>
+      <span class="wrong">Incorrect: <span id="wrong-score">0</span></span>
+    </div>
+  
+<div id="input-div" style="display: flex; justify-content: center; align-items: center;">
+    <input type="text" id="name-input" placeholder="Enter your name">
+    <button onclick="generateReport()">Create Score Report</button>
+</div>
+
+<div id="table-container" style="display: none;">
+    <table id="results-table">
+        <tbody id="results-tbody">
+        </tbody>
+    </table><br/>
+<button style="display: block; margin: 0 auto;" onclick="printTable()">Save PDF</button>
+
+</div>	   
+	   
+<script>
+  const questions = [
+    { question: 'Tooth #1', answer: 'tooth-1' },
+    { question: 'Tooth #2', answer: 'tooth-2' },
+    { question: 'Tooth #3', answer: 'tooth-3' },
+    { question: 'Tooth #4', answer: 'tooth-4' },
+    { question: 'Tooth #5', answer: 'tooth-5' },
+	{ question: 'Tooth #6', answer: 'tooth-6' },
+	{ question: 'Tooth #7', answer: 'tooth-7' },
+	{ question: 'Tooth #8', answer: 'tooth-8' },
+	{ question: 'Tooth #9', answer: 'tooth-9' },
+	{ question: 'Tooth #10', answer: 'tooth-10' },
+	{ question: 'Tooth #11', answer: 'tooth-11' },
+	{ question: 'Tooth #12', answer: 'tooth-12' },
+	{ question: 'Tooth #13', answer: 'tooth-13' },
+	{ question: 'Tooth #14', answer: 'tooth-14' },
+	{ question: 'Tooth #15', answer: 'tooth-15' },
+	{ question: 'Tooth #16', answer: 'tooth-16' },
+	{ question: 'Tooth #17', answer: 'tooth-17' },
+	{ question: 'Tooth #18', answer: 'tooth-18' },
+	{ question: 'Tooth #19', answer: 'tooth-19' },
+	{ question: 'Tooth #20', answer: 'tooth-20' },
+	{ question: 'Tooth #21', answer: 'tooth-21' },
+	{ question: 'Tooth #22', answer: 'tooth-22' },
+	{ question: 'Tooth #23', answer: 'tooth-23' },
+	{ question: 'Tooth #24', answer: 'tooth-24' },
+	{ question: 'Tooth #25', answer: 'tooth-25' },
+	{ question: 'Tooth #26', answer: 'tooth-26' },
+	{ question: 'Tooth #27', answer: 'tooth-27' },
+	{ question: 'Tooth #28', answer: 'tooth-28' },
+	{ question: 'Tooth #29', answer: 'tooth-29' },
+	{ question: 'Tooth #30', answer: 'tooth-30' },
+	{ question: 'Tooth #31', answer: 'tooth-31' },
+	{ question: 'Tooth #32', answer: 'tooth-32' },
+	{ question: 'Upper Right Third Molar', answer: 'tooth-1' },
+	{ question: 'Upper Right Second Molar', answer: 'tooth-2' },
+	{ question: 'Upper Right First Molar', answer: 'tooth-3' },
+	{ question: 'Upper Right Second Pre-Molar', answer: 'tooth-4' },
+	{ question: 'Upper Right First Pre-Molar', answer: 'tooth-5' },
+	{ question: 'Upper Right Canine', answer: 'tooth-6' },
+	{ question: 'Upper Right Lateral Incisor', answer: 'tooth-7' },
+	{ question: 'Upper Right Center Incisor', answer: 'tooth-8' },
+	{ question: 'Upper Left Central Incisor', answer: 'tooth-9' },
+	{ question: 'Upper Left Lateral Incisor', answer: 'tooth-10' },
+	{ question: 'Upper Left Canine', answer: 'tooth-11' },
+	{ question: 'Upper Left First Pre-Molar', answer: 'tooth-12' },
+	{ question: 'Upper Left Second Pre-Molar', answer: 'tooth-13' },
+	{ question: 'Upper Left First Molar', answer: 'tooth-14' },
+	{ question: 'Upper Left Second Molar', answer: 'tooth-15' },
+	{ question: 'Upper Left Third Molar', answer: 'tooth-16' },
+	{ question: 'Lower Left Third Molar', answer: 'tooth-17' },
+	{ question: 'Lower Left Second Molar', answer: 'tooth-18' },
+	{ question: 'Lower Left First Molar', answer: 'tooth-19' },
+	{ question: 'Lower Left Second Pre-Molar', answer: 'tooth-20' },
+	{ question: 'Lower Left First Pre-Molar', answer: 'tooth-21' },
+	{ question: 'Lower Left Canine', answer: 'tooth-22' },
+	{ question: 'Lower Left Lateral Incisor', answer: 'tooth-23' },
+	{ question: 'Lower Left Central Incisor', answer: 'tooth-24' },
+	{ question: 'Lower Right Central Incisor', answer: 'tooth-25' },
+	{ question: 'Lower Right Lateral Incisor', answer: 'tooth-26' },
+	{ question: 'Lower Right Canine', answer: 'tooth-27' },
+	{ question: 'Lower Right First Pre-Molar', answer: 'tooth-28' },
+	{ question: 'Lower Right Second Pre-Molar', answer: 'tooth-29' },
+	{ question: 'Lower Right First Molar', answer: 'tooth-30' },
+	{ question: 'Lower Right Second Molar', answer: 'tooth-31' },
+	{ question: 'Lower Right Third Molar', answer: 'tooth-32' },
+  ];
+
+let currentQuestionIndex = 0;
+let rightScore = 0;
+let wrongScore = 0;
+let isAnswered = false;  // This variable keeps track of whether the current question has been answered
+let selectedToothElement; // This variable keeps track of the selected tooth
+
+const questionElement = document.getElementById('question');
+const resultElement = document.getElementById('result');
+const rightScoreElement = document.getElementById('right-score');
+const wrongScoreElement = document.getElementById('wrong-score');
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+        [array[i], array[j]] = [array[j], array[i]]; // swap elements
+    }
+}
+
+shuffleArray(questions); // This will shuffle your questions array
+
+function renderQuestion(index) {
+    // Remove 'correct' and 'incorrect' classes from all teeth before rendering new question
+    const toothElements = document.querySelectorAll('.tooth');
+    toothElements.forEach((tooth) => {
+        tooth.classList.remove('correct', 'incorrect');
+    });
+
+    const question = questions[index];
+    questionElement.textContent = question.question;
+    resultElement.textContent = '';
+    isAnswered = false; // Reset this variable to false when a new question is rendered
+}
+
+function handleAnswer(answer) {
+    if (!isAnswered) { // Check if the question has been answered
+        if (questions[currentQuestionIndex].answer === answer) {
+            resultElement.textContent = 'CORRECT';
+            rightScore++;
+            rightScoreElement.textContent = rightScore;
+            // Add the 'correct-answer' class and remove the 'wrong-answer' class
+            resultElement.classList.add('correct-answer');
+            resultElement.classList.remove('wrong-answer');
+            // Add the 'correct' class and remove the 'incorrect' class for the selected tooth
+            selectedToothElement.classList.add('correct');
+            selectedToothElement.classList.remove('incorrect');
+        } else {
+            resultElement.textContent = 'WRONG';
+            wrongScore++;
+            wrongScoreElement.textContent = wrongScore;
+            // Add the 'wrong-answer' class and remove the 'correct-answer' class
+            resultElement.classList.add('wrong-answer');
+            resultElement.classList.remove('correct-answer');
+            // Add the 'incorrect' class and remove the 'correct' class for the selected tooth
+            selectedToothElement.classList.add('incorrect');
+            selectedToothElement.classList.remove('correct');
+        }
+        isAnswered = true; // Set this variable to true after an answer has been selected
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            setTimeout(() => { renderQuestion(currentQuestionIndex); }, 1000); // Wait for 1 seconds before rendering the next question
+        } else {
+            resultElement.textContent = 'You have finished the game!';
+            generateReport();  // Call the generateReport function when the game ends
+        }
+    }
+}
+
+
+const toothElements = document.querySelectorAll('.tooth');
+toothElements.forEach(function(tooth) {
+    tooth.onclick = function(event) {
+        const element = event.target;
+        const id = element.id || element.parentElement.id;
+        
+        selectedToothElement = element.classList.contains('tooth') ? element : element.parentElement;
+        handleAnswer(id);
+    };
+});
+
+renderQuestion(currentQuestionIndex);
+
+function generateReport() {
+    let name = document.getElementById("name-input").value;
+    let date = new Date();
+    let totalScore = rightScore + wrongScore;
+    let percentCorrect = (rightScore / totalScore) * 100;
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let time = `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`; // Convert time to HH:MM format
+    // Remove previous report if exists
+    document.getElementById("results-tbody").innerHTML = '';
+
+    // Generate the unique identifier code
+    let nameLength = name.replace(/\s/g, '').length;  // Removing spaces from name to get true length
+    let firstLetter = name.charAt(0).toUpperCase();
+    let lastLetter = name.charAt(name.length - 1).toUpperCase();
+    let paddingLength = Math.ceil(nameLength / 2) - 1; // Subtract 1 for the 2 characters in the middle
+
+    let possibleChars = 'abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*';
+    let randomCharsPrefix = Array(paddingLength).fill('').map(() => possibleChars[Math.floor(Math.random() * possibleChars.length)]).join('');
+    let randomCharsSuffix = Array(paddingLength).fill('').map(() => possibleChars[Math.floor(Math.random() * possibleChars.length)]).join('');
+
+    let identifierCode;
+    if (totalScore >= 5) {
+        identifierCode = randomCharsPrefix.toUpperCase() + firstLetter + lastLetter + randomCharsSuffix.toUpperCase();
+    } else {
+        identifierCode = randomCharsPrefix.toUpperCase() + lastLetter + firstLetter + randomCharsSuffix.toUpperCase();
+    }
+
+    let data = [
+        {label: "Adult Dentition Tooth Identification"},
+        {label: "Name", value: name},
+        {label: "Date", value: date.toLocaleDateString()},
+	{label: "Time", value: time},
+        {label: "Right Score", value: rightScore},
+        {label: "Wrong Score", value: wrongScore},
+        {label: "Percent Correct", value: percentCorrect.toFixed(2) + "%"},
+        {label: "Identifier Code", value: identifierCode}  // Add the unique identifier code to the table
+    ]
+
+    for (let item of data) {
+        // Create a new table row
+        let tr = document.createElement('tr');
+
+        // Create and set the values for each table cell
+        let labelTd = document.createElement('td');
+        labelTd.textContent = item.label;
+        tr.appendChild(labelTd);
+
+        let valueTd = document.createElement('td');
+        valueTd.textContent = item.value;
+        tr.appendChild(valueTd);
+
+        // Add the new table row to the table
+        document.getElementById("results-tbody").appendChild(tr);
+    }
+
+    document.getElementById("input-div").style.display = "none";
+    document.getElementById("table-container").style.display = "block";
+}
+
+
+function printTable() {
+    var printWindow = window.open('', '_blank');
+    var tableHtml = document.getElementById('results-table').outerHTML;
+
+    printWindow.document.write(`
+        <html>
+            <head>
+                <title>Print</title>
+                <style type="text/css">
+                    body {
+                        font-family: Arial, sans-serif;
+                    }
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    th, td {
+                        border: 1px solid #000;
+                        padding: 10px;
+                    }
+                    th {
+                        background-color: #4CAF50;
+                        color: white;
+                    }
+                    tr:nth-child(even) {
+                        background-color: #f2f2f2;
+                    }
+                </style>
+            </head>
+            <body>
+                ${tableHtml}
+            </body>
+        </html>
+    `);
+
+    printWindow.document.close();
+    printWindow.print();
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>
