@@ -276,7 +276,7 @@ a.button:active {
         </tbody>
     </table><br/>
 <button style="display: block; margin: 0 auto;" onclick="printTable()">Save PDF</button>
-
+<button style="display: block; margin: 0 auto;" onclick="refreshPage()">Refresh Page</button>
 </div>	   
 	   
 <script>
@@ -529,7 +529,9 @@ function printTable() {
 }
 
 
-
+        function refreshPage() {
+            location.reload();
+        }
 
 
 </script>
