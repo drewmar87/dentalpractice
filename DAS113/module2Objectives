@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+	background-color: rgba(191, 205, 224, .15);
+    }
+
+    h1, h2, h3 {
+        color: #404040;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #a399c2;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.tab-button:active {
+    transform: scale(0.9);
+}
+
+    .tab-content {
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #5d5d81;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        left: 100%;
+        top: 50%;
+        margin-top: -30px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext,
+    .highlighted .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Styling for table */
+    table {
+        width: auto;
+        border-collapse: collapse;
+        border: 0px solid #999999;
+        margin-bottom: 20px;
+	margin-left: 20px;
+    }
+
+    th, td {
+        padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+        text-align: left;
+        border-bottom: 1px dotted #999999;
+        width: 100%;
+    }
+
+    th {
+        background-color: #a399c2;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+    tr:hover {
+        background-color: #bfcde0;
+        color: 000505;
+    }
+
+</style>
+
+</head>
+<body>
+    <h1>Module Objectives</h1>
+
+    <div class="tabs">
+ <!--       <div id="tab1-button" class="tab-button" onclick="changeTab('tab1')">Syllabus and Orientation</div> -->
+        <div id="tab2-button" class="tab-button" onclick="changeTab('tab2')">Chapter 1</div>
+
+    </div>
+
+
+<!-- TAB 1 -->
+
+    <div id="tab1" class="tab-content hidden">
+        <!-- Wednesday's content here -->
+    </div>
+
+
+
+<!-- TAB 2 -->
+
+<div id="tab2" class="tab-content">
+    <h2>Chapter 1: History of Dentistry<br>Wednesday 8/16/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+        <tr>
+            <td class="objective tooltip">
+                <div>1. Pronounce, define, and spell the key terms.</div>
+                <span class="tooltiptext">Objective 1 Description</span>
+            </td>
+        </tr>
+
+
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 1:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 1:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+
+    </div>
+
+
+
+
+<!-- TAB 3 -->
+
+
+    <div id="tab3" class="tab-content hidden">
+        Tab 3
+    </div>
+
+    <script>
+        function changeTab(tabId) {
+            // hide all tabs
+            document.getElementById('tab1').classList.add('hidden');
+            document.getElementById('tab2').classList.add('hidden');
+            document.getElementById('tab3').classList.add('hidden');
+
+            // show selected tab
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        // initialize first tab
+        changeTab('tab1');
+
+        // Add event listeners to highlight and remove highlight on table cells
+        var objectives = document.getElementsByClassName('objective');
+        for (var i = 0; i < objectives.length; i++) {
+            objectives[i].addEventListener('mouseover', function () {
+                this.classList.add('highlighted');
+            });
+            objectives[i].addEventListener('mouseout', function () {
+                this.classList.remove('highlighted');
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>
