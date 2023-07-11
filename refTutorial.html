@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-top: 75px;
+    padding-top: 0px;
 }
 
 header {
@@ -308,107 +308,11 @@ table#results-table th {
 </style>
 
 
-<script>
-// JavaScript code to handle submenu navigation
-document.addEventListener('DOMContentLoaded', function() {
-  var playButton = document.getElementById('playButton');
-  var playSubmenu = document.getElementById('playSubmenu');
-  var helpButton = document.getElementById('helpButton');
-  var helpSubmenu = document.getElementById('helpSubmenu');
-  var tutorialButton = document.getElementById('tutorialButton'); // New button
-  var tutorialSubmenu = document.getElementById('tutorialSubmenu'); // New submenu
-  
-  // Function to close all submenus
-  function closeAllSubmenus() {
-    var submenus = document.querySelectorAll('.submenu');
-    var activeItems = document.querySelectorAll('.active');
-    
-    submenus.forEach(function(submenu) {
-      submenu.style.display = 'none';
-    });
-    
-    activeItems.forEach(function(item) {
-      item.classList.remove('active');
-    });
-  }
-  
-  playButton.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default link behavior
-    var isActive = playButton.parentElement.classList.contains('active');
-    closeAllSubmenus(); // Close all submenus
-    // Open this submenu if it was not already open
-    if (!isActive) {
-      playButton.parentElement.classList.add('active');
-      playSubmenu.style.display = 'block';
-    }
-  });
-
-  helpButton.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default link behavior
-    var isActive = helpButton.parentElement.classList.contains('active');
-    closeAllSubmenus(); // Close all submenus
-    // Open this submenu if it was not already open
-    if (!isActive) {
-      helpButton.parentElement.classList.add('active');
-      helpSubmenu.style.display = 'block';
-    }
-  });
-
-  tutorialButton.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default link behavior
-    var isActive = tutorialButton.parentElement.classList.contains('active');
-    closeAllSubmenus(); // Close all submenus
-    // Open this submenu if it was not already open
-    if (!isActive) {
-      tutorialButton.parentElement.classList.add('active');
-      tutorialSubmenu.style.display = 'block';
-    }
-
-  });
-});
-
-  </script>
 
 </head>
 
 <body>
-    <nav>
-        <ul>
-
-
-<li>
-                <a href="#" class="button" id="tutorialButton">Tutorial / FAQ</a>
-                <ul class="submenu" id="tutorialSubmenu">
-                    <!-- Add your submenu items here -->
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Tutorial 1</a></li>
-                    <li><a href="#">Tutorial 2</a></li>
-                </ul>
-</li>
-
-<li>
-          <a href="#" class="button" id="playButton">Didactic</a>
-          <ul class="submenu" id="playSubmenu">
-            <li><a href="radiograph_mounting.html">Radiograph Mounting</a></li>
-            <li><a href="identificationExercise.html">Identification Exercises</a></li>
-	<li><a href="adult_tooth_selector.html">Adult Tooth Number Identification</a></li>
-	<li><a href="#">Child Tooth Number Identification</a></li>
-          </ul>
-</li>
-
-<li>
-    <a href="#" class="button" id="helpButton">Clinical</a>
-    <ul class="submenu" id="helpSubmenu">
-        <li><a href="txPlan.html">Treatment Planning</a></li>
-        <li><a href="ging_description_choice.html">Gingival Description<a></li>
-        <li><a href="aapTxPlan.html">AAP Staging</a></li>
-        <li><a href="aapGrading.html">AAP Grading</a></li>
-        <li><a href="#">FAQ</a></li>
-    </ul>
-</li>
-
-</ul>
-</nav>
+ 
 
 	<header>
 		<h1>Tutorial: Radiographic Evaluation Forms</h1>
