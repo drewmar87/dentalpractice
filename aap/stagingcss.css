@@ -154,22 +154,31 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
+
+Sure, let's modify the CSS for your requirement. What you want to achieve is to have two columns on mobile, with the left column smaller than the right. To do that, we'll modify the @media queries to specify this layout for smaller screens.
+
+css
+Copy code
+/* Styles for screens smaller than or equal to 768px */
 @media only screen and (max-width: 768px) {
 
     #mainContainer {
-        flex-direction: column;
-        width: 95%;
-        margin-top: 10px;
+        flex-direction: row;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
-    #leftColumn, #rightColumn {
+    #leftColumn {
         flex: 1;
         padding: 10px;
-        border-right: none;
+        border-right: 1px solid #e1e1e1;
     }
 
     #rightColumn {
-        border-top: 1px solid #e1e1e1;
+        flex: 3;
+        padding: 10px;
+        border-left: 1px solid #e1e1e1;
     }
 
     #answers {
@@ -178,7 +187,8 @@ button:hover {
     }
 
     .breadcrumb, button, .backButton {
-        width: 100%;
+        width: 90%;
+        margin: auto;
     }
 
     button, .backButton {
@@ -190,22 +200,23 @@ button:hover {
     }
 }
 
-/* Styles for screens smaller than or equal to 480px (typical breakpoint for mobile phones) */
+/* Styles for screens smaller than or equal to 480px */
 @media only screen and (max-width: 480px) {
 
-    /* Change the flex direction so the columns stack vertically */
     #mainContainer {
-        flex-direction: column;
+        flex-direction: row;
     }
 
-    /* Remove the border on the left column, as it's now on top */
     #leftColumn {
-        border-right: none;
+        flex: 1;
+        padding: 5px;
+        border-right: 1px solid #e1e1e1;
     }
 
-    /* Add a border to the bottom of the left column instead */
-    #leftColumn {
-        border-bottom: 1px solid #e1e1e1;
+    #rightColumn {
+        flex: 3;
+        padding: 5px;
+        border-left: 1px solid #e1e1e1;
     }
 
     /* More responsive styles... */
