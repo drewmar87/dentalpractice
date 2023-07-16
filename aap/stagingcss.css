@@ -193,11 +193,22 @@ button:hover {
 /* Styles for screens smaller than or equal to 480px (typical breakpoint for mobile phones) */
 @media only screen and (max-width: 480px) {
 
-    h2 {
-        font-size: 18px; /* Smaller heading for mobile screens */
+    /* Change the flex direction so the columns stack vertically */
+    #mainContainer {
+        flex-direction: column;
     }
 
-    #mostSevereStage {
-        font-size: 18px; /* Smaller text for mobile screens */
+    /* Remove the border on the left column, as it's now on top */
+    #leftColumn {
+        border-right: none;
     }
+
+    /* Add a border to the bottom of the left column instead */
+    #leftColumn {
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    /* More responsive styles... */
+
+}
 }
