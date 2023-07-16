@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="stagingcss.css">
+</head>
+<body>
+    <h1>Periodontal Staging Walkthrough</h1>
+    <div id="mainContainer">
+        <div id="leftColumn">
+            <div id="savedAnswers"></div>
+            <div id="backButtonContainer"></div>
+			<button id="startOverButton" style="display: none;" onclick="location.reload();">Start Over</button>
+        </div>
+        <div id="rightColumn">
+            <div id="questionnaire">
+                <h2 id="question"></h2>
+                <div id="answers"></div>
+			    <img id="image" style="max-width: 300px; margin-top: 20px;">
+                <p id="infoText"></p>
+            </div>
+            <div id="results" style="display: none;">
+				<div id="mostSevereStage"></div>
+                <div id="answersList"></div>
+            </div>
+        </div>
+    </div>
+    <script src="stagingjs.js"></script>
+</body>
+</html>
