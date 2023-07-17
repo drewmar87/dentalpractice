@@ -38,7 +38,7 @@ let states = {
 
 	'notPerioCAL': {
         'question': 'Is there over 10% bleeding on probing (BoP) in the oral cavity?',
-		'info': 'Info goes here',
+		'info': 'To evaluate the state of the gingival tissue, we must assess the degree of bleeding upon probing. When over 10% of the tissue exhibits bleeding, this indicates gingivitis.',
         'image': 'url_to_image_1',
         'answers': [
             { 'text': 'Yes', 'nextState': 'results', 'savedText': 'More than 10% BoP', 'hiddenData': 'Gingivitis on a Reduced Peiodontium in a Non-Periodontitis Patient' },
