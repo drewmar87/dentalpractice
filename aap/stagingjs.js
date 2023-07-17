@@ -179,8 +179,8 @@ let states = {
 		'info': 'Assessing the need for complex rehabilitation due to masticatory dysfunction, fewer than 10 pairs of opposing teeth, or significant ridge defects is essential in diagnosing and staging periodontal disease. These factors can indicate the disease\'s impact on oral functionality and structure, providing critical insight into the extent of damage and necessary treatment measures.',
         'image': 'images/complexity.png',
         'answers': [
-            { 'text': 'Yes', 'nextState': 'results', 'savedText': 'No Masticatory Dysfunction Noted', 'hiddenData': null },
-            { 'text': 'No', 'nextState': 'results', 'savedText': 'Serious Masticatory Dysfunction noted', 'hiddenData': 'Stage 4 (Consideration Only)' }
+            { 'text': 'Yes', 'nextState': 'results', 'savedText': 'Serious Masticatory Dysfunction noted', 'hiddenData': 'Stage 4 (Consideration Only)' },
+            { 'text': 'No', 'nextState': 'results', 'savedText': 'No Masticatory Dysfunction Noted', 'hiddenData': null }
         ]
     },
 
