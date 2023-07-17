@@ -163,9 +163,8 @@ Copy code
 @media only screen and (max-width: 768px) {
 
     #mainContainer {
-        flex-direction: row;
+        flex-direction: column-reverse;
         width: 100%;
-	max-width: 100%;
         padding: 0;
         margin: 0;
     }
@@ -174,14 +173,12 @@ Copy code
         flex: 1;
         padding: 10px;
         border-right: 1px solid #e1e1e1;
-        max-width: 100%;
     }
 
     #rightColumn {
         flex: 3;
         padding: 10px;
         border-left: 1px solid #e1e1e1;
-        max-width: 100%;
     }
 
     #answers {
@@ -205,25 +202,17 @@ Copy code
 
 /* Styles for screens smaller than or equal to 480px */
 @media only screen and (max-width: 480px) {
-
     #mainContainer {
-        flex-direction: row;
+        flex-direction: column-reverse;
     }
 
     #leftColumn {
-        flex: 1;
         padding: 5px;
-        border-right: 1px solid #e1e1e1;
-        max-width: 100%;
     }
 
     #rightColumn {
-        flex: 3;
         padding: 5px;
-        border-left: 1px solid #e1e1e1;
-        max-width: 100%;
     }
 
     /* More responsive styles... */
-
 }
