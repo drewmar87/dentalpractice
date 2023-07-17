@@ -198,9 +198,6 @@ button:hover {
         margin: auto;
     }
 
-    button, .backButton {
-        padding: 10px;
-    }
 
     .table {
         max-width: 95%;
@@ -234,8 +231,8 @@ button:hover {
 h1 {
 	text-align: center;
 }
- button, .backButton {
-        padding: 45px;
+ .backButton {
+        padding: 15px 32px;
     }
     /* More responsive styles... */
 }
