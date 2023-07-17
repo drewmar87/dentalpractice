@@ -50,8 +50,7 @@ let states = {
 
 	'perioCAL': {
         'question': 'Does the patient have a history of periodontal treatment and regular periodontal maintenance?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Understanding whether a patient has undergone prior periodontal treatment aids in determining if the infection is new, old, or recurring. Accurate diagnosis is pivotal for effective treatment, which necessitates having as much relevant information as possible.',
         'answers': [
             { 'text': 'Yes', 'nextState': 'perioMaintYes', 'savedText': 'Patient has a history of Periodontal Maintenance', 'hiddenData': 'Perio Maintenance' },
             { 'text': 'No', 'nextState': 'perioMaintNo', 'savedText': 'Patient does NOT have a history of Periodontal Maintenance', 'hiddenData': 'Possible evidence of undiagnosed periodontal disease' }
@@ -63,8 +62,7 @@ let states = {
 
 	'perioMaintYes': {
         'question': 'Is there over 10% bleeding on probing (BoP) in the oral cavity?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'To evaluate the state of the gingival tissue, we must assess the degree of bleeding upon probing. When over 10% of the tissue exhibits bleeding, this indicates gingivitis.',
         'answers': [
             { 'text': 'Yes', 'nextState': 'perioMaintYesStepTwo', 'savedText': 'More than 10% BoP', 'hiddenData': 'Evidence of possible recurrence of periodontal disease' },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'Less than 10% BoP', 'hiddenData': 'Clinical Gingival Health on a Reduced Periodontium in a Stable Periodontitis Patient' }
