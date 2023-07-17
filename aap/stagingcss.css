@@ -234,5 +234,8 @@ button:hover {
 h1 {
 	text-align: center;
 }
+ button, .backButton {
+        padding: 15px 32px;
+    }
     /* More responsive styles... */
 }
