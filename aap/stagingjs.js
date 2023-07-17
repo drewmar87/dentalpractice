@@ -102,8 +102,8 @@ let states = {
 // Step one
 	'stagingStepOne': {
         'question': 'When evaluating the two most severely affected sites of active periodontal-induced Clinical Attachment Loss (CAL), excluding third molars and distal defects in second molars, what is the CAL measurement? However, if these two most severe sites do not fall within a single category, please select the next two most severe sites that do for your assessment.',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Evaluating the degree of clinical attachment loss is a key factor in helping us categorize the patient\'s stage of periodontal disease.',
+        'image': 'images/stage1234.png',
         'answers': [
             { 'text': 'CAL 1-2mm', 'nextState': 'stagingStepTwo', 'savedText': 'CAL 1-2mm', 'hiddenData': 'Stage 1' },
             { 'text': 'CAL 3-4mm', 'nextState': 'stagingStepTwo', 'savedText': 'CAL 3-4mm', 'hiddenData': 'Stage 2' },
@@ -114,20 +114,21 @@ let states = {
 // Step Two
 	'stagingStepTwo': {
         'question': 'When observing the radiographic representation of bone loss, what is your evaluation?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Utilizing radiographic evidence of bone loss reinforces our diagnosis of compromised periodontal health in our patient, indicating the need for periodontal therapy. This approach is crucial in helping us ascertain the stage of the disease.',
+        'image': 'images/rbl.png',
         'answers': [
-            { 'text': 'Horizontal RBL pattern of less than 15%', 'nextState': 'stagingStepThree', 'savedText': 'Horizontal RBL Less than 15%', 'hiddenData': 'Stage 1' },
+            { 'test': 'Do not use RBL in my diagnosis.', 'nextState': 'stagingStepThree', 'savedText': null, 'hiddenData': null },
+	    { 'text': 'Horizontal RBL pattern of less than 15%', 'nextState': 'stagingStepThree', 'savedText': 'Horizontal RBL Less than 15%', 'hiddenData': 'Stage 1' },
             { 'text': 'Horizontal RBL pattern 15-33%', 'nextState': 'stagingStepThree', 'savedText': 'Horizontal RBL between 15-33%', 'hiddenData': 'Stage 2' },
-			{ 'text': 'Horizontal RBL pattern over 33%', 'nextState': 'stagingStepThree', 'savedText': 'Horizontal RBL over 33%', 'hiddenData': 'Stage 3' }
+	    { 'text': 'Horizontal RBL pattern over 33%', 'nextState': 'stagingStepThree', 'savedText': 'Horizontal RBL over 33%', 'hiddenData': 'Stage 3' }
         ]
     },
 
 // Step Three
 	'stagingStepThree': {
         'question': 'When observing tooth loss or planned extractions specifically due to periodontal disease, what is your evaluation?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Observing tooth loss or planned extractions specifically due to periodontal disease is of significant importance. It provides a clear indication of the severity of the condition and helps in planning an effective treatment strategy.',
+        'image': 'images/toothLoss.png',
         'answers': [
             { 'text': 'No tooth loss', 'nextState': 'stagingStepFour', 'savedText': 'No Periodontal Induced Tooth Loss', 'hiddenData': 'Stage 1 or 2' },
             { 'text': '1-4 Teeth', 'nextState': 'stagingStepFour', 'savedText': '1-4 Teeth lost due to Periodontitis', 'hiddenData': 'Stage 3' },
@@ -139,8 +140,8 @@ let states = {
 // Step Four
 	'stagingStepFour': {
         'question': 'When observing periodontal pocketing specifically due to periodontal disease, what is your evaluation?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Examining periodontal pocketing specifically linked to periodontal disease is critically important. It offers key insights into the severity of the disease and assists in tailoring a suitable treatment plan.',
+        'image': 'images/complexity.png',
         'answers': [
             { 'text': '4mm or less pocketing', 'nextState': 'stagingStepFive', 'savedText': 'Max Perio Pockets of 4mm or less', 'hiddenData': 'Stage 1' },
             { 'text': '2 or more sites of active 5mm pocketing', 'nextState': 'stagingStepFive', 'savedText': 'Max Perio Pockets of 5mm or less', 'hiddenData': 'Stage 2 (Consideration Only)' },
@@ -152,8 +153,8 @@ let states = {
 // Step Five
 	'stagingStepFive': {
         'question': 'When observing vertical bone loss specifically due to periodontal disease, what is your evaluation?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'The assessment of vertical bone loss specifically related to periodontal disease is vital. This observation provides substantial information about the severity of the condition, guiding the formulation of an effective treatment approach.',
+        'image': 'images/complexity.png',
         'answers': [
             { 'text': 'No VBL', 'nextState': 'stagingStepSix', 'savedText': 'No Periodontally Induced Vertical Bone Loss', 'hiddenData': null },
             { 'text': 'VBL of 3mm or more', 'nextState': 'stagingStepSix', 'savedText': 'Periodontally Induced VBL', 'hiddenData': 'Stage 3 or 4 (Consideration Only)' }
@@ -164,8 +165,8 @@ let states = {
 // Step Six
 	'stagingStepSix': {
         'question': 'When observing furcation involvement specifically due to periodontal disease, what is your evaluation?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Evaluating furcation involvement specifically associated with periodontal disease is crucial. This observation can give us essential insights into the severity of the disease, assisting in shaping an effective treatment strategy.',
+        'image': 'images/complexity.png',
         'answers': [
             { 'text': 'No Furcation Involvement', 'nextState': 'stagingStepSeven', 'savedText': 'No Periodontally Induced Furcation involvement', 'hiddenData': null },
             { 'text': 'Class 2 or 3 Furcation Involvement', 'nextState': 'stagingStepSeven', 'savedText': 'Periodontally Induced Furcation Involvement', 'hiddenData': 'Stage 3 or 4 (Consideration Only)' }
@@ -175,8 +176,8 @@ let states = {
 // Step Seven
 	'stagingStepSeven': {
         'question': 'Any need for complex rehabilitation due to: Masticatory Dysfunction, less than 10 opposing pairs of teeth, or significant ridge defects?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Assessing the need for complex rehabilitation due to masticatory dysfunction, fewer than 10 pairs of opposing teeth, or significant ridge defects is essential in diagnosing and staging periodontal disease. These factors can indicate the disease\'s impact on oral functionality and structure, providing critical insight into the extent of damage and necessary treatment measures.',
+        'image': 'images/complexity.png',
         'answers': [
             { 'text': 'Yes', 'nextState': 'results', 'savedText': 'No Masticatory Dysfunction Noted', 'hiddenData': null },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'Serious Masticatory Dysfunction noted', 'hiddenData': 'Stage 4 (Consideration Only)' }
