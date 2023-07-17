@@ -72,8 +72,7 @@ let states = {
 // No Perio Maint Question
 	'perioMaintNo': {
         'question': 'Are there at least 2 sites on non-adjacent teeth with the following attributes: BoP, 4+mm pocket depths, and 1+ CAL?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Keep in mind, our goal is to trace patterns of disease. It\'s crucial to ascertain if there are multiple diseased sites involving non-adjacent teeth. Disease characteristics to look for include: bleeding on probing, pocket depths of 4mm or more, and a minimum of 1mm of clinical attachment loss.',
         'answers': [
             { 'text': 'Yes', 'nextState': 'stagingStepOne', 'savedText': '2+ Sites of periodontally active have been noted.', 'hiddenData': 'Proceed to Staging Patient' },
             { 'text': 'No', 'nextState': 'noCAL', 'savedText': 'Patient does NOT have 2+ Sites of periodontally active teeth.', 'hiddenData': 'No Active Periodontits, possible mistake' }
@@ -85,8 +84,7 @@ let states = {
 
 	'perioMaintYesStepTwo': {
         'question': 'Are there at least 2 sites on non-adjacent teeth with the following attributes: BoP, 4+mm pocket depths, and 1+ CAL?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Keep in mind, our goal is to trace patterns of disease. It\'s crucial to ascertain if there are multiple diseased sites involving non-adjacent teeth. Disease characteristics to look for include: bleeding on probing, pocket depths of 4mm or more, and a minimum of 1mm of clinical attachment loss.',
         'answers': [
             { 'text': 'Yes', 'nextState': 'stagingStepOne', 'savedText': 'Multiple areas of periodontal infection noted', 'hiddenData': 'Recurrence of periodontal disease, re-stage patient' },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'Insufficient evidence of periodontal disease recurrence', 'hiddenData': 'Gingivitis on a Reduced Periodontium in a Stable Periodontitis Patient' }
