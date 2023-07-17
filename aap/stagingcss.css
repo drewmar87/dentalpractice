@@ -7,7 +7,9 @@ body {
     font-family: Arial, sans-serif; /* Simple, clean font */
     overflow-x: hidden;
 }
-
+* {
+    box-sizing: border-box;
+}
 }
 
 #savedAnswers {
@@ -39,6 +41,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D look */
     margin-top: 20px; /* Space from the top of the page */
     overflow: hidden; /* To comply with border radius if children overflows */
+    overflow-x: hidden;
 }
 
 #leftColumn {
@@ -225,8 +228,8 @@ Copy code
 }
 
     #leftColumn, #rightColumn {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     #leftColumn *, #rightColumn * {
