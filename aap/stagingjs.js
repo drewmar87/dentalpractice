@@ -4,8 +4,8 @@ let states = {
  //Opening Question
 	'start': {
         'question': 'Does the patient have Clinical Attachment Loss (CAL)?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'The first step in identifying the patient\'s periodontal condition is to identify if the patient has any Clinical Attachment Loss.',
+        'image': 'images/startPicture.png',
         'answers': [
             { 'text': 'Yes', 'nextState': 'yesCAL', 'savedText': 'Patient has clinical attachment loss.', 'hiddenData': 'CAL' },
             { 'text': 'No', 'nextState': 'noCAL', 'savedText': 'Patient does NOT have any clinical attachment loss.', 'hiddenData': 'No Staging' }
