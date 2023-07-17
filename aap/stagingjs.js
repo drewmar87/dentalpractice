@@ -17,7 +17,8 @@ let states = {
 	'noCAL': {
         'question': 'Is there over 10% bleeding on probing (BoP) in the oral cavity?',
 		'info': 'To evaluate the state of the gingival tissue, we must assess the degree of bleeding upon probing. When over 10% of the tissue exhibits bleeding, this indicates gingivitis.',
-        'answers': [
+        	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
+		'answers': [
             { 'text': 'Yes', 'nextState': 'results', 'savedText': 'More than 10% BoP.', 'hiddenData': 'Ginvgivitis on an Intact Periodontium' },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'Less than 10% BoP', 'hiddenData': 'Clinical Gingival Health on an Intact Periodontium' }
         ]
@@ -28,7 +29,8 @@ let states = {
 	'yesCAL': {
         'question': 'Is the clinical attachment loss periodontally induced with at least 2 sites of non-adjacent teeth? (Not including third molars or distal bone defects on second molars from third molar extractions).',
 		'info': 'Staging a patient is about assessing the potential future state of their periodontal health. We do this by identifying recurring patterns. By recognizing two separate infection areas, we can suggest the start of a harmful condition. This enables us to act in advance, making it easier to treat the issue early and keep it under control.',
-        'answers': [
+        	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
+		'answers': [
             { 'text': 'Yes', 'nextState': 'perioCAL', 'savedText': 'CAL is noted to be Periodontally Induced', 'hiddenData': 'Further Investigation' },
             { 'text': 'No', 'nextState': 'notPerioCAL', 'savedText': 'CAL is NOT Periodontally Induced', 'hiddenData': null }
         ]
@@ -39,7 +41,7 @@ let states = {
 	'notPerioCAL': {
         'question': 'Is there over 10% bleeding on probing (BoP) in the oral cavity?',
 		'info': 'To evaluate the state of the gingival tissue, we must assess the degree of bleeding upon probing. When over 10% of the tissue exhibits bleeding, this indicates gingivitis.',
-        'image': 'url_to_image_1',
+        'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
         'answers': [
             { 'text': 'Yes', 'nextState': 'results', 'savedText': 'More than 10% BoP', 'hiddenData': 'Gingivitis on a Reduced Peiodontium in a Non-Periodontitis Patient' },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'Less than 10% BoP', 'hiddenData': 'Clinical Gingival Health on a Reduced Periodontium in a Non-Periodontitis Patient' }
@@ -51,7 +53,8 @@ let states = {
 	'perioCAL': {
         'question': 'Does the patient have a history of periodontal treatment and regular periodontal maintenance?',
 		'info': 'Understanding whether a patient has undergone prior periodontal treatment aids in determining if the infection is new, old, or recurring. Accurate diagnosis is pivotal for effective treatment, which necessitates having as much relevant information as possible.',
-        'answers': [
+        	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
+		'answers': [
             { 'text': 'Yes', 'nextState': 'perioMaintYes', 'savedText': 'Patient has a history of Periodontal Maintenance', 'hiddenData': 'Perio Maintenance' },
             { 'text': 'No', 'nextState': 'perioMaintNo', 'savedText': 'Patient does NOT have a history of Periodontal Maintenance', 'hiddenData': 'Possible evidence of undiagnosed periodontal disease' }
         ]
@@ -63,7 +66,8 @@ let states = {
 	'perioMaintYes': {
         'question': 'Is there over 10% bleeding on probing (BoP) in the oral cavity?',
 		'info': 'To evaluate the state of the gingival tissue, we must assess the degree of bleeding upon probing. When over 10% of the tissue exhibits bleeding, this indicates gingivitis.',
-        'answers': [
+        	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
+		'answers': [
             { 'text': 'Yes', 'nextState': 'perioMaintYesStepTwo', 'savedText': 'More than 10% BoP', 'hiddenData': 'Evidence of possible recurrence of periodontal disease' },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'Less than 10% BoP', 'hiddenData': 'Clinical Gingival Health on a Reduced Periodontium in a Stable Periodontitis Patient' }
         ]
@@ -73,7 +77,8 @@ let states = {
 	'perioMaintNo': {
         'question': 'Are there at least 2 sites on non-adjacent teeth with the following attributes: BoP, 4+mm pocket depths, and 1+ CAL?',
 		'info': 'Keep in mind, our goal is to trace patterns of disease. It\'s crucial to ascertain if there are multiple diseased sites involving non-adjacent teeth. Disease characteristics to look for include: bleeding on probing, pocket depths of 4mm or more, and a minimum of 1mm of clinical attachment loss.',
-        'answers': [
+        	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
+		'answers': [
             { 'text': 'Yes', 'nextState': 'stagingStepOne', 'savedText': '2+ Sites of periodontally active have been noted.', 'hiddenData': 'Proceed to Staging Patient' },
             { 'text': 'No', 'nextState': 'noCAL', 'savedText': 'Patient does NOT have 2+ Sites of periodontally active teeth.', 'hiddenData': 'No Active Periodontits, possible mistake' }
         ]
@@ -85,7 +90,8 @@ let states = {
 	'perioMaintYesStepTwo': {
         'question': 'Are there at least 2 sites on non-adjacent teeth with the following attributes: BoP, 4+mm pocket depths, and 1+ CAL?',
 		'info': 'Keep in mind, our goal is to trace patterns of disease. It\'s crucial to ascertain if there are multiple diseased sites involving non-adjacent teeth. Disease characteristics to look for include: bleeding on probing, pocket depths of 4mm or more, and a minimum of 1mm of clinical attachment loss.',
-        'answers': [
+        	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
+		'answers': [
             { 'text': 'Yes', 'nextState': 'stagingStepOne', 'savedText': 'Multiple areas of periodontal infection noted', 'hiddenData': 'Recurrence of periodontal disease, re-stage patient' },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'Insufficient evidence of periodontal disease recurrence', 'hiddenData': 'Gingivitis on a Reduced Periodontium in a Stable Periodontitis Patient' }
         ]
