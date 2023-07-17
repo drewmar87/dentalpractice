@@ -117,7 +117,7 @@ let states = {
 		'info': 'Utilizing radiographic evidence of bone loss reinforces our diagnosis of compromised periodontal health in our patient, indicating the need for periodontal therapy. This approach is crucial in helping us ascertain the stage of the disease.',
         'image': 'images/rbl.png',
         'answers': [
-            { 'test': 'Do not use RBL in my diagnosis.', 'nextState': 'stagingStepThree', 'savedText': null, 'hiddenData': null },
+            { 'text': 'Do not use RBL in my diagnosis.', 'nextState': 'stagingStepThree', 'savedText': null, 'hiddenData': null },
 	    { 'text': 'Horizontal RBL pattern of less than 15%', 'nextState': 'stagingStepThree', 'savedText': 'Horizontal RBL Less than 15%', 'hiddenData': 'Stage 1' },
             { 'text': 'Horizontal RBL pattern 15-33%', 'nextState': 'stagingStepThree', 'savedText': 'Horizontal RBL between 15-33%', 'hiddenData': 'Stage 2' },
 	    { 'text': 'Horizontal RBL pattern over 33%', 'nextState': 'stagingStepThree', 'savedText': 'Horizontal RBL over 33%', 'hiddenData': 'Stage 3' }
