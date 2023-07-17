@@ -236,6 +236,8 @@ Copy code
         margin-left: 0;
         margin-right: 0;
     }
-
+h1 {
+	text-align: center;
+}
     /* More responsive styles... */
 }
