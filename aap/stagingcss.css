@@ -5,6 +5,9 @@ body {
     width: 100%;
     background-color: #f7f7f7; /* Light grey background */
     font-family: Arial, sans-serif; /* Simple, clean font */
+    overflow-x: hidden;
+}
+
 }
 
 #savedAnswers {
@@ -29,8 +32,8 @@ body {
 
 #mainContainer {
     display: flex;
-    width: 90%; /* Not full width for better look */
-    max-width: 1200px; /* Limit maximum width */
+    width: 85%; /* Not full width for better look */
+    max-width: 85%; /* Limit maximum width */
     border: 1px solid #e1e1e1; /* Softer border color */
     border-radius: 5px; /* Slight roundness for the container */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D look */
@@ -204,6 +207,9 @@ Copy code
 @media only screen and (max-width: 480px) {
     #mainContainer {
         flex-direction: column-reverse;
+         overflow-x: hidden;
+    }
+
     }
 
     #leftColumn, #rightColumn {
