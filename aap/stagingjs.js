@@ -186,6 +186,7 @@ let states = {
 // RESULTS
 	'results': {
         'question': 'Click -Finish- to get your results',
+	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
         'answers': [
             { 'text': 'Finish', 'nextState': 'end'},
         ]
