@@ -43,7 +43,7 @@ let states = {
 		'info': 'To evaluate the state of the gingival tissue, we must assess the degree of bleeding upon probing. When over 10% of the tissue exhibits bleeding, this indicates gingivitis.',
         'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
         'answers': [
-            { 'text': 'Yes', 'nextState': 'results', 'savedText': 'More than 10% BoP', 'hiddenData': 'Gingivitis on a Reduced Peiodontium in a Non-Periodontitis Patient' },
+            { 'text': 'Yes', 'nextState': 'results', 'savedText': 'More than 10% BoP', 'hiddenData': 'Gingivitis on a Reduced Periodontium in a Non-Periodontitis Patient' },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'Less than 10% BoP', 'hiddenData': 'Clinical Gingival Health on a Reduced Periodontium in a Non-Periodontitis Patient' }
         ]
     },
