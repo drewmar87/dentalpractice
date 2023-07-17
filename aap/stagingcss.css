@@ -206,12 +206,14 @@ Copy code
         flex-direction: column-reverse;
     }
 
-    #leftColumn {
-        padding: 5px;
+    #leftColumn, #rightColumn {
+        padding-left: 0;
+        padding-right: 0;
     }
 
-    #rightColumn {
-        padding: 5px;
+    #leftColumn *, #rightColumn * {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     /* More responsive styles... */
