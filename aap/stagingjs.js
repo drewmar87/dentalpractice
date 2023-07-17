@@ -16,8 +16,7 @@ let states = {
 	
 	'noCAL': {
         'question': 'Is there over 10% bleeding on probing (BoP) in the oral cavity?',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'To evaluate the state of the gingival tissue, we must assess the degree of bleeding upon probing. When over 10% of the tissue exhibits bleeding, this indicates gingivitis.',
         'answers': [
             { 'text': 'Yes', 'nextState': 'results', 'savedText': 'More than 10% BoP.', 'hiddenData': 'Ginvgivitis on an Intact Periodontium' },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'Less than 10% BoP', 'hiddenData': 'Clinical Gingival Health on an Intact Periodontium' }
@@ -28,8 +27,7 @@ let states = {
 	
 	'yesCAL': {
         'question': 'Is the clinical attachment loss periodontally induced with at least 2 sites of non-adjacent teeth? (Not including third molars or distal bone defects on second molars from third molar extractions).',
-		'info': 'Info goes here',
-        'image': 'url_to_image_1',
+		'info': 'Staging a patient is about assessing the potential future state of their periodontal health. We do this by identifying recurring patterns. By recognizing two separate infection areas, we can suggest the start of a harmful condition. This enables us to act in advance, making it easier to treat the issue early and keep it under control.',
         'answers': [
             { 'text': 'Yes', 'nextState': 'perioCAL', 'savedText': 'CAL is noted to be Periodontally Induced', 'hiddenData': 'Further Investigation' },
             { 'text': 'No', 'nextState': 'notPerioCAL', 'savedText': 'CAL is NOT Periodontally Induced', 'hiddenData': null }
