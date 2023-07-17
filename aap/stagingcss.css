@@ -2,7 +2,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     background-color: #f7f7f7; /* Light grey background */
     font-family: Arial, sans-serif; /* Simple, clean font */
     overflow-x: hidden;
