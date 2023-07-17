@@ -233,6 +233,7 @@ h1 {
 }
  .backButton {
         padding: 15px 32px;
+	 width: 100%;
     }
     /* More responsive styles... */
 }
