@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+	background-color: rgba(191, 205, 224, .15);
+    }
+
+    h1, h2, h3 {
+        color: #404040;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #a399c2;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.tab-button:active {
+    transform: scale(0.9);
+}
+
+    .tab-content {
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #5d5d81;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        left: 100%;
+        top: 50%;
+        margin-top: -30px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext,
+    .highlighted .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Styling for table */
+    table {
+        width: auto;
+        border-collapse: collapse;
+        border: 0px solid #999999;
+        margin-bottom: 20px;
+	margin-left: 20px;
+    }
+
+    th, td {
+        padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+        text-align: left;
+        border-bottom: 1px dotted #999999;
+        width: 100%;
+    }
+
+    th {
+        background-color: #a399c2;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+    tr:hover {
+        background-color: #bfcde0;
+        color: 000505;
+    }
+
+</style>
+
+</head>
+<body>
+    <h1>In Person Activities</h1>
+
+    <div class="tabs">
+	<div id="tab1-button" class="tab-button" onclick="changeTab('tab1')">Tuesday</div>
+        <div id="tab2-button" class="tab-button" onclick="changeTab('tab2')">Wednesday</div>
+        <div id="tab3-button" class="tab-button" onclick="changeTab('tab3')">Friday</div>
+    </div>
+
+
+<!-- TAB 1 -->
+
+<div id="tab1" class="tab-content">
+    <h2>DAS 113 – Day 2 In Person Overview (8/22/23)</h2>
+    <p>Hello Everyone,</p>
+    <p>Day 2 of DAS 113 and we're exploring into the world of dentistry in DAS 113! Today's focus is on Infection Prevention and Disease Transmission. Let's take a glimpse at our itinerary:</p>
+    <ul>
+        <li><strong>Introduction</strong> - Begin with the significance of infection control in dentistry. We'll have a compelling presentation highlighting real-world implications of poor infection control. </li>
+        <li><strong>Disease Transmission</strong> - We'll learn about the main ways diseases can spread in a dental environment. Stay alert for a group activity on identifying types of disease transmission in dental scenarios.</li>
+        <li><strong>Personal Protective Equipment (PPE)</strong> - Ever wondered about the right way to wear and remove gloves, masks, and gowns? A comprehensive presentation on PPE awaits you, followed by a hands-on demonstration.</li>
+        <li><strong>Hand Hygiene</strong> - An essential element of infection control, we'll discuss the when, why, and how of proper hand hygiene, further deepening your practical skills.</li>
+        <li><strong>Wrap-Up & Look Ahead</strong> - Recap of today's key lessons, a quick quiz to consolidate learning, and a Q&A session to clarify any doubts. A preview of our next class will also be provided.</li>
+    </ul>
+    <p>I look forward to seeing everyone's active participation. Let's make Day 2 another great class!</p>
+    <p>Best,</p>
+    <p>Andrew Margarit</p>
+</div>
+
+
+
+
+<!-- TAB 2 -->
+
+<div id="tab2" class="tab-content">
+    <h2>DAS 113 – Day 3 In Person Overview (8/23/23)</h2>
+    <p>Hello Everyone,</p>
+    <p>Day 3 of DAS 113 and we're diving into the principles and techniques of Disinfection, Instrument Processing and Sterilizing. Here's what we've planned:</p>
+    <ul>
+        <li><strong>Classroom Session</strong> - A comprehensive theoretical dive including:</li>
+        <ul>
+            <li>Introduction - Understanding the importance of disinfection and sterilization in a dental clinic.</li>
+            <li>Principles of Disinfection - Unraveling the types and functions of disinfectants.</li>
+            <li>Techniques of Instrument Processing - Exploring manual cleaning, ultrasonic cleaners, and instrument washers.</li>
+            <li>Sterilizing Techniques - Learning about the role of autoclaves, dry heat sterilizers, and chemical vapor sterilizers.</li>
+            <li>Overview of Infection Control - A primer on the correct use of personal protective equipment and key infection control practices.</li>
+        </ul>
+        <li><strong>Clinic Session</strong> - A hands-on experience covering:</li>
+        <ul>
+            <li>Operatory Setup and Tear Down - Real-life training on operatory setup and tear down, emphasizing on disinfectant use and proper handling of items.</li>
+            <li>Instrument Processing and Sterilizing - A live demonstration of cleaning instruments, autoclave operation and safety precautions.</li>
+            <li>End-of-Day Cleanup and Infection Control - Mastering the post-treatment cleanup and routine maintenance of sterilization equipment.</li>
+        </ul>
+        <li><strong>Wrap-Up & Look Ahead</strong> - Recap, common mistakes and best practices discussion, a Q&A session, and a preview of our next class.</li>
+    </ul>
+    <p>Looking forward to your active participation as we learn and grow together!</p>
+    <p>Best,</p>
+    <p>Andrew Margarit</p>
+</div>
+
+
+
+
+
+<!-- TAB 3 -->
+
+
+<div id="tab3" class="tab-content">
+    <h2>DAS 113 – Day 4 In Person Overview (8/25/23)</h2>
+    <p>Hello Everyone,</p>
+    <p>Day 4 of DAS 113 is here! Today we are going to explore the world of Regulatory and Advisory Agencies in Dentistry. Here's a quick overview of our day:</p>
+    <ul>
+        <li><strong>Lecture on Regulatory and Advisory Agencies</strong> - A detailed discussion on various dental advisory and regulatory agencies and their respective roles and functions.</li>
+        <li><strong>Game: Guess the Agency</strong> - A fun and interactive group activity where you'll get a chance to delve deeper into the functions and characteristics of various dental agencies. The game includes:</li>
+        <ul>
+            <li>Setup and Agency Assignment</li>
+            <li>Research Phase - A deep dive into your assigned agency</li>
+            <li>Question Phase - A chance to test the knowledge of other groups</li>
+            <li>Deliberation and Reveal Phase - Time to guess the agencies of other groups</li>
+            <li>Scoring and Debrief - Correct guesses and clarifications</li>
+        </ul>
+        <li><strong>Kahoot on Regulatory and Advisory Agencies</strong> - An exciting quiz session to test and reinforce your knowledge about various dental regulatory and advisory agencies.</li>
+        <li><strong>Wrap-Up & Look Ahead</strong> - Recap of the day's lessons, a Q&A session, and a sneak peek into our next class.</li>
+    </ul>
+    <p>I am excited to learn and have fun with you all today! Let's make Day 4 another memorable day!</p>
+    <p>Best,</p>
+    <p>Andrew Margarit</p>
+</div>
+
+
+    <script>
+        function changeTab(tabId) {
+            // hide all tabs
+            document.getElementById('tab1').classList.add('hidden');
+            document.getElementById('tab2').classList.add('hidden');
+            document.getElementById('tab3').classList.add('hidden');
+
+            // show selected tab
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        // initialize first tab
+        changeTab('tab1');
+
+        // Add event listeners to highlight and remove highlight on table cells
+        var objectives = document.getElementsByClassName('objective');
+        for (var i = 0; i < objectives.length; i++) {
+            objectives[i].addEventListener('mouseover', function () {
+                this.classList.add('highlighted');
+            });
+            objectives[i].addEventListener('mouseout', function () {
+                this.classList.remove('highlighted');
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>
