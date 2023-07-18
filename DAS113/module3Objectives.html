@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+	background-color: rgba(191, 205, 224, .15);
+    }
+
+    h1, h2, h3 {
+        color: #404040;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #a399c2;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.tab-button:active {
+    transform: scale(0.9);
+}
+
+    .tab-content {
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #5d5d81;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%; /* Position it above the parent element */
+        right: 0%; /* Position it to the left of the parent element */
+        margin-bottom: 5px; /* Add some space above the tooltip */
+        margin-right: 5px; /* Add some space to the left of the tooltip */
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext,
+    .highlighted .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Styling for table */
+    table {
+        width: auto;
+        border-collapse: collapse;
+        border: 0px solid #999999;
+        margin-bottom: 20px;
+	margin-left: 20px;
+    }
+
+    th, td {
+        padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+        text-align: left;
+        border-bottom: 1px dotted #999999;
+        width: 100%;
+    }
+
+    th {
+        background-color: #a399c2;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+    tr:hover {
+        background-color: #bfcde0;
+        color: 000505;
+    }
+
+</style>
+
+</head>
+<body>
+    <h1>Module Objectives</h1>
+
+    <div class="tabs">
+        <div id="tab1-button" class="tab-button" onclick="changeTab('tab1')">Chapter 23</div> 
+        <div id="tab2-button" class="tab-button" onclick="changeTab('tab2')">Chapter 25</div>
+        <div id="tab3-button" class="tab-button" onclick="changeTab('tab3')">Chapter 27</div>
+    </div>
+
+
+<!-- TAB 1 -->
+
+    <div id="tab1" class="tab-content">
+    <h2>Chapter 19: History of Dentistry<br>Tuesday 8/22/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+
+<tr>
+    <td class="objective tooltip">
+        <div>1. Pronounce, define, and spell the key terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>2. Explain the exposure to diseases in the dental setting.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;2a. Describe the importance of the Centers for Disease Control (CDC).</div>
+        <span class="tooltiptext">Objective 2a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>3. Summarize how the links of the chain of infection must be present.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3a. Define pathogen as it relates to being an infectious agent.</div>
+        <span class="tooltiptext">Objective 3a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3b. Give examples of reservoirs where microorganisms live.</div>
+        <span class="tooltiptext">Objective 3b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3c. List portal of entry and exit for a pathogen to enter and leave the body.</div>
+        <span class="tooltiptext">Objective 3c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3d. Define susceptible host for infection.</div>
+        <span class="tooltiptext">Objective 3d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3e. List and give examples of the modes of disease transmission.</div>
+        <span class="tooltiptext">Objective 3e Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>4. Discuss how infection can follow a different course.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4a. Define acute infection and provide examples.</div>
+        <span class="tooltiptext">Objective 4a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4b. Define chronic infection and provide examples.</div>
+        <span class="tooltiptext">Objective 4b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4c. Define latent infection and provide examples.</div>
+        <span class="tooltiptext">Objective 4c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4d. Define opportunistic infection and provide examples.</div>
+        <span class="tooltiptext">Objective 4d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>5. Explain the immune system and differentiate the types of immunity.</div>
+        <span class="tooltiptext">Objective 5 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5a. Define naturally acquired immunity.</div>
+        <span class="tooltiptext">Objective 5a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5b. Define artificially acquired immunity.</div>
+        <span class="tooltiptext">Objective 5b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>6. Explain how the dental team is better prepared to minimize disease transmission in the dental office.</div>
+        <span class="tooltiptext">Objective 6 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6a. Give examples of how disease transmission is prevented from patient to dental team.</div>
+        <span class="tooltiptext">Objective 6a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6b. Give examples of how disease transmission is prevented from dental team to patient.</div>
+        <span class="tooltiptext">Objective 6b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6c. Give examples of how disease transmission is prevented from patient to patient.</div>
+        <span class="tooltiptext">Objective 6c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6d. Give examples of how disease transmission is prevented from dental office to community.</div>
+        <span class="tooltiptext">Objective 6d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6e. Give examples of how disease transmission is prevented from community to dental office to patient.</div>
+        <span class="tooltiptext">Objective 6e Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>7. Summarize the Occupational Safety and Health Administration Blood-Borne Pathogens Standard and its importance in infection control in the dental office.</div>
+        <span class="tooltiptext">Objective 7 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7a. Differentiate between standard and universal precautions used in the dental setting.</div>
+        <span class="tooltiptext">Objective 7a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>8. Summarize the goal of an infection control program in the dental setting.</div>
+        <span class="tooltiptext">Objective 8 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;8a. Define the term hand hygiene and how it is used to reduce infections.</div>
+        <span class="tooltiptext">Objective 8a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;8b. Give examples of what is included as personal protective equipment (PPE).</div>
+        <span class="tooltiptext">Objective 8b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;8c. Cite the purpose of protective clothing used in the dental setting.</div>
+        <span class="tooltiptext">Objective 8c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;8d. Categorize the three levels of masks used in the dental setting.</div>
+        <span class="tooltiptext">Objective 8d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;8e. Identify the types of protective eyewear used in the dental setting.</div>
+        <span class="tooltiptext">Objective 8e Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;8f. List the four types of gloves commonly used in the dental setting.</div>
+        <span class="tooltiptext">Objective 8f Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;8g. Categorize the three common allergic reactions to latex.</div>
+        <span class="tooltiptext">Objective 8g Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>9. Discuss the different types of hi-tech dental equipment to consider utilizing with disinfection and sterilization.</div>
+        <span class="tooltiptext">Objective 9 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;9a. Identify semi-critical items the CDC recommends following infection control protocol.</div>
+        <span class="tooltiptext">Objective 9a Description</span>
+    </td>
+</tr>
+
+
+
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 2:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 2:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+    </div>
+
+
+
+<!-- TAB 2 -->
+
+<div id="tab2" class="tab-content hidden">
+    <h2>Chapter 20: History of Dentistry<br>Tuesday 8/22/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+
+<tr>
+    <td class="objective tooltip">
+        <div>1. Pronounce, define, and spell the key terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>2. Summarize the importance of the disinfection process in the dental setting.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>3. Summarize the Centers for Disease Control and Prevention (CDC) guidelines for managing environmental surfaces in the dental setting.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3a. List the two types of surfaces in relation to the dental team and patient exposure.</div>
+        <span class="tooltiptext">Objective 3a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3b. Give the 2 methods used and explain methods to prevent a surface from contamination.</div>
+        <span class="tooltiptext">Objective 3b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3c. Give examples of single-use disposable items.</div>
+        <span class="tooltiptext">Objective 3c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>4. Differentiate between precleaning and disinfection and describe their importance.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4a. Describe the purpose of precleaning before disinfecting.</div>
+        <span class="tooltiptext">Objective 4a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4b. Define disinfection.</div>
+        <span class="tooltiptext">Objective 4b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4c. Differentiate between high, intermediate, and low-level disinfectants.</div>
+        <span class="tooltiptext">Objective 4c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4d. Describe the purpose of immersion disinfectants and the precautions taken when using them.</div>
+        <span class="tooltiptext">Objective 4d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>5. Describe how the use of a high-volume evacuation system reduces contamination of the dental team and clinical surfaces.</div>
+        <span class="tooltiptext">Objective 5 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5a. Describe the purpose of a trap in the evacuation system and steps in changing.</div>
+        <span class="tooltiptext">Objective 5a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>6. Describe the Centers for Disease Control and Prevention guidelines for disinfecting housekeeping surfaces.</div>
+        <span class="tooltiptext">Objective 6 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6a. Explain why carpeting and cloth are not recommended in the clinical area.</div>
+        <span class="tooltiptext">Objective 6a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6b. Give the steps in cleaning blood or a body substance from a surface.</div>
+        <span class="tooltiptext">Objective 6b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>7. Describe green infection control measures that can be taken in the dental office.</div>
+        <span class="tooltiptext">Objective 7 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7a. Explain how changing to digital patient records can improve greener infection control.</div>
+        <span class="tooltiptext">Objective 7a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7b. Explain how changing to digital radiology can improve greener infection control.</div>
+        <span class="tooltiptext">Objective 7b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7c. Name a personal protective attire that can improve greener infection control.</div>
+        <span class="tooltiptext">Objective 7c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7d. Discuss the challenges with the attempt to go greener with the use of surface barriers and disinfection.</div>
+        <span class="tooltiptext">Objective 7d Description</span>
+    </td>
+</tr>
+
+
+
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 2:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 2:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+
+    </div>
+
+
+
+
+<!-- TAB 3 -->
+
+
+    <div id="tab3" class="tab-content hidden">
+            <h2>Chapter 21: History of Dentistry<br>Wednesday 8/23/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+<tr>
+    <td class="objective tooltip">
+        <div>1. Pronounce, define, and spell the key terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>2. Summarize the seven steps involved in processing contaminated instruments.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>3. Explain how instruments and procedures are categorized for potential risk of infection.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3a. Name items that are considered critical instruments.</div>
+        <span class="tooltiptext">Objective 3a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3b. Name items that are considered semicritical instruments.</div>
+        <span class="tooltiptext">Objective 3b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3c. Name items that are considered noncritical instruments.</div>
+        <span class="tooltiptext">Objective 3c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3d. Name personal protective equipment to be worn during instrument processing.</div>
+        <span class="tooltiptext">Objective 3d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>4. Summarize how contaminated instruments and clinical supplies are transported and processed.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4a. Describe the layout of an ideal instrument processing area.</div>
+        <span class="tooltiptext">Objective 4a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4b. List the four rules of workflow pattern that should be used in the processing area.</div>
+        <span class="tooltiptext">Objective 4b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4c. Describe the contaminated portion of the instrument processing area.</div>
+        <span class="tooltiptext">Objective 4c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4d. Discuss what the preparation portion of the instrument process area is used for.</div>
+        <span class="tooltiptext">Objective 4d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>5. Describe the Centers for Disease Control and Prevention (CDC) guidelines for preparing and packaging instruments for sterilization.</div>
+        <span class="tooltiptext">Objective 5 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5a. Describe the purpose of a holding solution for contaminated instruments.</div>
+        <span class="tooltiptext">Objective 5a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5b. Describe the purpose and use of the ultrasonic cleaner and the safety precautions that are necessary when one is operating an ultrasonic cleaner.</div>
+        <span class="tooltiptext">Objective 5b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5c. Explain the purpose and use of the automated washers.</div>
+        <span class="tooltiptext">Objective 5c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5d. Explain the purpose and process of drying, lubrication, and corrosion control for instruments and burs.</div>
+        <span class="tooltiptext">Objective 5d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5e. Explain the CDC guidelines for packing instruments and the materials used.</div>
+        <span class="tooltiptext">Objective 5e Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5f. Describe the CDC guidelines for unwrapped instruments.</div>
+        <span class="tooltiptext">Objective 5f Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>6. Summarize the different methods of sterilization in the dental office.</div>
+        <span class="tooltiptext">Objective 6 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6a. Describe how steam sterilization operates and its advantages and disadvantages.</div>
+        <span class="tooltiptext">Objective 6a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6b. Describe flash sterilization and its advantages and disadvantages.</div>
+        <span class="tooltiptext">Objective 6b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6c. Describe unsaturated chemical vapor sterilization and its advantages and disadvantages.</div>
+        <span class="tooltiptext">Objective 6c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6d. Describe dry heat sterilization and the advantages and disadvantages.</div>
+        <span class="tooltiptext">Objective 6d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6e. Describe ethylene oxide sterilization and the advantages and disadvantages.</div>
+        <span class="tooltiptext">Objective 6e Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6f. Describe liquid chemical sterilants and the advantages and disadvantages.</div>
+        <span class="tooltiptext">Objective 6f Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6g. List the common sterilization error that can affect the process.</div>
+        <span class="tooltiptext">Objective 6g Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>7. Summarize the importance of sterilization monitoring.</div>
+        <span class="tooltiptext">Objective 7 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7a. Explain how to physically monitor a sterilizer.</div>
+        <span class="tooltiptext">Objective 7a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7b. Explain chemical monitoring both external and internal.</div>
+        <span class="tooltiptext">Objective 7b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7c. Explain biologic monitoring and the different types of spore testing.</div>
+        <span class="tooltiptext">Objective 7c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>8. Describe the process of dental handpiece sterilization.</div>
+        <span class="tooltiptext">Objective 8 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;8a. List the steps in how to flush dental handpieces and the purpose.</div>
+        <span class="tooltiptext">Objective 8a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;8b. Explain the sterilization techniques used for dental handpieces.</div>
+        <span class="tooltiptext">Objective 8b Description</span>
+    </td>
+</tr>
+
+
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 1:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 1:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+
+    </div>
+
+
+
+
+
+
+<!-- TAB 4 -->
+
+
+    <div id="tab4" class="tab-content hidden">
+            <h2>Chapter 22: History of Dentistry<br>Friday 8/25/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+<tr>
+    <td class="objective tooltip">
+        <div>1. Pronounce, define, and spell the key terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>2. Summarize the difference between regulatory and non-regulatory agencies.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;2a. List the professional associations and organizations involved in dental regulatory and advisory agendas.</div>
+        <span class="tooltiptext">Objective 2a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;2b. Identify the professional associations and organizations involved in the health and safety of the dental team and the patients they serve.</div>
+        <span class="tooltiptext">Objective 2b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>3. Discuss the government agencies involved in the health and safety of the dental community.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3a. Explain the role of the Food and Drug Administration (FDA) in the dental setting.</div>
+        <span class="tooltiptext">Objective 3a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3b. Explain the role of the Environmental Protection Agency (EPA) in the dental setting.</div>
+        <span class="tooltiptext">Objective 3b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3c. Explain the role of the National Institute of Health (NIH) in the dental setting.</div>
+        <span class="tooltiptext">Objective 3c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3d. Explain the role of the National Institute of Dental and Craniofacial Research (NIDCR) in the dental setting.</div>
+        <span class="tooltiptext">Objective 3d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3e. Explain the role of the National Institute for Occupational Safety and Health (NIOSH) in the dental setting.</div>
+        <span class="tooltiptext">Objective 3e Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3f. Explain the role of the Public Health Agency of Canada (PHAC) in the dental setting.</div>
+        <span class="tooltiptext">Objective 3f Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3g. Explain the role of the Centers for Disease Control (CDC) in the dental setting.</div>
+        <span class="tooltiptext">Objective 3g Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3h. Explain the role of the Occupational Safety and Health Administration (OSHA) in the dental setting.</div>
+        <span class="tooltiptext">Objective 3h Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3i. Identify the roles and responsibilities of the CDC and OSHA in infection control in the dental setting.</div>
+        <span class="tooltiptext">Objective 3i Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3j. Explain post-exposure management after an exposure incident.</div>
+        <span class="tooltiptext">Objective 3j Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3k. Explain employee training requirements.</div>
+        <span class="tooltiptext">Objective 3k Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3l. Describe the hepatitis B immunization requirements for all employees.</div>
+        <span class="tooltiptext">Objective 3l Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>4. Describe the OSHA Hazard Communication Program.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4a. Explain the Hazard Communication Written program requirements.</div>
+        <span class="tooltiptext">Objective 4a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4b. Discuss when an employee is required to update their hazard communication training.</div>
+        <span class="tooltiptext">Objective 4b Description</span>
+    </td>
+</tr>
+
+
+
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 1:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 1:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+
+    </div>
+
+
+
+
+
+
+    <script>
+        function changeTab(tabId) {
+            // hide all tabs
+            document.getElementById('tab1').classList.add('hidden');
+            document.getElementById('tab2').classList.add('hidden');
+            document.getElementById('tab3').classList.add('hidden');
+            document.getElementById('tab4').classList.add('hidden');
+
+            // show selected tab
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        // initialize first tab
+        changeTab('tab1');
+
+        // Add event listeners to highlight and remove highlight on table cells
+        var objectives = document.getElementsByClassName('objective');
+        for (var i = 0; i < objectives.length; i++) {
+            objectives[i].addEventListener('mouseover', function () {
+                this.classList.add('highlighted');
+            });
+            objectives[i].addEventListener('mouseout', function () {
+                this.classList.remove('highlighted');
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>
