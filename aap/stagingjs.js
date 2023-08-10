@@ -303,9 +303,9 @@ function showResults() {
         'Clinical Gingival Health on a Reduced Periodontium in a Non-Periodontitis Patient': 0,
         'Possible evidence of undiagnosed periodontal disease': -1,
         'Proceed to Staging Patient': .94,
-        'No Active Periodontal Pockets': -1,
+        //'No Active Periodontal Pockets': -1,
         'Recurrence of periodontal disease, re-stage patient': .94,
-        'Gingivitis on a Reduced Periodontium in a Stable Periodontitis Patient': 0,
+        'Gingivitis on a Reduced Periodontium in a Stable Periodontitis Patient': .94,
         'Stage 1 (Consideration Only)': .96,
         'Stage 2 (Consideration Only)': .97,
         'Stage 3 or 4 (Consideration Only)': .98,
@@ -326,7 +326,8 @@ function showResults() {
         "CAL",
         "Further Investigation",
         "Evidence of possible recurrence of periodontal disease",
-        "Perio Maintenance"
+        "Perio Maintenance",
+	"No Active Periodontal Pockets"
     ];
 
     var userAnswers = [];
