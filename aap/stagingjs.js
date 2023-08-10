@@ -80,7 +80,7 @@ let states = {
         	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
 		'answers': [
             { 'text': 'Yes', 'nextState': 'stagingStepOne', 'savedText': '2+ Sites of periodontally active have been noted.', 'hiddenData': 'Proceed to Staging Patient' },
-            { 'text': 'No', 'nextState': 'noCAL', 'savedText': 'Patient does NOT have 2+ Sites of periodontally active teeth.', 'hiddenData': 'No Active Periodontal Pockets' }
+            { 'text': 'No', 'nextState': 'perioMaintYes', 'savedText': 'Patient does NOT have 2+ Sites of periodontally active teeth.', 'hiddenData': 'No Active Periodontal Pockets' }
         ]
     },
 
