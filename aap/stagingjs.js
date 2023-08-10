@@ -80,7 +80,7 @@ let states = {
         	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
 		'answers': [
             { 'text': 'Yes', 'nextState': 'stagingStepOne', 'savedText': '2+ Sites of periodontally active have been noted.', 'hiddenData': 'Proceed to Staging Patient' },
-            { 'text': 'No', 'nextState': 'noCAL', 'savedText': 'Patient does NOT have 2+ Sites of periodontally active teeth.', 'hiddenData': 'No Active Periodontits, possible mistake' }
+            { 'text': 'No', 'nextState': 'noCAL', 'savedText': 'Patient does NOT have 2+ Sites of periodontally active teeth.', 'hiddenData': 'No Active Periodontal Pockets' }
         ]
     },
 
@@ -303,7 +303,7 @@ function showResults() {
         'Clinical Gingival Health on a Reduced Periodontium in a Non-Periodontitis Patient': 0,
    //     'Possible evidence of undiagnosed periodontal disease': .94,
         'Proceed to Staging Patient': .94,
-        'No Active Periodontits, possible mistake': .94,
+    //    'No Active Periodontits, possible mistake': .94,
         'Recurrence of periodontal disease, re-stage patient': .94,
         'Gingivitis on a Reduced Periodontium in a Stable Periodontitis Patient': 0,
         'Stage 1 (Consideration Only)': .96,
