@@ -301,7 +301,7 @@ function showResults() {
         'Clinical Gingival Health on an Intact Periodontium': 0,
         'Gingivitis on a Reduced Periodontium in a Non-Periodontitis Patient': 0,
         'Clinical Gingival Health on a Reduced Periodontium in a Non-Periodontitis Patient': 0,
-        'Possible evidence of undiagnosed periodontal disease': .94,
+   //     'Possible evidence of undiagnosed periodontal disease': .94,
         'Proceed to Staging Patient': .94,
         'No Active Periodontits, possible mistake': .94,
         'Recurrence of periodontal disease, re-stage patient': .94,
