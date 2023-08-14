@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+	background-color: rgba(191, 205, 224, .15);
+    }
+
+    h1, h2, h3 {
+        color: #404040;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #a399c2;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.tab-button:active {
+    transform: scale(0.9);
+}
+
+    .tab-content {
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #5d5d81;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        left: 100%;
+        top: 50%;
+        margin-top: -30px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext,
+    .highlighted .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Styling for table */
+    table {
+        width: auto;
+        border-collapse: collapse;
+        border: 0px solid #999999;
+        margin-bottom: 20px;
+	margin-left: 20px;
+    }
+
+    th, td {
+        padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+        text-align: left;
+        border-bottom: 1px dotted #999999;
+        width: 100%;
+    }
+
+    th {
+        background-color: #a399c2;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+    tr:hover {
+        background-color: #bfcde0;
+        color: 000505;
+    }
+
+</style>
+
+</head>
+<body>
+    <h1>In Person Activities</h1>
+
+    <div class="tabs">
+	<div id="tab1-button" class="tab-button" onclick="changeTab('tab1')">Tuesday</div>
+        <div id="tab2-button" class="tab-button" onclick="changeTab('tab2')">Wednesday</div>
+        <div id="tab3-button" class="tab-button" onclick="changeTab('tab3')">Friday</div>
+    </div>
+
+
+<!-- TAB 1 -->
+
+<div id="tab1" class="tab-content">
+    <h2>DAS 113 – Day 5 In Person Overview (8/29/23)</h2>
+    <p>Hello Everyone,</p>
+    <p>We're moving forward in DAS 113 with an interesting focus today: Understanding and Applying Safety Data Sheets in Dentistry. Let's take a look at what we have in store:</p>
+    <ul>
+        <li><strong>Introduction to Chemical and Waste Management (SDS)</strong> - We'll start with a brief overview of what an SDS is, its significance, and how to interpret it. A detailed walk-through of the 16 sections of an SDS and the information they provide will be the key highlight.</li>
+        <li><strong>Interpreting SDS Sections Activity</strong> - You'll get hands-on experience with an SDS for CaviCide and a blank hazard label. This will be followed by a group discussion where you can compare your results, discuss any challenges you faced, and rectify any mistakes.</li>
+        <li><strong>Activity: Dental Tray Waste Identification and Disposal</strong> - A simulated activity where you'll identify different types of waste on a dental tray and decide the correct disposal method for each type. This will be followed by a comprehensive group discussion to explain your reasoning and to learn from each other.</li>
+        <li><strong>Kahoot on Safety Data Sheets</strong> - We'll conclude the class with a fun and engaging Kahoot game to test your understanding of SDSs and how to interpret them. Remember, the questions will be based on the information in the SDSs used in class!</li>
+        <li><strong>Wrap-Up</strong> - We'll review the main points from the lesson, answer any remaining questions, and announce any assignments or readings for the next class.</li>
+    </ul>
+    <p>Looking forward to your active participation in today's class. Let's make Day 5 an insightful session!</p>
+    <p>Best,</p>
+    <p>Andrew Margarit</p>
+</div>
+
+
+
+
+<!-- TAB 2 -->
+
+<div id="tab2" class="tab-content">
+    <h2>DAS 113 – Day 6 In Person Overview (8/30/23)</h2>
+    <p>Hello Everyone,</p>
+    <p>Welcome to Day 6 of DAS 113! Today we're delving into an essential topic in dental assisting - Ergonomics and Vitals. Here's an outline of what we'll be doing today:</p>
+    <ul>
+        <li><strong>Ergonomics in Dental Assisting</strong> - We'll begin by understanding the importance of good posture and ergonomics in the dental office. We'll be using a PowerPoint presentation, and I'll show you some video examples of correct and incorrect ergonomic practices. You will also get the chance to practice correct postures and positions with the help of dental chairs.</li>
+        <li><strong>Break</strong></li>
+        <li><strong>Vital Signs in Dental Assisting</strong> - Moving on, we'll learn how to accurately measure and record patients' vital signs. This segment will be a blend of PowerPoint presentations, informative videos, and hands-on practice using blood pressure cuffs, pulse oximeters, and thermometers. Make sure to engage fully during the practical session!</li>
+	<li><strong>Kahoot on Vitals and Ergonomics</strong> - At the end we'll follow with a Kahoot to go over what we've learned today and help reinforce key take-a-ways.</li>   
+        <li><strong>Discussion and Reflection</strong> - We'll wrap up the class by summarizing the main takeaways from the lesson and answering any questions that you may have. This is a good opportunity to clarify your doubts and understand the practical implications of what you've learned.</li>
+    </ul>
+    <p>I look forward to seeing everyone's active involvement. Let's make Day 6 a productive learning experience!</p>
+    <p>Best,</p>
+    <p>Andrew Margarit</p>
+</div>
+
+
+
+
+
+<!-- TAB 3 -->
+
+
+<div id="tab3" class="tab-content">
+    <h2>DAS 113 – Day 7 Exam 1 Overview (9/1/23)</h2>
+    <p>Hello Everyone,</p>
+    <p>We're fast approaching our first examination in DAS 113! The exam will cover key topics we've studied so far, focusing on both theoretical knowledge and practical skills. Let's break down what to expect:</p>
+    <ul>
+        <li><strong>Chapter 1: History of Dentistry</strong> - An overview of the historical context and evolution of dentistry.</li>
+        <li><strong>Chapter 19: Disease Transmission and Infection Prevention</strong> - Understanding the ways diseases can spread in a dental environment and how to prevent it.</li>
+        <li><strong>Chapter 20: Principles and Techniques of Disinfection</strong> - Detailed insights into the principles of disinfection, including various techniques employed in a dental setting.</li>
+        <li><strong>Chapter 21: Principles and Techniques of Instrument Processing and Sterilization</strong> - The how-to's of instrument processing and sterilization, a critical aspect of infection control in dentistry.</li>
+        <li><strong>Chapter 22: Regulatory and Advisory Agencies</strong> - A look at the key regulatory bodies governing dental practice and their roles.</li>
+        <li><strong>Chapter 23: Chemical and Waste Management</strong> - Understanding how to manage chemicals and waste responsibly in a dental practice.</li>
+        <li><strong>Chapter 25: Ergonomics</strong> - The study of the importance of ergonomics in the dental office, including posture, hand positioning, and injury prevention.</li>
+        <li><strong>Chapter 27: Vitals</strong> - Learning how to accurately measure and record patients' vital signs.</li>
+        <li><strong>Tooth Anatomy</strong> - Basics of tooth structure and function.</li>
+        <li><strong>Tooth Identification</strong> - A study on how to correctly identify different types of teeth.</li>
+    </ul>
+    <p>I encourage everyone to review your notes, readings, and any other materials from these chapters. Consider forming study groups to discuss concepts, quiz each other, and help each other understand challenging topics. Remember, understanding the material will help you more than simply memorizing it!</p>
+    <p>Best of luck with your preparations, and don't hesitate to reach out if you have any questions!</p>
+    <p>Best,</p>
+    <p>Andrew Margarit</p>
+</div>
+
+
+    <script>
+        function changeTab(tabId) {
+            // hide all tabs
+            document.getElementById('tab1').classList.add('hidden');
+            document.getElementById('tab2').classList.add('hidden');
+            document.getElementById('tab3').classList.add('hidden');
+
+            // show selected tab
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        // initialize first tab
+        changeTab('tab1');
+
+        // Add event listeners to highlight and remove highlight on table cells
+        var objectives = document.getElementsByClassName('objective');
+        for (var i = 0; i < objectives.length; i++) {
+            objectives[i].addEventListener('mouseover', function () {
+                this.classList.add('highlighted');
+            });
+            objectives[i].addEventListener('mouseout', function () {
+                this.classList.remove('highlighted');
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>
