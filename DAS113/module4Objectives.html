@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+	background-color: rgba(191, 205, 224, .15);
+    }
+
+    h1, h2, h3 {
+        color: #404040;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #a399c2;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.tab-button:active {
+    transform: scale(0.9);
+}
+
+    .tab-content {
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #5d5d81;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%; /* Position it above the parent element */
+        right: 0%; /* Position it to the left of the parent element */
+        margin-bottom: 5px; /* Add some space above the tooltip */
+        margin-right: 5px; /* Add some space to the left of the tooltip */
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext,
+    .highlighted .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Styling for table */
+    table {
+        width: auto;
+        border-collapse: collapse;
+        border: 0px solid #999999;
+        margin-bottom: 20px;
+	margin-left: 20px;
+    }
+
+    th, td {
+        padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+        text-align: left;
+        border-bottom: 1px dotted #999999;
+        width: 100%;
+    }
+
+    th {
+        background-color: #a399c2;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+    tr:hover {
+        background-color: #bfcde0;
+        color: 000505;
+    }
+
+</style>
+
+</head>
+<body>
+    <h1>Module Objectives</h1>
+
+    <div class="tabs">
+        <div id="tab1-button" class="tab-button" onclick="changeTab('tab1')">Chapter 23</div> 
+        <div id="tab2-button" class="tab-button" onclick="changeTab('tab2')">Chapter 25</div>
+        <div id="tab3-button" class="tab-button" onclick="changeTab('tab3')">Chapter 27</div>
+    </div>
+
+
+<!-- TAB 1 -->
+
+    <div id="tab1" class="tab-content">
+    <h2>Chapter 23: Chemical and Waste Management<br>Tuesday 8/29/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+
+<tr>
+    <td class="objective tooltip">
+        <div>1. Articulate, understand, and spell out the essential terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>2. Elucidate the significance of being aware of exposure hazards in the dental workspace.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>3. Provide a summary of the physical and health hazardous materials found in the dental environment.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3a. Recognize the three main ways of exposure to chemicals.</div>
+        <span class="tooltiptext">Objective 3a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3b. Distinguish between acute and chronic forms of chemical toxicity.</div>
+        <span class="tooltiptext">Objective 3b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3c. Demonstrate the importance of hand protection to avert chemical exposure.</div>
+        <span class="tooltiptext">Objective 3c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3d. Describe the role of eye protection in preventing chemical exposure.</div>
+        <span class="tooltiptext">Objective 3d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3e. Detail the protective clothing used to ward off chemical exposure.</div>
+        <span class="tooltiptext">Objective 3e Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3f. Outline the inhalation protection measures to prevent chemical exposure.</div>
+        <span class="tooltiptext">Objective 3f Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3g. Illustrate the procedure for controlling a chemical spill.</div>
+        <span class="tooltiptext">Objective 3g Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3h. Differentiate between various eyewash stations.</div>
+        <span class="tooltiptext">Objective 3h Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3i. Clarify the necessary ventilation requirements for a dental office.</div>
+        <span class="tooltiptext">Objective 3i Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3j. Enumerate the steps to store chemicals in a proper manner.</div>
+        <span class="tooltiptext">Objective 3j Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3k. Elaborate on how to correctly dispose of empty chemical containers.</div>
+        <span class="tooltiptext">Objective 3k Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>4. Recapitulate the focus on waste management in the dental office.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4a. Recognize and explain the different types of waste disposal classifications.</div>
+        <span class="tooltiptext">Objective 4a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4b. Describe the protocol for handling contaminated waste.</div>
+        <span class="tooltiptext">Objective 4b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4c. List the five defining characteristics of hazardous waste.</div>
+        <span class="tooltiptext">Objective 4c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>5. Recap the classifications of hazards.</div>
+        <span class="tooltiptext">Objective 5 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5a. Detail how hazardous labels are used for identification purposes.</div>
+        <span class="tooltiptext">Objective 5a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5b. Specify the necessary information and training required for the staff.</div>
+        <span class="tooltiptext">Objective 5b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5c. Describe the use of a Safety Data Sheet (SDS) file as a chemical inventory.</div>
+        <span class="tooltiptext">Objective 5c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5d. Recognize items that require specialized guidelines for disposal.</div>
+        <span class="tooltiptext">Objective 5d Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>6. Outline the Environmental Protection Agency (EPA) requirements for waste disposal.</div>
+        <span class="tooltiptext">Objective 6 Description</span>
+    </td>
+</tr>
+
+
+
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+    </div>
+
+
+
+<!-- TAB 2 -->
+
+<div id="tab2" class="tab-content hidden">
+    <h2>Chapter 25: Ergonomics<br>Tuesday 8/30/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+
+<tr>
+    <td class="objective tooltip">
+        <div>1. Vocalize, comprehend, and spell out the essential terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>2. Discuss the potential strains that can impact an individual's physical well-being in their workspace.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;2a. Provide a definition for ergonomics.</div>
+        <span class="tooltiptext">Objective 2a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>3. Deliberate on how ergonomics can enhance the work environment for dental team members.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3a. Enumerate tips that can alleviate bodily stress for both clinical and administrative assistants.</div>
+        <span class="tooltiptext">Objective 3a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>4. Explain the risk factors that can augment the potential for injury.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4a. Illustrate proper posture, the neutral working position, and provide guidelines for reaching movements.</div>
+        <span class="tooltiptext">Objective 4a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4b. Recognize the types of repetition and force that may increase the risk of cumulative trauma disorders (CTDs).</div>
+        <span class="tooltiptext">Objective 4b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4c. Discuss the impact of improperly fitting gloves.</div>
+        <span class="tooltiptext">Objective 4c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>5. Sum up exercises that can decrease muscle fatigue and bolster muscles to reduce eye and neck strain.</div>
+        <span class="tooltiptext">Objective 5 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5a. Catalogue exercises to alleviate the strain on muscles and joints of the hands.</div>
+        <span class="tooltiptext">Objective 5a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5b. Detail methods for relieving eye strain.</div>
+        <span class="tooltiptext">Objective 5b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5c. Elucidate steps to alleviate stress from shoulder muscles.</div>
+        <span class="tooltiptext">Objective 5c Description</span>
+    </td>
+</tr>
+
+
+
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+
+    </div>
+
+
+
+
+<!-- TAB 3 -->
+
+
+    <div id="tab3" class="tab-content hidden">
+            <h2>Chapter 27: Vitals<br>Wednesday 8/30/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+<tr>
+    <td class="objective tooltip">
+        <div>1. Vocalize, comprehend, and spell out the essential terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>2. Recap the importance of taking a patient's vital signs in a dental setting.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;2a. Enumerate the types of factors that can affect a vital sign reading.</div>
+        <span class="tooltiptext">Objective 2a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>3. Discuss how the body temperature influences metabolism.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3a. Classify the body areas used for temperature measurement and their efficacy in readings.</div>
+        <span class="tooltiptext">Objective 3a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;3b. Enumerate the types of thermometers in use today.</div>
+        <span class="tooltiptext">Objective 3b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>4. Explain what a pulse is and the common sites for pulse measurement.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4a. List average resting pulse rates for newborns, infants, children, and adults.</div>
+        <span class="tooltiptext">Objective 4a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4b. Detail the three characteristics of a pulse.</div>
+        <span class="tooltiptext">Objective 4b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;4c. Classify the pulse quality scale.</div>
+        <span class="tooltiptext">Objective 4c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>5. Define respiration and the exchange of oxygen and carbon dioxide.</div>
+        <span class="tooltiptext">Objective 5 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5a. Recall the normal respiration range for infants, children, and adults.</div>
+        <span class="tooltiptext">Objective 5a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;5b. Explain the characteristics of respiration and its impact on a person's breathing.</div>
+        <span class="tooltiptext">Objective 5b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>6. Define blood pressure and its role in a person's health.</div>
+        <span class="tooltiptext">Objective 6 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6a. Differentiate between the ranges of standard blood pressure readings and stages of hypertension.</div>
+        <span class="tooltiptext">Objective 6a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6b. Summarize the equipment used for blood pressure measurement and their roles.</div>
+        <span class="tooltiptext">Objective 6b Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;6c. Describe particular medical considerations that may lead to a high blood pressure reading.</div>
+        <span class="tooltiptext">Objective 6c Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>7. Discuss advanced monitoring procedures used to assess a patient's health status.</div>
+        <span class="tooltiptext">Objective 7 Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7a. Explain how pulse oximetry functions.</div>
+        <span class="tooltiptext">Objective 7a Description</span>
+    </td>
+</tr>
+
+<tr>
+    <td class="objective tooltip">
+        <div>&emsp;7b. Explain the use of an electrocardiogram in dentistry and how it records the heart's activity.</div>
+        <span class="tooltiptext">Objective 7b Description</span>
+    </td>
+</tr>
+	    
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function changeTab(tabId) {
+            // hide all tabs
+            document.getElementById('tab1').classList.add('hidden');
+            document.getElementById('tab2').classList.add('hidden');
+            document.getElementById('tab3').classList.add('hidden');
+
+            // show selected tab
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        // initialize first tab
+        changeTab('tab1');
+
+        // Add event listeners to highlight and remove highlight on table cells
+        var objectives = document.getElementsByClassName('objective');
+        for (var i = 0; i < objectives.length; i++) {
+            objectives[i].addEventListener('mouseover', function () {
+                this.classList.add('highlighted');
+            });
+            objectives[i].addEventListener('mouseout', function () {
+                this.classList.remove('highlighted');
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>
