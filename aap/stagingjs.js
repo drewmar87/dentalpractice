@@ -55,7 +55,7 @@ let states = {
 		'info': 'Understanding whether a patient has undergone prior periodontal treatment aids in determining if the infection is new, old, or recurring. Accurate diagnosis is pivotal for effective treatment, which necessitates having as much relevant information as possible.',
         	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
 		'answers': [
-            { 'text': 'Yes', 'nextState': 'perioMaintYes', 'savedText': 'Patient has a history of Periodontal Maintenance', 'hiddenData': 'Perio Maintenance' },
+            { 'text': 'Yes', 'nextState': 'perioMaintYes', 'savedText': 'Patient has a history of Periodontal Therapy', 'hiddenData': 'Perio Maintenance' },
             { 'text': 'No', 'nextState': 'perioMaintNo', 'savedText': 'Patient does NOT have a history of Periodontal Maintenance', 'hiddenData': 'Possible evidence of undiagnosed periodontal disease' }
         ]
     },
@@ -167,7 +167,8 @@ let states = {
         'image': 'images/complexity.png',
         'answers': [
             { 'text': 'No VBL', 'nextState': 'stagingStepSix', 'savedText': 'No Periodontally Induced Vertical Bone Loss', 'hiddenData': null },
-            { 'text': 'VBL of 3mm or more', 'nextState': 'stagingStepSix', 'savedText': 'Periodontally Induced VBL', 'hiddenData': 'Stage 3 or 4 (Consideration Only)' }
+	    { 'text': 'VBL of 1-2mm', 'nextState': 'stagingStepSix', 'savedText': 'Periodontally Induced VBL of 1-2mm', 'hiddenData': null },
+            { 'text': 'VBL of 3mm or more', 'nextState': 'stagingStepSix', 'savedText': 'Periodontally Induced VBL of 3mm or more', 'hiddenData': 'Stage 3 or 4 (Consideration Only)' }
         ]
     },
 
@@ -179,17 +180,18 @@ let states = {
         'image': 'images/complexity.png',
         'answers': [
             { 'text': 'No Furcation Involvement', 'nextState': 'stagingStepSeven', 'savedText': 'No Periodontally Induced Furcation involvement', 'hiddenData': null },
+	    { 'text': 'Class 1 Furcation Involvement', 'nextState': 'stagingStepSeven', 'savedText': 'Initial Furcation Involvement Noted', 'hiddenData': null },
             { 'text': 'Class 2 or 3 Furcation Involvement', 'nextState': 'stagingStepSeven', 'savedText': 'Periodontally Induced Furcation Involvement', 'hiddenData': 'Stage 3 or 4 (Consideration Only)' }
         ]
     },
 
 // Step Seven
 	'stagingStepSeven': {
-        'question': 'Any need for complex rehabilitation due to: Masticatory Dysfunction, less than 10 opposing pairs of teeth, or significant ridge defects?',
+        'question': 'Any need for complex rehabilitation due to: Masticatory Dysfunction, less than 10 opposing pairs of teeth, 2nd or 3rd Degree Tooth Mobility, Bite Collapse, or significant ridge defects?',
 		'info': 'Assessing the need for complex rehabilitation due to masticatory dysfunction, fewer than 10 pairs of opposing teeth, or significant ridge defects is essential in diagnosing and staging periodontal disease. These factors can indicate the disease\'s impact on oral functionality and structure, providing critical insight into the extent of damage and necessary treatment measures.',
         'image': 'images/complexity.png',
         'answers': [
-            { 'text': 'Yes', 'nextState': 'results', 'savedText': 'Serious Masticatory Dysfunction noted', 'hiddenData': 'Stage 4 (Consideration Only)' },
+            { 'text': 'Yes', 'nextState': 'results', 'savedText': 'Serious Masticatory Dysfunction noted', 'hiddenData': 'Stage 4 (SIGNIFICANT Consideration)' },
             { 'text': 'No', 'nextState': 'results', 'savedText': 'No Masticatory Dysfunction Noted', 'hiddenData': null }
         ]
     },
