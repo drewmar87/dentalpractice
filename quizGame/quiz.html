@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 id="quiz-title">Dental Assisting Exam Review</h1>
+  
+  <form id="quiz-selection-form">
+    <h3>Select Quiz Categories:</h3>
+    <input type="checkbox" id="infectionControlCheckbox" name="quizCategory" value="Infection Control">
+    <label for="infectionControlCheckbox">Infection Control</label><br>
+    <input type="checkbox" id="rhsCheckbox" name="quizCategory" value="RHS">
+    <label for="rhsCheckbox">Radiation Health and Safety</label><br>
+    <input type="checkbox" id="chairsideCheckbox" name="quizCategory" value="Chairside">
+    <label for="chairsideCheckbox">Chairside Assisting</label><br>
+
+    <input type="checkbox" id="techniqueErrorsCheckbox" name="quizCategory" value="Technique Errors">
+    <label for="techniqueErrorsCheckbox">RG Technique Error Identification</label><br><br>
+
+    <input type="submit" value="Start Quiz">
+  </form>
+
+  <div id="question-container" class="question-container" style="display: none;">
+    <!-- Questions will be inserted here -->
+  </div>
+  
+  <div id="score-container" class="score-container" style="display: none;">
+	<div id="numbers-container" style="display: block;">
+    Correct: <span id="correct" style="color:green;">0</span> /
+    Incorrect: <span id="incorrect" style="color:red;">0</span>
+	  <div id="percentage-correct"></div></div>
+
+
+
+<button id="endGameButton">End Game</button>
+  <div id="endGamePopup" style="display: none;">
+    <p>Are you sure?</p>
+    <button id="confirmEndGame">Yes</button>
+    <button id="cancelEndGame">No</button>
+  </div>
+  <div id="enterNamePopup" style="display: none;">
+    <p>Enter your name:</p>
+    <input type="text" id="playerNameInput">
+    <button id="submitName">Submit</button>
+  </div>
+
+
+
+  </div>
+
+  <script src="infectionControlQuestions.js"></script>
+  <script src="rhsQuestions.js"></script>
+  <script src="chairsideQuestions.js"></script>
+  <script src="techniqueErrorsQuestions.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
