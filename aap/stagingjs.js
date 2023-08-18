@@ -114,7 +114,7 @@ let states = {
         	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
 		'answers': [
             { 'text': 'Yes', 'nextState': 'stagingStepOne', 'savedText': 'Multiple areas of periodontal infection noted', 'hiddenData': 'Recurrence of periodontal disease, re-stage patient' },
-            { 'text': 'No', 'nextState': 'results', 'savedText': 'Insufficient evidence of periodontal disease recurrence', 'hiddenData': 'Clinical Gingival Health on a Reduced Periodontium Patient' }
+            { 'text': 'No', 'nextState': 'results', 'savedText': 'No sites with 4mm Pockets and BOP and CAL', 'hiddenData': 'Clinical Gingival Health on a Reduced Periodontium Patient' }
         ]
     },
 	
