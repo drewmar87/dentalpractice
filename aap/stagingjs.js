@@ -104,7 +104,7 @@ let states = {
         	'image': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=',
 		'answers': [
             { 'text': 'Yes', 'nextState': 'stagingStepOne', 'savedText': 'Multiple areas of periodontal infection noted', 'hiddenData': 'Recurrence of periodontal disease, re-stage patient' },
-            { 'text': 'No', 'nextState': 'results', 'savedText': 'Insufficient evidence of periodontal disease recurrence', 'hiddenData': 'Gingivitis in a patient with a history of periodontitis' }
+            { 'text': 'No', 'nextState': 'results', 'savedText': 'x', 'hiddenData': 'Gingivitis in a patient with a history of periodontitis' }
         ]
     },	
 // Perio Step three
