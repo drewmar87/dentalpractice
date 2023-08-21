@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+	background-color: rgba(191, 205, 224, .15);
+    }
+
+    h1, h2, h3 {
+        color: #404040;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #a399c2;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.tab-button:active {
+    transform: scale(0.9);
+}
+
+    .tab-content {
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #5d5d81;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%; /* Position it above the parent element */
+        right: 0%; /* Position it to the left of the parent element */
+        margin-bottom: 5px; /* Add some space above the tooltip */
+        margin-right: 5px; /* Add some space to the left of the tooltip */
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext,
+    .highlighted .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Styling for table */
+    table {
+        width: auto;
+        border-collapse: collapse;
+        border: 0px solid #999999;
+        margin-bottom: 20px;
+	margin-left: 20px;
+    }
+
+    th, td {
+        padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+        text-align: left;
+        border-bottom: 1px dotted #999999;
+        width: 100%;
+    }
+
+    th {
+        background-color: #a399c2;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+    tr:hover {
+        background-color: #bfcde0;
+        color: 000505;
+    }
+
+</style>
+
+</head>
+<body>
+    <h1>Module Objectives</h1>
+
+    <div class="tabs">
+        <div id="tab1-button" class="tab-button" onclick="changeTab('tab1')">Chapter 34</div> 
+        <div id="tab2-button" class="tab-button" onclick="changeTab('tab2')">Chapter 35</div>
+        <div id="tab3-button" class="tab-button" onclick="changeTab('tab3')">Chapter 28</div>
+    </div>
+
+
+<!-- TAB 1 -->
+
+    <div id="tab1" class="tab-content">
+    <h2>Chapter 34: Dental Hand Instruments<br>Tuesday 9/12/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+
+
+<tr>
+    <td class="objective tooltip">
+        <div>1. Pronounce, define, and spell the key terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+<tr>
+    <td class="objective tooltip">
+        <div>2. Summarize the importance of knowing and identifying dental instruments for a procedure.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Describe what a dental instrument is designed for.</div>
+            <span class="tooltiptext">Objective 2a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. List the three specific parts of a dental instrument.</div>
+            <span class="tooltiptext">Objective 2b Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>3. Describe the classification of instruments used in a specific sequence.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. What is the theory behind placing instruments in a specific sequence?</div>
+            <span class="tooltiptext">Objective 3a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. Identify the examination instruments and give their uses.</div>
+            <span class="tooltiptext">Objective 3b Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;c. Identify the hand (manual) cutting dental instruments and give their uses.</div>
+            <span class="tooltiptext">Objective 3c Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;d. Identify the restorative dental instruments and give their uses.</div>
+            <span class="tooltiptext">Objective 3d Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;e. Identify accessory instruments and give their uses.</div>
+            <span class="tooltiptext">Objective 3e Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>4. Describe the use of preset trays, tubs, and color-coding systems in dentistry.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Discuss how storage tubs are used for dental procedures.</div>
+            <span class="tooltiptext">Objective 4a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. Indicate why color coding would be used to organize instruments.</div>
+            <span class="tooltiptext">Objective 4b Description</span>
+        </td>
+    </tr>
+
+	    
+
+
+
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+    </div>
+
+
+
+<!-- TAB 2 -->
+
+<div id="tab2" class="tab-content hidden">
+    <h2>Chapter 35: Dental Handpieces and Accessories<br>Wednesday 9/13/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+
+
+<tr>
+    <td class="objective tooltip">
+        <div>1. Pronounce, define, and spell the key terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+<tr>
+    <td class="objective tooltip">
+        <div>2. Summarize the importance of rotary instruments in dental procedures.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Describe the evolution of the dental handpiece.</div>
+            <span class="tooltiptext">Objective 2a Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>3. Discuss the types of dental handpieces that are essential in restorative and aesthetic dentistry.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Identify the low-speed handpieces and list the types of attachments and their use.</div>
+            <span class="tooltiptext">Objective 3a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. Identify the high-speed handpiece and describe its use in clinical procedures.</div>
+            <span class="tooltiptext">Objective 3b Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;c. Identify the laboratory handpiece and describe its use in the lab.</div>
+            <span class="tooltiptext">Objective 3c Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>4. Discuss what additional specialized handpieces are used in dentistry.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Identify the ultrasonic handpiece and describe its use.</div>
+            <span class="tooltiptext">Objective 4a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. Identify the laser handpiece and describe its use.</div>
+            <span class="tooltiptext">Objective 4b Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;c. Identify the air abrasion handpiece and describe its use.</div>
+            <span class="tooltiptext">Objective 4c Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>5. Summarize the importance of handpiece maintenance.</div>
+        <span class="tooltiptext">Objective 5 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Discuss why a handpiece is considered a semi-critical instrument.</div>
+            <span class="tooltiptext">Objective 5a Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>6. Describe the role of a rotary cutting instrument, and its use in restorative dentistry.</div>
+        <span class="tooltiptext">Objective 6 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Define the bur and describe its use in dental procedures.</div>
+            <span class="tooltiptext">Objective 6a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. Identify the types of burs by their shape, number, and use.</div>
+            <span class="tooltiptext">Objective 6b Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;c. Identify the types of diamond rotary instruments by their shape and use.</div>
+            <span class="tooltiptext">Objective 6c Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;d. Identify the types of finishing rotary instruments by their shape, number, and use.</div>
+            <span class="tooltiptext">Objective 6d Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;e. Identify the types of abrasive rotary instruments by the material and use.</div>
+            <span class="tooltiptext">Objective 6e Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;f. Describe the use and types of laboratory burs.</div>
+            <span class="tooltiptext">Objective 6f Description</span>
+        </td>
+    </tr>
+
+
+
+	    
+
+
+
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+
+    </div>
+
+
+
+
+<!-- TAB 3 -->
+
+
+    <div id="tab3" class="tab-content hidden">
+            <h2>Chapter 28: Oral Diagnosis and Treatment Planning<br>Friday 9/15/23</h2>
+
+    <h3>Module Objectives:</h3>
+    <p>Upon completion of this module the student should be able to:</p>
+
+    <table class="objectives">
+
+
+
+<tr>
+    <td class="objective tooltip">
+        <div>1. Pronounce, define, and spell the key terms.</div>
+        <span class="tooltiptext">Objective 1 Description</span>
+    </td>
+</tr>
+<tr>
+    <td class="objective tooltip">
+        <div>2. Describe why a patient would seek dental care.</div>
+        <span class="tooltiptext">Objective 2 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Discuss the role of the dental assistant in the diagnosis and treatment planning of a patient.</div>
+            <span class="tooltiptext">Objective 2a Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>3. List the techniques used in the diagnosis and treatment planning of a patient.</div>
+        <span class="tooltiptext">Objective 3 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Describe the specific areas of the head and neck examined through visual evaluation.</div>
+            <span class="tooltiptext">Objective 3a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. Discuss how palpation is used to examine the hard and soft tissue.</div>
+            <span class="tooltiptext">Objective 3b Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;c. Name the instruments used to examine the teeth and surrounding tissues.</div>
+            <span class="tooltiptext">Objective 3c Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;d. Summarize the types of devices that incorporate digital technology in diagnosis.</div>
+            <span class="tooltiptext">Objective 3d Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;e. Discuss how photography is a diagnostic tool in dentistry.</div>
+            <span class="tooltiptext">Objective 3e Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>4. Summarize the process of how the dentists' findings are recorded.</div>
+        <span class="tooltiptext">Objective 4 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Differentiate between the anatomic and geometric charting diagram.</div>
+            <span class="tooltiptext">Objective 4a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. List the three most common numbering systems used for dental charting.</div>
+            <span class="tooltiptext">Objective 4b Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;c. Recall the colors used for recording the paper and digital charts.</div>
+            <span class="tooltiptext">Objective 4c Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;d. Explain the five classifications in Black's classification of cavities.</div>
+            <span class="tooltiptext">Objective 4d Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;e. Describe the abbreviations used to name combined surfaces of teeth.</div>
+            <span class="tooltiptext">Objective 4e Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>5. Discuss the role of the dental assistant in the soft tissue examination.</div>
+        <span class="tooltiptext">Objective 5 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Describe the steps in the soft tissue exam.</div>
+            <span class="tooltiptext">Objective 5a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. Discuss the role of the dental assistant in the examination of the teeth.</div>
+            <span class="tooltiptext">Objective 5b Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;c. Summarize the findings that can be recorded in the periodontal exam.</div>
+            <span class="tooltiptext">Objective 5c Description</span>
+        </td>
+    </tr>
+<tr>
+    <td class="objective tooltip">
+        <div>6. Discuss the importance of a treatment plan.</div>
+        <span class="tooltiptext">Objective 6 Description</span>
+    </td>
+</tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;a. Differentiate between levels of care.</div>
+            <span class="tooltiptext">Objective 6a Description</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="objective tooltip">
+            <div>&emsp;b. Explain how a treatment plan is presented to a patient and what it includes.</div>
+            <span class="tooltiptext">Objective 6b Description</span>
+        </td>
+    </tr>
+
+
+	    
+	    
+	    
+        <!-- repeat for each objective -->
+    </table>
+
+    <h3>Course Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>CLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each CLO -->
+    </table>
+
+    <h3>Program Learning Objectives Aligned to Module 3:</h3>
+    <table class="objectives">
+        <tr class="clo-mlo tooltip">
+            <td>MLO-1: Placeholder</td>
+            <td class="tooltiptext">Objective 1</td>
+        </tr>
+        <!-- repeat for each MLO -->
+    </table>
+</div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function changeTab(tabId) {
+            // hide all tabs
+            document.getElementById('tab1').classList.add('hidden');
+            document.getElementById('tab2').classList.add('hidden');
+            document.getElementById('tab3').classList.add('hidden');
+
+            // show selected tab
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        // initialize first tab
+        changeTab('tab1');
+
+        // Add event listeners to highlight and remove highlight on table cells
+        var objectives = document.getElementsByClassName('objective');
+        for (var i = 0; i < objectives.length; i++) {
+            objectives[i].addEventListener('mouseover', function () {
+                this.classList.add('highlighted');
+            });
+            objectives[i].addEventListener('mouseout', function () {
+                this.classList.remove('highlighted');
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>
