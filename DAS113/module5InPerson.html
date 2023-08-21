@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+	background-color: rgba(191, 205, 224, .15);
+    }
+
+    h1, h2, h3 {
+        color: #404040;
+    }
+
+    .tabs {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #a399c2;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.tab-button:active {
+    transform: scale(0.9);
+}
+
+    .tab-content {
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #5d5d81;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        left: 100%;
+        top: 50%;
+        margin-top: -30px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext,
+    .highlighted .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Styling for table */
+    table {
+        width: auto;
+        border-collapse: collapse;
+        border: 0px solid #999999;
+        margin-bottom: 20px;
+	margin-left: 20px;
+    }
+
+    th, td {
+        padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+        text-align: left;
+        border-bottom: 1px dotted #999999;
+        width: 100%;
+    }
+
+    th {
+        background-color: #a399c2;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+    tr:hover {
+        background-color: #bfcde0;
+        color: 000505;
+    }
+
+</style>
+
+</head>
+<body>
+    <h1>In Person Activities</h1>
+
+    <div class="tabs">
+	<div id="tab1-button" class="tab-button" onclick="changeTab('tab1')">Tuesday</div>
+        <div id="tab2-button" class="tab-button" onclick="changeTab('tab2')">Wednesday</div>
+        <div id="tab3-button" class="tab-button" onclick="changeTab('tab3')">Friday</div>
+    </div>
+
+
+<!-- TAB 1 -->
+
+<div id="tab1" class="tab-content">
+    <h2>DAS 113 – Day 10 Dental Hand Instruments (9/12/23)</h2>
+    <p>Hello Everyone,</p>
+    <p>Here we go! Day 10, Double Digits!:</p>
+    <ul>
+        <li><strong>Introduction to Hand Instruments</strong> - Starting off with Lecture and Videos associated with Hand Instruments.</li>
+        <li><strong>Activity: Working with Dental Premade Trays, getting a closer look.</li>
+        <li><strong>Activity: Instrument Passing with the Dentist</strong> - Instrument passing practice with the Dentist!</li>
+        <li><strong>Wrap-Up</strong> - We'll review the main points from the lesson, answer any remaining questions, and announce any assignments or readings for the next class.</li>
+    </ul>
+    <p>Best,</p>
+    <p>Andrew Margarit</p>
+</div>
+
+
+
+
+<!-- TAB 2 -->
+
+<div id="tab2" class="tab-content">
+    <h2>DAS 113 – Day 11 Dental Handpieces and Accessories (9/13/23)</h2>
+    <p>Hello Everyone,</p>
+    <p>Welcome to Day 11 of DAS 113! We're moving right along!:</p>
+    <ul>
+        <li><strong>Handpieces Galore</strong> - The instruments that saved our wrists and let us continue practicing for years to come!</li>
+	<li><strong>Burrs</strong> - Can't cut without a Burr! Lots to look at today and go over!</li>   
+    </ul>
+    <p>Best,</p>
+    <p>Andrew Margarit</p>
+</div>
+
+
+
+
+
+<!-- TAB 3 -->
+
+
+<div id="tab3" class="tab-content">
+    <h2>DAS 113 – Day 12 Oral Diagnosis and Treatment Planning (9/15/23)</h2>
+    <p>Hello Everyone,</p>
+    <p>Welcome to Day 12 of DAS 113! Charting, Charting, Charting Here's an outline of what we'll be doing today:</p>
+    <ul>
+        <li><strong>Charting!</strong> - Good guess right? We need to start improving our computational skills and learning how to chart!</li>
+	<li><strong>Activity!</strong> - Let's chart some teeth!</li>  
+    </ul>
+    <p>Best,</p>
+    <p>Andrew Margarit</p>
+</div>
+
+
+    <script>
+        function changeTab(tabId) {
+            // hide all tabs
+            document.getElementById('tab1').classList.add('hidden');
+            document.getElementById('tab2').classList.add('hidden');
+            document.getElementById('tab3').classList.add('hidden');
+
+            // show selected tab
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+
+        // initialize first tab
+        changeTab('tab1');
+
+        // Add event listeners to highlight and remove highlight on table cells
+        var objectives = document.getElementsByClassName('objective');
+        for (var i = 0; i < objectives.length; i++) {
+            objectives[i].addEventListener('mouseover', function () {
+                this.classList.add('highlighted');
+            });
+            objectives[i].addEventListener('mouseout', function () {
+                this.classList.remove('highlighted');
+            });
+        }
+
+
+
+    </script>
+</body>
+</html>
