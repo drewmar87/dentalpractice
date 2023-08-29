@@ -62,10 +62,12 @@ function evaluatePlacement() {
       }
 
 function redirectToRandomWebsite() {
-		var randomIndex = Math.floor(Math.random() * websites.length);
-        var randomWebsite = websites[randomIndex];
-        window.location.href = randomWebsite;
-    }
+  var randomIndex = Math.floor(Math.random() * websites.length);
+  var randomWebsite = websites[randomIndex];
+  if(randomWebsite) {
+    window.location.href = randomWebsite;
+  }
+}
 
     function clearEvaluation() {
         for (var i = 0; i < imageSlots.length; i++) {
