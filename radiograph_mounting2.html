@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radiograph Mounting Game</title>
+  <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #9370DB; /* Light Purple */
+    padding: 0px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Change to horizontal */
+    justify-content: center; /* Center align items */
+}
+
+li {
+    margin: 10px; /* Add horizontal and vertical margin */
+    position: relative; /* Position relative for submenu */
+}
+
+/* Submenu Styles */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #FFF; /* White */
+    padding: 10px;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    top: 100%; /* Position below the parent li */
+    left: 50%; /* Center the submenu horizontally */
+    transform: translateX(-50%); /* Adjust horizontal position */
+    margin-top: 5px; /* Add space between button and submenu */
+    white-space: nowrap; /* Prevent text wrapping */
+    width: max-content; /* Set width based on content */
+}
+
+    
+    h1 {
+      color: #FFF; /* White */
+    }
+    
+    /* Main Styles */
+    main {
+      background-color: #FFF; /* White */
+      padding: 0px;
+      text-align: center;
+    }
+    
+    h2 {
+      color: #9370DB; /* Light Purple */
+    }
+    
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9370DB; /* Light Purple */
+    color: #FFF; /* White */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    border: 2px solid black;
+}
+    
+.button:hover {
+    background-color: #8A2BE2; /* Dark Purple */
+}
+.button:active {
+    background-color: violet;
+}
+	
+    /* Image Grid Styles */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 0px;
+      margin-top: 0px;
+
+    }
+    .image-grid2 {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 0px;
+      margin-top: 0px;
+	      margin-bottom: 0;
+    padding-bottom: 0;
+	    margin-bottom: 0;
+    padding-bottom: 0;
+
+    }
+	
+.image-slot {
+    height: auto; /* Adjust as needed */
+    position: relative;
+      border: 2px dashed #9370DB; /* Light Purple */
+      border-radius: 0px;
+}
+    .image-slot.small {
+	  height: 100%; /* change this to what you need */
+	  width: 100%; /* change this to what you need */
+	  margin: auto;
+    }
+    
+    .image-slot.correct {
+      border-color: green;
+	  border-width: 5px;
+    }
+    
+    .image-slot.incorrect {
+      border-color: red;
+	 border-width: 10px;
+    }
+    
+    .image-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0px;
+	      line-height: 0; /* Add this */
+    }
+	.image-slot-holder {
+      border: 0px dashed #9370DB; /* Light Purple */
+      border-radius: 0px;
+      height: 150px;
+	      line-height: 0; /* Add this */
+
+    }
+
+    .message {
+      color: red;
+      font-weight: bold;
+      margin-top: 0px;
+    }
+	#image-container {
+    transform: scale(1.0);
+    transform-origin: top;
+	align: center;
+	valign: center;
+}
+#image3, #image4, #image5, #image10, #image11, #image12 {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;  /* Center horizontally */
+    margin-bottom: -100px; /* adjust this value as per your requirement */
+}
+
+
+  </style>
+
+<script src="radiographscript.js"></script>
+
+</head>
+
+<body>
+  
+
+  <header>
+    <h1>Radiograph Mounting</h1>
+  </header>
+ <br /> 
+  <main>
+    <button id="beginButton" class="button"><b>Press Me To Start</b></button><p>
+
+	<div id="instructions" class="button" style="display: none;"></div>
+	<p id="messageText" style="display: none;"><p>
+	
+	
+	   <button id="evaluateButton" class="button">Evaluate</button>
+	<button id="resetButton" class="button">Reset</button>
+    <button id="nextButton" class="button">Next</button><p />
+	
+<div id="image-container">   
+    <div class="image-grid">
+      <div class="image-slot"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot-holder"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot-holder"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot-holder"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot-holder"></div>
+      <div class="image-slot"></div>
+      <div class="image-slot"></div>
+	  <div class="image-slot"></div>
+	  <div class="image-slot"></div>
+	  <div class="image-slot-holder"></div>
+	  <div class="image-slot-holder"></div>
+	  <div class="image-slot-holder"></div>
+	  <div class="image-slot-holder"></div>
+	  <div class="image-slot-holder"></div>
+	  <div class="image-slot"></div>
+	  <div class="image-slot"></div>
+    </div><p>
+
+
+
+	
+
+    <div class="image-grid2">
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/1.png" alt="Image 1" id="image1">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/2.png" alt="Image 2" id="image2">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/3.png" alt="Image 3" id="image3">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/4.png" alt="Image 4" id="image4">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/5.png" alt="Image 5" id="image5">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/6.png" alt="Image 6" id="image6">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/7.png" alt="Image 7" id="image7">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/8.png" alt="Image 8" id="image8">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/9.png" alt="Image 9" id="image9">
+      </div>
+  
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/10.png" alt="Image 10" id="image10">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/11.png" alt="Image 11" id="image11">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/12.png" alt="Image 12" id="image12">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/13.png" alt="Image 13" id="image13">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/14.png" alt="Image 14" id="image14">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/15.png" alt="Image 15" id="image15">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/16.png" alt="Image 16" id="image16">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/17.png" alt="Image 17" id="image17">
+      </div>
+      <div class="image-slot" draggable="true">
+        <img src="images/patient2fmx/18.png" alt="Image 18" id="image18">
+      </div>
+    </div>
+</div>
+
+  </main>
+</body>
+</html>
