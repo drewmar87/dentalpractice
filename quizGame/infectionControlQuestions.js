@@ -1871,9 +1871,81 @@ let infectionControlQuestions = [
     "correct": 0,
     "category": "Infection Control",
     "rationale": "#"
-  }
+  },
 
  // 61 - 70
+
+  {
+    "question": "Indicators of which type are printed on packing materials for sterilization and contain dyes that change color on exposure to sterilizing cycles?",
+    "answers": ["process indicator", "biologic monitor", "process integrator", "physical monitoring"],
+    "correct": 0,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which chemical is not recommended as a disinfectant?",
+    "answers": ["alcohol", "iodophors", "glutaraldehyde", "quaternary amine"],
+    "correct": 0,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which bacterium is hard to kill in the sterilization process because of its lipid cell wall?",
+    "answers": ["Streptococcus", "Pseudomonas", "Staphylococcus", "M. tuberculosis"],
+    "correct": 3,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which disinfectant produces fumes that are toxic to lung tissue?",
+    "answers": ["phenolics", "iodophors", "glutaraldehyde", "quaternary amine"],
+    "correct": 2,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which is the process that kills microorganisms, including bacterial spores?",
+    "answers": ["antisepsis", "disinfection", "sterilization", "sanitization"],
+    "correct": 2,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which disinfection/sterilization process is used for processing heat-sensitive items?",
+    "answers": ["immersion in a phenolic solution", "immersion in a glutaraldehyde solution", "spraying with a glutaraldehyde solution", "spraying with alcohol"],
+    "correct": 1,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which sterilization process requires pretreatment with a corrosion inhibitor on carbon steel instruments?",
+    "answers": ["steam autoclave", "dry heat oven type", "rapid heat transfer", "unsaturated chemical vapor"],
+    "correct": 3,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which sterilization process requires a 270°F (132°C) temperature?",
+    "answers": ["dry heat", "unsaturated chemical vapor", "flash or immediate use sterilizer", "steam autoclave"],
+    "correct": 3,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which regulatory agency requires the use of surface disinfection?",
+    "answers": ["Food and Drug Administration (FDA)", "Environmental Protection Agency (EPA)", "Centers for Disease Control and Prevention (CDC)", "Occupational Safety and Health Administration (OSHA)"],
+    "correct": 3,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which is a nonregulatory agency that investigates, reports, and tracks specific diseases for public health concerns in the United States?",
+    "answers": ["Food and Drug Administration (FDA)", "Environmental Protection Agency (EPA)", "Centers for Disease Control and Prevention (CDC)", "Occupational Safety and Health Administration (OSHA)"],
+    "correct": 2,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+
 
 
   // 71 - 80
