@@ -1726,12 +1726,168 @@ let infectionControlQuestions = [
   "correct": 0,
   "category": "Infection Control",
   "rationale": "Biologic indicators are the most definitive means of confirming that sterilization has occurred, because they assess the sterilization process directly by killing known, highly resistant organisms (usually Geobacillus stearothermophilus)."
-}
+},
 
-// 40, 2
+// 41 - 50
+  {
+    "question": "Which type of sterilization used in the dental office requires the highest temperature?",
+    "answers": ["dry heat", "unsaturated chemical vapor", "flash or immediate use sterilizer", "steam autoclave"],
+    "correct": 0,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "How should a dental assistant determine the amount of time required for sterilization to occur when using a chemical liquid sterilization process for heat-sensitive instruments?",
+    "answers": ["10 hours", "6 hours", "it depends on the concentration", "follow the manufacturer’s instructions"],
+    "correct": 3,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which can occur if wet dental instrument packages are removed from the autoclave before the drying cycle is completed?",
+    "answers": ["wicking", "aerating", "saturating", "ventilating"],
+    "correct": 0,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "The solution in the ultrasonic cleaner should be replaced at least __________",
+    "answers": ["once a day", "once a week", "once a month", "every other day"],
+    "correct": 0,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which type of gloves are worn during instrument processing?",
+    "answers": ["over gloves", "utility gloves", "examination gloves", "sterile gloves"],
+    "correct": 1,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "A small sheet of __________ can be submerged in the ultrasonic unit to determine whether the ultrasonic cleaner is working properly.",
+    "answers": ["copper", "plastic", "wax paper", "aluminum foil"],
+    "correct": 3,
+    "category": "Sterilization",
+    "rationale": "#"
+  },
+  {
+    "question": "Which is the process that is initiated in the ultrasonic cleaner when sound waves are produced?",
+    "answers": ["cavitation", "sterilization", "disinfection", "sanitization"],
+    "correct": 0,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which term refers to the blood, saliva, and tissue fluids that contaminate dental instruments after use?",
+    "answers": ["organic", "syneresis", "bioburden", "bacteremia"],
+    "correct": 2,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which sterilization technique may rust non–stainless steel instruments and burs?",
+    "answers": ["steam autoclave", "dry heat oven type", "rapid heat transfer", "unsaturated chemical vapor"],
+    "correct": 0,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which type of sterilization monitoring technique is a multiparameter indicator of the sterilization process?",
+    "answers": ["process indicator", "biologic monitor", "chemical integrator", "physical monitoring"],
+    "correct": 2,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+
+  //51 - 60
+
+  {
+    "question": "Which is the purpose of placing contaminated dental instruments in a presoaking solution?",
+    "answers": ["removes bioburden", "disinfects the instruments", "kills the highest level of spores", "prevents debris from drying on the instruments"],
+    "correct": 3,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which is not an item of personal protective equipment (PPE) that is worn during the manual scrubbing of contaminated dental instruments?",
+    "answers": ["face mask", "dosimeter", "utility gloves", "protective eyewear"],
+    "correct": 1,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which method of sterilization is used to sterilize unpackaged instruments using a short exposure time?",
+    "answers": ["dry heat oven", "steam autoclave", "flash sterilization", "unsaturated chemical vapor"],
+    "correct": 2,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which is an improper technique regarding infection control in the dental office?",
+    "answers": ["eating in the dental laboratory", "storing sterile instruments in sealed bags", "disposing of a patient bib in the general trash", "using over gloves to open a drawer in the treatment room"],
+    "correct": 0,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which is classified as a high-level disinfectant?",
+    "answers": ["phenolics", "iodophors", "glutaraldehyde", "sodium hypochlorite"],
+    "correct": 2,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which is classified as a low-level disinfectant?",
+    "answers": ["phenolics", "hydrogen peroxide", "glutaraldehyde", "quaternary amine"],
+    "correct": 3,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which is the recommended time frame for an operator to change a facial mask under standard precautions?",
+    "answers": ["every hour", "once a day", "twice a day", "after each patient"],
+    "correct": 3,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "When should an alcohol hand rub be used for routine dentistry?",
+    "answers": ["at the beginning of the day", "immediately after handwashing", "in the absence of visible soil", "immediately before handwashing"],
+    "correct": 2,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "Which disinfectant is an iodine-containing compound?",
+    "answers": ["phenolics", "iodophors", "glutaraldehyde", "quaternary amine"],
+    "correct": 1,
+    "category": "Infection Control",
+    "rationale": "#"
+  },
+  {
+    "question": "How often should sodium hypochlorite disinfectant be prepared?",
+    "answers": ["daily", "weekly", "monthly", "bimonthly"],
+    "correct": 0,
+    "category": "Infection Control",
+    "rationale": "#"
+  }
+
+ // 61 - 70
+
+
+  // 71 - 80
+
+
+  // 81 - 90
 
 
 
+// 91 - 100
+
+
+// finish exam 2
+  
 
 
 
