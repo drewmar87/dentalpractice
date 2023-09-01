@@ -1726,7 +1726,7 @@ let infectionControlQuestions = [
   "correct": 0,
   "category": "Infection Control",
   "rationale": "Biologic indicators are the most definitive means of confirming that sterilization has occurred, because they assess the sterilization process directly by killing known, highly resistant organisms (usually Geobacillus stearothermophilus)."
-},
+}
 
 
 
