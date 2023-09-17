@@ -367,6 +367,9 @@ var draggedElem;
 var offsetX, offsetY;
 
 function touchStart(event) {
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nTouch Start Function Called';
+    
     if (event.target.classList.contains('image-slot')) {
         draggedElem = event.target;
         var rect = draggedElem.getBoundingClientRect();
@@ -383,6 +386,9 @@ function touchStart(event) {
 }
 
 function moveAt(pageX, pageY) {
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nMove At Function Called';
+
     draggedElem.style.left = pageX - offsetX + 'px';
     draggedElem.style.top = pageY - offsetY + 'px';
     
@@ -391,6 +397,9 @@ function moveAt(pageX, pageY) {
 }
 
 function touchMove(event) {
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nTouch Move Function Called';
+
     moveAt(event.touches[0].clientX, event.touches[0].clientY);
     
     // Debug statement
@@ -398,6 +407,9 @@ function touchMove(event) {
 }
 
 function touchEnd(event) {
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nTouch End Function Called';
+
     // Find the closest image slot to drop the dragged element
     var closestSlot;
     var minDistance = Infinity;
