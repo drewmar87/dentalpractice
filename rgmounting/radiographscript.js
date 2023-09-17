@@ -97,7 +97,8 @@ element.addEventListener('touchend', function(event) {
     var draggingElem = document.querySelector('[data-dragging="true"]');
     if (draggingElem) {
         var dropzone = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY - 50); // Adjusted offset
-         console.log('Identified drop zone:', dropzone);
+        document.getElementById('debug-area').innerText += '\nIdentified drop zone: ' + (dropzone ? dropzone.id : 'None');
+
         draggingElem.style.top = '';
         draggingElem.style.left = '';
         draggingElem.style.position = '';
@@ -118,11 +119,13 @@ element.addEventListener('touchend', function(event) {
     } else {
         // If it was a tap (not a drag), we trigger a click event to handle image selection and showing rotation buttons
         var tappedElem = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
-	     console.log('Tapped Element:', tappedElem);
+	     document.getElementById('debug-area').innerText += '\nTapped Element: ' + (tappedElem ? tappedElem.id : 'None');
+
 	    
         if (tappedElem) {
             tappedElem.click();
-		console.log('Click event triggered');
+		document.getElementById('debug-area').innerText += '\nClick event triggered';
+
         }
     }
 });
