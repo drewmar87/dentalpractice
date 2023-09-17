@@ -250,7 +250,7 @@ function selectImage(event) {
         var rect = selectedImage.getBoundingClientRect();
         
         // Variables to adjust the final position of the buttons
-        var topAdjustment = 17.5; // Adjust this value to move the buttons up or down
+        var topAdjustment = 0; // Adjust this value to move the buttons up or down
         var leftAdjustment = 10; // Adjust this value to move the buttons left or right
 
         // Calculate the new positions for the rotational buttons
