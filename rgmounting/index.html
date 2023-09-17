@@ -19,8 +19,9 @@ body {
 
 /* --- Instructions Styles --- */
 .instructions {
-    display: inline-block;
-    padding: 15px 20px;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
     background-color: rgba(147, 112, 219, 0.5);
     color: #ffffff;
     font-weight: bold;
@@ -28,9 +29,7 @@ body {
     border-radius: 4px;
     font-size: 18px;
     border: 2px solid #000000;
-    margin-bottom: 15px; /* Adds some space below the instructions */
-    word-wrap: break-word; /* Ensures words break properly */
-    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect the total width */
 }
 
 /* --- Button Styles --- */
@@ -264,6 +263,7 @@ body {
     font-weight: bold;
     word-wrap: break-word; /* Ensures words break properly */
     width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect the total width */
 }
 
 </style>
