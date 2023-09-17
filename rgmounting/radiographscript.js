@@ -37,7 +37,7 @@ element.addEventListener('touchstart', function(event) {
 
 element.addEventListener('touchmove', function(event) {
     var draggingElem = document.querySelector('[data-dragging="true"]');
-    if (draggingElem) {
+    if (draggingElem && draggingElem.tagName.toLowerCase() === 'img') {
         var originalX = parseFloat(draggingElem.getAttribute('data-origin-x'));
         var originalY = parseFloat(draggingElem.getAttribute('data-origin-y'));
         var touch = event.touches[0];
