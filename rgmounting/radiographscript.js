@@ -25,6 +25,7 @@ function enableDragAndDrop(element) {
     });
 
 element.addEventListener('touchstart', function(event) {
+	 document.getElementById('debug-area').innerText += '\nTouch start event triggered';
     if (event.target.tagName.toLowerCase() === 'img') {
         resetBorderColors(); // Call the function to reset the border colors
         wasDragged = true; // Set the flag to true to indicate a drag operation has started
@@ -36,6 +37,7 @@ element.addEventListener('touchstart', function(event) {
 });
 
 element.addEventListener('touchmove', function(event) {
+	document.getElementById('debug-area').innerText += '\nTouch move event triggered';
     var draggingElem = document.querySelector('[data-dragging="true"]');
     if (draggingElem && draggingElem.tagName.toLowerCase() === 'img') {
         var originalX = parseFloat(draggingElem.getAttribute('data-origin-x'));
