@@ -20,6 +20,7 @@ body {
 
 /* --- Instructions Styles --- */
 .instructions {
+    display: block; /* Change this to block */
     padding: 10px 20px;
     background-color: rgba(147, 112, 219, 0.5);
     color: #ffffff;
@@ -28,7 +29,14 @@ body {
     border-radius: 4px;
     font-size: 18px;
     border: 2px solid #000000;
+
+    /* New styles to center the element at the top */
+    position: relative; 
+    width: max-content; /* Add this to give it the width it requires */
+    margin: 0 auto 20px; /* Centers the element and adds space below it */
+    text-align: center; /* Center the text inside the element */
 }
+
 
 /* --- Button Styles --- */
 .button {
