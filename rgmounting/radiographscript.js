@@ -20,17 +20,43 @@ function enableDragAndDrop(element) {
     element.addEventListener('dragstart', function(event) {
         resetBorderColors(); // Call the function to reset the border colors
         wasDragged = true; // Set the flag to true to indicate a drag operation has started
-		evaluationComplete = false;
+        evaluationComplete = false;
         event.dataTransfer.setData('text/plain', event.target.id);
+    });
+
+    element.addEventListener('touchstart', function(event) {
+        resetBorderColors(); // Call the function to reset the border colors
+        wasDragged = true; // Set the flag to true to indicate a drag operation has started
+        evaluationComplete = false;
+        event.target.setAttribute('data-dragging', 'true');
+        event.target.setAttribute('data-x', event.touches[0].clientX);
+        event.target.setAttribute('data-y', event.touches[0].clientY);
+        event.preventDefault();
     });
 
     element.addEventListener('dragover', function(event) {
         event.preventDefault();
     });
 
-    element.addEventListener('drop', function(event) {
+    element.addEventListener('touchmove', function(event) {
+        var draggingElem = document.querySelector('[data-dragging="true"]');
+        if(draggingElem) {
+            var touchX = event.touches[0].clientX;
+            var touchY = event.touches[0].clientY;
+            draggingElem.style.position = 'fixed';
+            draggingElem.style.top = (touchY - 50) + 'px'; // Adjusted to make element center to finger
+            draggingElem.style.left = (touchX - 50) + 'px'; // Adjusted to make element center to finger
+        }
         event.preventDefault();
-        var data = event.dataTransfer.getData('text/plain');
+    });
+
+    element.addEventListener('drop', handleDrop);
+    element.addEventListener('touchend', handleDrop);
+
+    function handleDrop(event) {
+        event.preventDefault();
+
+        var data = event.dataTransfer ? event.dataTransfer.getData('text/plain') : document.querySelector('[data-dragging="true"]').id;
         var draggableElement = document.getElementById(data);
         var dropzone = event.target;
         var targetImage; // Variable to hold the reference to the image that should be targeted
@@ -59,10 +85,20 @@ function enableDragAndDrop(element) {
         if (targetImage && targetImage.tagName === 'IMG') {
             selectImage({ target: targetImage });
         }
+        
+        var draggingElem = document.querySelector('[data-dragging="true"]');
+        if(draggingElem) {
+            draggingElem.style.position = '';
+            draggingElem.style.top = '';
+            draggingElem.style.left = '';
+            draggingElem.removeAttribute('data-dragging');
+        }
+
         wasDragged = false; // Reset the flag to false after the drop operation
-		showRotationButtons();
-    });
+        showRotationButtons();
+    }
 }
+
 
 
 // Deselect an Image
@@ -201,7 +237,7 @@ var allImageSlots = document.querySelectorAll('.image-slot');
 var instructions = document.getElementById('instructions');
     if (instructions) {  
         instructions.style.display = 'block';
-		instructions.innerHTML = 'To complete the task, drag and rotate the radiographs to match the correct anatomical locations. Afterward, click "Evaluate" to receive feedback on your performance2.';
+		instructions.innerHTML = 'To complete the task, drag and rotate the radiographs to match the correct anatomical locations. Afterward, click "Evaluate" to receive feedback on your performance.';
 
     }
 
