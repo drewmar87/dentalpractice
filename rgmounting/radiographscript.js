@@ -25,12 +25,14 @@ function enableDragAndDrop(element) {
     });
 
 element.addEventListener('touchstart', function(event) {
-    resetBorderColors(); // Call the function to reset the border colors
-    wasDragged = true; // Set the flag to true to indicate a drag operation has started
-    evaluationComplete = false;
-    event.target.setAttribute('data-dragging', 'true');
-    event.target.setAttribute('data-origin-x', event.touches[0].clientX);
-    event.target.setAttribute('data-origin-y', event.touches[0].clientY);
+    if (event.target.tagName.toLowerCase() === 'img') {
+        resetBorderColors(); // Call the function to reset the border colors
+        wasDragged = true; // Set the flag to true to indicate a drag operation has started
+        evaluationComplete = false;
+        event.target.setAttribute('data-dragging', 'true');
+        event.target.setAttribute('data-origin-x', event.touches[0].clientX);
+        event.target.setAttribute('data-origin-y', event.touches[0].clientY);
+    }
 });
 
 element.addEventListener('touchmove', function(event) {
@@ -112,7 +114,13 @@ element.addEventListener('touchend', function(event) {
             dropzone.id = tmpId;
         }
         
-        event.preventDefault();
+       event.preventDefault();
+    } else {
+        // If it was a tap (not a drag), we trigger a click event to handle image selection and showing rotation buttons
+        var tappedElem = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
+        if (tappedElem) {
+            tappedElem.click();
+        }
     }
 });
 
