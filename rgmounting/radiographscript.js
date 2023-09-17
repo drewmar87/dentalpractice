@@ -201,7 +201,7 @@ var allImageSlots = document.querySelectorAll('.image-slot');
 var instructions = document.getElementById('instructions');
     if (instructions) {  
         instructions.style.display = 'block';
-		instructions.innerHTML = 'To complete the task, drag and rotate the radiographs to match the correct anatomical locations. Afterward, click "Evaluate" to receive feedback on your performance1.';
+		instructions.innerHTML = 'To complete the task, drag and rotate the radiographs to match the correct anatomical locations. Afterward, click "Evaluate" to receive feedback on your performance2.';
 
     }
 
@@ -210,6 +210,34 @@ document.getElementById('rotate-left-button').addEventListener('click', rotateLe
 document.getElementById('rotate-right-button').addEventListener('click', rotateRight);
 
 // messageText.style.display = 'none';
+
+let selectedSlot = null;
+
+// Add event listeners to each image slot
+document.querySelectorAll('.image-slot').forEach(slot => {
+    slot.addEventListener('click', handleSlotClick);
+});
+
+function handleSlotClick(event) {
+    // If an image is selected and we click on a different slot, move the image
+    if (selectedImage && event.currentTarget !== selectedImage.parentElement) {
+        selectedSlot = event.currentTarget;
+        selectedSlot.append(selectedImage);
+        showRotationButtons();
+    }
+}
+
+document.addEventListener('click', (event) => {
+    // If the click is outside an image or image slot, deselect the current image
+    if (!event.target.closest('.image') && !event.target.closest('.image-slot')) {
+        if (selectedImage) {
+            selectedImage.classList.remove('selected');
+            selectedImage = null;
+            hideRotationButtons();
+        }
+    }
+});
+
 });
 
 // End DOM Loader
