@@ -19,9 +19,9 @@ body {
 
 /* --- Instructions Styles --- */
 .instructions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     width: 100%;
     padding: 10px 20px;
     background-color: rgba(147, 112, 219, 0.5);
@@ -273,18 +273,18 @@ body {
 <script src="radiographscript.js"></script>
 </head>
 <body>
-
-        <!-- Image Container -->
-        <div id="image-container">
-		
-            <!-- Image Grid -->
-            <div class="image-grid">
-		    <div class="header">
+<div class="header">
 	The Molar Manual: Mastering Radiograph Mounting
 </div>
         <!-- Instructions Section -->
 		<div class="instructions" id="instructions"></div>
 		<br />
+        <!-- Image Container -->
+        <div id="image-container">
+		
+            <!-- Image Grid -->
+            <div class="image-grid">
+
                 <!-- Image Slots -->
                 <div class="image-slot"></div>
                 <div class="image-slot"></div>
