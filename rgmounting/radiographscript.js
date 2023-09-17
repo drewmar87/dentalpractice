@@ -256,8 +256,8 @@ function selectImage(event) {
         // Calculate the new positions for the rotational buttons
         var buttonHeight = 80; // Adjust based on your button's height
         var buttonWidth = 90; // Adjust based on your button's width
-        var newLeftPosition = rect.left + window.scrollX + rect.width / 2 - buttonWidth - leftAdjustment;
-        var newTopPosition = rect.bottom + window.scrollY - buttonHeight - topAdjustment;
+        var newLeftPosition = rect.left + rect.width / 2 - buttonWidth - leftAdjustment;
+        var newTopPosition = rect.bottom - buttonHeight - topAdjustment;
 
         // Get the rotational buttons
         var rotateLeftButton = document.getElementById('rotate-left-button');
