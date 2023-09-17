@@ -64,7 +64,97 @@ function enableDragAndDrop(element) {
     });
 }
 
+// Touch Event Handlers for mobile devices
+var draggedElem;
+var offsetX, offsetY;
 
+function touchStart(event) {
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nTouch Start Function Called';
+    
+    if (event.target.classList.contains('image-slot')) {
+        draggedElem = event.target;
+        var rect = draggedElem.getBoundingClientRect();
+        offsetX = event.touches[0].clientX - rect.left;
+        offsetY = event.touches[0].clientY - rect.top;
+        event.target.style.position = 'absolute';
+        event.target.style.zIndex = '1000';
+        document.body.append(event.target);
+        moveAt(event.touches[0].clientX, event.touches[0].clientY);
+        
+        // Debug statement
+        document.getElementById('debug-area').innerText += '\nTouch Start: ' + event.target.id;
+    }
+}
+
+function moveAt(pageX, pageY) {
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nMove At Function Called';
+
+    draggedElem.style.left = pageX - offsetX + 'px';
+    draggedElem.style.top = pageY - offsetY + 'px';
+    
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nMove At: (' + pageX + ', ' + pageY + ')';
+}
+
+function touchMove(event) {
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nTouch Move Function Called';
+
+    moveAt(event.touches[0].clientX, event.touches[0].clientY);
+    
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nTouch Move';
+}
+
+function touchEnd(event) {
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nTouch End Function Called';
+
+    // Find the closest image slot to drop the dragged element
+    var closestSlot;
+    var minDistance = Infinity;
+    imageSlots.forEach(function(slot) {
+        var rect = slot.getBoundingClientRect();
+        var distance = Math.sqrt(Math.pow(event.changedTouches[0].clientX - (rect.left + rect.width / 2), 2) + Math.pow(event.changedTouches[0].clientY - (rect.top + rect.height / 2), 2));
+        if (distance < minDistance) {
+            minDistance = distance;
+            closestSlot = slot;
+        }
+    });
+
+    // Swap the images between the dragged element and the closest slot
+    if (closestSlot) {
+        var tmpSrc = draggedElem.src;
+        var tmpId = draggedElem.id;
+        draggedElem.src = closestSlot.src;
+        draggedElem.id = closestSlot.id;
+        closestSlot.src = tmpSrc;
+        closestSlot.id = tmpId;
+        
+        // Debug statement
+        document.getElementById('debug-area').innerText += '\nImage swapped with: ' + closestSlot.id;
+    }
+    
+    // Reset the styles applied during the drag operation
+    draggedElem.style.position = 'static';
+    draggedElem.style.zIndex = 'auto';
+    
+    // Debug statement
+    document.getElementById('debug-area').innerText += '\nTouch End';
+}
+
+// Adding touch event listeners
+imageSlots.forEach(function(imageSlot) {
+    imageSlot.addEventListener('touchstart', touchStart);
+    imageSlot.addEventListener('touchmove', touchMove);
+    imageSlot.addEventListener('touchend', touchEnd);
+});
+
+
+
+	
 // Deselect an Image
 function deselectImage() {
     if (selectedImage) {
@@ -362,90 +452,3 @@ function resetBorderColors() {
     });
 }
 
-// Touch Event Handlers for mobile devices
-var draggedElem;
-var offsetX, offsetY;
-
-function touchStart(event) {
-    // Debug statement
-    document.getElementById('debug-area').innerText += '\nTouch Start Function Called';
-    
-    if (event.target.classList.contains('image-slot')) {
-        draggedElem = event.target;
-        var rect = draggedElem.getBoundingClientRect();
-        offsetX = event.touches[0].clientX - rect.left;
-        offsetY = event.touches[0].clientY - rect.top;
-        event.target.style.position = 'absolute';
-        event.target.style.zIndex = '1000';
-        document.body.append(event.target);
-        moveAt(event.touches[0].clientX, event.touches[0].clientY);
-        
-        // Debug statement
-        document.getElementById('debug-area').innerText += '\nTouch Start: ' + event.target.id;
-    }
-}
-
-function moveAt(pageX, pageY) {
-    // Debug statement
-    document.getElementById('debug-area').innerText += '\nMove At Function Called';
-
-    draggedElem.style.left = pageX - offsetX + 'px';
-    draggedElem.style.top = pageY - offsetY + 'px';
-    
-    // Debug statement
-    document.getElementById('debug-area').innerText += '\nMove At: (' + pageX + ', ' + pageY + ')';
-}
-
-function touchMove(event) {
-    // Debug statement
-    document.getElementById('debug-area').innerText += '\nTouch Move Function Called';
-
-    moveAt(event.touches[0].clientX, event.touches[0].clientY);
-    
-    // Debug statement
-    document.getElementById('debug-area').innerText += '\nTouch Move';
-}
-
-function touchEnd(event) {
-    // Debug statement
-    document.getElementById('debug-area').innerText += '\nTouch End Function Called';
-
-    // Find the closest image slot to drop the dragged element
-    var closestSlot;
-    var minDistance = Infinity;
-    imageSlots.forEach(function(slot) {
-        var rect = slot.getBoundingClientRect();
-        var distance = Math.sqrt(Math.pow(event.changedTouches[0].clientX - (rect.left + rect.width / 2), 2) + Math.pow(event.changedTouches[0].clientY - (rect.top + rect.height / 2), 2));
-        if (distance < minDistance) {
-            minDistance = distance;
-            closestSlot = slot;
-        }
-    });
-
-    // Swap the images between the dragged element and the closest slot
-    if (closestSlot) {
-        var tmpSrc = draggedElem.src;
-        var tmpId = draggedElem.id;
-        draggedElem.src = closestSlot.src;
-        draggedElem.id = closestSlot.id;
-        closestSlot.src = tmpSrc;
-        closestSlot.id = tmpId;
-        
-        // Debug statement
-        document.getElementById('debug-area').innerText += '\nImage swapped with: ' + closestSlot.id;
-    }
-    
-    // Reset the styles applied during the drag operation
-    draggedElem.style.position = 'static';
-    draggedElem.style.zIndex = 'auto';
-    
-    // Debug statement
-    document.getElementById('debug-area').innerText += '\nTouch End';
-}
-
-// Adding touch event listeners
-imageSlots.forEach(function(imageSlot) {
-    imageSlot.addEventListener('touchstart', touchStart);
-    imageSlot.addEventListener('touchmove', touchMove);
-    imageSlot.addEventListener('touchend', touchEnd);
-});
