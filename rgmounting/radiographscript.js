@@ -39,14 +39,15 @@ element.addEventListener('touchmove', function(event) {
         var originalX = parseFloat(draggingElem.getAttribute('data-origin-x'));
         var originalY = parseFloat(draggingElem.getAttribute('data-origin-y'));
         var touch = event.touches[0];
-        var deltaX = touch.clientX - originalX;
-        var deltaY = touch.clientY - originalY;
+        var deltaX = touch.clientX - originalX - 50; // Adjusted offset
+        var deltaY = touch.clientY - originalY - 50; // Adjusted offset
         draggingElem.style.top = deltaY + 'px';
         draggingElem.style.left = deltaX + 'px';
         draggingElem.style.position = 'relative';
         event.preventDefault();
     }
 });
+
 
 
 
