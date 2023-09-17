@@ -205,7 +205,6 @@ var allImageSlots = document.querySelectorAll('.image-slot');
 // Top Instructions
 var instructions = document.getElementById('instructions');
     if (instructions) {  
-        instructions.style.display = 'block';
 		instructions.innerHTML = 'To complete the task, drag and rotate the radiographs to match the correct anatomical locations. Afterward, click "Evaluate" to receive feedback on your performance.';
 
     }
