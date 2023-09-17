@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+	<title>Radiograph Mounting Activity</title>
+	
+<style>
+/* --- Global Styles --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #000000;
+    text-align: center;
+}
+
+/* --- Instructions Styles --- */
+.instructions {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(147, 112, 219, 0.5);
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 18px;
+    border: 2px solid #000000;
+}
+
+/* --- Button Styles --- */
+.button {
+    font-family: 'Montserrat', Arial, sans-serif;
+    display: inline-block;
+    padding: 0px;
+    background-color: #9370DB;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 18px;
+    border: 2px solid #000000;
+    width: 150px;
+    height: 75px;
+}
+.button:hover {
+    background-color: #8A2BE2;
+}
+.button:active {
+    background-color: violet;
+}
+
+/* --- Image Grid Styles --- */
+.image-grid, .image-grid2 {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    justify-items: center;
+    align-items: center;
+}
+
+/* --- Image Slot Styles --- */
+.image-slot {
+    height: 175px;
+    width: 175px;
+    position: relative;
+    border: 2.5px dashed #9370DB;
+    border-radius: 10px;
+}
+.image-slot img {
+    max-height: 100%;
+    max-width: 92.5%;
+    margin-top: 12.5%;
+    object-fit: contain;
+    border-radius: 0px;
+    line-height: 0;
+}
+
+/* --- Image Slot Variation Styles --- */
+.image-slot.originalBorder {
+    border-color: #9370DB;
+    border-width: 2.5px;
+}
+.image-slot.incorrect {
+    border-color: #ff0000 !important;
+    border-width: 2.5px;
+    background-color: rgba(255, 0, 0, 0.05);
+}
+.image-slot.correct {
+    border-color: #00ff00 !important;
+    border-width: 2.5px;
+    background-color: rgba(0, 255, 0, 0.10);
+}
+
+/* --- Image Container Styles --- */
+#image-container {
+    transform: scale(1);
+    transform-origin: top;
+    align: center;
+    valign: center;
+}
+#image3, #image4, #image5, #image10, #image11, #image12 {
+    width: auto;
+    max-height: 92.5%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2.5%;
+}
+
+/* --- Rotation Button Styles --- */
+#rotate-left-button, #rotate-right-button {
+    font-family: 'Montserrat', Arial, sans-serif;
+    width: 85px;
+    height: 60px;
+    font-size: 12px;
+    display: none;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #455A64;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px #808080;
+    background-color: #78909C;
+}
+#rotate-left-button:hover, #rotate-right-button:hover {
+    background-color: #90A4AE;
+}
+#rotate-left-button:active, #rotate-right-button:active {
+    background-color: #455A64;
+}
+
+/* --- Selected Image Styles --- */
+.selected {
+    border: 2.5px solid #000080;
+    box-shadow: 3px 3px 5px #808080;
+}
+
+/* --- Message Styles --- */
+.message {
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+/* ---------- Modal Styles ---------- */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1000;
+    padding-top: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 15px; /* Rounded corners */
+    width: 50%; /* Adjusted width to 50% of the parent container */
+    max-width: 600px; /* Setting a maximum width to maintain aesthetics on larger screens */
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* ---------- Modal Text Styles ---------- */
+
+.modal-content p {
+    margin-bottom: 20px;
+    font-size: 1.2em; /* Larger font size */
+}
+
+.warning-text {
+    color: red;
+    font-weight: bold; /* Making the text bold */
+    display: block; /* Making the text appear on a new line */
+    text-align: center; /* Centering the text */
+}
+
+/* ---------- Modal Button Styles ---------- */
+
+.modal-content button {
+    padding: 20px 30px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 12px; /* Rounded corners for buttons */
+    cursor: pointer;
+    font-size: 20px; /* Larger font size for buttons */
+}
+
+.modal-content button#confirm-yes {
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #28a745; /* Border matching background color */
+}
+
+.modal-content button#confirm-no {
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid #dc3545; /* Border matching background color */
+}
+
+/* ---------- Modal Button Active & Hover Styles ---------- */
+
+.modal-content button:active {
+    transform: translate(2px, 2px); /* Moves the button slightly down and to the right */
+}
+
+.modal-content button#confirm-yes:active {
+    background-color: #218838; /* Darker green for active state */
+    border-color: #1e7e34; /* Even darker green for active border */
+}
+
+.modal-content button#confirm-no:active {
+    background-color: #c82333; /* Darker red for active state */
+    border-color: #bd2130; /* Even darker red for active border */
+}
+
+.modal-content button:hover {
+    opacity: 0.8; /* Adding transitions for a smoother hover effect */
+}
+
+/* -------- Copyright ----- Andrew Margarit RDH ------- */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #9370DB;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.header {
+    background-color: #9370DB;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+</style>
+<script src="radiographscript.js"></script>
+</head>
+<body>
+<div class="header">
+	The Molar Manual: Mastering Radiograph Mounting
+</div>
+
+    <main>
+        <!-- Instructions Section -->
+		<div class="instructions" id="instructions"></div>
+		<br />
+        <!-- Image Container -->
+        <div id="image-container">
+            <!-- Image Grid -->
+            <div class="image-grid">
+                <!-- Image Slots -->
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot-holder"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot-holder"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot-holder"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot-holder"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+                <div class="image-slot-holder">
+				<!-- Reset Button -->
+                    <button class="button" id="resetButton">Reset</button>
+                </div>
+                <div class="image-slot-holder">
+				<!-- Left Rotation Placeholder -->
+                    <button id="rotate-left-button">⟲ <br />Left 90°</button>
+                </div>
+                <div class="image-slot-holder">
+				<!-- Evaluation Button -->
+                    <button class="button" id="evaluateButton">Evaluate</button>
+                </div>
+                <div class="image-slot-holder">
+				<!-- Right Rotation Placeholder -->
+                    <button id="rotate-right-button">⟳ <br />Right 90°</button>
+                </div>
+                <div class="image-slot-holder">
+				<!-- Next Button -->
+                    <button class="button" id="nextButton">Next</button>
+                </div>
+                <div class="image-slot"></div>
+                <div class="image-slot"></div>
+            </div>
+
+            <!-- Image Grid 2 -->
+            <p>
+                <div class="image-grid2">
+                    <!-- Image Slots with Images -->
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 1" id="image1" src="images/patient5fmx/1.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 2" id="image2" src="images/patient5fmx/2.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 3" id="image3" src="images/patient5fmx/3.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 4" id="image4" src="images/patient5fmx/4.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 5" id="image5" src="images/patient5fmx/5.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 6" id="image6" src="images/patient5fmx/6.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 7" id="image7" src="images/patient5fmx/7.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 8" id="image8" src="images/patient5fmx/8.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 9" id="image9" src="images/patient5fmx/9.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 10" id="image10" src="images/patient5fmx/10.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 11" id="image11" src="images/patient5fmx/11.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 12" id="image12" src="images/patient5fmx/12.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 13" id="image13" src="images/patient5fmx/13.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 14" id="image14" src="images/patient5fmx/14.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 15" id="image15" src="images/patient5fmx/15.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 16" id="image16" src="images/patient5fmx/16.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 17" id="image17" src="images/patient5fmx/17.jpeg"/>
+                    </div>
+                    <div class="image-slot" draggable="false">
+                        <img alt="Image 18" id="image18" src="images/patient5fmx/18.jpeg"/>
+                    </div>
+                </div>
+            </p>
+        </div>
+    </main>
+<div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+		<p>Are you sure? <br /><span class="warning-text">**This will erase your mounting progress.**</span></p>
+        <button id="confirm-yes">Yes</button>
+        <button id="confirm-no">No</button>
+    </div>
+</div>
+<div class="footer">
+  &copy; 2023 The Molar Manual. All Rights Reserved. | Designed by Andrew Margarit, RDH
+</div>
+
+</body>
+</html>
