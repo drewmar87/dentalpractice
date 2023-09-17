@@ -19,19 +19,15 @@ body {
 
 /* --- Instructions Styles --- */
 .instructions {
-    display: grid;
-    grid-template-columns: repeat(1);
-    grid-template-rows: repeat(1);
+    position: fixed;
+    left: 0;
+    top: 30px;
     width: 100%;
-    padding: 10px 20px;
-    background-color: rgba(147, 112, 219, 0.5);
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 18px;
-    border: 2px solid #000000;
-    box-sizing: border-box;
+    background-color: #9370DB;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+    font-size: 14px;
 }
 
 
@@ -258,11 +254,10 @@ body {
 }
 
 .header {
-    position: relative;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    max-width: 100%;
     background-color: #9370DB;
     text-align: center;
     padding: 10px 0;
