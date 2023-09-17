@@ -91,15 +91,17 @@ element.addEventListener('touchmove', function(event) {
     });
 	
 	
-	element.addEventListener('touchend', function(event) {
+element.addEventListener('touchend', function(event) {
     var draggingElem = document.querySelector('[data-dragging="true"]');
     if (draggingElem) {
-        draggingElem.style.transform = '';
+        var dropzone = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY - 50); // Adjusted offset
+        
+        draggingElem.style.top = '';
+        draggingElem.style.left = '';
+        draggingElem.style.position = '';
         draggingElem.removeAttribute('data-dragging');
         draggingElem.removeAttribute('data-origin-x');
         draggingElem.removeAttribute('data-origin-y');
-        
-        var dropzone = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
         
         if (dropzone && dropzone.id.startsWith('image')) {
             var tmpSrc = draggingElem.src;
@@ -113,6 +115,7 @@ element.addEventListener('touchmove', function(event) {
         event.preventDefault();
     }
 });
+
 
 	
 }
