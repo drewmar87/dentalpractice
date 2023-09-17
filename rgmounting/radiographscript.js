@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	
     shuffleImages();
 
+imageSlots.forEach(function(imageSlot) {
+    imageSlot.addEventListener('click', function(event) {
+        placeImage(event, imageSlot);
+    });
+});
+
+
+
+
 // Dragging and Dropping Images
 function enableDragAndDrop(element) {
     
@@ -183,11 +192,8 @@ function shuffleImages() {
 		originalRotations[i] = 0;
         img.style.transform = 'rotate(' + getRandomRotation() + 'deg)';
     });
-
-    document.querySelectorAll('.image-grid .image-slot img, .image-grid2 .image-slot img').forEach(img => {
-        img.addEventListener('click', selectImage);
-    });
 }
+
 
 // Drag and Drop Enable
 var allImageSlots = document.querySelectorAll('.image-slot');
@@ -209,6 +215,14 @@ document.getElementById('rotate-left-button').addEventListener('click', rotateLe
 document.getElementById('rotate-right-button').addEventListener('click', rotateRight);
     
 // messageText.style.display = 'none';
+
+document.body.addEventListener('click', function(event) {
+    if (event.target.tagName === 'IMG') {
+        selectImage(event);
+    }
+});
+
+
 });
 
 // End DOM Loader
@@ -250,7 +264,7 @@ function selectImage(event) {
         var rect = selectedImage.getBoundingClientRect();
         
         // Variables to adjust the final position of the buttons
-        var topAdjustment = 0; // Adjust this value to move the buttons up or down
+        var topAdjustment = 17.5; // Adjust this value to move the buttons up or down
         var leftAdjustment = 10; // Adjust this value to move the buttons left or right
 
         // Calculate the new positions for the rotational buttons
@@ -335,4 +349,59 @@ function resetBorderColors() {
         slot.classList.add('originalBorder'); // Add the 'originalBorder' class
     });
 }
+
+
+
+function placeImage(event, imageSlot) {
+    // event.stopPropagation(); // Comment out or remove this line
+    if (selectedImage) {
+        // Remove the existing click event listener
+        selectedImage.removeEventListener('click', selectImage);
+        
+        // Append the image to the new slot
+        imageSlot.appendChild(selectedImage);
+        
+        // Re-add the click event listener
+        selectedImage.addEventListener('click', selectImage);
+        
+        // Get the bounding rectangle of the selected image
+        var rect = selectedImage.getBoundingClientRect();
+        
+        // Variables to adjust the final position of the buttons
+        var topAdjustment = 0; // Adjust this value to move the buttons up or down
+        var leftAdjustment = 10; // Adjust this value to move the buttons left or right
+
+        // Calculate the new positions for the rotational buttons
+        var buttonHeight = 80; // Adjust based on your button's height
+        var buttonWidth = 90; // Adjust based on your button's width
+        var newLeftPosition = rect.left + window.scrollX + rect.width / 2 - buttonWidth - leftAdjustment;
+        var newTopPosition = rect.bottom + window.scrollY - buttonHeight - topAdjustment;
+        
+        // Get the rotational buttons
+        var rotateLeftButton = document.getElementById('rotate-left-button');
+        var rotateRightButton = document.getElementById('rotate-right-button');
+
+        // Set the new positions for the rotational buttons
+        rotateLeftButton.style.position = 'absolute';
+        rotateLeftButton.style.top = newTopPosition + 'px';
+        rotateLeftButton.style.left = newLeftPosition + 'px';
+        rotateLeftButton.style.zIndex = 1000;
+
+        rotateRightButton.style.position = 'absolute';
+        rotateRightButton.style.top = newTopPosition + 'px';
+        rotateRightButton.style.left = newLeftPosition + buttonWidth + leftAdjustment * 2 + 'px';
+        rotateRightButton.style.zIndex = 1000;
+
+        // Do not deselect the image; comment out or remove the line below
+        // selectedImage.classList.remove('selected');
+        
+        // Show the rotation buttons; uncomment the line below
+        showRotationButtons();
+        
+        // Do not reset the selected image variable; comment out or remove the line below
+        // selectedImage = null;
+    }
+}
+
+
 
