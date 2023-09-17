@@ -41,10 +41,13 @@ element.addEventListener('touchmove', function(event) {
         var touch = event.touches[0];
         var deltaX = touch.clientX - originalX;
         var deltaY = touch.clientY - originalY;
-        draggingElem.style.transform = 'translate(' + deltaX + 'px, ' + deltaY + 'px)';
+        draggingElem.style.top = deltaY + 'px';
+        draggingElem.style.left = deltaX + 'px';
+        draggingElem.style.position = 'relative';
         event.preventDefault();
     }
 });
+
 
 
     element.addEventListener('dragover', function(event) {
