@@ -60,6 +60,7 @@ function enableDragAndDrop(element) {
             selectImage({ target: targetImage });
         }
         wasDragged = false; // Reset the flag to false after the drop operation
+		showRotationButtons();
     });
 }
 
@@ -222,8 +223,8 @@ function getRandomRotation() {
 // Start Selected Image Function
 let wasDragged = false;
 let selectedImage = null;
-function selectImage(event) {
 
+function selectImage(event) {
     // Get the clicked image element
     let clickedImage = event.target;
 
@@ -245,38 +246,41 @@ function selectImage(event) {
         showRotationButtons();
     }
 
-    // Get the bounding rectangle of the selected image
+    // Reset the wasDragged flag after handling the selection
+    wasDragged = false;
+}
+
+// Hide rotation buttons if no image is selected
+function showRotationButtons() {
     if (selectedImage) {
-        var rect = selectedImage.getBoundingClientRect();
-
-        // Variables to adjust the final position of the buttons
-        var topAdjustment = 17.5; // Adjust this value to move the buttons up or down
-        var leftAdjustment = 10; // Adjust this value to move the buttons left or right
-
-        // Calculate the new positions for the rotational buttons
-        var buttonHeight = 80; // Adjust based on your button's height
-        var buttonWidth = 52; // Adjust based on your button's width
-        var newLeftPosition = rect.left + rect.width / 2 - buttonWidth - leftAdjustment;
-        var newTopPosition = rect.bottom - buttonHeight - topAdjustment;
-
         // Get the rotational buttons
         var rotateLeftButton = document.getElementById('rotate-left-button');
         var rotateRightButton = document.getElementById('rotate-right-button');
 
-        // Set the new positions for the rotational buttons
+        // Get the image slot (parent element of the selected image)
+        var imageSlot = selectedImage.parentElement;
+
+        // Append the buttons to the image slot
+        imageSlot.append(rotateLeftButton);
+        imageSlot.append(rotateRightButton);
+
+        // Apply styles to the buttons to show them and position them within the image slot
         rotateLeftButton.style.position = 'absolute';
-        rotateLeftButton.style.top = newTopPosition + 'px';
-        rotateLeftButton.style.left = newLeftPosition + 'px';
-        rotateLeftButton.style.zIndex = 1000;
+        rotateLeftButton.style.bottom = '-25px';
+        rotateLeftButton.style.left = '0px';
+        rotateLeftButton.style.display = 'block';
+        rotateLeftButton.style.zIndex = '1000';  // Set a high z-index value
+
 
         rotateRightButton.style.position = 'absolute';
-        rotateRightButton.style.top = newTopPosition + 'px';
-        rotateRightButton.style.left = newLeftPosition + buttonWidth + leftAdjustment * 2 + 'px';
-        rotateRightButton.style.zIndex = 1000;
+        rotateRightButton.style.bottom = '-25px';
+        rotateRightButton.style.right = '0px';
+        rotateRightButton.style.display = 'block';
+	    rotateRightButton.style.zIndex = '1000';  // Set a high z-index value
+
     }
 }
 
-// Hide rotation buttons if no image is selected
 function hideRotationButtons() {
     var rotateLeftButton = document.getElementById('rotate-left-button');
     var rotateRightButton = document.getElementById('rotate-right-button');
@@ -285,14 +289,8 @@ function hideRotationButtons() {
     rotateRightButton.style.display = 'none';
 }
 
-// Show rotation buttons if no image is selected
-function showRotationButtons() {
-    var rotateLeftButton = document.getElementById('rotate-left-button');
-    var rotateRightButton = document.getElementById('rotate-right-button');
 
-    rotateLeftButton.style.display = 'block';
-    rotateRightButton.style.display = 'block';
-}
+
 
 // Rotate Right
 function rotateRight() {
