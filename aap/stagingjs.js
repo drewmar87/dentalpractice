@@ -437,12 +437,4 @@ function showResults() {
 
 });
 
-var correctPin = "072023"; // Set this to your actual PIN
-var userPin = prompt("Please have your faculty enter their PIN:");
-var body = document.getElementsByTagName("body")[0];
 
-if (userPin !== correctPin) {
-    body.innerHTML = 'Access denied. Incorrect PIN.';
-} else {
-    body.style.display = "block";
-}
