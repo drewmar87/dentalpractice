@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 var currentDraggedElementId = null;
 
 var dragImage = new Image();
-dragImage.src = 'images/drag.jpeg';
+dragImage.src = 'images/drag.png';
 dragImage.onload = function() {
     imageLoaded = true;
 };
