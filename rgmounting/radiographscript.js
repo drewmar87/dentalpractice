@@ -491,8 +491,8 @@ function showRotationButtons() {
 
 
         rotateRightButton.style.position = 'absolute';
-        rotateRightButton.style.bottom = '50px';
-        rotateRightButton.style.left = '-50px';
+        rotateRightButton.style.bottom = '-40px';
+        rotateRightButton.style.left = '20px';
         rotateRightButton.style.display = 'block';
 	    rotateRightButton.style.zIndex = '1000';  // Set a high z-index value
 
