@@ -1,11 +1,11 @@
 // DOM Content Loader
 document.addEventListener('DOMContentLoaded', function() {
+
     var beginButton = document.getElementById('beginButton');
     var evaluateButton = document.getElementById('evaluateButton');
     var resetButton = document.getElementById('resetButton');
     var nextButton = document.getElementById('nextButton');
     var imageSlots = document.querySelectorAll('.image-grid .image-slot');
- //   var messageText = document.getElementById('messageText');
     var evaluationComplete = false;
 
     var correctOrder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
@@ -14,54 +14,243 @@ document.addEventListener('DOMContentLoaded', function() {
 
     shuffleImages();
 
-// Dragging and Dropping Images
+var currentDraggedElementId = null;
+
+var dragImage = new Image();
+dragImage.src = 'images/drag.png';
+dragImage.onload = function() {
+    imageLoaded = true;
+};
+
+let dropTarget = null; 
+let clone; // To store the clone
+let startX, startY; // To store the initial touch coordinates
+
+var imageLoaded = false;
+
 function enableDragAndDrop(element) {
+    element.addEventListener('touchstart', handleTouchStart);
+    element.addEventListener('touchmove', handleTouchMove);
+    element.addEventListener('touchend', handleTouchEnd);
 
-    element.addEventListener('dragstart', function(event) {
-        resetBorderColors(); // Call the function to reset the border colors
-        wasDragged = true; // Set the flag to true to indicate a drag operation has started
-		evaluationComplete = false;
-        event.dataTransfer.setData('text/plain', event.target.id);
-    });
+    element.addEventListener('dragstart', handleDragStart);
+    element.addEventListener('dragover', handleDragOver);
+    element.addEventListener('drop', handleDrop);
+}
 
-    element.addEventListener('dragover', function(event) {
-        event.preventDefault();
-    });
+function handleDragStart(event) {
+    // console.log("DRAG START");
 
-    element.addEventListener('drop', function(event) {
-        event.preventDefault();
-        var data = event.dataTransfer.getData('text/plain');
-        var draggableElement = document.getElementById(data);
-        var dropzone = event.target;
-        var targetImage; // Variable to hold the reference to the image that should be targeted
+    if (event.target.tagName.toLowerCase() === 'img') {
+        if (imageLoaded) {
+            event.dataTransfer.setDragImage(dragImage, dragImage.width / 2, dragImage.height / 2);
+        }
+    }
+    resetBorderColors();
+    wasDragged = true;
+    evaluationComplete = false;
+    event.dataTransfer.setData('text/plain', event.target.id);
+}
 
-        if(dropzone.id.startsWith('image')) {
-            var tmpSrc = draggableElement.src;
-            var tmpId = draggableElement.id;
-            draggableElement.src = dropzone.src;
-            draggableElement.id = dropzone.id;
-            dropzone.src = tmpSrc;
-            dropzone.id = tmpId;
-            targetImage = dropzone; // The target image should be the dropzone in this case
-        } else {
-            if(dropzone.firstChild && draggableElement) {
-                var tmpImg = draggableElement;
-                draggableElement.parentNode.appendChild(dropzone.firstChild);
-                dropzone.appendChild(tmpImg);
-                targetImage = tmpImg; // The target image should be the tmpImg in this case
-            } else if(draggableElement) {
-                dropzone.appendChild(draggableElement);
-                targetImage = draggableElement; // The target image should be the draggableElement in this case
+function handleTouchStart(event) {
+    // console.log("TOUCH START :", event.target);
+
+
+    let rotating = false;
+    if (event.target.parentNode && event.target.parentNode.id == 'rotate-left-button') {
+        rotateLeft();
+        rotating = true;
+    }
+    if (event.target.parentNode && event.target.parentNode.id == 'rotate-right-button') {
+        rotateRight();
+        rotating = true;
+    }
+
+
+    resetBorderColors();
+    wasDragged = true;
+    evaluationComplete = false;
+
+    if (event.target.tagName.toLowerCase() === 'img') {
+        currentDraggedElementId = event.target.id;  // Store the id in the global variable
+        //console.log("Setting currentDraggedElementId:", currentDraggedElementId);
+        //console.log("currentDraggedElementId after set:", currentDraggedElementId);
+
+        const touch = event.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+
+        if (!rotating) {
+            clone = dragImage.cloneNode(true);
+            clone.style.position = 'absolute';
+            clone.style.top = startY - dragImage.height / 2 + 'px';
+            clone.style.left = startX - dragImage.width / 2 + 'px';
+            document.body.appendChild(clone);
+        }
+    }
+}
+
+function handleDragOver(event) {
+    // console.log("DRAG OVER");
+
+    event.preventDefault();
+}
+
+function handleTouchMove(event) {
+    // console.log("TOUCH MOVE");
+
+    event.preventDefault();
+
+    if (clone && document.body.contains(clone)) {
+        const touch = event.touches[0];
+        clone.style.left = touch.clientX - dragImage.width / 2 + 'px';
+        clone.style.top = touch.clientY - dragImage.height / 2 + 'px';
+    }
+}
+
+function handleTouchEnd(event) {
+    // console.log("HANDLE TOUCH END");
+
+    event.preventDefault();
+
+    if (clone && document.body.contains(clone)) {
+        document.body.removeChild(clone);  // Remove the clone
+    }
+
+    const touch = event.changedTouches[0];
+    let element = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (element && (element.classList.contains("image-slot") || element.id.startsWith("image"))) {
+        // console.log(`Setting touch element drop target - ${element}`);
+        dropTarget = element;
+    }
+
+    if (dropTarget) {
+        var draggableElement = document.getElementById(currentDraggedElementId);
+
+        if (!draggableElement) {
+            // console.log("Somehow there is not a draggable element. DEBUG!");
+
+            if (selectedImage) {
+                draggableElement = selectedImage;
+                currentDraggedElementId = selectedImage.id;
             }
         }
 
-        // Check if targetImage is defined and is an image element before calling selectImage
+        // append child to image slot
+        if (element.classList.contains("image-slot") && !dropTarget.firstChild) {
+            draggableElement.parentNode.removeChild(draggableElement);
+            dropTarget.appendChild(draggableElement);
+            targetImage = draggableElement;
+        // swap with image in existing slot
+        } else if (element.id.startsWith("image") && currentDraggedElementId != element.id) {
+            var tmpImg = draggableElement;
+            var oldParent = dropTarget.parentNode;
+            draggableElement.parentNode.appendChild(dropTarget);
+            oldParent.appendChild(tmpImg);
+            targetImage = tmpImg; // The target image should be the tmpImg in this case
+        // should select the current image in this case
+        } else if (currentDraggedElementId == dropTarget.id) {
+            targetImage = draggableElement;
+        }
+
+        // focus the new targetted image
         if (targetImage && targetImage.tagName === 'IMG') {
             selectImage({ target: targetImage });
         }
-        wasDragged = false; // Reset the flag to false after the drop operation
-		showRotationButtons();
-    });
+
+        wasDragged = false;
+        currentDraggedElementId = null;  // Reset the global variable
+        showRotationButtons();
+    }
+}
+
+function handleDrop(event) {
+    // console.log("HANDLE DROP");
+
+    event.preventDefault();
+    var data = event.dataTransfer.getData('text/plain');
+    handleCommonDropLogic(event, data);
+}
+
+function handleCommonDropLogic(event, draggedElementId) {
+    var draggableElement = document.getElementById(draggedElementId);
+    var dropzone = event.target;
+    
+    event.preventDefault();
+
+    if (dropTarget) {
+        dropzone = dropTarget;
+    }
+
+    if (event.type === 'drop') {
+        // Only use dataTransfer for 'drop' events
+        var data = event.dataTransfer.getData('text/plain');
+        draggedElementId = data;
+    }
+    
+    // console.log("handleCommonDropLogic draggedElementId:", draggedElementId);
+    var draggableElement = document.getElementById(draggedElementId || currentDraggedElementId);
+    // console.log("draggableElement:", draggableElement);
+
+    if (currentDraggedElementId) {
+        draggableElement = document.getElementById(currentDraggedElementId);
+    }
+
+    if (!draggableElement) {
+        console.error("No element found for ID:", draggedElementId);
+        return; // exit the function if no element is found
+    }
+
+    var dropzone = event.target;
+    var targetImage; // Variable to hold the reference to the image that should be targeted
+
+    if(dropzone.id.startsWith('image')) {
+        var tmpSrc = draggableElement.src;
+        var tmpId = draggableElement.id;
+        draggableElement.src = dropzone.src;
+        draggableElement.id = dropzone.id;
+        dropzone.src = tmpSrc;
+        dropzone.id = tmpId;
+        targetImage = dropzone; // The target image should be the dropzone in this case
+    } else {
+        if(dropzone.firstChild && draggableElement) {
+            var tmpImg = draggableElement;
+            draggableElement.parentNode.appendChild(dropzone.firstChild);
+            dropzone.appendChild(tmpImg);
+            targetImage = tmpImg; // The target image should be the tmpImg in this case
+        } else if(draggableElement) {
+            dropzone.appendChild(draggableElement);
+            targetImage = draggableElement; // The target image should be the draggableElement in this case
+        }
+    }
+
+    // Check if targetImage is defined and is an image element before calling selectImage
+    if (targetImage && targetImage.tagName === 'IMG') {
+        selectImage({ target: targetImage });
+    }
+    //wasDragged = false; // Reset the flag to false after the drop operation
+    //showRotationButtons();
+
+    wasDragged = false;
+    currentDraggedElementId = null;  // Reset the global variable
+    showRotationButtons();
+}
+
+function handleSlotClick(event) {
+    // console.log("HANDLE SLOT CLICK");
+
+    // If an image is selected and we click on a different slot, move the image
+    if (selectedImage && event.currentTarget !== selectedImage.parentElement) {
+        selectedSlot = event.currentTarget;
+
+        // Check if the selectedSlot is empty before moving the image
+        if (!selectedSlot.firstChild) {
+            selectedSlot.append(selectedImage);
+            showRotationButtons();
+        } else {
+            console.log("Destination slot is already filled. Image was not moved.");
+        }
+    }
 }
 
 
@@ -218,14 +407,6 @@ document.querySelectorAll('.image-slot').forEach(slot => {
     slot.addEventListener('click', handleSlotClick);
 });
 
-function handleSlotClick(event) {
-    // If an image is selected and we click on a different slot, move the image
-    if (selectedImage && event.currentTarget !== selectedImage.parentElement) {
-        selectedSlot = event.currentTarget;
-        selectedSlot.append(selectedImage);
-        showRotationButtons();
-    }
-}
 
 document.addEventListener('click', (event) => {
     // If the click is outside an image or image slot, deselect the current image
@@ -294,15 +475,15 @@ function showRotationButtons() {
 
         // Apply styles to the buttons to show them and position them within the image slot
         rotateLeftButton.style.position = 'absolute';
-        rotateLeftButton.style.bottom = '0px';
-        rotateLeftButton.style.left = '0px';
+        rotateLeftButton.style.bottom = '50px';
+        rotateLeftButton.style.right = '-50px';
         rotateLeftButton.style.display = 'block';
         rotateLeftButton.style.zIndex = '1000';  // Set a high z-index value
 
 
         rotateRightButton.style.position = 'absolute';
-        rotateRightButton.style.bottom = '0px';
-        rotateRightButton.style.right = '0px';
+        rotateRightButton.style.bottom = '50px';
+        rotateRightButton.style.left = '-50px';
         rotateRightButton.style.display = 'block';
 	    rotateRightButton.style.zIndex = '1000';  // Set a high z-index value
 
@@ -324,7 +505,7 @@ function hideRotationButtons() {
 function rotateRight() {
     if (selectedImage) {
         var currentRotation = getRotation(selectedImage);
-        selectedImage.style.transform = 'rotate(' + (currentRotation + 90) + 'deg)';
+        selectedImage.style.transform = 'rotate(' + (currentRotation - 90) + 'deg)';
     }
 }
 
@@ -332,7 +513,7 @@ function rotateRight() {
 function rotateLeft() {
     if (selectedImage) {
         var currentRotation = getRotation(selectedImage);
-        selectedImage.style.transform = 'rotate(' + (currentRotation - 90) + 'deg)';
+        selectedImage.style.transform = 'rotate(' + (currentRotation + 90) + 'deg)';
     }
 }
 
