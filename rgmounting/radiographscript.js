@@ -83,8 +83,14 @@ function handleTouchStart(event) {
         if (!rotating) {
             clone = dragImage.cloneNode(true);
             clone.style.position = 'absolute';
-            clone.style.top = startY - dragImage.height / 2 + 'px';
-            clone.style.left = startX - dragImage.width / 2 + 'px';
+
+            const scrollX = window.scrollX || window.pageXOffset;
+            const scrollY = window.scrollY || window.pageYOffset;
+
+            clone.style.left = (touch.clientX + startX) - dragImage.width / 2 + 'px';
+            clone.style.top = (touch.clientY + startY) - dragImage.height / 2 + 'px';
+            //clone.style.top = startY - dragImage.height / 2 + 'px';
+            //clone.style.left = startX - dragImage.width / 2 + 'px';
             document.body.appendChild(clone);
         }
     }
@@ -103,8 +109,11 @@ function handleTouchMove(event) {
 
     if (clone && document.body.contains(clone)) {
         const touch = event.touches[0];
-        clone.style.left = touch.clientX - dragImage.width / 2 + 'px';
-        clone.style.top = touch.clientY - dragImage.height / 2 + 'px';
+        const scrollX = window.scrollX || window.pageXOffset;
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        clone.style.left = (touch.clientX + scrollX) - dragImage.width / 2 + 'px';
+        clone.style.top = (touch.clientY + scrollY) - dragImage.height / 2 + 'px';
     }
 }
 
@@ -542,3 +551,4 @@ function resetBorderColors() {
         slot.classList.add('originalBorder'); // Add the 'originalBorder' class
     });
 }
+
