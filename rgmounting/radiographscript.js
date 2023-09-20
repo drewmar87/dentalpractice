@@ -21,6 +21,7 @@ dragImage.src = 'images/drag.png';
 dragImage.onload = function() {
     imageLoaded = true;
 };
+var isDragging = false;
 
 let dropTarget = null; 
 let clone; // To store the clone
@@ -72,13 +73,13 @@ function handleTouchStart(event) {
     evaluationComplete = false;
 
     if (event.target.tagName.toLowerCase() === 'img') {
+        isDragging = true;
+        
         currentDraggedElementId = event.target.id;  // Store the id in the global variable
         //console.log("Setting currentDraggedElementId:", currentDraggedElementId);
         //console.log("currentDraggedElementId after set:", currentDraggedElementId);
 
         const touch = event.touches[0];
-        startX = touch.clientX;
-        startY = touch.clientY;
 
         if (!rotating) {
             clone = dragImage.cloneNode(true);
@@ -87,8 +88,8 @@ function handleTouchStart(event) {
             const scrollX = window.scrollX || window.pageXOffset;
             const scrollY = window.scrollY || window.pageYOffset;
 
-            clone.style.left = (touch.clientX + startX) - dragImage.width / 2 + 'px';
-            clone.style.top = (touch.clientY + startY) - dragImage.height / 2 + 'px';
+            clone.style.left = (touch.clientX + scrollX) - dragImage.width / 2 + 'px';
+            clone.style.top = (touch.clientY + scrollY) - dragImage.height / 2 + 'px';
             //clone.style.top = startY - dragImage.height / 2 + 'px';
             //clone.style.left = startX - dragImage.width / 2 + 'px';
             document.body.appendChild(clone);
@@ -105,22 +106,25 @@ function handleDragOver(event) {
 function handleTouchMove(event) {
     // console.log("TOUCH MOVE");
 
-    event.preventDefault();
+    if (isDragging) {
+        event.preventDefault();
 
-    if (clone && document.body.contains(clone)) {
-        const touch = event.touches[0];
-        const scrollX = window.scrollX || window.pageXOffset;
-        const scrollY = window.scrollY || window.pageYOffset;
+        if (clone && document.body.contains(clone)) {
+            const touch = event.touches[0];
+            const scrollX = window.scrollX || window.pageXOffset;
+            const scrollY = window.scrollY || window.pageYOffset;
 
-        clone.style.left = (touch.clientX + scrollX) - dragImage.width / 2 + 'px';
-        clone.style.top = (touch.clientY + scrollY) - dragImage.height / 2 + 'px';
+            clone.style.left = (touch.clientX + scrollX) - dragImage.width / 2 + 'px';
+            clone.style.top = (touch.clientY + scrollY) - dragImage.height / 2 + 'px';
+        }
     }
 }
 
 function handleTouchEnd(event) {
     // console.log("HANDLE TOUCH END");
-
-    event.preventDefault();
+    if (event.cancelable) {
+        event.preventDefault();
+    }
 
     if (clone && document.body.contains(clone)) {
         document.body.removeChild(clone);  // Remove the clone
@@ -133,7 +137,7 @@ function handleTouchEnd(event) {
         dropTarget = element;
     }
 
-    if (dropTarget) {
+    if (dropTarget && isDragging) {
         var draggableElement = document.getElementById(currentDraggedElementId);
 
         if (!draggableElement) {
@@ -171,6 +175,8 @@ function handleTouchEnd(event) {
         currentDraggedElementId = null;  // Reset the global variable
         showRotationButtons();
     }
+
+    isDragging = false;
 }
 
 function handleDrop(event) {
@@ -399,7 +405,7 @@ var allImageSlots = document.querySelectorAll('.image-slot');
 var instructions = document.getElementById('instructions');
     if (instructions) {  
         instructions.style.display = 'block';
-		instructions.innerHTML = 'To complete the task, drag and rotate the radiographs to match the correct anatomical locations. Afterward, click "Evaluate" to receive feedback on your performance.2';
+		instructions.innerHTML = 'To complete the task, drag and rotate the radiographs to match the correct anatomical locations. Afterward, click "Evaluate" to receive feedback on your performance.';
 
     }
 
@@ -551,4 +557,3 @@ function resetBorderColors() {
         slot.classList.add('originalBorder'); // Add the 'originalBorder' class
     });
 }
-
