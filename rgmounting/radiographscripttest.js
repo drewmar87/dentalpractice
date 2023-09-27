@@ -29,7 +29,6 @@ let startX, startY; // To store the initial touch coordinates
 
 var imageLoaded = false;
 
-
 function enableDragAndDrop(element) {
     element.addEventListener('touchstart', handleTouchStart);
     element.addEventListener('touchmove', handleTouchMove);
@@ -171,13 +170,6 @@ function handleTouchEnd(event) {
         if (targetImage && targetImage.tagName === 'IMG') {
             selectImage({ target: targetImage });
         }
-
-		    if (draggableElement) {
-        var originalDiv = draggableElement.parentNode;
-        if (originalDiv && originalDiv.classList.contains('image-slot')) {
-            originalDiv.style.display = 'none';
-        }
-    }
 
         wasDragged = false;
         currentDraggedElementId = null;  // Reset the global variable
@@ -413,7 +405,7 @@ var allImageSlots = document.querySelectorAll('.image-slot');
 var instructions = document.getElementById('instructions');
     if (instructions) {  
         instructions.style.display = 'block';
-		instructions.innerHTML = 'Drag and rotate the radiographs to match the correct anatomical locations.';
+		instructions.innerHTML = 'To complete the task, drag and rotate the radiographs to match the correct anatomical locations. Afterward, click "Evaluate" to receive feedback on your performance.';
 
     }
 
@@ -498,15 +490,15 @@ function showRotationButtons() {
 
         // Apply styles to the buttons to show them and position them within the image slot
         rotateLeftButton.style.position = 'absolute';
-        rotateLeftButton.style.bottom = '-40px';
-        rotateLeftButton.style.right = '10px';
+        rotateLeftButton.style.bottom = '50px';
+        rotateLeftButton.style.right = '-50px';
         rotateLeftButton.style.display = 'block';
         rotateLeftButton.style.zIndex = '1000';  // Set a high z-index value
 
 
         rotateRightButton.style.position = 'absolute';
-        rotateRightButton.style.bottom = '-40px';
-        rotateRightButton.style.left = '10px';
+        rotateRightButton.style.bottom = '50px';
+        rotateRightButton.style.left = '-50px';
         rotateRightButton.style.display = 'block';
 	    rotateRightButton.style.zIndex = '1000';  // Set a high z-index value
 
@@ -565,4 +557,3 @@ function resetBorderColors() {
         slot.classList.add('originalBorder'); // Add the 'originalBorder' class
     });
 }
-
