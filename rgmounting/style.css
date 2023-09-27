@@ -6,6 +6,8 @@ body {
     background-color: #B0C7D4;
     text-align: center; /* Ensuring text is centered */
     width: 100%;
+    transform: scale(.80);
+    transform-origin: left;
 }
 
 
