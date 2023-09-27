@@ -6,14 +6,12 @@ body {
     background-color: #B0C7D4;
     text-align: center; /* Ensuring text is centered */
     width: 100%;
+    transform: scale(0.85);
+    position: absolute;  /* Use absolute positioning */
+    top: 0;              /* Align to the top */
+    left: 0;             /* Align to the left */
 }
 
-#main-container {
-  transform: scale(0.85);
-  position: absolute;  /* Use absolute positioning */
-  top: 0;              /* Align to the top */
-  left: 0;             /* Align to the left */
-}
 
 
 /* --- Instructions Styles --- */
