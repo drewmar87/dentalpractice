@@ -405,7 +405,7 @@ var allImageSlots = document.querySelectorAll('.image-slot');
 var instructions = document.getElementById('instructions');
     if (instructions) {  
         instructions.style.display = 'block';
-		instructions.innerHTML = 'To complete the task, drag and rotate the radiographs to match the correct anatomical locations. Afterward, click "Evaluate" to receive feedback on your performance.';
+		instructions.innerHTML = 'Drag and rotate the radiographs to match the correct anatomical locations.';
 
     }
 
@@ -490,15 +490,15 @@ function showRotationButtons() {
 
         // Apply styles to the buttons to show them and position them within the image slot
         rotateLeftButton.style.position = 'absolute';
-        rotateLeftButton.style.bottom = '50px';
-        rotateLeftButton.style.right = '-50px';
+        rotateLeftButton.style.bottom = '-40px';
+        rotateLeftButton.style.right = '10px';
         rotateLeftButton.style.display = 'block';
         rotateLeftButton.style.zIndex = '1000';  // Set a high z-index value
 
 
         rotateRightButton.style.position = 'absolute';
-        rotateRightButton.style.bottom = '50px';
-        rotateRightButton.style.left = '-50px';
+        rotateRightButton.style.bottom = '-40px';
+        rotateRightButton.style.left = '10px';
         rotateRightButton.style.display = 'block';
 	    rotateRightButton.style.zIndex = '1000';  // Set a high z-index value
 
