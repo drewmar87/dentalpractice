@@ -490,15 +490,15 @@ function showRotationButtons() {
 
         // Apply styles to the buttons to show them and position them within the image slot
         rotateLeftButton.style.position = 'absolute';
-        rotateLeftButton.style.bottom = '-40px';
-        rotateLeftButton.style.right = '20px';
+        rotateLeftButton.style.bottom = '50px';
+        rotateLeftButton.style.right = '-50px';
         rotateLeftButton.style.display = 'block';
         rotateLeftButton.style.zIndex = '1000';  // Set a high z-index value
 
 
         rotateRightButton.style.position = 'absolute';
-        rotateRightButton.style.bottom = '-40px';
-        rotateRightButton.style.left = '20px';
+        rotateRightButton.style.bottom = '50px';
+        rotateRightButton.style.left = '-50px';
         rotateRightButton.style.display = 'block';
 	    rotateRightButton.style.zIndex = '1000';  // Set a high z-index value
 
