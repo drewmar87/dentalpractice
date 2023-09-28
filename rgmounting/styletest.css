@@ -6,7 +6,7 @@ body {
     background-color: #B0C7D4;
     text-align: center; /* Ensuring text is centered */
     width: 100%;
-    transform: scale(0.75);
+    transform: scale(0.60);
     position: absolute;  /* Use absolute positioning */
     top: 0;              /* Align to the top */
     left: 0;             /* Align to the left */
