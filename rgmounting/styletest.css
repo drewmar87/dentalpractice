@@ -13,12 +13,12 @@ body {
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 2) {
   
-body {
-    transform: scale(0.65);
-    transform-origin: center; /* sets the origin of the transform to the center of the element */
-    position: absolute; /* sets the positioning to absolute */
-    top: 0;  /* aligns the top edge of the element with the top edge of its nearest positioned ancestor */
-    left: 0; /* aligns the left edge of the element with the left edge of its nearest positioned ancestor */
+  #wrapper {
+    transform: scale(0.6);
+    transform-origin: top left;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
