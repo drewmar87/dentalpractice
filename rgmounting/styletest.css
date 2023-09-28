@@ -14,8 +14,8 @@ body {
   and (-webkit-min-device-pixel-ratio: 2) {
   
   body {
-    max-width: 1024px;
-    margin: auto; /* This centers the content if the screen width is greater than the max-width */
+transform: scale(.6);
+transform-origin: top left;
   }
 }
 
