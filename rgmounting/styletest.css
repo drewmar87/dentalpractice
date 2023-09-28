@@ -14,11 +14,12 @@ body {
   and (-webkit-min-device-pixel-ratio: 2) {
   
   #wrapper {
-    transform: scale(0.6);
+    transform: scale(0.7);
     transform-origin: top left;
     position: absolute;
     top: 0;
     left: 0;
+background-color: red;  /* Just for debugging */
   }
 }
 
