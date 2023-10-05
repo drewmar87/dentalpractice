@@ -64,7 +64,7 @@ let rhsQuestions = [
               "Total office staff radiation exposures"],
     correct: 2,
     category: "RHS",
-    rationale: "A film badge monitors the radiographer\\'s daily occupational exposure. Film badges do not monitor natural radiation or patient or total staff exposures."
+    rationale: "A film badge monitors the radiographer\'s daily occupational exposure. Film badges do not monitor natural radiation or patient or total staff exposures."
   },
 
   {
@@ -90,11 +90,11 @@ let rhsQuestions = [
   },
 
   {
-    question: "With a new dental x-ray machine in the office, the position indicating device (PID) length is changing from 16 to 8 inches. How does this impact the x-ray beam\\'s intensity and what adjustments are needed to maintain consistent image density?",
-    answers: ["The resultant beam will be half as intense. You\\'ll need to increase exposure time.",
-              "The resultant beam will be one-quarter as intense. You\\'ll need to increase exposure time.",
-              "The resultant beam will be twice as intense. You\\'ll need to decrease exposure time.",
-              "The resultant beam will be four times as intense. You\\'ll need to decrease exposure time."],
+    question: "With a new dental x-ray machine in the office, the position indicating device (PID) length is changing from 16 to 8 inches. How does this impact the x-ray beam\'s intensity and what adjustments are needed to maintain consistent image density?",
+    answers: ["The resultant beam will be half as intense. You\'ll need to increase exposure time.",
+              "The resultant beam will be one-quarter as intense. You\'ll need to increase exposure time.",
+              "The resultant beam will be twice as intense. You\'ll need to decrease exposure time.",
+              "The resultant beam will be four times as intense. You\'ll need to decrease exposure time."],
     correct: 3,
     category: "RHS",
     rationale: "Using the inverse square law, the beam in the example would be four times as intense. The inverse square law states “the intensity of radiation is inversely proportional to the square of the distance from the source of radiation.” When distance is decreased from 16 inches to 8 inches, intensity increases. When intensity increases, exposure time will need to be decreased for the same density to be maintained. The beam would be one-half as intense if the change in PID length had been from an 8 inches to 12 inches; the exposure time would need to be increased to maintain the same density. The beam would be one-quarter as intense if the PID had been changed from 8 inches to 16 inches; the exposure time would need to be increased to maintain the same density. The beam would be two times as intense if the PID had been changed from 16 inches to 12 inches; the exposure time would need to be decreased to maintain the same density."
@@ -699,10 +699,10 @@ let rhsQuestions = [
   answers: ["Uncooperative children require panoramic exposures.",
             "Pediatric patients do not require images.",
             "Immature tissues of pediatric patients are less susceptible to radiation than the tissues of adult patients.",
-            "A child may be seated in a parent's lap for exposures."],
+            "A child may be seated in a parent\'s lap for exposures."],
   correct: 3,
     category: "RHS",
-  rationale: "A parent may hold a child with the child seated in the parent's lap, only if the child is uncooperative; both are covered by a lead apron. Although a panoramic exposure is an option, it may not be the best option. A panoramic image will not show decay as readily as a bitewing image. Children should be prescribed dental images when clinically necessary. Immature tissues found in children are more susceptible to ionizing radiation than adult tissues."
+  rationale: "A parent may hold a child with the child seated in the parent\'s lap, only if the child is uncooperative; both are covered by a lead apron. Although a panoramic exposure is an option, it may not be the best option. A panoramic image will not show decay as readily as a bitewing image. Children should be prescribed dental images when clinically necessary. Immature tissues found in children are more susceptible to ionizing radiation than adult tissues."
 },
 
 //65
@@ -725,7 +725,7 @@ let rhsQuestions = [
   answers: ["Stands more than 6 feet away and at a right angle to the tubehead",
             "Stands in front of and parallel to the primary beam",
             "Stands within 6 feet of and parallel to the primary beam",
-            "Stands in back of the patient's head"],
+            "Stands in back of the patient\'s head"],
   correct: 0,
     category: "RHS",
   rationale: "The operator must stand 6 feet away at right angles to the tubehead; standing in front of and parallel to the primary beam, standing within 6 feet of and parallel to the primary beam, and standing in back of the patient’s head can expose the operator to primary and scatter radiation."
@@ -906,12 +906,12 @@ let rhsQuestions = [
   question: "You are using a complete series of dental images to educate your patient on the value of radiography. According to HIPAA, what should not be present in or on the film mount?",
 
   answers: ["The date",
-            "The patient's name",
+            "The patient\'s name",
             "Radiographs showing impacted teeth",
             "Radiographs showing dental caries"],
   correct: 1,
     category: "RHS",
-  rationale: "Health Insurance Portability and Accountability Act (HIPAA) regulations protect a patient's identity. Personal identification (e.g., patient's name) on a set of radiographs is not for public display. The date, images showing impacted teeth, and images showing dental caries can be displayed."
+  rationale: "Health Insurance Portability and Accountability Act (HIPAA) regulations protect a patient\'s identity. Personal identification (e.g., patient\'s name) on a set of radiographs is not for public display. The date, images showing impacted teeth, and images showing dental caries can be displayed."
 },
 
 
@@ -1024,12 +1024,12 @@ let rhsQuestions = [
   question: "Exposed film and phosphor plates should be collected in __________ and transferred to the darkroom or scanning area.",
 
   answers: ["The lab coat pocket",
-            "The operator's hand",
+            "The operator\'s hand",
             "A cup",
             "The bracket tray"],
   correct: 2,
     category: "RHS",
-  rationale: "Exposed receptors should be collected in a cup. Collecting receptors in the lab coat pocket, the operator's hand, or the bracket tray will cause cross-contamination."
+  rationale: "Exposed receptors should be collected in a cup. Collecting receptors in the lab coat pocket, the operator\'s hand, or the bracket tray will cause cross-contamination."
 },
 
 //90
@@ -1102,7 +1102,7 @@ let rhsQuestions = [
 
 //95
 {
-  question: "You are at greatest risk of contracting your patient's hepatitis C virus from which source?",
+  question: "You are at greatest risk of contracting your patient\'s hepatitis C virus from which source?",
 
   answers: ["Your gloves",
             "The film packet",
@@ -1261,7 +1261,7 @@ let rhsQuestions = [
             "TLD (thermoluminescent dosimeter)"],
   correct: 0, // assuming the right answer here, adjust it if not.
   category: "RHS",
-  rationale: "A charge-coupled device (CCD) is a solid-state electrical plate used to transmit signals directly into a computer in digital imaging systems. A position indicating device (PID) is a device that guides the direction of the x-ray beam during the exposure of dental radiographs. Magnetic resonance imaging (MRI) is a method used to produce images of the inside of a person's body by means of a strong magnetic field. A thermoluminescent dosimeter (TLD) is a device that measures exposure to ionizing radiation." // Fill this in with the explanation for the correct answer.
+  rationale: "A charge-coupled device (CCD) is a solid-state electrical plate used to transmit signals directly into a computer in digital imaging systems. A position indicating device (PID) is a device that guides the direction of the x-ray beam during the exposure of dental radiographs. Magnetic resonance imaging (MRI) is a method used to produce images of the inside of a person\'s body by means of a strong magnetic field. A thermoluminescent dosimeter (TLD) is a device that measures exposure to ionizing radiation." // Fill this in with the explanation for the correct answer.
 },
 //8
 {
@@ -1273,19 +1273,19 @@ let rhsQuestions = [
             "Herringbone pattern"],
   correct: 2, // assuming the right answer here, adjust it if not.
   category: "RHS",
-  rationale: "Foreshortening is a vertical angulation error in which images of the teeth appear too short, resulting from excessive vertical angulation. Overlapping is horizontal angulation. Movement of the patient's head would result in a blurred image. A herringbone pattern is the result of the film being placed backward in the mouth." // Fill this in with the explanation for the correct answer.
+  rationale: "Foreshortening is a vertical angulation error in which images of the teeth appear too short, resulting from excessive vertical angulation. Overlapping is horizontal angulation. Movement of the patient\'s head would result in a blurred image. A herringbone pattern is the result of the film being placed backward in the mouth." // Fill this in with the explanation for the correct answer.
 },
 //9
 {
   question: "Which has occurred if there is no image on a film after processing?",
 
   answers: ["Film not exposed to radiation",
-            "Movement of the patient's head",
+            "Movement of the patient\'s head",
             "X-ray beam misses part of the film",
             "Film placed backward in the mouth"],
   correct: 0, // assuming the right answer here, adjust it if not.
   category: "RHS",
-  rationale: "If there is no image on a film after processing, the film has not been exposed to radiation. Movement of the patient's head would result in a blurred image. If the x-ray beam misses part of the film, the result is cone cutting. A herringbone pattern is the result of the film being placed backward in the mouth." // Fill this in with the explanation for the correct answer.
+  rationale: "If there is no image on a film after processing, the film has not been exposed to radiation. Movement of the patient\'s head would result in a blurred image. If the x-ray beam misses part of the film, the result is cone cutting. A herringbone pattern is the result of the film being placed backward in the mouth." // Fill this in with the explanation for the correct answer.
 },
 //10
 {
@@ -1297,7 +1297,7 @@ let rhsQuestions = [
             "Blurred image"],
   correct: 0, // assuming the right answer here, adjust it if not.
   category: "RHS",
-  rationale: "A light image occurs if a film is underexposed or underdeveloped. Overdeveloping or developing solution temperature that is warm will result in a dark image. A partial image is the result of the film not completely immersed or tanks having low solution levels. A blurred image occurs if there is movement of the patient's head or the tubehead." // Fill this in with the explanation for the correct answer.
+  rationale: "A light image occurs if a film is underexposed or underdeveloped. Overdeveloping or developing solution temperature that is warm will result in a dark image. A partial image is the result of the film not completely immersed or tanks having low solution levels. A blurred image occurs if there is movement of the patient\'s head or the tubehead." // Fill this in with the explanation for the correct answer.
 },
 
 //11
@@ -1907,7 +1907,7 @@ let rhsQuestions = [
             "informed"],
   correct: 3, // assuming the right answer here, adjust it if not.
   category: "RHS",
-  rationale: "Informed consent is necessary before exposing dental radiographs on a patient. Informed consent is permission granted with full knowledge of the possible risks and benefits. Implied consent is not adequate consent. Implied consent is consent that is not expressly granted by a person, but rather implicitly by a person's actions. Inferred consent and indicated consent are not terms used in reference to consent." // Fill this in with the explanation for the correct answer.
+  rationale: "Informed consent is necessary before exposing dental radiographs on a patient. Informed consent is permission granted with full knowledge of the possible risks and benefits. Implied consent is not adequate consent. Implied consent is consent that is not expressly granted by a person, but rather implicitly by a person\'s actions. Inferred consent and indicated consent are not terms used in reference to consent." // Fill this in with the explanation for the correct answer.
 },
 
 //61
@@ -2416,7 +2416,7 @@ let rhsQuestions = [
 {
   question: "When image receptors are dispensed from the supply area, they should be transported to the radiology room __________.",
   answers: ["on the bracket tray",
-            "in the operator's hand",
+            "in the operator\'s hand",
             "in a paper cup",
             "in the patient chart"],
   correct: 2,
@@ -2809,7 +2809,7 @@ let rhsQuestions = [
   answers: ["Anterior images are always exposed before posterior images.",
             "Either anterior or posterior images may be exposed first.",
             "In posterior quadrants, the premolar image is always exposed before the molar image.",
-            "When exposing anterior images, work from the patient's right to left in the upper arch, and then work from the left to right in the lower arch."],
+            "When exposing anterior images, work from the patient\'s right to left in the upper arch, and then work from the left to right in the lower arch."],
   correct: 1,
   category: "RHS",
   rationale: "#"
@@ -2904,7 +2904,7 @@ let rhsQuestions = [
 },
 //145
 {
-  question: "Which of the following decreases a patient's radiation exposure?",
+  question: "Which of the following decreases a patient\'s radiation exposure?",
   answers: ["use of an 8-inch PID rather than a 16-inch PID",
             "use of a circular collimator in place of a rectangular collimator",
             "use of the bisecting technique instead of the paralleling technique",
@@ -3039,7 +3039,7 @@ let rhsQuestions = [
 },
 //157
 {
-  question: "You have placed the sensor in your patient's mouth, you have positioned the PID, and you are ready to press the control button. What will exit the PID?",
+  question: "You have placed the sensor in your patient\'s mouth, you have positioned the PID, and you are ready to press the control button. What will exit the PID?",
   answers: ["Compton scatter",
             "coherent scatter",
             "secondary radiation",
