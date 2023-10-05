@@ -2398,6 +2398,993 @@ let rhsQuestions = [
   rationale: "The film badge worn by a person exposing dental x-rays does not require a barrier; it is not contaminated during the imaging procedure. The PID, treatment chair, and exposure button become contaminated during the procedure and require a barrier." // Fill this in with the explanation for the correct answer.
 },
 
+// rhs 3
+
+
+//100
+{
+  question: "Films removed from the film packet that have not been in a barrier envelope are processed in a daylight loader with __________",
+  answers: ["gloved hands",
+            "ungloved hands",
+            "hands with powder-free gloves",
+            "hands with utility gloves"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//101
+{
+  question: "When image receptors are dispensed from the supply area, they should be transported to the radiology room __________.",
+  answers: ["on the bracket tray",
+            "in the operator's hand",
+            "in a paper cup",
+            "in the patient chart"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//102
+{
+  question: "Which level of disinfectant does the CDC recommend for disinfection of a sensor?",
+  answers: ["high-level disinfectant",
+            "intermediate-level disinfectant",
+            "low-level disinfectant",
+            "no recommendations are made regarding the disinfectant level"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//103
+{
+  question: "Which best describes the function of a plastic barrier cover for a digital radiography sensor?",
+  answers: ["The barrier allows the sensor to be reused easily without disinfection.",
+            "The barrier cover protects the sensor from chemical erosion.",
+            "The barrier keeps the positioning device in line with the top of the sensor.",
+            "The barrier protects the sensor from saliva contamination."],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//104
+{
+  question: "Beam alignment devices must be __________.",
+  answers: ["sterilized",
+            "disinfected",
+            "decontaminated",
+            "wiped with alcohol between uses"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+
+//105
+{
+  question: "How should the receptor be placed for exposing a mandibular occlusal image?",
+  answers: ["The image receptor is placed parallel to the long axis of the teeth with the white side facing the lingual surface of the teeth.",
+            "The image receptor is placed between the occlusal surfaces of the maxillary and mandibular teeth with the white side down, facing the mandibular teeth.",
+            "The image receptor is placed parallel to the long axis of the teeth with the colored side facing the lingual surface of the teeth.",
+            "The image receptor is placed between the occlusal surfaces of the maxillary and mandibular teeth with the white side facing the maxillary teeth."],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//106
+{
+  question: "Which of the following is not true related to automatic processors?",
+  answers: ["Rollers are removed at the end of each week; they are cleaned and soaked over the weekend.",
+            "Processing solutions are checked each morning before radiographs are run through the processor.",
+            "Machines are maintained based on a daily, weekly, and monthly cleaning schedule.",
+            "Manufacturer’s instructions are followed related to solution usage."],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//107
+{
+  question: "You are using phosphor plates to take bitewings on a patient. Which of the following does not need to be completed before exposing the images?",
+  answers: ["Expose a test image and process in scanner.",
+            "Place phosphor side of receptor against black side of protective barrier sleeve.",
+            "Check plates for damage prior to use.",
+            "Check that machine settings are correct for phosphor plates."],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//108
+{
+  question: "Which statement regarding benefits to automatic processors compared to manual processing is not correct?",
+  answers: ["Less time required for processing.",
+            "Time and temperature are controlled.",
+            "A daylight loader is required.",
+            "There is no need for additional space."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+
+//109
+{
+  question: "A contact test should be performed regularly using which of the following?",
+  answers: ["phosphor plate",
+            "sensor",
+            "screen film",
+            "all of the above"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//110
+{
+  question: "A step wedge can be used with which of the following?",
+  answers: ["film",
+            "phosphor plate",
+            "sensor",
+            "all of the above"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//111
+{
+  question: "When the bisecting technique is used, the imaginary angle that is bisected is formed between the long axis of the tooth and the __________.",
+  answers: ["long axis of the PID",
+            "bite block",
+            "plane of the receptor",
+            "horizontal axis of the tubehead"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//112
+{
+  question: "What is the most common reason to see a completely clear receptor? The receptor was:",
+  answers: ["exposed to light",
+            "not exposed to x-radiation",
+            "exposed backward in the mouth",
+            "left in the developer too long"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//113
+{
+  question: "Which of the following pieces of equipment requires heat sterilization before use?",
+  answers: ["film",
+            "digital sensor",
+            "x-ray tubehead",
+            "beam alignment devices"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//114
+{
+  question: "Which component of the x-ray film packet should be recycled?",
+  answers: ["developed film",
+            "lead foil",
+            "black paper",
+            "outer package wrapping"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+
+//115
+{
+  question: "Commercially available barrier envelopes __________.",
+  answers: ["protect the film from damage",
+            "minimize contamination after exposure of the film",
+            "are made of a material that blocks the passage of photons",
+            "are made of a material that blocks the passage of electrons"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//116
+{
+  question: "After each use and before processing, each phosphor plate or dental film must be __________.",
+  answers: ["disinfected",
+            "dried with a paper towel",
+            "placed in a barrier",
+            "wiped with alcohol"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//117
+{
+  question: "You are reorganizing the office storage areas. Where should you store the boxes of x-ray film?",
+  answers: ["on a shelf in the cabinet",
+            "in the refrigerator",
+            "under the sink with the chemicals",
+            "on a shelf in the x-ray room"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//118
+{
+  question: "You are preparing to take dental images on a patient. You discussed with your patient what you will be taking and why the images are needed for treatment. The patient has refused the dental images. You explain to the dentist about the patient’s refusal. What should the dentist do?",
+  answers: ["Have the patient sign a waiver and begin treatment.",
+            "Change the treatment plan to exclude the images",
+            "Refuse to treat the patient if the images are not taken.",
+            "Force the patient to have dental images taken."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//119
+{
+  question: "What is occurring inside the x-ray tubehead when you increase the kilovoltage setting on the exposure control panel?",
+  answers: ["The speed of the electrons decreases from the cathode to the anode.",
+            "The penetrating power of the x-ray beam increases.",
+            "The number of x-rays produced is increased.",
+            "The speed of the photons from anode to cathode is increased."],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//120
+{
+  question: "Your patient is a large man, on the obese side. What adjustments would you make, if any, to the control panel when exposing dental images?",
+  answers: ["Increase the exposure time; leave the kV and the mA the same.",
+            "Decrease the exposure time; leave the kV and the mA the same.",
+            "Increase the exposure time, kV, and mA.",
+            "You do not need to make any adjustments."],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//121
+{
+  question: "If you want to provide the lowest amount of exposure possible for your patient, which of the following settings should you use?",
+  answers: ["70 kV, 6 mA, 0.40 impulses",
+            "68 kV, 7 mA, 0.50 impulses",
+            "66 kV, 7 mA, 0.60 impulses",
+            "65 kV, 8 mA, 0.60 impulses"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//122
+{
+  question: "You noticed that the patient moved just as you pressed the exposure button. What effect will that have on the dental image?",
+  answers: ["distortion",
+            "alteration in image sharpness",
+            "elongation",
+            "image magnification"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//123
+{
+  question: "If you decreased exposure time, and left the other exposure factors the same, what impact would this have on your dental image?",
+  answers: ["The image would be lighter because the density would increase.",
+            "The image would be darker because the density would increase.",
+            "The image would be lighter because the density would decrease.",
+            "The image would be darker because the density would decrease."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//124
+{
+  question: "Which is not considered a critical organ in dental imaging?",
+  answers: ["skin",
+            "lens of the eye",
+            "pituitary gland",
+            "bone marrow"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+
+//125
+{
+  question: "If you decreased the mA, and left the other exposure factors the same, what impact would this have on your dental image?",
+  answers: ["The image would be lighter because the density would increase.",
+            "The image would be darker because the density would increase.",
+            "The image would be lighter because the density would decrease.",
+            "The image would be darker because the density would decrease."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//126
+{
+  question: "Which applies to producing dental images on pregnant patients?",
+  answers: ["Dental images should be taken only during the third trimester.",
+            "Dental images should never be taken on a pregnant patient.",
+            "Guidelines are designed to protect all patients; no alterations are required.",
+            "Dental images should be taken only during the first trimester."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//127
+{
+  question: "The operator should clean and disinfect any uncovered areas while wearing __________.",
+  answers: ["utility gloves",
+            "vinyl gloves",
+            "latex gloves",
+            "nitrile gloves"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//128
+{
+  question: "Which is true regarding exposure of radiation on the body?",
+  answers: ["The direct theory of radiation suggests that toxins form in the body and cause damage.",
+            "The direct theory of radiation suggests that radiation damage occurs because of the high water content in the body.",
+            "The indirect theory of radiation suggests that ionizing radiation creates the formation of free radicals.",
+            "The indirect theory of radiation injury suggests that damage occurs as a result of ionizing radiation hitting critical areas."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//129
+{
+  question: "If you decreased the distance, and left the exposure factors the same, what impact would this have on your dental image?",
+  answers: ["The image would be lighter because the density would increase.",
+            "The image would be darker because the density would increase.",
+            "The image would be lighter because the density would decrease.",
+            "The image would be darker because the density would decrease."],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+
+//130
+{
+  question: "Which of the following is recommended by the CDC?",
+  answers: ["immersion of film packets in disinfecting solutions",
+            "disinfecting sensors with at least a low-level EPA-registered disinfectant",
+            "cold-sterilizing noncritical items",
+            "gloves worn by the operator"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//131
+{
+  question: "You have a new patient. She is 7 years old, and she has her first molars. Which dental images should you take?",
+  answers: ["bitewings",
+            "panoramic",
+            "occlusal",
+            "bitewings and panoramic"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//132
+{
+  question: "Tests for tube drift should be performed at which frequency?",
+  answers: ["annually",
+            "twice annually",
+            "every 4 months",
+            "It depends on the volume of dental images exposed"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//133
+{
+  question: "A fresh film test should be exposed __________.",
+  answers: ["whenever developer and fixer solutions are changed",
+            "whenever developer and fixer solutions are replenished",
+            "when a new box of film is opened",
+            "once a month"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//134
+{
+  question: "How often should film cassettes be examined?",
+  answers: ["annually",
+            "twice annually",
+            "monthly",
+            "it depends on the volume of dental images exposed"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+
+//135
+{
+  question: "The light leak test should be performed at which frequency?",
+  answers: ["annually",
+            "twice annually",
+            "monthly",
+            "it depends on the volume of dental images exposed"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//136
+{
+  question: "Which statement is not correct concerning the exposure sequence for periapical images?",
+  answers: ["Anterior images are always exposed before posterior images.",
+            "Either anterior or posterior images may be exposed first.",
+            "In posterior quadrants, the premolar image is always exposed before the molar image.",
+            "When exposing anterior images, work from the patient's right to left in the upper arch, and then work from the left to right in the lower arch."],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//137
+{
+  question: "What is the second compartment that the films will enter in an automatic processor?",
+  answers: ["fixer",
+            "water",
+            "developer",
+            "drying fan"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//138
+{
+  question: "Which is the proper technique to expose a bitewing image on a patient with mandibular tori?",
+  answers: ["Place the receptor on the tori.",
+            "Place the receptor on the tongue.",
+            "Place the receptor between the tori and the tongue.",
+            "Intraoral placement is not recommended on patients who have mandibular tori."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//139
+{
+  question: "The thermometer should be placed in which solution of the manual processing tanks?",
+  answers: ["fixer",
+            "water",
+            "developer",
+            "water or developer"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//140
+{
+  question: "Which receptor would provide the most protection against radiation exposure for the patient?",
+  answers: ["phosphor plate",
+            "D-speed film",
+            "F-speed film",
+            "digital sensor"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//141
+{
+  question: "Which of the following statements is true regarding manual film mounting?",
+  answers: ["The raised dot side of the film faces the viewer in a labial mounting method.",
+            "The depressed dot side of the film faces the viewer in the lingual mounting method.",
+            "The raised dot side of the film faces the viewer in a lingual mounting method.",
+            "The depressed dot side of the film faces the viewer in the labial mounting method."],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//142
+{
+  question: "In which two lengths are PIDs typically available?",
+  answers: ["6 and 12 inches",
+            "12 and 24 inches",
+            "8 and 16 inches",
+            "12 and 16 inches"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//143
+{
+  question: "Which method is used to stabilize the receptor during exposure of an occlusal image?",
+  answers: ["stable bite block",
+            "hemostat",
+            "patient gently biting on the receptor",
+            "bitewing tab"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//144
+{
+  question: "If the length of the PID is changed from 8 to 12 inches, how does this affect the intensity of the x-ray beam?",
+  answers: ["The resultant beam will be one-half as intense",
+            "The resultant beam will be one-quarter as intense",
+            "The resultant beam will be two times as intense",
+            "The resultant beam will be four times as intense"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//145
+{
+  question: "Which of the following decreases a patient's radiation exposure?",
+  answers: ["use of an 8-inch PID rather than a 16-inch PID",
+            "use of a circular collimator in place of a rectangular collimator",
+            "use of the bisecting technique instead of the paralleling technique",
+            "use of a higher kV setting to achieve the same density"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//146
+{
+  question: "Commercially available barrier envelopes are used to:",
+  answers: ["protect the film from saliva",
+            "provide comfort for the patient",
+            "minimize contamination in the operatory",
+            "minimize contamination in the darkroom"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//147
+{
+  question: "What is the best way to limit a patient’s radiation exposure?",
+  answers: ["Prescribe only what is necessary.",
+            "Use the fastest film speed available.",
+            "Complete radiographs with no errors.",
+            "Ensure the patient wears a lead apron."],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+
+//148
+{
+  question: "Your 5-year-old patient has been coming regularly to the dental office for the last 2 years. The last set of dental images was taken 6 months ago. He has occlusal decay on #A, #B, #I, and #J, and his teeth are in tight contact. The last time he was in, he had restorations placed on teeth #K and #L. When should you next take dental images?",
+  answers: ["today’s appointment",
+            "next appointment, because insurance will cover dental images only once a year",
+            "next appointment, because the guidelines recommend taking them once a year",
+            "in 6–18 months, because the guidelines recommend taking them at 1- to 2-year intervals"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//149
+{
+  question: "Your 6-year-old patient has clinical caries and closed proximal contacts. Which of the following dental images should you take?",
+  answers: ["posterior bitewings",
+            "seven vertical bitewings",
+            "full-mouth series",
+            "panoramic"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//150
+{
+  question: "Which of the following position indicating devices exposes a patient to more radiation?",
+  answers: ["conical",
+            "rectangular 8 inch",
+            "circular 8 inch",
+            "circular 16 inch"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//151
+{
+  question: "Which is not an example of PPE (personal protective equipment)?",
+  answers: ["mask",
+            "gloves",
+            "thyroid collar",
+            "protective eyewear"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+
+
+//152
+{
+  question: "Your adult recall patient has no clinical caries and is not at increased risk for caries. He had bitewing images taken 1 year ago. When should you take bitewing images of your patient?",
+  answers: ["at this appointment",
+            "at his appointment in 6 months",
+            "at his appointment in 1 year",
+            "24–36 months from his last bitewing images"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//153
+{
+  question: "What is the purpose of a collimator?",
+  answers: ["filter out long wavelengths",
+            "confine the beam",
+            "restrict the size and shape of the beam",
+            "filter out short wavelengths"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//154
+{
+  question: "What is the purpose of the receptor-holding device?",
+  answers: ["stabilize receptor position in the mouth and reduce the chance for movement",
+            "aid with paralleling technique but is not required",
+            "easier for the patient to bite",
+            "increased patient comfort"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//155
+{
+  question: "Which device/method provides patients the best protection against radiation exposure?",
+  answers: ["long PID",
+            "beam alignment device",
+            "proper operator technique",
+            "sensor instead of a phosphor plate"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//156
+{
+  question: "Which type of contrast would best help detect dental caries in a patient?",
+  answers: ["low contrast with few shades of gray",
+            "low contrast with many shades of gray",
+            "high contrast with few shades of gray",
+            "high contrast with many shades of gray"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//157
+{
+  question: "You have placed the sensor in your patient's mouth, you have positioned the PID, and you are ready to press the control button. What will exit the PID?",
+  answers: ["Compton scatter",
+            "coherent scatter",
+            "secondary radiation",
+            "primary beam"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//158
+{
+  question: "An important way for the operator to avoid primary beam exposure is to:",
+  answers: ["stand 4 feet behind the patient",
+            "position himself or herself at a 90- to 135-degree angle to the primary beam",
+            "position himself or herself at a 30- to 45-degree angle from the primary beam",
+            "wear protective covering"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//159
+{
+  question: "You notice that the roots of your maxillary anterior images are consistently too long and seem out of proportion. What is the error, and how should you correct it?",
+  answers: ["Foreshortening; the receptor needs to be parallel to the teeth, and the x-ray beam needs to be perpendicular to both.",
+            "Magnification; the receptor needs to be parallel to the teeth, and the x-ray beam needs to be perpendicular to both.",
+            "Elongation; the receptor needs to be parallel to the teeth, and the x-ray beam needs to be perpendicular to both.",
+            "Magnification; the receptor needs to be closer to the tooth, or the target–image receptor distance needs to be increased."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//160
+{
+  question: "Your last patient was an average-size man. Your next patient is a slender 12-year-old girl. What adjustment would you make, if any, to the control panel when exposing dental images?",
+  answers: ["Increase the exposure time; leave the kV and the mA the same.",
+            "Decrease the exposure time; leave the kV and the mA the same.",
+            "Decrease the exposure time, kV, and mA.",
+            "You do not need to make any adjustments."],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//161
+{
+  question: "Which of the following components of the tubehead protects the patient by removing long-wavelength, low-energy x-rays?",
+  answers: ["tungsten target",
+            "filter",
+            "lead-lined PID",
+            "collimator"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+
+//162
+{
+  question: "How often should processing solutions be changed?",
+  answers: ["biweekly",
+            "every 3–4 weeks",
+            "every 5–7 weeks",
+            "when patient images appear too light"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//163
+{
+  question: "Correct solution maintenance for manual film processing includes__________.",
+  answers: ["diluting fixer to keep the level at optimal levels",
+            "never adding new solutions to the developer or fixer until they are ready to be completely changed",
+            "changing the developer solution if the image appears yellow",
+            "changing both developer and fixer at the same time"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//164
+{
+  question: "Which statement is true concerning the anode?",
+  answers: ["It carries a negative charge.",
+            "Electrons are generated at the anode.",
+            "It converts the bombarding electrons into x-ray photons.",
+            "It consists of a tungsten filament in a focusing cup."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//165
+{
+  question: "The quality administration procedures within the quality assurance plan should include which of the following basic elements?",
+  answers: ["description of the plan with assignment of duties",
+            "collimation-beam alignment test results",
+            "kilovoltage test",
+            "tubehead stability test"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//166
+{
+  question: "Adjusting the chair and headrest, placing the lead apron on a patient, and removing metal objects from the head and neck area of a patient should be completed by the dental professional __________?",
+  answers: ["before washing hands, prior to gloving",
+            "after gloving",
+            "after gloving and over gloving with vinyl gloves",
+            "while wearing utility gloves"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//167
+{
+  question: "The optimal storage temperature for dental film is __________:",
+  answers: ["30°–45°F",
+            "50°–70°F",
+            "70°–80°F",
+            "80°–85°F"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//168
+{
+  question: "You are assisting the dental hygienist. She is performing the oral assessment and would like to compare dental images to the probing depths. Which type of contrast would provide the best image for this purpose?",
+  answers: ["high contrast; few shades of gray",
+            "high contrast; many shades of gray",
+            "low contrast; few shades of gray",
+            "low contrast; many shades of gray"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//169
+{
+  question: "Which statement is correct concerning the use of gloves during a dental imaging procedure?",
+  answers: ["Gloves must be washed prior to use to remove powder residue.",
+            "Gloves must be sterile for all procedures.",
+            "New gloves must be worn for each patient.",
+            "Gloves must be worn only when contact with saliva is anticipated."],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//170
+{
+  question: "Which of the following persons should perform the calibration of dental x-ray machines?",
+  answers: ["dentist",
+            "dental hygienist",
+            "dental assistant",
+            "qualified technician"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//171
+{
+  question: "A lead apron is used when performing which of the following?",
+  answers: ["panoramic image",
+            "full-mouth series",
+            "periapical image",
+            "all of the above"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//172
+{
+  question: "You are performing a quality assurance test on your stored film. The unexposed, properly stored, fresh film will appear __________ when processed.",
+  answers: ["clear with a slight blue tint",
+            "cloudy with a blue tint",
+            "fogged",
+            "totally black"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//173
+{
+  question: "Unexposed film that has not been stored properly or is out of date will appear ________ when processed.",
+  answers: ["clear with a slight blue tint",
+            "cloudy with a blue tint",
+            "fogged",
+            "totally black"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//174
+{
+  question: "When functioning properly, a view box will emit a __________.",
+  answers: ["uniform, subdued light",
+            "brilliant light from the center portion of the viewbox",
+            "soft flickering light",
+            "uniform bright light"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//175
+{
+  question: "Who is responsible for the diagnostic quality of dental images?",
+  answers: ["the dental professional exposing the receptors",
+            "the dentist",
+            "the dental assistant",
+            "the hazard communication officer"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+
+
+//176
+{
+  question: "In a dental practice in which many HIV-positive patients are treated, the film rollers in the automatic processor should be __________",
+  answers: ["scrubbed with an abrasive cleaner every day",
+            "autoclaved every day",
+            "disinfected after every use",
+            "treated in the usual accepted manner"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//177
+{
+  question: "Dental x-ray equipment is classified as __________.",
+  answers: ["critical instruments",
+            "semicritical instruments",
+            "noncritical instruments",
+            "semicritical and noncritical instruments"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//178
+{
+  question: "Which of the following steps should be followed when exposing a panoramic image?",
+  answers: ["Place lead apron with thyroid collar on patient and secure it.",
+            "Instruct patient to place posterior teeth in the deep groove on bite block and bite firmly.",
+            "Radiodense objects may remain in place from the head and neck area for the duration of exposure",
+            "Instruct patient to close lips on bite block, to swallow once, then place tongue against roof of mouth, and maintain that position during exposure"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//179
+{
+  question: "Which is a correct statement concerning disinfection procedures for the darkroom?",
+  answers: ["Countertops and areas touched by gloved hands must be disinfected.",
+            "Countertops do not need to be disinfected, because aerosolization does not occur during dental x-ray film processing.",
+            "Countertops must be covered with a barrier before each clinical use.",
+            "A high-level disinfectant is required to disinfect the area surrounding the processor."],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//180
+{
+  question: "EPA-registered chemical germicides labeled as hospital disinfectants are:",
+  answers: ["classified as high-level disinfectants",
+            "classified as intermediate-level disinfectants",
+            "classified as low-level disinfectants",
+            "not designated a disinfectant level"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//181
+{
+  question: "Why does digital imaging require less radiation than traditional film-based radiography?",
+  answers: ["Sensor is more sensitive to x-radiation.",
+            "Images are instantly viewed on the computer.",
+            "Images may be enhanced with density and contrast controls.",
+            "Computer software is designed to eliminate common placement errors."],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//182
+{
+  question: "Following an exposure, beam alignment devices are __________ using __________ hands.",
+  answers: ["disinfected; ungloved",
+            "disinfected; gloved",
+            "prepared for sterilization; ungloved",
+            "prepared for sterilization; gloved"],
+  correct: 1,
+  category: "RHS",
+  rationale: "#"
+},
+//183
+{
+  question: "What is the function of intensifying screens used in extraoral radiography?",
+  answers: ["increase sharpness of image",
+            "decrease magnification of image",
+            "help patient remain still during exposure.",
+            "decrease patient’s exposure to radiation"],
+  correct: 3,
+  category: "RHS",
+  rationale: "#"
+},
+//184
+{
+  question: "All of the following are examples of inherent filtration, except:",
+  answers: ["aluminum filter",
+            "leaded glass window",
+            "insulating oil",
+            "tubehead seal"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+},
+//185
+{
+  question: "Which choice describes infection control protocol for an interrupted dental imaging procedure?",
+  answers: ["removing gloves, and upon return, regloving with the same gloves",
+            "donning overgloves, and upon return, removing the over gloves",
+            "removing gloves, washing hands, and upon return, washing hands and regloving with new gloves",
+            "removing gloves, washing hands, and upon return, washing hands and regloving with the same gloves"],
+  correct: 2,
+  category: "RHS",
+  rationale: "#"
+},
+//186
+{
+  question: "Image receptors that have been removed from barrier envelopes are processed with __________.",
+  answers: ["gloved hands",
+            "ungloved hands",
+            "powder-free gloves",
+            "utility gloves"],
+  correct: 0,
+  category: "RHS",
+  rationale: "#"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
 
 
 
