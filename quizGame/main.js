@@ -110,6 +110,9 @@ function showQuestion() {
   document.getElementById('correct').textContent = correct;
   document.getElementById('incorrect').textContent = incorrect;
   updatePercentageCorrect();
+  
+  const totalQuestionsElement = document.getElementById('total-questions');
+  totalQuestionsElement.textContent = `${currentQuestion + 1} / ${questions.length} questions`;
 
   let questionHtml = `
     <h2>${questions[currentQuestion].question}</h2>
