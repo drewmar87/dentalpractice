@@ -10,17 +10,14 @@ document.getElementById('quiz-selection-form').addEventListener('submit', functi
   // Check which categories were selected and load the corresponding question sets
 if (document.getElementById('infectionControlCheckbox').checked) {
   infectionControlQuestions.forEach(question => addQuestion(question));
-  dynamicRows += `<tr><th style="border: 1px solid black; padding: 10px;">Percentage Infection Control (Answered: ${categoryStats['Infection Control'].answered}; Correct: ${categoryStats['Infection Control'].correct})</th><td style="border: 1px solid black; padding: 10px;">${(categoryStats['Infection Control'].answered > 0) ? ((categoryStats['Infection Control'].correct / categoryStats['Infection Control'].answered) * 100).toFixed(2) : 'N/A'}%</td></tr>`;
 }
 
 if (document.getElementById('rhsCheckbox').checked) {
   rhsQuestions.forEach(question => addQuestion(question));
-  dynamicRows += `<tr><th style="border: 1px solid black; padding: 10px;">Percentage RHS (Answered: ${categoryStats['RHS'].answered}; Correct: ${categoryStats['RHS'].correct})</th><td style="border: 1px solid black; padding: 10px;">${(categoryStats['RHS'].answered > 0) ? ((categoryStats['RHS'].correct / categoryStats['RHS'].answered) * 100).toFixed(2) : 'N/A'}%</td></tr>`;
 }
 
 if (document.getElementById('chairsideCheckbox').checked) {
   chairsideQuestions.forEach(question => addQuestion(question));
-  dynamicRows += `<tr><th style="border: 1px solid black; padding: 10px;">Percentage Chairside (Answered: ${categoryStats['Chairside'].answered}; Correct: ${categoryStats['Chairside'].correct})</th><td style="border: 1px solid black; padding: 10px;">${(categoryStats['Chairside'].answered > 0) ? ((categoryStats['Chairside'].correct / categoryStats['Chairside'].answered) * 100).toFixed(2) : 'N/A'}%</td></tr>`;
 }
 if (document.getElementById('techniqueErrorsCheckbox').checked) {
   techniqueErrorsQuestions.forEach(question => addQuestion(question));
@@ -241,6 +238,24 @@ document.getElementById('submitName').addEventListener('click', function() {
   let midIndex = Math.floor(uniqueIdentifier.length / 2);
   uniqueIdentifier = uniqueIdentifier.substring(0, midIndex) + firstName.charAt(0).toLowerCase() + lastName.charAt(lastName.length - 1).toLowerCase() + uniqueIdentifier.substring(midIndex + 2);
 
+dynamicRows = "";
+
+// Check if the "Infection Control" category was selected
+if (document.getElementById('infectionControlCheckbox').checked) {
+  dynamicRows += `<tr><th style="border: 1px solid black; padding: 10px;">Percentage Infection Control (Answered: ${categoryStats['Infection Control'].answered}; Correct: ${categoryStats['Infection Control'].correct})</th><td style="border: 1px solid black; padding: 10px;">${(categoryStats['Infection Control'].answered > 0) ? ((categoryStats['Infection Control'].correct / categoryStats['Infection Control'].answered) * 100).toFixed(2) : 'N/A'}%</td></tr>`;
+}
+
+// Check if the "RHS" category was selected
+if (document.getElementById('rhsCheckbox').checked) {
+  dynamicRows += `<tr><th style="border: 1px solid black; padding: 10px;">Percentage RHS (Answered: ${categoryStats['RHS'].answered}; Correct: ${categoryStats['RHS'].correct})</th><td style="border: 1px solid black; padding: 10px;">${(categoryStats['RHS'].answered > 0) ? ((categoryStats['RHS'].correct / categoryStats['RHS'].answered) * 100).toFixed(2) : 'N/A'}%</td></tr>`;
+}
+
+// Check if the "Chairside" category was selected
+if (document.getElementById('chairsideCheckbox').checked) {
+  dynamicRows += `<tr><th style="border: 1px solid black; padding: 10px;">Percentage Chairside (Answered: ${categoryStats['Chairside'].answered}; Correct: ${categoryStats['Chairside'].correct})</th><td style="border: 1px solid black; padding: 10px;">${(categoryStats['Chairside'].answered > 0) ? ((categoryStats['Chairside'].correct / categoryStats['Chairside'].answered) * 100).toFixed(2) : 'N/A'}%</td></tr>`;
+}
+
+	
 let printableTable = `
   <table style="width: 50%; margin: 0 auto; border-collapse: collapse;">
     <tr><th style="border: 1px solid black; padding: 10px;">Name</th><td style="border: 1px solid black; padding: 10px;">${playerName}</td></tr>
