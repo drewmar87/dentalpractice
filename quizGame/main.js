@@ -201,6 +201,7 @@ document.getElementById('endGameButton').addEventListener('click', function() {
   document.getElementById('numbers-container').style.display = "none";
   document.getElementById('endGamePopup').style.display = "block";
   document.getElementById('endGameButton').style.display = "none";
+document.getElementById('total-questions').style.display = "none";
 });
 
 document.getElementById('confirmEndGame').addEventListener('click', function() {
