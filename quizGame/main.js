@@ -20,24 +20,19 @@ document.getElementById('quiz-selection-form').addEventListener('submit', functi
     techniqueErrorsQuestions.forEach(question => addQuestion(question));
   }
 
-  // Start the quiz
-  // Shuffle the questions:
-// Start the quiz
-// Shuffle the questions:
+
 shuffleQuestions(questions);
-// Then call showQuestion() to start the quiz:
 showQuestion();
 
 });
 
-// Shuffle function (Fisher-Yates algorithm)
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];  // Swap elements
   }
 }
-// Shuffle both questions and their answers
+
 
 function shuffleQuestions(questions) {
   shuffleArray(questions);
@@ -112,7 +107,7 @@ function showQuestion() {
   updatePercentageCorrect();
   
   const totalQuestionsElement = document.getElementById('total-questions');
-  totalQuestionsElement.textContent = `${currentQuestion + 1} / ${questions.length} questions`;
+  totalQuestionsElement.textContent = `${currentQuestion + 1} / ${questions.length}`;
 
   let questionHtml = `
     <h2>${questions[currentQuestion].question}</h2>
