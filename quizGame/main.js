@@ -22,10 +22,12 @@ document.getElementById('quiz-selection-form').addEventListener('submit', functi
 
   // Start the quiz
   // Shuffle the questions:
-  shuffleArray(questions);
-  shuffleQuestionsAndAnswers(questions);
-  // Then call showQuestion() to start the quiz:
-  showQuestion();
+// Start the quiz
+// Shuffle the questions:
+shuffleQuestions(questions);
+// Then call showQuestion() to start the quiz:
+showQuestion();
+
 });
 
 // Shuffle function (Fisher-Yates algorithm)
@@ -36,14 +38,11 @@ function shuffleArray(array) {
   }
 }
 // Shuffle both questions and their answers
-function shuffleQuestionsAndAnswers(questions) {
+
+function shuffleQuestions(questions) {
   shuffleArray(questions);
-  questions.forEach(question => {
-    const correctAnswer = question.answers[question.correct];
-    shuffleArray(question.answers);
-    question.correct = question.answers.indexOf(correctAnswer);
-  });
 }
+
 
 let currentQuestion = 0;
 let correct = 0;
