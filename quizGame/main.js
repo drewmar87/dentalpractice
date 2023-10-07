@@ -76,7 +76,8 @@ function answerQuestion(i) {
       document.getElementById(`btn${index}`).disabled = true;
     });
 
-    if (i === questions[currentQuestion].correct) {
+    if (String(i) === String(questions[currentQuestion].correct)) {
+	    
       document.getElementById(`btn${i}`).style.backgroundColor = 'green';
       correct++;
       categoryStats[questions[currentQuestion].category].correct++;  // Update the correct count for the category
