@@ -1,59 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quiz</title>
+  <title>Radiation Health and Safety Exam</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Optional: Add styles to make the "Begin" button large and centered */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #beginButton {
+      padding: 20px 40px;
+      font-size: 24px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #beginButton:hover {
+      background-color: #0056b3;
+    }
+
+    /* Hide other containers initially */
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <h1 id="quiz-title">Board Prep Questions</h1>
-  
- <form id="quiz-selection-form">
-    <h3>Select Prep Categories:</h3>
-    <input type="checkbox" id="infectionControlCheckbox" name="quizCategory" value="Infection Control">
-    <label for="infectionControlCheckbox">Infection Control</label><br>
-    <input type="checkbox" id="rhsCheckbox" name="quizCategory" value="RHS">
-    <label for="rhsCheckbox">Radiation Health and Safety</label><br>
-    <input type="checkbox" id="chairsideCheckbox" name="quizCategory" value="Chairside">
-    <label for="chairsideCheckbox">Chairside Assisting</label><br>
-    <input type="checkbox" id="techniqueErrorsCheckbox" name="quizCategory" value="Technique Errors">
-    <label for="techniqueErrorsCheckbox">RG Technique Error Identification</label><br><br>
+  <button id="beginButton">Begin</button>
 
-    <input type="submit" value="Start Quiz">
-  </form>
-
-  <div id="question-container" class="question-container" style="display: none;">
-    <!-- Questions will be inserted here -->
+  <div id="question-container" class="question-container hidden">
+    <!-- RHS Questions will be inserted here -->
   </div>
   
-  <div id="score-container" class="score-container" style="display: none;">
-	<div id="numbers-container" style="display: block;">
-    Correct: <span id="correct" style="color:green;">0</span> /
-    Incorrect: <span id="incorrect" style="color:red;">0</span>
-	  <div id="percentage-correct"></div></div>
-	    <div id="total-questions"></div> <!-- New element for total questions -->
+  <div id="score-container" class="score-container hidden">
+    <div id="numbers-container" style="display: block;">
+      Correct: <span id="correct" style="color:green;">0</span> /
+      Incorrect: <span id="incorrect" style="color:red;">0</span>
+      <div id="percentage-correct"></div>
+    </div>
+    <div id="total-questions"></div> <!-- New element for total questions -->
 
-
-
-<button id="endGameButton">End Board Prep</button>
-  <div id="endGamePopup" style="display: none;">
-    <p>Are you sure?</p>
-    <button id="confirmEndGame">Yes</button>
-    <button id="cancelEndGame">No</button>
-  </div>
-  <div id="enterNamePopup" style="display: none;">
-    <p>Enter your name:</p>
-    <input type="text" id="playerNameInput">
-    <button id="submitName">Submit</button>
-  </div>
-
-
-
+    <button id="endGameButton">End Board Prep</button>
+    <div id="endGamePopup" style="display: none;">
+      <p>Are you sure?</p>
+      <button id="confirmEndGame">Yes</button>
+      <button id="cancelEndGame">No</button>
+    </div>
+    <div id="enterNamePopup" style="display: none;">
+      <p>Enter your name:</p>
+      <input type="text" id="playerNameInput">
+      <button id="submitName">Submit</button>
+    </div>
   </div>
 
-  <script src="infectionControlQuestions.js"></script>
+  <!-- Only include the RHS Questions script -->
   <script src="rhsQuestions.js"></script>
-  <script src="chairsideQuestions.js"></script>
-  <script src="techniqueErrorsQuestions.js"></script>
   <script src="main.js"></script>
+  <script>
+    // main.js should be updated to handle the new "Begin" button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const beginButton = document.getElementById('beginButton');
+      const questionContainer = document.getElementById('question-container');
+      const scoreContainer = document.getElementById('score-container');
+
+      beginButton.addEventListener('click', function() {
+        // Hide the begin button
+        beginButton.classList.add('hidden');
+        
+        // Initialize and display the RHS quiz
+        startRHSQuiz(); // Assuming startRHSQuiz is defined in main.js or rhsQuestions.js
+
+        // Show the question container
+        questionContainer.classList.remove('hidden');
+      });
+
+      // Example function to start RHS Quiz
+      function startRHSQuiz() {
+        // Implementation depends on your main.js and rhsQuestions.js
+        // This could involve loading questions, initializing variables, etc.
+      }
+    });
+  </script>
 </body>
 </html>
