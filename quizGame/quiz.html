@@ -4,7 +4,7 @@
   <title>Radiation Health and Safety Exam</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Optional: Add styles to make the "Begin" button large and centered */
+    /* Center the "Begin" button */
     body {
       display: flex;
       justify-content: center;
@@ -34,6 +34,49 @@
     .hidden {
       display: none;
     }
+
+    /* Styling for question and score containers */
+    .question-container, .score-container {
+      text-align: center;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .button-container {
+      margin: 10px 0;
+    }
+
+    .button-container button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-container button:hover {
+      opacity: 0.8;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
   </style>
 </head>
 <body>
@@ -49,48 +92,11 @@
       Incorrect: <span id="incorrect" style="color:red;">0</span>
       <div id="percentage-correct"></div>
     </div>
-    <div id="total-questions"></div> <!-- New element for total questions -->
-
-    <button id="endGameButton">End Board Prep</button>
-    <div id="endGamePopup" style="display: none;">
-      <p>Are you sure?</p>
-      <button id="confirmEndGame">Yes</button>
-      <button id="cancelEndGame">No</button>
-    </div>
-    <div id="enterNamePopup" style="display: none;">
-      <p>Enter your name:</p>
-      <input type="text" id="playerNameInput">
-      <button id="submitName">Submit</button>
-    </div>
+    <div id="total-questions"></div> <!-- Display current question number -->
   </div>
 
   <!-- Only include the RHS Questions script -->
   <script src="rhsQuestions.js"></script>
   <script src="main.js"></script>
-  <script>
-    // main.js should be updated to handle the new "Begin" button functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const beginButton = document.getElementById('beginButton');
-      const questionContainer = document.getElementById('question-container');
-      const scoreContainer = document.getElementById('score-container');
-
-      beginButton.addEventListener('click', function() {
-        // Hide the begin button
-        beginButton.classList.add('hidden');
-        
-        // Initialize and display the RHS quiz
-        startRHSQuiz(); // Assuming startRHSQuiz is defined in main.js or rhsQuestions.js
-
-        // Show the question container
-        questionContainer.classList.remove('hidden');
-      });
-
-      // Example function to start RHS Quiz
-      function startRHSQuiz() {
-        // Implementation depends on your main.js and rhsQuestions.js
-        // This could involve loading questions, initializing variables, etc.
-      }
-    });
-  </script>
 </body>
 </html>
