@@ -47,12 +47,12 @@ function showQuestion() {
 
   // Update total questions display
   const totalQuestionsElement = document.getElementById('total-questions');
-  totalQuestionsElement.textContent = `${currentQuestion + 1} / ${questions.length}`;
+  totalQuestionsElement.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
 
   // Generate HTML for the current question
   let questionHtml = `
     <h2>${questions[currentQuestion].question}</h2>
-    ${questions[currentQuestion].image ? `<div class="img-container"><img src="${questions[currentQuestion].image}" alt="Quiz question image"></div>` : ''}
+    ${questions[currentQuestion].image ? `<div class="img-container"><img src="${questions[currentQuestion].image}" alt="Quiz question image" style="max-width: 100%; height: auto;"></div>` : ''}
     ${questions[currentQuestion].answers.map((a, i) => `
       <div class="button-container"><button id="btn${i}" onclick="answerQuestion(${i})">${a}</button></div>
     `).join('')}
@@ -60,10 +60,11 @@ function showQuestion() {
 
   document.getElementById("question-container").innerHTML = questionHtml;
 
-  // Enable all answer buttons
+  // Enable all answer buttons and reset their styles
   questions[currentQuestion].answers.forEach((_, index) => {
-    document.getElementById(`btn${index}`).disabled = false;
-    document.getElementById(`btn${index}`).style.backgroundColor = ''; // Reset button color
+    const btn = document.getElementById(`btn${index}`);
+    btn.disabled = false;
+    btn.style.backgroundColor = ''; // Reset button color
   });
 }
 
@@ -98,7 +99,7 @@ function answerQuestion(selectedIndex) {
 function showRationale(selectedIndex) {
   let rationaleHtml = `
     <h2>${questions[currentQuestion].question}</h2>
-    ${questions[currentQuestion].image ? `<div class="img-container"><img src="${questions[currentQuestion].image}" alt="Quiz question image"></div>` : ''}
+    ${questions[currentQuestion].image ? `<div class="img-container"><img src="${questions[currentQuestion].image}" alt="Quiz question image" style="max-width: 100%; height: auto;"></div>` : ''}
     <table>
       <tr>
         <th>Your Answer</th>
@@ -110,7 +111,7 @@ function showRationale(selectedIndex) {
       </tr>
       <tr>
         <th>Rationale</th>
-        <td>${questions[currentQuestion].rationale}${questions[currentQuestion].rationaleImage ? `<br><img src="${questions[currentQuestion].rationaleImage}" alt="Rationale image">` : ''}</td>
+        <td>${questions[currentQuestion].rationale}${questions[currentQuestion].rationaleImage ? `<br><img src="${questions[currentQuestion].rationaleImage}" alt="Rationale image" style="max-width: 100%; height: auto;">` : ''}</td>
       </tr>
     </table>
     <div class="button-container"><button onclick="nextQuestion()">Next Question</button></div>
@@ -136,7 +137,7 @@ function updateScoreDisplay() {
   document.getElementById('correct').textContent = correct;
   document.getElementById('incorrect').textContent = incorrect;
   updatePercentageCorrect();
-  document.getElementById('total-questions').textContent = `${currentQuestion + 1} / ${questions.length}`;
+  document.getElementById('total-questions').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
 }
 
 // Function to calculate and display the percentage of correct answers
@@ -152,105 +153,38 @@ function updatePercentageCorrect() {
 
 // Function to finish the quiz
 function finishQuiz() {
-  document.getElementById('question-container').innerHTML = "<h2>Quiz Finished!</h2>";
-
-  // Optionally, you can hide other elements or display final results here
-}
-
-// End Game and Scoring Functionality
-document.getElementById('endGameButton').addEventListener('click', function() {
-  document.getElementById('question-container').style.display = "none";
-  document.getElementById('score-container').style.display = "block";
-  document.getElementById('numbers-container').style.display = "none";
-  document.getElementById('endGamePopup').style.display = "block";
-  document.getElementById('endGameButton').style.display = "none";
-  document.getElementById('total-questions').style.display = "none";
-});
-
-document.getElementById('confirmEndGame').addEventListener('click', function() {
-  document.getElementById('endGamePopup').style.display = "none";
-  document.getElementById('enterNamePopup').style.display = "block";
-});
-
-document.getElementById('cancelEndGame').addEventListener('click', function() {
-  document.getElementById('endGamePopup').style.display = "none";
-  document.getElementById('question-container').style.display = "block";
-  document.getElementById('score-container').style.display = "block";
-  document.getElementById('numbers-container').style.display = "block";
-  document.getElementById('endGameButton').style.display = "";
-});
-
-document.getElementById('submitName').addEventListener('click', function() {
-  let playerName = document.getElementById('playerNameInput').value;
-
-  if (!playerName.trim()) {
-    alert('Please enter your name');
-    return;
-  }
-
-  document.getElementById('enterNamePopup').style.display = "none";
-
-  // Split the player's name into first and last names
-  let nameParts = playerName.trim().split(' ');
-  let firstName = nameParts[0];
-  let lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : '';
-
-  // Generate a random string of 14 characters
-  let uniqueIdentifier = randomString(14);
-
-  // Insert the first letter of the first name and the last letter of the last name in the middle of the string
-  let midIndex = Math.floor(uniqueIdentifier.length / 2);
-  uniqueIdentifier = uniqueIdentifier.substring(0, midIndex) + 
-                     (firstName.charAt(0) || '') +
-                     (lastName.charAt(lastName.length - 1) || '') + 
-                     uniqueIdentifier.substring(midIndex + 2);
-
-  // Create the results table
-  let printableTable = `
-    <table style="width: 50%; margin: 20px auto; border-collapse: collapse;">
-      <tr>
-        <th style="border: 1px solid black; padding: 10px;">Name</th>
-        <td style="border: 1px solid black; padding: 10px;">${playerName}</td>
-      </tr>
-      <tr>
-        <th style="border: 1px solid black; padding: 10px;">Date & Time</th>
-        <td style="border: 1px solid black; padding: 10px;">${new Date().toLocaleString()}</td>
-      </tr>
-      <tr>
-        <th style="border: 1px solid black; padding: 10px;">Correct</th>
-        <td style="border: 1px solid black; padding: 10px;">${correct}</td>
-      </tr>
-      <tr>
-        <th style="border: 1px solid black; padding: 10px;">Incorrect</th>
-        <td style="border: 1px solid black; padding: 10px;">${incorrect}</td>
-      </tr>
-      <tr>
-        <th style="border: 1px solid black; padding: 10px;">Percentage Overall</th>
-        <td style="border: 1px solid black; padding: 10px;">${((correct / (correct + incorrect)) * 100).toFixed(2)}%</td>
-      </tr>
-      <tr>
-        <th style="border: 1px solid black; padding: 10px;">Percentage RHS</th>
-        <td style="border: 1px solid black; padding: 10px;">${((categoryStats['RHS'].correct / categoryStats['RHS'].answered) * 100).toFixed(2)}%</td>
-      </tr>
-      <tr>
-        <th style="border: 1px solid black; padding: 10px;">Unique Identifier</th>
-        <td style="border: 1px solid black; padding: 10px;">${uniqueIdentifier}</td>
-      </tr>
-    </table>
+  // Hide question container
+  document.getElementById('question-container').classList.add('hidden');
+  
+  // Update score container to show final results
+  const scoreContainer = document.getElementById('score-container');
+  scoreContainer.innerHTML = `
+    <h2>Quiz Finished!</h2>
+    <p>Correct: <span style="color:green;">${correct}</span></p>
+    <p>Incorrect: <span style="color:red;">${incorrect}</span></p>
+    <p>${(correct + incorrect) > 0 ? 'Percentage Correct: ' + ((correct / (correct + incorrect)) * 100).toFixed(2) + '%' : 'No questions answered.'}</p>
+    <p>Thank you for completing the Radiation Health and Safety Exam!</p>
+    <button id="restartButton" style="padding: 10px 20px; font-size: 18px; margin-top: 20px;">Restart Quiz</button>
   `;
 
-  // Add the printableTable to the document
-  document.body.innerHTML += printableTable;
-});
+  // Add event listener to restart the quiz
+  document.getElementById('restartButton').addEventListener('click', function() {
+    // Reset all variables
+    currentQuestion = 0;
+    correct = 0;
+    incorrect = 0;
+    categoryStats['RHS'].correct = 0;
+    categoryStats['RHS'].answered = 0;
 
-// Function to generate a random string of specified length
-function randomString(length) {
-  let result = '';
-  let characters = '1234567890!@#$%&qwertyuiopasdfghjklzxcvbnm';
-  for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * characters.length));
-  }
-  return result;
+    // Show the "Begin" button again and hide the score container
+    scoreContainer.classList.add('hidden');
+    document.getElementById('beginButton').style.display = 'block';
+  });
+}
+
+// Function to restart the quiz (optional, enhances user experience)
+function restartQuiz() {
+  // This function can be expanded if additional reset logic is needed
 }
 
 // Event listener for the "Begin" button
