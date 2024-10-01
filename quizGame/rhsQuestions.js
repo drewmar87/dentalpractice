@@ -828,7 +828,7 @@ let rhsQuestions = [
               "The operator's hand",
               "A cup",
               "The bracket tray"],
-    correct: 3,
+    correct: 2,
     category: "RHS",
     rationale: "Exposed film and phosphor plates should be placed in a cup to prevent cross-contamination."
   },
