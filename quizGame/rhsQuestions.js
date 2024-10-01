@@ -1,7 +1,5 @@
-// image: "images/dental-tool.jpg",
-// File: rhsQuestions.js
 let rhsQuestions = [
-  {
+{
     question: "Concerning pregnant patients and radiation exposure, which statement is accurate?",
     answers: ["Dental imaging is delayed until the second trimester.",
               "ADA guidelines suggest delaying dental imaging during pregnancy.",
@@ -9,7 +7,7 @@ let rhsQuestions = [
               "Exposure time is shortened for pregnant patients."],
     correct: 2,
     category: "RHS",
-    rationale: "The fetus is protected by the lead apron during all trimesters of pregnancy. According to the American Dental Association and the U.S. Food and Drug Administration Guidelines for Exposing Dental Radiographs, dental imaging procedures are not changed for pregnant patients. The ADA guidelines recommend necessary dental images for all patients, including pregnant patients; exposure time is not affected when exposing images on a pregnant patient."
+    rationale: "Lead aprons effectively block radiation to the fetus during dental imaging. Imaging guidelines do not change for pregnant patients, and the ADA allows necessary imaging for all patients, including pregnant individuals."
   },
 
   {
@@ -20,7 +18,7 @@ let rhsQuestions = [
               "The short cone technique"],
     correct: 0,
     category: "RHS",
-    rationale: "Divergence, or spreading out of the x-ray beam, is reduced with the longer (16-inch) PID, which is used in the paralleling technique. Greater divergence of the x-ray beam occurs with the shorter 8-inch cone used with the bisecting techniques, also known as the short cone technique."
+    rationale: "A 16-inch PID reduces the divergence of the x-ray beam. Shorter PIDs, like those in the bisecting technique, cause greater beam spread."
   },
 
   {
@@ -31,7 +29,7 @@ let rhsQuestions = [
               "5.0 Sv/year"],
     correct: 1,
     category: "RHS",
-    rationale: "0.05 Sv/year is the MPD for occupationally exposed workers. 0.005 Sv/year, 0.5 Sv/year, and 5.0 Sv/year are not the MPD for occupationally exposed workers."
+    rationale: "0.05 Sv/year is the MPD for occupationally exposed workers. The other values are incorrect for occupational exposure limits."
   },
 
   {
@@ -42,7 +40,7 @@ let rhsQuestions = [
               "0.05 rem/month"],
     correct: 0,
     category: "RHS",
-    rationale: "Zero exposure is the desired amount for an occupationally exposed worker. In other words, a worker should not be exposed to any radiation if all safety measures are practiced. The maximum permissible dose for the general public is 0.01 rem/year. The maximum cumulative effective dose for an occupationally exposed worker is 1 rem/year × age of worker. The maximum permissible dose for a pregnant occupationally exposed worker is 0.05 rem/month."
+    rationale: "Zero radiation exposure is ideal for workers, though safety limits are set for permissible exposure levels."
   },
 
   {
@@ -53,7 +51,7 @@ let rhsQuestions = [
               "Holding the tubehead to prevent drifting"],
     correct: 0,
     category: "RHS",
-    rationale: "Film badges should be worn only at work; the operator should never hold the film, even if draped in a lead apron; proper positioning for the operator is 6 feet away and at 90–135 degrees to the primary beam, not behind the patient; the tubehead is never held–if a tubehead is drifting, it must be repaired."
+    rationale: "Film badges should be worn only at work. Operators should not hold film or tubeheads and must maintain proper positioning during x-rays."
   },
 
   {
@@ -64,10 +62,10 @@ let rhsQuestions = [
               "Total office staff radiation exposures"],
     correct: 2,
     category: "RHS",
-    rationale: "A film badge monitors the radiographer\'s daily occupational exposure. Film badges do not monitor natural radiation or patient or total staff exposures."
+    rationale: "A film badge monitors the radiographer’s daily occupational radiation exposure, not natural or patient exposures."
   },
-
-  {
+  
+{
     question: "Which dental structure is the hardest to visualize on a dental image?",
     answers: ["Pulp",
               "Cementum",
@@ -75,7 +73,7 @@ let rhsQuestions = [
               "Enamel"],
     correct: 1,
     category: "RHS",
-    rationale: "It is difficult to distinguish cementum from dentin on a dental image. The pulp is the most radiolucent part of the tooth tissue, the dentin composes the majority of the tooth, and the enamel is the most radiopaque structure"
+    rationale: "Cementum is difficult to distinguish from dentin on a dental image. The pulp is radiolucent, and enamel is highly radiopaque."
   },
 
   {
@@ -86,18 +84,18 @@ let rhsQuestions = [
               "ALARA is applicable to patients but not operators."],
     correct: 2,
     category: "RHS",
-    rationale: "Dosimeters monitor operator exposure to x-rays. A pregnant operator may expose dental images. Not all states require all dental personnel wear a monitoring device. A dosimeter may not be necessary for dental personnel who do not work in the radiography area. The ALARA concept—to keep exposure as low as reasonably achievable—also applies to patients and workers."
+    rationale: "Dosimeters monitor operator x-ray exposure. Pregnant operators can take images, and ALARA applies to both patients and staff."
   },
 
   {
-    question: "With a new dental x-ray machine in the office, the position indicating device (PID) length is changing from 16 to 8 inches. How does this impact the x-ray beam\'s intensity and what adjustments are needed to maintain consistent image density?",
-    answers: ["The resultant beam will be half as intense. You\'ll need to increase exposure time.",
-              "The resultant beam will be one-quarter as intense. You\'ll need to increase exposure time.",
-              "The resultant beam will be twice as intense. You\'ll need to decrease exposure time.",
-              "The resultant beam will be four times as intense. You\'ll need to decrease exposure time."],
+    question: "With a new dental x-ray machine in the office, the position indicating device (PID) length is changing from 16 to 8 inches. How does this impact the x-ray beam's intensity and what adjustments are needed to maintain consistent image density?",
+    answers: ["The resultant beam will be half as intense. You'll need to increase exposure time.",
+              "The resultant beam will be one-quarter as intense. You'll need to increase exposure time.",
+              "The resultant beam will be twice as intense. You'll need to decrease exposure time.",
+              "The resultant beam will be four times as intense. You'll need to decrease exposure time."],
     correct: 3,
     category: "RHS",
-    rationale: "Using the inverse square law, the beam in the example would be four times as intense. The inverse square law states “the intensity of radiation is inversely proportional to the square of the distance from the source of radiation.” When distance is decreased from 16 inches to 8 inches, intensity increases. When intensity increases, exposure time will need to be decreased for the same density to be maintained. The beam would be one-half as intense if the change in PID length had been from an 8 inches to 12 inches; the exposure time would need to be increased to maintain the same density. The beam would be one-quarter as intense if the PID had been changed from 8 inches to 16 inches; the exposure time would need to be increased to maintain the same density. The beam would be two times as intense if the PID had been changed from 16 inches to 12 inches; the exposure time would need to be decreased to maintain the same density."
+    rationale: "Using the inverse square law, the shorter PID makes the beam four times as intense, so exposure time needs to be reduced."
   },
 
   {
@@ -108,7 +106,7 @@ let rhsQuestions = [
               "Both Rectangular and Round"],
     correct: 0,
     category: "RHS",
-    rationale: "Both the rectangular- and the cylinder-type position indicating devices (PIDs) do not produce scatter radiation; the pointed cone position indicating device produced scatter radiation. It is no longer made"
+    rationale: "Rectangular and cylindrical PIDs reduce scatter radiation, while conical PIDs generate scatter and are no longer made."
   },
 
   {
@@ -119,8 +117,9 @@ let rhsQuestions = [
               "32"],
     correct: 3,
     category: "RHS",
-    rationale: "A total of 32 films should be taken when using a stepwedge to test developer strength. This is a 1-month supply of exposed film, one for each of the 4 days you are open each week, times 4 weeks, which is the length of time before the chemicals need to be changed. You have two machines. For each machine, you would process 16 films. On each day, 8 films would only provide testing once a week for each machine and are insufficient; testing must be done each day before each machine is used. Sixteen films only allow for testing every other day. Twenty films are the amount of film if you have one machine and are open 20 days of the month."
+    rationale: "32 films are needed for daily testing over 4 weeks for 2 processors (16 films per processor)."
   },
+
   {
     question: "What is compared using a reference radiograph?",
     answers: ["Densities",
@@ -129,8 +128,9 @@ let rhsQuestions = [
               "Fixer solution freshness"],
     correct: 0,
     category: "RHS",
-    rationale: "A reference radiograph is used to evaluate density and is compared with film that is processed daily to determine developer freshness. Film freshness is tested by developing an unexposed film in fresh chemicals and then comparing it to a reference image. Timers are checked for accuracy to make sure processing times are correct. Fixer freshness is checked with a clearing test."
+    rationale: "A reference radiograph is used to compare densities to check developer freshness."
   },
+
   {
     question: "What is the coin test used to check?",
     answers: ["Light leaks in the darkroom",
@@ -139,8 +139,9 @@ let rhsQuestions = [
               "Proper film density"],
     correct: 2,
     category: "RHS",
-    rationale: "The coin test checks for proper safelighting. Light leaks in the darkroom are checked with the light leak test. Dental x-ray units are checked through a series of tests and calibration of the units. Film density is monitored with the reference radiograph that is compared with daily film, a stepwedge radiograph that is compared with a control film, or a normalizing device."
+    rationale: "The coin test checks for proper safelighting in the darkroom."
   },
+
   {
     question: "What should extraoral intensifying screens be periodically inspected for?",
     answers: ["Fixer contamination",
@@ -149,19 +150,21 @@ let rhsQuestions = [
               "Gelatin buildup"],
     correct: 2,
     category: "RHS",
-    rationale: "Dirt and scratches build up on extraoral intensifying screens; screens should be checked periodically. The intensifying screens should not be placed where they will come in contact with fixer or developer. Gelatin on the film will not leach onto the intensifying screens."
+    rationale: "Intensifying screens should be checked for dirt and scratches, which can affect image quality."
   },
+
   {
     question: "When there is a difference of more than two steps in densities on a stepwedge, what action should be taken?",
     answers: ["Replace the processing solutions.",
-              "Stir the developer\'s contents and continue processing.",
-              "Raise the tank\'s heat by 2 degrees.",
+              "Stir the developer's contents and continue processing.",
+              "Raise the tank's heat by 2 degrees.",
               "Increase kV."],
     correct: 0,
     category: "RHS",
-    rationale: "Processing solutions should be replaced when densities differ by more than two steps on a stepwedge. Stirring the developer will not increase developer strength. Increasing the heat in the tank will increase the rate of development and could create film with increased density but will not increase the strength of the developer. Increasing the kV will increase density of the image but will not correct developer solution issues."
+    rationale: "Processing solutions should be replaced when the density difference exceeds two steps on a stepwedge."
   },
-  {
+  
+{
     question: "On average, how frequently should the processing solution be changed?",
     answers: ["Once a day",
               "Once a week",
@@ -169,7 +172,7 @@ let rhsQuestions = [
               "Every 3-4 months"],
     correct: 2,
     category: "RHS",
-    rationale: "On average, processing solution should be changed every 3–4 weeks; chemicals are replenished daily; it is not necessary to change chemicals daily or every week unless depleted; changing too frequently wastes chemicals; chemicals will be depleted if changed every 3–4 months."
+    rationale: "Processing solution should be changed every 3-4 weeks. Daily replenishment is necessary, but full changes are not required more often unless heavily used."
   },
   {
     question: "According to the CDC, what should barriers be used to cover?",
@@ -179,62 +182,18 @@ let rhsQuestions = [
               "Both sensor and phosphor imaging plate"],
     correct: 3,
     category: "RHS",
-    rationale: "According to the CDC, barriers should be placed over a sensor and phosphor imaging plate. The outer plastic film cover acts as a barrier to the film; therefore, coverage of film with a barrier is optional."
-  },
-  {
-    question: "If a radiograph is mounted labially, what would be the radiopaque restoration on tooth #19 in this image?",
-	image: "images/rhs18.jpg",
-    answers: ["Composite restoration with an overhang on the mesial surface",
-              "Amalgam restoration with an overhang on the mesial surface",
-              "Composite restoration with an overhang on the distal surface",
-              "Amalgam restoration with an overhang on the distal surface"],
-    correct: 1, // this is a placeholder as the actual image is not provided
-    category: "RHS",
-    rationale: "The radiopaque restoration on the mandibular first molar (#19) is an amalgam restoration with an overhang at the mesial cervical surface; a composite restoration will appear radiolucent to slightly radiopaque; the overhang is on the mesial surface of the tooth, not the distal surface."
+    rationale: "The CDC recommends covering both the sensor and phosphor imaging plate with barriers. The film is already protected by its cover."
   },
 
   {
-    question: "What process is depicted in this image?",
-	image: "images/rhs19.jpg",
-    answers: ["External resorption",
-              "Physiologic resorption",
-              "Internal resorption",
-              "Extrusion"],
-    correct: 1, 
-    category: "RHS",
-    rationale: "Physiologic resorption occurs naturally as part of the normal exfoliation of primary teeth. External resorption involves the root of a tooth, usually at the apex; causes include trauma, forces, and infection, which result in shorter, blunted roots. Internal resorption is caused by trauma, chronic irritation, or pulp polyps; it begins at the pulp and appears radiolucent. The incisal edge or occlusal surface of an extruded tooth, abnormal displacement of the tooth outside of the bone, appears higher than the other teeth."
-  },
-  {
-    question: "Which structure is appearing in this panoramic image?",
-	image: "images/rhs20.jpg",
-    answers: ["Orthodontic appliances",
-              "Orthodontic bands",
-              "Metal framework for two partial dentures",
-              "Fused gold crowns"],
-    correct: 2,
-    category: "RHS",
-    rationale: "The metal framework for both maxillary and mandibular partial dentures is visible. Orthodontic appliances vary in appearance based on the shape and dental materials used. Orthodontic bands are recognized by their shape. Fused gold crowns appear as large radiopaque restorations with smooth contours."
-  },
-  {
-    question: "What landmark is being pointed out by the arrows?",
-	image: "images/rhs21.jpg",
-    answers: ["Coronoid process",
-              "Condyle",
-              "Internal oblique ridge",
-              "Zygomatic process of the maxilla"],
-    correct: 0,
-    category: "RHS",
-    rationale: "The coronoid process, a triangular eminence on the anterior superior border of the ramus of the mandible, appears radiopaque and is superimposed on the maxillary tuberosity in a maxillary molar image. The condyle, which extends from the posterior superior border of the ramus of the mandible, is seen on panoramic images but not on periapical radiographs. The internal oblique ridge appears as a radiopaque band that extends downward and forward from the ramus. The zygomatic process of the maxilla appears as a J- or U-shaped radiopacity in the maxillary sinus."
-  },
-  {
-    question: "If using a digital imaging system, an image was taken but doesn\'t appear on the screen and the program doesn\'t advance to the next image space, what could be the issue and how should it be addressed?",
+    question: "If using a digital imaging system, an image was taken but doesn't appear on the screen and the program doesn't advance to the next image space, what could be the issue and how should it be addressed?",
     answers: ["X-ray machine is off; switch on the machine",
               "PID is not aligned with receptor; align PID with receptor",
               "Sensor is backward in the holder; correctly position receptor in film holder",
               "All of the above"],
     correct: 3,
     category: "RHS",
-    rationale: "All of the above: if the x-ray machine is turned off, the image will be clear and the program will not advance; the x-ray machine will need to be turned on. The PID may not have been aligned with the receptor; this will also cause a clear image and the program will not advance; align PID with the receptor. The sensor may also be in the film holder backward; the back side of the receptor may be facing the PID; the sensor will need to be placed in the film holder correctly."
+    rationale: "All of the above: X-ray machine off, PID misalignment, or a backward sensor can cause a clear image and prevent program advancement."
   },
   {
     question: "In a dental image, how is the median palatine suture depicted?",
@@ -244,7 +203,7 @@ let rhsQuestions = [
               "Pair of radiopaque diagonal lines starting by the apices of the maxillary centrals and ending above the apices of the maxillary canines"],
     correct: 1,
     category: "RHS",
-    rationale: "On a maxillary periapical image, the median palatine suture appears as a thin radiolucent line between the maxillary central incisors to the base of the nasal spine. The incisive foramen appears as an almond-shaped radiolucency between the maxillary central incisors. The nasal septum is a radiopaque vertical line above the central incisors. The floor of the nasal cavity appears as a pair of radiopaque diagonal lines beginning by the apices of the maxillary centrals and ending above the apices of the maxillary canines."
+    rationale: "The median palatine suture appears as a thin radiolucent line between the maxillary central incisors on a periapical image."
   },
   {
     question: "In which of the following locations should film be stored?",
@@ -254,7 +213,7 @@ let rhsQuestions = [
               "In the refrigerator"],
     correct: 1,
     category: "RHS",
-    rationale: "Film should be stored in a cool (50°–70°F), dry (40%–60% humidity) place. A lighted or dark room or well-ventilated area will not affect the film, but temperature and humidity are the key factors; the average refrigerator temperature is 37°, which is too cold for film."
+    rationale: "Film should be stored in a cool, dry area (50°–70°F, 40%–60% humidity). The refrigerator is too cold for storage."
   },
   {
     question: "Which of these structures would not be observable as a maxillary landmark on a panoramic image?",
@@ -264,7 +223,7 @@ let rhsQuestions = [
               "Mental foramen"],
     correct: 3,
     category: "RHS",
-    rationale: "The mental foramen is an opening or hole in the bone located on the external surface of the mandible in the region of the apices of the premolars and appears as a small round or oval radiolucency. The styloid process is a long, pointed, sharp radiopaque projection that extends from the temporal bone, anterior to the mastoid process. The external auditory meatus is an oval or round radiolucency in the temporal bone superior and anterior to the mastoid process. The incisive canal is a radiolucent cylinder with thin radiopaque borders located above the incisive foramen between teeth #8 and #9."
+    rationale: "The mental foramen is a mandibular landmark, not maxillary. The other structures are located in the maxilla."
   },
 
   {
@@ -275,7 +234,7 @@ let rhsQuestions = [
               "Original records"],
     correct: 1,
     category: "RHS",
-    rationale: "The patient chart should have the original images; duplicate images can be made if copies of the images are requested by another dental office or for legal purposes; they do not need to be stored in the chart. A signed informed consent and HIPAA release must be in the patient’s record. The dentist should keep the original record and send copies when necessary."
+    rationale: "Duplicate images are not required in the patient chart, but original records, signed consent, and HIPAA releases are."
   },
   {
     question: "How does static electricity appear on a developed film?",
@@ -285,7 +244,7 @@ let rhsQuestions = [
               "Black branching lines"],
     correct: 3,
     category: "RHS",
-    rationale: "Static electricity causes thin, black branching lines across film when film packets are opened too quickly, especially in low humidity conditions. Developer contamination prior to processing causes black dots on the film. Clear dots are caused by fixer contamination prior to processing. Scratches are caused by damage from a sharp object."
+    rationale: "Static electricity causes black branching lines on film, typically from opening packets too quickly in low humidity."
   },
   {
     question: "An informed consent consists of all of the following except:",
@@ -295,7 +254,7 @@ let rhsQuestions = [
               "Reason for the images"],
     correct: 1,
     category: "RHS",
-    rationale: "Permission to release records to a dentist or physician is part of HIPAA. Informed consent informs the patient of the need for dental images, the purpose and benefits of such images, the number and types of exposures to be made, and potential harm that may occur if the dental image is not taken."
+    rationale: "Permission to release records is part of HIPAA, not informed consent. Informed consent covers exposures, reasons, and potential harm."
   },
   {
     question: "When preparing the radiography room for a patient, where should barriers be placed?",
@@ -305,7 +264,7 @@ let rhsQuestions = [
               "On the sensor, computer mouse, and x-ray unit on/off button"],
     correct: 2,
     category: "RHS",
-    rationale: "Phosphor plates, the PID and tubehead, and exposure control button should be covered with a barrier. These are difficult to disinfect and may be damaged with disinfectant. The phosphor plate is a semicritical item and must have a barrier because it cannot be sterilized; the headrest can be disinfected or covered with a barrier; the control panel should have a barrier; the beam alignment device is sterilized; the computer keyboard and work area should have a barrier; the sensor cord can be disinfected; the sensor and computer mouse should have a barrier; the x-ray unit on/off switch does not need a barrier if it is turned on prior to patient care."
+    rationale: "Barriers should be placed on the phosphor plate, PID, tubehead, and exposure control button, as these are harder to disinfect and may be damaged by disinfectants."
   },
   {
     question: "Failure to obtain informed consent is an example of:",
@@ -315,7 +274,7 @@ let rhsQuestions = [
               "Standard of care"],
     correct: 0,
     category: "RHS",
-    rationale: "Failure to obtain informed consent prior to a dental procedure is an example of negligence or malpractice. Common laws are derived from customs or legal precedence. Statutory laws are created by the legislature. Standard of care is determined from the level of care provided by the average cautious practitioner."
+    rationale: "Failure to obtain informed consent is considered negligence or malpractice. It violates the patient’s rights before treatment."
   },
 
   {
@@ -326,7 +285,7 @@ let rhsQuestions = [
               "Written in ink or data recorded on a computer"],
     correct: 3,
     category: "RHS",
-    rationale: "The dental record is a legal record; documents must be permanent and should only be written on in ink or via data recorded on a computer. A pencil should not be used in a legal record."
+    rationale: "Dental records must be permanent, so they should be written in ink or recorded electronically. Pencil is not acceptable."
   },
   {
     question: "Which of the following agencies enforces regulations to protect the safety of dental employees from hazardous materials in the dental office?",
@@ -336,7 +295,7 @@ let rhsQuestions = [
               "Organization for Safety, Asepsis, and Prevention (OSAP)"],
     correct: 1,
     category: "RHS",
-    rationale: "OSHA enforces regulations to protect the safety of dental employees from hazardous materials in the dental office. The EPA develops policies to protect humans and the environment from pollutants. The CDC monitors and prevents health threats. OSAP provides training and education related to infection control."
+    rationale: "OSHA enforces safety regulations regarding hazardous materials. The EPA, CDC, and OSAP focus on environmental and health safety policies."
   },
   {
     question: "Chemical-resistant gloves are used to perform which of the following?",
@@ -346,7 +305,7 @@ let rhsQuestions = [
               "Process film"],
     correct: 2,
     category: "RHS",
-    rationale: "Chemical-resistant gloves should be used when disinfecting surfaces. The gloves protect hands from harmful chemicals in the disinfectants; chemical resistant gloves are not needed to set up the room, remove barriers, or process film."
+    rationale: "Chemical-resistant gloves are needed for disinfecting surfaces to protect hands from harmful chemicals."
   },
   {
     question: "Films are being taken to the daylight loader for automatic processing. Which of the following would not be done when developing film using a daylight loader?",
@@ -356,7 +315,7 @@ let rhsQuestions = [
               "Place dirty or used gloves through the cuff assembly"],
     correct: 3,
     category: "RHS",
-    rationale: "Clean ungloved hands are placed through the cuff assembly to access the inside of the daylight loader; the film is placed in the feed slot with ungloved hands; clean gloves which have been placed in the daylight loader ahead of time are used to open the exposed film packets; the cup of exposed film is placed in the daylight loader prior to placing hands through the cuff assembly."
+    rationale: "Dirty gloves should not be placed in the daylight loader; clean hands and gloves are used to handle film and packets."
   },
   {
     question: "Current infection control guidelines come from the __________.",
@@ -366,7 +325,7 @@ let rhsQuestions = [
               "CDC, ADA, and OSHA"],
     correct: 3,
     category: "RHS",
-    rationale: "All three agencies—CDC, ADA, and OSHA—offer infection control guidelines. The state dental society follows guidelines of these organizations and does not make regulations."
+    rationale: "Infection control guidelines are established by CDC, ADA, and OSHA."
   },
   {
     question: "Which is the method used to prevent cross-contamination during use of a digital sensor?",
@@ -376,7 +335,7 @@ let rhsQuestions = [
               "Cold sterilization"],
     correct: 2,
     category: "RHS",
-    rationale: "The CDC has recommended that both disinfection with a high-level disinfectant and barrier should be used with digital sensors. Sensors could be damaged with heat sterilization and cold sterilization."
+    rationale: "Digital sensors should be disinfected and covered with a barrier to prevent cross-contamination."
   },
   {
     question: "The disinfectant required with the use of a digital sensor is an EPA registered __________.",
@@ -386,7 +345,7 @@ let rhsQuestions = [
               "Sterilant"],
     correct: 1,
     category: "RHS",
-    rationale: "Digital sensors, which are non-critical instruments, should be disinfected with an EPA-registered intermediate-level disinfectant and then covered with a barrier. Immersion in high-level disinfectants will damage sensors. Low-level disinfectants are used to disinfect surfaces that can become contaminated. A sterilant solution will damage a sensor."
+    rationale: "An intermediate-level disinfectant is recommended for digital sensors to avoid damage while maintaining proper disinfection."
   },
   {
     question: "In addition to the barrier technique, which of the following is an infection control measure for the wire connections from the sensor to the digital image unit?",
@@ -396,7 +355,7 @@ let rhsQuestions = [
               "No specific infection control measures are required for the cords"],
     correct: 2,
     category: "RHS",
-    rationale: "Wires from the sensor to the digital image unit should be wiped down with a high-level hospital-grade disinfectant. Wiping with soapy water or an intermediate-level disinfectant will not disinfect to the level required."
+    rationale: "The sensor wires should be wiped with a high-level hospital-grade disinfectant for proper infection control."
   },
   {
     question: "Which of the following statements is correct regarding the use of masks and protective eyewear during dental imaging procedures?",
@@ -406,7 +365,7 @@ let rhsQuestions = [
               "All PPE, including face masks and protective eyewear, must be worn at all times. Standard precautions apply."],
     correct: 3,
     category: "RHS",
-    rationale: "There is minimal risk of splash or spatter during a dental imaging procedure; therefore, the use of a face mask, protective eyewear, and additional PPE is optional. The CDC requires a facemask and protective eyewear when there is a risk of splash or spatter."
+    rationale: "Face masks and protective eyewear are required when there is a risk of splash or spatter, per standard precautions."
   },
   {
     question: "Film contaminated with saliva should be __________.",
@@ -416,7 +375,7 @@ let rhsQuestions = [
               "Wiped free of saliva with alcohol"],
     correct: 2,
     category: "RHS",
-    rationale: "Film contaminated with saliva should be wiped off and placed in a disposable cup. Placing the film in a high-level disinfectant, wiping with an intermediate-level disinfectant, or wiping with alcohol could damage the film."
+    rationale: "Saliva-contaminated film should be wiped with an intermediate-level disinfectant to prevent cross-contamination."
   },
 
   {
@@ -427,8 +386,9 @@ let rhsQuestions = [
               "An empty cup and powder-free gloves"],
     correct: 3,
     category: "RHS",
-    rationale: "The equipment placed in the daylight loader of an automatic processor before developing films includes the cup and a pair of powder-free gloves. Powdered gloves create an artifact on the x-rays."
+    rationale: "An empty cup and powder-free gloves should be placed in the daylight loader to avoid contamination and artifacts on x-rays."
   },
+  
   {
     question: "The current patient was running, slipped and hit a picnic table with his front teeth. He fractured tooth number 9. Which image is preferred to evaluate this tooth?",
     answers: ["Occlusal",
@@ -437,7 +397,7 @@ let rhsQuestions = [
               "Panoramic"],
     correct: 2,
     category: "RHS",
-    rationale: "The periapical image is recommended for the evaluation of a crown fracture. The periapical image allows the evaluation of the proximity of the pulp chamber to the fracture. The other views do not provide as clear an image for this condition as does a periapical view. The occlusal image and panoramic image are used to evaluate large areas of the maxilla or mandible. The bitewing image is used to evaluate interproximal surfaces. The panoramic image is recommended for the evaluation of mandibular jaw fractures."
+    rationale: "A periapical image is preferred for evaluating a crown fracture as it provides a detailed view of the pulp and surrounding area. Other views do not offer the same detail for this condition."
   },
   {
     question: "In which situation would extraoral radiography not be used?",
@@ -447,7 +407,7 @@ let rhsQuestions = [
               "To evaluate the extent of large lesions"],
     correct: 2,
     category: "RHS",
-    rationale: "Extraoral dental imaging is not used to diagnosis of dental caries. Bitewing radiographs are used for this procedure. Extraoral dental imaging is used to evaluate growth and development, impacted teeth, and the extent of large lesions."
+    rationale: "Extraoral radiography is not used to diagnose dental caries; bitewings are typically used for this purpose."
   },
   {
     question: "All of the following must be documented in the patient record when exposing dental images except:",
@@ -457,17 +417,17 @@ let rhsQuestions = [
               "Diagnosis from the images"],
     correct: 0,
     category: "RHS",
-    rationale: "Exposure setting would be good to include in the patient record but is not required. Reason for the images, number and type of images, and diagnosis from the images are all required record documentation."
+    rationale: "Exposure settings are not required unless they are changed. The reason for the images, number and type of images, and diagnosis are required."
   },
   {
     question: "You are mounting film with the orientation dot face up (convex side is facing you). Which method of mounting is being used and how are you viewing the film?",
-    answers: ["Lingual mounting; you are viewing the patient\'s x-ray images as if you were inside his or her mouth looking out. The patient\'s left side is on your left side, and the patient\'s right side is on your right side.",
-              "Labial mounting; you are viewing your patient\'s x-ray images as if you were inside his or her mouth looking out. Your patient\'s left side is on your left side, and your patient\'s right side is on your right side.",
-              "Lingual mounting; you are viewing your patient\'s x-ray images as if you were facing your patient. Your patient\'s left side is on your right side, and your patient\'s right side is on your left side.",
-              "Labial mounting you are viewing your patient\'s x-ray images as if you were facing your patient. Your patient\'s left side is on your right side, and your patient\'s right side is on your left side."],
+    answers: ["Lingual mounting; you are viewing the patient's x-ray images as if you were inside his or her mouth looking out. The patient's left side is on your left side, and the patient's right side is on your right side.",
+              "Labial mounting; you are viewing your patient's x-ray images as if you were inside his or her mouth looking out. Your patient's left side is on your left side, and your patient's right side is on your right side.",
+              "Lingual mounting; you are viewing your patient's x-ray images as if you were facing your patient. Your patient's left side is on your right side, and your patient's right side is on your left side.",
+              "Labial mounting; you are viewing your patient's x-ray images as if you were facing your patient. Your patient's left side is on your right side, and your patient's right side is on your left side."],
     correct: 3,
     category: "RHS",
-    rationale: "Labial film mounting orients the dot with the convex side facing the viewer. The dental professional views x-rays as if the viewer were facing the patient. The patient\'s left side is on the viewer\'s right side, and the patient\'s right side is on the viewer\'s left side. The lingual system of film mounting is not used frequently, but when it is used, the dental professional then views the radiographs from the lingual aspect, as if the viewer were sitting on the inside of the patient\'s mouth and looking out; the patient\'s left side is on the viewer\'s left side, and the patient\'s right side is on the viewer\'s right side."
+    rationale: "Labial mounting orients the film as if you are facing the patient. The patient's left side is on your right, and the patient's right side is on your left."
   },
   {
     question: "You were replenishing the chemicals and mixed the chemicals, putting developer in the fixer and fixer in the developer. What occurred that alerted you that you had made a mistake?",
@@ -477,7 +437,7 @@ let rhsQuestions = [
               "Green deposits in the developer"],
     correct: 0,
     category: "RHS",
-    rationale: "Contamination of processing chemicals results in a strong ammonia smell. Crystals precipitate owing to the reaction of mineral salts in the water and the chemicals, but crystals are not considered a contamination. Old solutions begin to change colors to brown. Contaminated chemicals do not cause a green sediment"
+    rationale: "A strong ammonia smell indicates contamination of the processing chemicals. This happens when developer and fixer are mixed improperly."
   },
   {
     question: "You are in charge of the quality control procedures for the dental office, which of the following should be performed on a daily basis?",
@@ -487,18 +447,7 @@ let rhsQuestions = [
               "Check the scanner using an unexposed phosphor plate."],
     correct: 1,
     category: "RHS",
-    rationale: "A test film is run through the processing solutions each day prior to developing exposed film to test the strength of the processing solutions; phosphor plates are checked regularly for artifacts; an unexposed film is processed each time a new box of film is opened; the scanner is checked on a schedule using processed plates."
-  },
-  {
-    question: "What radiolucent landmark is circled on the dental image?",
-	image: "images/rhs48.jpg",
-    answers: ["Mental foramen",
-              "Lingual foramen",
-              "Mandibular canal",
-              "Genial tubercles"],
-    correct: 1,
-    category: "RHS",
-    rationale: "This is the lingual foramen. It is an opening or a hole in the bone located on the internal surface of the mandible near the midline; it is surrounded by the genial tubercles and appears radiolucent. The genial tubercles are radiopaque. The mental foramen is an opening or hole in the bone located on the external surface of the mandible in the region of the premolars. It would appear as a small ovoid or round radiolucent area located in the apical region of the mandibular premolars. The mandibular canal is radiolucent with thin superior and inferior radiolucent walls and is located below the submandibular fossa, between the mandibular foramen and the mental foramen."
+    rationale: "Running a test film daily ensures the strength and quality of the processing solutions before exposing patient films."
   },
   {
     question: "Which of the following is not a factor in a missing apical area in a radiograph?",
@@ -508,1900 +457,1476 @@ let rhsQuestions = [
               "The patient was unable to completely close on the bite block."],
     correct: 2,
     category: "RHS",
-    rationale: "Horizontal angulation does not play a role in a missing apex on a radiographic film. It can cause overlapping. A and B are both factors in a missing apical area due to the receptor not being placed high enough or low enough in the maxilla or mandible. A missing apical area can also be caused by the inability of the patient to bite down completely on the bite block."
+    rationale: "Incorrect horizontal angulation does not affect apical coverage; it can cause overlapping. The other factors can lead to missing the apex."
   },
   {
-    question: "Which of the following conditions exists on this image?",
-	image: "images/rhs50.jpg",
-    answers: ["A fixed bridge between the second premolar and second molar",
-              "Open contacts between maxillary premolars",
-              "Open contacts between the molars",
-              "Pulp stone on the second molar"],
+    question: "Which of the following would appear most radiopaque?",
+    answers: ["Composite",
+              "Amalgam",
+              "Pulp",
+              "Enamel"],
     correct: 1,
     category: "RHS",
-    rationale: "This view indicates open contacts between the maxillary premolars as evidenced by the dark spaces between these teeth. The teeth in a fixed bridge would appear connected, and there should be at least one pontic present. The contacts between the molars are overlapped. There is no pulp stone."
+    rationale: "Amalgam is the most radiopaque material due to its density. Composite may vary, and enamel is radiopaque but less so than amalgam."
   },
-
-// Start here.
-
-
-{
-  question: "Which image is shown in this film?",
-  image: "images/rhs51.jpg",
-  answers: ["Frontal sinus",
-            "Sphenoidal sinus",
-            "Ethmoidal sinus",
-            "Maxillary sinus"],
-  correct: 3,
+  {
+    question: "Which of the following affects the sharpness of a dental image?",
+    answers: ["Tungsten filament",
+              "Milliamperage",
+              "Focusing cup position",
+              "Focal spot size"],
+    correct: 3,
     category: "RHS",
-  rationale: "The radiolucent area in this image is the floor of the maxillary sinus, which is one of a paired cavity or compartment of bone located within the maxilla. The paired frontal sinuses are found within the frontal bone superior to the nasal cavity, the sphenoidal sinuses are located deep within the body of the sphenoid bone, and the ethmoidal sinuses are located in small cavities located deep within each lateral mass of the ethmoid bone."
-},
-
-
-{
-  question: "Which of the following would appear most radiopaque?",
-  answers: ["Composite",
-            "Amalgam",
-            "Pulp",
-            "Enamel"],
-  correct: 1,
+    rationale: "Focal spot size directly impacts image sharpness; smaller focal spots produce sharper images."
+  },
+  {
+    question: "Distortion of an image describes which of the following characteristics?",
+    answers: ["Characteristics of the beam of energy",
+              "Radiolucent characteristics",
+              "Geometric characteristics",
+              "Radiopaque characteristics"],
+    correct: 2,
     category: "RHS",
-  rationale: "Amalgam is a common restorative material used in dentistry and is the most radiopaque of the materials listed. Composite can appear radiopaque or radiolucent depending on content of materials but less radiopaque than amalgam. The pulp appears radiolucent. Enamel is radiopaque but less radiopaque than amalgam."
-},
-
-
-{
-  question: "In this panoramic image, which of the following statements is true?",
-  image: "images/rhs53.jpg",
-  answers: ["The permanent mandibular second molars are erupted.",
-            "There is no evidence of mandibular third molars.",
-            "Unerupted maxillary canines are present.",
-            "The primary maxillary first molars are still present."],
-  correct: 2,
+    rationale: "Distortion is a geometric characteristic affecting the accuracy of an image, along with sharpness and magnification."
+  },
+  {
+    question: "An underdeveloped film may be caused by which error?",
+    answers: ["Inadequate development time",
+              "Solution that is too warm",
+              "Excessive development time",
+              "Concentrated developer solution"],
+    correct: 0,
     category: "RHS",
-  rationale: "The permanent maxillary canines are unerupted. In this panoramic image, the permanent mandibular second molars are unerupted, the mandibular third molars have begun to form, and the permanent first premolars are present in place of the primary first molars."
-},
-
-
-{
-  question: "Which of the following affects the sharpness of a dental image?",
-
-  answers: ["Tungsten filament",
-            "Milliamperage",
-            "Focusing cup position",
-            "Focal spot size"],
-  correct: 3,
+    rationale: "Inadequate development time or cool developer solution leads to underdeveloped, light films."
+  },
+  
+  {
+    question: "The purpose of the intensifying screen in a panoramic cassette is to reduce:",
+    answers: ["Exposure time",
+              "Mounting time",
+              "Radiation exposure",
+              "Ghosting"],
+    correct: 2,
     category: "RHS",
-  rationale: "The size of the focal spot determines clarity or fuzziness on an image; the smaller the focal spot, the sharper the image. The tungsten filament produces the electrons; milliamperage determines the number of electrons produced; the focusing cup (or molybdenum cup) focuses the electron cloud that is directed at the tungsten target."
-},
-
-
-{
-  question: "Distortion of an image describes which of the following characteristics?",
-
-  answers: ["Characteristics of the beam of energy",
-            "Radiolucent characteristics",
-            "Geometric characteristics",
-            "Radiopaque characteristics"],
-  correct: 2,
+    rationale: "The intensifying screen reduces radiation exposure by glowing when exposed to x-rays, which allows less radiation to be used. It does not affect mounting time or ghosting."
+  },
+  {
+    question: "The office has just started using digital radiography. Analog film was used previously. Exposure time will be:",
+    answers: ["About the same as for film",
+              "Increased",
+              "Decreased",
+              "Unchanged"],
+    correct: 2,
     category: "RHS",
-  rationale: "Distortion, magnification, and sharpness are all geometric characteristics affecting the quality of dental images. Quality, quantity, and intensity describe characteristics of the beam of energy; radiolucent and radiopaque describe the structures on the image related to their density."
-},
-
-
-{
-  question: "An underdeveloped film may be caused by which error?",
-
-  answers: ["Inadequate development time",
-            "Solution that is too warm",
-            "Excessive development time",
-            "Concentrated developer solution"],
-  correct: 0,
+    rationale: "Exposure times for digital radiography are reduced by 50%–90% compared to conventional film."
+  },
+  {
+    question: "What exposure control selection(s) controls the quality of the x-ray beam?",
+    answers: ["Time",
+              "Kilovoltage",
+              "Milliamperage",
+              "Both a and c"],
+    correct: 1,
     category: "RHS",
-  rationale: "An underdeveloped film will appear light and is caused by inadequate development time, developer solution that is too cool, and depleted or contaminated developer. Overdeveloped film will appear dark and is caused by excessive development time, developer solution that is too warm, or developer solution that is too concentrated."
-},
-
-
-{
-  question: "The purpose of the intensifying screen in a panoramic cassette is to reduce:",
-
-  answers: ["Exposure time",
-            "Mounting time",
-            "Radiation exposure",
-            "Ghosting"],
-  correct: 2,
+    rationale: "Kilovoltage (kV) controls the quality, or penetrating ability, of the x-ray beam. Time and milliamperage (mA) control the quantity of the beam."
+  },
+  {
+    question: "Which of the following is a true statement regarding radiation and patient protection?",
+    answers: ["X-ray images are routinely prescribed for 6-month recall patients.",
+              "Round collimators are preferred over rectangular collimators.",
+              "A patient may hold the image receptor in place when XCPs are not available.",
+              "The benefit of dental x-ray images outweighs the risk of ionizing radiation."],
+    correct: 3,
     category: "RHS",
-  rationale: "The intensifying screen glows with a green light or blue light when exposed to x-radiation. The illumination of the intensifying screen exposes the panoramic screen film. Less x-radiation is required to expose the screen film than x-ray film. Exposure time is actually longer for panoramic film. Mounting time and ghosting are not affected by the intensifying screen."
-},
-
-
-{
-  question: "The office has just started using digital radiography. Analog film was used previously. Exposure time will be:",
-
-  answers: ["About the same as for film",
-            "Increased",
-            "Decreased",
-            "Unchanged"],
-  correct: 2,
+    rationale: "The diagnostic benefits of x-rays outweigh the risks of radiation exposure when images are needed. Rectangular collimators reduce exposure more than round collimators, and patients should not hold receptors."
+  },
+  {
+    question: "Which of the following is a dose equivalent measurement?",
+    answers: ["Coulombs per kilogram",
+              "Rad",
+              "Roentgen",
+              "Sievert"],
+    correct: 3,
     category: "RHS",
-  rationale: "Exposure times for digital images are decreased by 50%–90% compared with the use of conventional film."
-},
-
-
-{
-  question: "What exposure control selection(s) controls the quality of the x-ray beam?",
-
-  answers: ["Time",
-            "Kilovoltage",
-            "Milliamperage",
-            "Both a and c"],
-  correct: 1,
+    rationale: "The sievert (Sv) is the SI unit used to measure the biologic effects of different types of radiation, making it a dose equivalent measurement."
+  },
+  {
+    question: "Which traditional measurement and metric measurement are equal?",
+    answers: ["Roentgen and sievert",
+              "Rad and gray",
+              "Rem and coulombs per kilogram",
+              "Sievert and rad"],
+    correct: 1,
     category: "RHS",
-  rationale: "The quality, or wavelength and energy, of the x-ray beam is controlled by kilovoltage. An increase in kilovoltage will increase the speed and energy of the electrons and increase the penetrating ability of the x-ray beam. The quantity or number of x-rays is controlled by milliamperage and exposure time. Both milliamperes and exposure time have a direct influence on the number of electrons produced by the cathode filament. When milliamperage is increased, the exposure time must be decreased and vice versa to maintain the density of the image."
-},
-
-
-{
-  question: "Which of the following is a true statement regarding radiation and patient protection?",
-
-  answers: ["X-ray images are routinely prescribed for 6-month recall patients.",
-            "Round collimators are preferred over rectangular collimators.",
-            "A patient may hold the image receptor in place when XCPs are not available.",
-            "The benefit of dental x-ray images outweighs the risk of ionizing radiation."],
-  correct: 3,
+    rationale: "Rad and gray are equal in terms of absorbed dose. The rem and sievert are equal for dose equivalents."
+  },
+  {
+    question: "Which of the following represents the maximum permissible dose (MPD) for the general public?",
+    answers: ["0.05 rem/month",
+              "0.1 rem/year",
+              "5 rem/year",
+              "20 rem"],
+    correct: 1,
     category: "RHS",
-  rationale: "The benefit of early diagnosis of dental disease far outweighs the risks related to ionizing radiation. Exposure of images is based on clinical need and not based on a “time” routine. Rectangular collimators reduce the area of exposure on the face more than round collimators. At no time should a patient hold an image receptor in place."
-},
-
-//61
-{
-  question: "Which of the following is a dose equivalent measurement?",
-
-  answers: ["Coulombs per kilogram",
-            "Rad",
-            "Roentgen",
-            "Sievert"],
-  correct: 3,
+    rationale: "The MPD for the general public is 0.1 rem/year or 0.001 Sv/year. Occupational limits differ."
+  },
+  {
+    question: "Which of the following is a true statement regarding pediatric exposures to radiation?",
+    answers: ["Uncooperative children require panoramic exposures.",
+              "Pediatric patients do not require images.",
+              "Immature tissues of pediatric patients are less susceptible to radiation than the tissues of adult patients.",
+              "A child may be seated in a parent's lap for exposures."],
+    correct: 3,
     category: "RHS",
-  rationale: "The sievert is the International System of Units (SI) unit of the dose equivalent. It is used to compare the biologic effects of different types of radiation. Coulombs per kilogram and the roentgens measure radiation exposure. Coulombs per kilogram measures the number of ion pairs in the air. The roentgen measures radiation exposure by measuring the amount of ionization that occurs in the air. Rad measures absorbed dose."
-},
-
-//62
-{
-  question: "Which traditional measurement and metric measurement are equal?",
-
-  answers: ["Roentgen and sievert",
-            "Rad and gray",
-            "Rem and coulombs per kilogram",
-            "Sievert and rad"],
-  correct: 1,
+    rationale: "A child may sit on a parent's lap for exposures, both covered by a lead apron. Children's tissues are more sensitive to radiation than adults'."
+  },
+  {
+    question: "Which of the following refers to operator protection during dental imaging procedures?",
+    answers: ["Avoid the primary beam.",
+              "Use a lead apron.",
+              "Determine the need for dental images.",
+              "Avoid retakes."],
+    correct: 0,
     category: "RHS",
-  rationale: "Rad, the traditional unit, and gray, the SI unit (International System of Units), refer to the absorbed dose. The roentgen, the traditional exposure measurement, measures the amount of ionization that occurs in the air. Coulombs per kilogram, the SI unit of exposure measurement, measures the number of ion pairs in the air. The sievert is the SI unit and the rem is the traditional unit of the dose equivalent. They are used to compare the biological effects of different types of radiation."
-},
-
-//63
-{
-  question: "Which of the following represents the maximum permissible dose (MPD) for the general public?",
-
-  answers: ["0.05 rem/month",
-            "0.1 rem/year",
-            "5 rem/year",
-            "20 rem"],
-  correct: 1,
+    rationale: "The operator must avoid the primary beam for protection. The other measures are focused on patient protection."
+  },
+  {
+    question: "During the exposure of a dental image, the operator:",
+    answers: ["Stands more than 6 feet away and at a right angle to the tubehead",
+              "Stands in front of and parallel to the primary beam",
+              "Stands within 6 feet of and parallel to the primary beam",
+              "Stands in back of the patient's head"],
+    correct: 0,
     category: "RHS",
-  rationale: "A total of 0.1 rem/year or 0.001 Sv/year is the maximum permissible dose (MPD) of radiation per year for nonoccupationally exposed persons; 0.05 rems/month is the MPD for an occupationally exposed pregnant worker; 5 rems/year is the MPD of an occupationally exposed worker; 20 rems is the cumulative effective dose for an occupationally exposed 20-year-old worker (age × 1 rem)."
-},
-
-//64
-{
-  question: "Which of the following is a true statement regarding pediatric exposures to radiation?",
-
-  answers: ["Uncooperative children require panoramic exposures.",
-            "Pediatric patients do not require images.",
-            "Immature tissues of pediatric patients are less susceptible to radiation than the tissues of adult patients.",
-            "A child may be seated in a parent\'s lap for exposures."],
-  correct: 3,
+    rationale: "The operator should stand at least 6 feet away and at a right angle to the tubehead to avoid radiation exposure."
+  },
+  {
+    question: "Multiple shades of gray on an image are controlled by which component of the x-ray machine?",
+    answers: ["mA",
+              "kV",
+              "Timer",
+              "Collimator"],
+    correct: 1,
     category: "RHS",
-  rationale: "A parent may hold a child with the child seated in the parent\'s lap, only if the child is uncooperative; both are covered by a lead apron. Although a panoramic exposure is an option, it may not be the best option. A panoramic image will not show decay as readily as a bitewing image. Children should be prescribed dental images when clinically necessary. Immature tissues found in children are more susceptible to ionizing radiation than adult tissues."
-},
-
-//65
+    rationale: "Kilovoltage (kV) controls the contrast and range of gray shades on an image. mA and the timer control density."
+  },
+  
+  
 {
-  question: "Which of the following refers to operator protection during dental imaging procedures?",
-
-  answers: ["Avoid the primary beam.",
-            "Use a lead apron.",
-            "Determine the need for dental images.",
-            "Avoid retakes."],
-  correct: 0,
+    question: "During the production of x-rays, how much energy is lost as heat?",
+    answers: ["1%",
+              "8%",
+              "70%",
+              "99%"],
+    correct: 3,
     category: "RHS",
-  rationale: "The operator should avoid the primary beam. The use of a lead apron and avoiding retakes protect the patient. Determining the need for the dental images is the responsibility of the dentist and protects the patient."
-},
-
-//66
-{
-  question: "During the exposure of a dental image, the operator:",
-
-  answers: ["Stands more than 6 feet away and at a right angle to the tubehead",
-            "Stands in front of and parallel to the primary beam",
-            "Stands within 6 feet of and parallel to the primary beam",
-            "Stands in back of the patient\'s head"],
-  correct: 0,
+    rationale: "99% of the energy during x-ray production is lost as heat, and less than 1% is converted into x-rays."
+  },
+  {
+    question: "Which of the following causes cellular damage from x-radiation?",
+    answers: ["Ionization",
+              "Milliamperage",
+              "Kilovoltage potential",
+              "Filtration"],
+    correct: 0,
     category: "RHS",
-  rationale: "The operator must stand 6 feet away at right angles to the tubehead; standing in front of and parallel to the primary beam, standing within 6 feet of and parallel to the primary beam, and standing in back of the patient’s head can expose the operator to primary and scatter radiation."
-},
-
-//67
-{
-  question: "Multiple shades of gray on an image are controlled by which component of the x-ray machine?",
-
-  answers: ["mA",
-            "kV",
-            "Timer",
-            "Collimator"],
-  correct: 1,
+    rationale: "Ionization, caused by x-rays ejecting electrons from atoms, leads to cellular damage."
+  },
+  {
+    question: "Which statement is true as it relates to the direct theory of radiation injury?",
+    answers: ["Cell damage results when ionizing radiation directly hits critical areas or targets within the cell.",
+              "Direct injuries from exposure to ionizing radiation occur frequently but seldom do noticeable damage.",
+              "Most x-ray photons are absorbed by the cell and cause little or no damage.",
+              "Indirect injuries occur at the same rate as direct injuries from exposure to ionizing radiation."],
+    correct: 0,
     category: "RHS",
-  rationale: "The kV setting controls contrast, which is the range of gray shades or areas of black and white, on an image. The mA and the timer control the density on images. The kV setting also controls density on an image. The collimator limits the size of the primary beam that exits the position indicating device (PID) to 2.75 inches."
-},
-
-//68
-{
-  question: "During the production of x-rays, how much energy is lost as heat?",
-
-  answers: ["1%",
-            "8%",
-            "70%",
-            "99%"],
-  correct: 3,
+    rationale: "The direct theory suggests that ionizing radiation directly striking critical cell areas leads to cell damage."
+  },
+  {
+    question: "Which of the following changes describes the development of cataracts in a person who has been exposed to excessive radiation?",
+    answers: ["Genetic",
+              "Generational",
+              "Short term",
+              "Somatic"],
+    correct: 3,
     category: "RHS",
-  rationale: "X-ray production is very inefficient; 99% of the energy used to generate x-rays is lost as heat. Electrons travel from the cathode to the anode. When the electrons strike the tungsten target, their energy of motion, or kinetic energy, is converted to x-ray energy and heat. Less than 1% of the energy is converted to x-rays. Coherent scatter accounts for 8% of the scatter radiation. General radiation accounts for 70% of the x-ray photons produced."
-},
-
-//69
-{
-  question: "Which of the following causes cellular damage from x-radiation?",
-
-  answers: ["Ionization",
-            "Milliamperage",
-            "Kilovoltage potential",
-            "Filtration"],
-  correct: 0,
+    rationale: "Cataracts are a somatic effect, as they impact the individual who received the radiation, not future generations."
+  },
+  {
+    question: "Which of the following requires less exposure for the patient?",
+    answers: ["Large silver halide crystals",
+              "Small silver halide crystals",
+              "Phosphor storage plates",
+              "Pixels"],
+    correct: 3,
     category: "RHS",
-  rationale: "Cellular damage in the tissues occurs as a result of ionization when x-rays interact with the cells. Ionization occurs when an electron is ejected from the orbit of an atom. Milliamperage affects image density, and kilovoltage affects both image density and contrast. The filter removes long-wavelength, low-energy radiation from the primary beam."
-},
-
-//70
-{
-  question: "Which statement is true as it relates to the direct theory of radiation injury?",
-
-  answers: ["Cell damage results when ionizing radiation directly hits critical areas or targets within the cell.",
-            "Direct injuries from exposure to ionizing radiation occur frequently but seldom do noticeable damage.",
-            "Most x-ray photons are absorbed by the cell and cause little or no damage.",
-            "Indirect injuries occur at the same rate as direct injuries from exposure to ionizing radiation."],
-  correct: 0,
+    rationale: "Pixels in digital sensors require less x-ray exposure compared to film and phosphor storage plates."
+  },
+  {
+    question: "Which of the following would actually increase exposure time to a patient?",
+    answers: ["Exposing a panoramic image instead of four bitewings",
+              "Decreasing target-to-image receptor distance",
+              "Decreasing kV by 10%",
+              "Using the bisecting angle technique"],
+    correct: 2,
     category: "RHS",
-  rationale: "The direct theory of radiation injury suggests that cell damage results when ionizing radiation directly hits critical areas or targets within the cell. This occurs when the x-ray photon directly strikes the DNA within the cell, resulting in injury to the irradiated organism. Direct theory injuries from exposure to ionizing radiation occur infrequently; when it occurs, damage occurs. Most x-ray photons pass through the cell and cause little or no damage. The indirect theory of injury suggests ionizing radiation causes ionization of the water molecules, which result in free radicle formation that can reform into toxins. This occurs more frequently than direct damage to tissues and organs."
-},
-
-
-//71
-{
-  question: "Which of the following changes describes the development of cataracts in a person who has been exposed to excessive radiation?",
-
-  answers: ["Genetic",
-            "Generational",
-            "Short term",
-            "Somatic"],
-  correct: 3,
+    rationale: "Decreasing kV requires increased exposure time to maintain image density."
+  },
+  {
+    question: "Which of the following statements best describes the primary beam of energy?",
+    answers: ["It includes primary, secondary, and scatter radiation.",
+              "It contains short waves.",
+              "It is unfiltered.",
+              "It is measured in coulombs per kilogram."],
+    correct: 1,
     category: "RHS",
-  rationale: "Somatic damage causes damage to the person who received the radiation exposure. It affects all cells except reproductive cells. Cataracts affect the person who is exposed and therefore are a somatic change. Generational or genetic effects are found in the offspring of a person receiving radiation. Cataracts are not a short-term effect; rather, they can be a long-term effect of radiation exposure."
-},
-
-//72
-{
-  question: "Which of the following requires less exposure for the patient?",
-
-  answers: ["Large silver halide crystals",
-            "Small silver halide crystals",
-            "Phosphor storage plates",
-            "Pixels"],
-  correct: 3,
+    rationale: "The primary beam consists of short-wavelength, high-energy x-rays used for imaging."
+  },
+  {
+    question: "Which of the following is the acronym for the principle that governs exposure to radiation?",
+    answers: ["NCRP",
+              "ALARA",
+              "MPD",
+              "ANSI"],
+    correct: 1,
     category: "RHS",
-  rationale: "Pixels, discrete units of information within digital sensors, are more sensitive to x-rays than the silver halide crystals in film emulsion and require 50%–90% less x-ray exposure than film. Phosphor storage plates use a similar amount of x-radiation as F-speed film. Digital sensors reduce the exposure time more than 50% over F-speed film and phosphor storage plates."
-},
-
-//73
-{
-  question: "Which of the following would actually increase exposure time to a patient?",
-
-  answers: ["Exposing a panoramic image instead of four bitewings",
-            "Decreasing target-to-image receptor distance",
-            "Decreasing kV by 10%",
-            "Using the bisecting angle technique"],
-  correct: 2,
+    rationale: "ALARA stands for 'As Low As Reasonably Achievable,' guiding radiation exposure practices."
+  },
+  {
+    question: "Which of the following best describes acute exposures to radiation?",
+    answers: ["Genetic",
+              "Chronic",
+              "Short term",
+              "Leukemia"],
+    correct: 2,
     category: "RHS",
-  rationale: "In order to keep the same density of an image, if the kV is decreased, the mA or time would have to be increased. Both mA and time control the number of x-ray photons; kV controls the force or penetrating power of the electrons. Increasing the number of x-ray photons would increase exposure. A panoramic film and four bitewing x-rays require the same amount of radiation. Decreasing the target-to-film distance allows the exposure time to be decreased. The bisecting technique requires less exposure time with a shorter PID than the paralleling technique with longer PID."
-},
-
-//74
-{
-  question: "Which of the following statements best describes the primary beam of energy?",
-
-  answers: ["It includes primary, secondary, and scatter radiation.",
-            "It contains short waves.",
-            "It is unfiltered.",
-            "It is measured in coulombs per kilogram."],
-  correct: 1,
+    rationale: "Acute exposure refers to a large dose of radiation over a short time, potentially causing immediate effects."
+  },
+  {
+    question: "Which of the following has fairly low sensitivity to x-rays, but is a concern because of its risk of exposure due to its location?",
+    answers: ["Lens of the eye",
+              "Oral mucosa",
+              "Bone marrow",
+              "Thyroid gland"],
+    correct: 3,
     category: "RHS",
-  rationale: "The primary x-ray beam consists of short-wavelength, high-energy x-rays. The long-wave, low-energy x-rays are removed by an aluminum filter. The primary beam is the x-ray beam that exits the tubehead before it interacts with matter. The x-rays that are created once the primary beam interacts with matter are known as secondary radiation. Scatter radiation, a type of secondary radiation, consists of x-rays that are deflected. Coulombs per kilogram, an exposure measurement, measures the amount of ionization in the air produced by x-rays."
-},
-
-//75
-{
-  question: "Which of the following is the acronym for the principle that governs exposure to radiation?",
-
-  answers: ["NCRP",
-            "ALARA",
-            "MPD",
-            "ANSI"],
-  correct: 1,
+    rationale: "The thyroid gland has low sensitivity but is often exposed due to its location near the beam."
+  },
+  {
+    question: "When should a full adult series of dental images be considered for a child or adolescent?",
+    answers: ["7 years old",
+              "9 years old",
+              "12 years old",
+              "When clinical evidence of generalized disease is present and the adolescent has first and second molars"],
+    correct: 3,
     category: "RHS",
-  rationale: "ALARA, keeping the amount of radiation as low as reasonably achievable, is the principle that governs the use of radiation. NCRP and ANSI are agencies and are not related to exposure to radiation, and MPD refers to the maximum permissible dose of radiation a person may receive in a given period of time."
-},
-
-//76
-{
-  question: "Which of the following best describes acute exposures to radiation?",
-
-  answers: ["Genetic",
-            "Chronic",
-            "Short term",
-            "Leukemia"],
-  correct: 2,
+    rationale: "A full series is based on clinical need, such as generalized disease and the presence of first and second molars, not age."
+  },
+ {
+    question: "After processing four bitewing films, the fourth film exits the processor and is completely black at one end of the image. What is the reason for the black portion of the image?",
+    answers: ["Developer solution was too weak",
+              "Processing chemicals were too cold",
+              "Darkroom door was opened too early",
+              "Receptor was not exposed to radiation"],
+    correct: 2,
     category: "RHS",
-  rationale: "A short-term effect would result from an acute amount of radiation that is received all at once. A chronic exposure refers to small amounts of radiation received over a longer period of time. Genetic effects take a generation to become evident, and leukemia is a possible long-term effect of exposure to radiation."
-},
-
-//77
-{
-  question: "Which of the following has fairly low sensitivity to x-rays, but is a concern because of its risk of exposure due to its location?",
-
-  answers: ["Lens of the eye",
-            "Oral mucosa",
-            "Bone marrow",
-            "Thyroid gland"],
-  correct: 3,
+    rationale: "A black portion of the image is caused by accidental exposure to white light, which happens when the darkroom door is opened too early."
+  },
+  {
+    question: "You are using a complete series of dental images to educate your patient on the value of radiography. According to HIPAA, what should not be present in or on the film mount?",
+    answers: ["The date",
+              "The patient's name",
+              "Radiographs showing impacted teeth",
+              "Radiographs showing dental caries"],
+    correct: 1,
     category: "RHS",
-  rationale: "The thyroid gland has low sensitivity to x-rays but is of concern because of its location on the neck where it could potentially receive radiation exposure from almost every exposure. The lens of the eye and oral mucosa are at high sensitivity and bone marrow is at highest sensitivity but are not positioned to receive exposure from multiple images."
-},
-
-//78
-{
-  question: "When should a full adult series of dental images be considered for a child or adolescent?",
-
-  answers: ["7 years old",
-            "9 years old",
-            "12 years old",
-            "When clinical evidence of generalized disease is present and the adolescent has first and second molars"],
-  correct: 3,
+    rationale: "Under HIPAA regulations, the patient's name should not be displayed publicly to protect their identity."
+  },
+  {
+    question: "How should you dispose of the used developer solution?",
+    answers: ["Put it in a leakproof biohazard bag.",
+              "Flush it down the sanitary drain sewer.",
+              "Place it in the septic system.",
+              "Place it in a special container to be picked up by a special service."],
+    correct: 2,
     category: "RHS",
-  rationale: "According to the American Dental Association and the U.S. Food and Drug Administration Guidelines for Prescribing Dental Radiographs, a full mouth series of dental images is recommended for adolescents (have both first and second molars) with generalized oral disease. There are no recommendations for a full mouth series of dental images on a child. A full adult series is based on need (generalized disease), not on age."
-},
-
-//79
-{
-  question: "After processing four bitewing films, the fourth film exits the processor and is completely black at one end of the image. What is the reason for the black portion of the image?",
-
-  answers: ["Developer solution was too weak",
-            "Processing chemicals were too cold",
-            "Darkroom door was opened too early",
-            "Receptor was not exposed to radiation"],
-  correct: 0,
+    rationale: "Used developer is nonhazardous and can be safely flushed down the sanitary drain but should not go into a septic system."
+  },
+  {
+    question: "Which of the following should not be disposed of through a waste management system?",
+    answers: ["Unused developer",
+              "Film",
+              "Lead foil",
+              "Stabe bite block"],
+    correct: 3,
     category: "RHS",
-  rationale: "Films accidentally exposed to white light will appear black. The darkroom door was opened before the film completely entered the processor. If the developer solution is too weak or too cold, a lighter film will be processed. If the receptor was not exposed to radiation the image would appear clear."
-},
-
-//80
-{
-  question: "You are using a complete series of dental images to educate your patient on the value of radiography. According to HIPAA, what should not be present in or on the film mount?",
-
-  answers: ["The date",
-            "The patient\'s name",
-            "Radiographs showing impacted teeth",
-            "Radiographs showing dental caries"],
-  correct: 1,
+    rationale: "Stabe bite blocks are basic waste and do not need to go through a specialized waste management system."
+  },
+  {
+    question: "You can dispose of the fixer solution and rinse water into sanitary drain systems when __________.",
+    answers: ["They are mixed with equal parts of distilled water",
+              "The temperature is equal to that of the room",
+              "The solutions have evaporated by half",
+              "All of the silver has been removed"],
+    correct: 3,
     category: "RHS",
-  rationale: "Health Insurance Portability and Accountability Act (HIPAA) regulations protect a patient\'s identity. Personal identification (e.g., patient\'s name) on a set of radiographs is not for public display. The date, images showing impacted teeth, and images showing dental caries can be displayed."
-},
-
-
-//81
-{
-  question: "How should you dispose of the used developer solution?",
-
-  answers: ["Put it in a leakproof biohazard bag.",
-            "Flush it down the sanitary drain sewer.",
-            "Place it in the septic system.",
-            "Place it in a special container to be picked up by a special service."],
-  correct: 1,
+    rationale: "Fixer solution can only be safely disposed of after running it through a silver recovery unit to remove all silver."
+  },
+  {
+    question: "Which method is used to dispose of silver that has been recovered from used fixer and rinse water solutions?",
+    answers: ["Have it picked up and disposed of by an appropriate waste management service",
+              "In the septic tank",
+              "In the sanitary sewer",
+              "In a biohazard bag"],
+    correct: 1,
     category: "RHS",
-  rationale: "Used developer is considered nonhazardous waste and can be disposed of in the sanitary drain. There is no need to put used developer solution in a leakproof biohazard bag or in a special container to be picked up by a special service. It must never be put into a septic system."
-},
-
-//82
-{
-  question: "Which of the following should not be disposed of through a waste management system?",
-
-  answers: ["Unused developer",
-            "Film",
-            "Lead foil",
-            "Stabe bite block"],
-  correct: 3,
+    rationale: "Recovered silver from fixer solution must be picked up by a licensed waste management service."
+  },
+  {
+    question: "Who/what determines who can expose dental images in the dental office?",
+    answers: ["Occupational Health and Safety Association (OSHA)",
+              "American Dental Association (ADA)",
+              "Individual states",
+              "Dentist"],
+    correct: 3,
     category: "RHS",
-  rationale: "Unused developer, film, and lead foil should all be disposed of through a waste management system. Stabe bite blocks are disposed with basic waste not through the waste management system."
-},
-
-//83
-{
-  question: "You can dispose of the fixer solution and rinse water into sanitary drain systems when __________.",
-
-  answers: ["They are mixed with equal parts of distilled water",
-            "The temperature is equal to that of the room",
-            "The solutions have evaporated by half",
-            "All of the silver has been removed"],
-  correct: 3,
+    rationale: "Individual states regulate who is allowed to expose dental images, setting specific certification requirements."
+  },
+  {
+    question: "You are destroying old patient records. How do you dispose of the dental radiographs?",
+    answers: ["As regulated waste",
+              "As hazardous waste",
+              "As normal office waste",
+              "Have them collected by an approved waste removal service"],
+    correct: 2,
     category: "RHS",
-  rationale: "The only time fixer solution can be discharged down the sanitary drain is after it has been run through a silver recovery unit when and all the silver halide crystals have been removed. Mixing fixer with distilled water, equalizing the temperature, and allowing half of the solution to evaporate will not decrease the amount of silver halide crystals in the solution."
-},
-
-//84
-{
-  question: "Which method is used to dispose of silver that has been recovered from used fixer and rinse water solutions?",
-
-  answers: ["Have it picked up and disposed of by an appropriate waste management service",
-            "In the septic tank",
-            "In the sanitary sewer",
-            "In a biohazard bag"],
-  correct: 0,
+    rationale: "Processed dental film can be disposed of in regular office waste."
+  },
+  {
+    question: "Which interaction with x-rays causes the radiopaque areas on a dental image?",
+    answers: ["Compton’s scatter",
+              "Photoelectric effect",
+              "Coherent scatter",
+              "No interaction"],
+    correct: 2,
     category: "RHS",
-  rationale: "Silver recovered from fixer solution must be picked up and disposed of by an appropriate waste management service. It cannot be discharged in the sanitary sewer, septic tank, or biohazard bag."
-},
-
-//85
-{
-  question: "Who/what determines who can expose dental images in the dental office?",
-
-  answers: ["Occupational Health and Safety Association (OSHA)",
-            "American Dental Association (ADA)",
-            "Individual states",
-            "Dentist"],
-  correct: 2,
+    rationale: "The photoelectric effect causes radiopaque areas by absorbing x-rays, preventing them from reaching the receptor."
+  },
+  {
+    question: "You have a package of outdated dental film. How should you dispose of it?",
+    answers: ["Put it in the trash receptacle.",
+              "Store it for 6 years, then discard in regular trash.",
+              "Shred it and place it in a biohazard bag.",
+              "Contact an approved waste removal service."],
+    correct: 3,
     category: "RHS",
-  rationale: "Individual states regulate who may expose dental images and the specific educational or certification requirements for such persons. OSHA enforces regulations to protect the safety of dental employees from hazardous materials in the dental office. The purpose of the ADA is to help the dental profession and advance oral healthcare. The dentist determines who he will hire and what responsibilities he will allow in his office that are sanctioned by the state dental board."
-},
-
-//86
-{
-  question: "You are destroying old patient records. How do you dispose of the dental radiographs?",
-
-  answers: ["As regulated waste",
-            "As hazardous waste",
-            "As normal office waste",
-            "Have them collected by an approved waste removal service"],
-  correct: 2,
+    rationale: "Undeveloped film must be disposed of by a licensed waste management service."
+  },
+  {
+    question: "Exposed film and phosphor plates should be collected in __________ and transferred to the darkroom or scanning area.",
+    answers: ["The lab coat pocket",
+              "The operator's hand",
+              "A cup",
+              "The bracket tray"],
+    correct: 3,
     category: "RHS",
-  rationale: "Developed dental film can be disposed of in normal office waste. There is no need to dispose of processed film in regulated waste, hazardous waste, or have them collected by an approved waste removal service."
-},
-
-//87
-{
-  question: "Which interaction with x-rays causes the radiopaque areas on a dental image?",
-
-  answers: ["Compton’s scatter",
-            "Photoelectric effect",
-            "Coherent scatter",
-            "No interaction"],
-  correct: 1,
+    rationale: "Exposed film and phosphor plates should be placed in a cup to prevent cross-contamination."
+  },
+  {
+    question: "Infection control practiced during exposure involves all of the following except __________.",
+    answers: ["The beam alignment device is placed on the uncovered countertop after the procedure",
+              "The exposed film or phosphor plates are dried after use",
+              "The beam alignment device is reassembled as needed",
+              "The exposed film or phosphor plates are placed in a cup"],
+    correct: 1,
     category: "RHS",
-  rationale: "The photoelectric effect or absorption is responsible for the radiopaque areas of a dental image. The x-ray photon collides with and ejects an inner shell electron expending all its energy to eject the electron and disappears. The x-rays do not reach the receptor which results in the radiopaque portions on the dental image. Compton scatter does not reach the receptor; the x-ray photon ejects an outer shell electron, loses the energy it took to eject the electron, and continues on in an alternate course with less energy. It could cause fogging of the image. Coherent scatter, unmodified, or Thompson scatter does not reach the receptor; an x-ray photon collides with but does not eject an outer shell electron; this interaction causes the photon to change course. It may cause fogging of the image. No interaction takes place; the x-ray photon passes through without interacting with matter and strikes the receptor causing the radiolucent areas on the dental image"
-},
-
-//88
-{
-  question: "You have a package of outdated dental film. How should you dispose of it?",
-
-  answers: ["Put it in the trash receptacle.",
-            "Store it for 6 years, then discard in regular trash.",
-            "Shred it and place it in a biohazard bag.",
-            "Contact an approved waste removal service."],
-  correct: 3,
+    rationale: "Infection control guidelines prohibit placing contaminated items, like the beam alignment device, on an uncovered countertop."
+  },
+  {
+    question: "Infection control practices during processing involve which of the following?",
+    answers: ["Transport",
+              "Assembly of beam alignment devices",
+              "Checking kV settings",
+              "Steadying the tubehead"],
+    correct: 0,
     category: "RHS",
-  rationale: "Undeveloped dental film must be collected by an approved waste management removal service. It cannot be put in the trash receptacle, stored for 6 years and then disposed of, or shredded and placed in a biohazard bag."
-},
-
-//89
-{
-  question: "Exposed film and phosphor plates should be collected in __________ and transferred to the darkroom or scanning area.",
-
-  answers: ["The lab coat pocket",
-            "The operator\'s hand",
-            "A cup",
-            "The bracket tray"],
-  correct: 2,
+    rationale: "Receptor transport is part of infection control during processing. Assembly of beam alignment devices, checking kV settings, and steadying the tubehead are part of exposure procedures."
+  },
+  {
+    question: "During dental imaging procedures, exposure to pathogens occurs most frequently from which of the following?",
+    answers: ["Touch",
+              "Transfer",
+              "Splash, spatter, and droplet",
+              "A and B"],
+    correct: 3,
     category: "RHS",
-  rationale: "Exposed receptors should be collected in a cup. Collecting receptors in the lab coat pocket, the operator\'s hand, or the bracket tray will cause cross-contamination."
-},
-
-//90
-{
-  question: "Infection control practiced during exposure involves all of the following except __________.",
-
-  answers: ["The beam alignment device is placed on the uncovered countertop after the procedure",
-            "The exposed film or phosphor plates are dried after use",
-            "The beam alignment device is reassembled as needed",
-            "The exposed film or phosphor plates are placed in a cup"],
-  correct: 0,
+    rationale: "In dental imaging, infection control focuses on touch and transfer, which are the primary means of pathogen transmission."
+  },
+  {
+    question: "Which of the following is a single-use item used in a dental imaging procedure?",
+    answers: ["Face mask",
+              "Lead apron",
+              "Beam alignment device",
+              "Phosphor plate"],
+    correct: 0,
     category: "RHS",
-  rationale: "The beam alignment device and receptors are never to be placed on the uncovered countertop before, during, or after use. They are to be kept on the bracket tray or on a covered countertop. The disposal of all contaminated items occurs at the end of the exposure process, not during it. During the exposure of receptors, the exposed film or phosphor plates are dried and placed in a cup. The beam alignment device is reassembled as needed for receptor placement."
-},
-
-
-
-
-//91
-{
-  question: "Infection control practices during processing involve which of the following?",
-
-  answers: ["Transport",
-            "Assembly of beam alignment devices",
-            "Checking kV settings",
-            "Steadying the tubehead"],
-  correct: 0,
+    rationale: "Face masks are single-use items. Lead aprons, beam alignment devices, and phosphor plates are reusable."
+  },
+  {
+    question: "Which describes proper storage of a lead apron?",
+    answers: ["Folding and placing it on the chair for reuse",
+              "Hanging it between uses",
+              "Rolling it",
+              "Any method may be used."],
+    correct: 1,
     category: "RHS",
-  rationale: "Receptor transport is considered to be part of processing. Assembling the beam alignment device, checking the kV settings, and steadying the tubehead are all part of the radiographic exposure process."
-},
-
-//92
-{
-  question: "During dental imaging procedures, exposure to pathogens occurs most frequently from which of the following?",
-
-  answers: ["Touch",
-            "Transfer",
-            "Splash, spatter, and droplet",
-            "A and B"],
-  correct: 3,
+    rationale: "Lead aprons should be hung to avoid creasing or damage. Folding or rolling can weaken the protective material."
+  },
+  {
+    question: "You are at greatest risk of contracting your patient's hepatitis C virus from which source?",
+    answers: ["Your gloves",
+              "The film packet",
+              "The lead apron",
+              "The beam alignment device"],
+    correct: 1,
     category: "RHS",
-  rationale: "Dental imaging infection control is focused on touch and transfer of pathogens. Splash, spatter, and droplet occur infrequently."
-},
-
-//93
-{
-  question: "Which of the following is a single-use item used in a dental imaging procedure?",
-
-  answers: ["Face mask",
-            "Lead apron",
-            "Beam alignment device",
-            "Phosphor plate"],
-  correct: 0,
+    rationale: "The film packet is the most likely source of cross-contamination. Proper handling is critical to prevent contamination."
+  },
+  {
+    question: "Which of the following is not classified as a noncritical instrument?",
+    answers: ["Beam alignment device",
+              "Position indicating device of the dental x-ray tubehead",
+              "Exposure button",
+              "Lead apron"],
+    correct: 0,
     category: "RHS",
-  rationale: "Face masks, cotton rolls, dental bibs, and any paper supplies are all disposable, single-use items used in a dental imaging procedure. The lead apron, beam alignment device, and phosphor plates are multiple-use items."
-},
-
-//94
-{
-  question: "Which describes proper storage of a lead apron?",
-
-  answers: ["Folding and placing it on the chair for reuse",
-            "Hanging it between uses",
-            "Rolling it",
-            "Any method may be used."],
-  correct: 1,
+    rationale: "Beam alignment devices are classified as semicritical because they contact mucous membranes."
+  },
+  {
+    question: "In trying to explain to a patient about sequence of injury, you use the example of a sunburn. What stage of injury is being described?",
+    answers: ["Recovery",
+              "Latent period",
+              "Period of injury",
+              "Cumulative effect"],
+    correct: 2,
     category: "RHS",
-  rationale: "Lead aprons cannot be folded, creased, rolled, or placed near sharp objects. The correct method of storage is hanging."
-},
-
-//95
-{
-  question: "You are at greatest risk of contracting your patient\'s hepatitis C virus from which source?",
-
-  answers: ["Your gloves",
-            "The film packet",
-            "The lead apron",
-            "The beam alignment device"],
-  correct: 1,
+    rationale: "The period of injury refers to the time when damage is occurring or visible, similar to how a sunburn manifests."
+  },
+  {
+    question: "Phosphor plates are cleaned with which of the following disinfectants?",
+    answers: ["Low-level disinfectant",
+              "Intermediate-level disinfectant",
+              "High-level disinfectant",
+              "Disinfectant specifically for phosphor plates"],
+    correct: 3,
     category: "RHS",
-  rationale: "The film packet is potentially the greatest source for cross-contamination in dental imaging. Improper handling of the film creates contamination issues in the operatory and in the darkroom. Gloves prevent cross-contamination; the lead apron is disinfected after every patient; and the beam alignment device is sterilized after each patient."
-},
-
-//96
-{
-  question: "Which of the following is not classified as a noncritical instrument?",
-
-  answers: ["Beam alignment device",
-            "Position indicating device of the dental x-ray tubehead",
-            "Exposure button",
-            "Lead apron"],
-  correct: 0,
+    rationale: "Phosphor plates are cleaned with a disinfectant specifically designed for them to avoid damage."
+  },
+  {
+    question: "An instrument that contacts mucous membranes but does not penetrate soft tissue or bone is considered __________.",
+    answers: ["Critical",
+              "Semicritical",
+              "Noncritical",
+              "Semicritical and noncritical"],
+    correct: 1,
     category: "RHS",
-  rationale: "The beam alignment device is a semicritical instrument because it touches mucous membrane but does not penetrate soft tissue. The lead apron, exposure button, and position indicating device are all noncritical instruments."
-},
-
-//97
-{
-  question: "In trying to explain to a patient about sequence of injury, you use the example of a sunburn. What stage of injury is being described?",
-
-  answers: ["Recovery",
-            "Latent period",
-            "Period of injury",
-            "Cumulative effect"],
-  correct: 2,
+    rationale: "Instruments that contact mucous membranes but do not penetrate soft tissue are classified as semicritical."
+  },
+  {
+    question: "Which statement is correct concerning the use of gloves during a dental imaging procedure?",
+    answers: ["Gloves must be washed before use, to remove powder residue.",
+              "Gloves must be sterile for all procedures.",
+              "New gloves must be worn for each patient.",
+              "Gloves must be worn only when contact with saliva is anticipated."],
+    correct: 3,
     category: "RHS",
-  rationale: "The period of injury is the period of time damage is occurring or symptoms are visible. The recovery period or cell recovery is the period of time when the body is recovering or repairing itself from the injury. The latent period is the time between exposure and the presence of symptoms. The cumulative effect is when irreparable injury occurs. The areas of the body that do not recover, but are irreparably damaged, can have long-term effects later and further injury/exposure will also lead to health issues later."
-},
-
-//98
-{
-  question: "Phosphor plates are cleaned with which of the following disinfectants?",
-
-  answers: ["Low-level disinfectant",
-            "Intermediate-level disinfectant",
-            "High-level disinfectant",
-            "Disinfectant specifically for phosphor plates"],
-  correct: 3,
+    rationale: "New gloves must be worn for each patient. Nonsterile gloves are acceptable, and washing gloves compromises their integrity."
+  },
+  {
+    question: "As the quality control officer for the dental office, you should do all of the following except:",
+    answers: ["Calibrate and inspect the equipment regularly.",
+              "Develop and maintain a monitoring schedule.",
+              "Maintain a log of all tasks completed, date of performance, and person conducting the test.",
+              "Develop a plan for evaluation and correction of problems."],
+    correct: 0,
     category: "RHS",
-  rationale: "Disinfectants specifically designed for phosphor plates are used to clean phosphor plates after they have been scanned. Low-level, intermediate-level, and high-level disinfectants could damage phosphor plates."
-},
-
-//99
-{
-  question: "An instrument that contacts mucous membranes but does not penetrate soft tissue or bone is considered __________.",
-
-  answers: ["Critical",
-            "Semicritical",
-            "Noncritical",
-            "Semicritical and noncritical"],
-  correct: 1,
+    rationale: "Calibration and inspection of equipment should be done by an authorized technician, not the quality control officer."
+  },
+  {
+    question: "Which of the following is not true as it relates to the components of a dental x-ray tube?",
+    answers: ["The focusing cup has a negative electrostatic charge.",
+              "The anode of the positive end of the x-ray tube is made of tungsten and copper.",
+              "The cathode is the positively charged end of the x-ray tube.",
+              "The collimator is a lead disk with an aperture of various sizes and shapes."],
+    correct: 2,
     category: "RHS",
-  rationale: "An instrument that contacts mucous membranes but does not penetrate soft tissue or bone is considered a semicritical instrument. An instrument that contacts mucous membranes and penetrates soft tissue or bone is considered a critical instrument. An instrument that does not contact mucous membranes is considered a noncritical instrument."
-},
-
-//100
-{
-  question: "Which statement is correct concerning the use of gloves during a dental imaging procedure?",
-
-  answers: ["Gloves must be washed before use, to remove powder residue.",
-            "Gloves must be sterile for all procedures.",
-            "New gloves must be worn for each patient.",
-            "Gloves must be worn only when contact with saliva is anticipated."],
-  correct: 2,
+    rationale: "The cathode is the negatively charged end of the x-ray tube. The focusing cup and anode have specific roles in the tube's function."
+  },
+  {
+    question: "Which part of a dental film absorbs the x-radiation during x-ray exposure and stores the energy from the radiation?",
+    answers: ["Film base",
+              "Adhesive layer",
+              "Silver halide crystals",
+              "Protective gelatin layer"],
+    correct: 2,
     category: "RHS",
-  rationale: "Fresh gloves need to be worn for each new patient. Washing them with soap and water or chemicals would decrease their barrier-protection properties. Nonsterile examination gloves can be used; sterile gloves are not necessary. Gloves are worn for all patient procedures, not just when contact with saliva is anticipated."
-},
-
-//1
-{
-  question: "As the quality control officer for the dental office, you should do all of the following except:",
-
-  answers: ["Calibrate and inspect the equipment regularly.",
-            "Develop and maintain a monitoring schedule.",
-            "Maintain a log of all tasks completed, date of performance, and person conducting the test.",
-            "Develop a plan for evaluation and correction of problems."],
-  correct: 0, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "Calibration and inspection of the equipment is regularly performed by an authorized service technician. The office quality control officer would develop and maintain a monitoring schedule; maintain a log of all tasks completed, date of performance, and person conducting the test; and develop a plan for evaluation and correction of problems." // Fill this in with the explanation for the correct answer.
-},
-//2
-{
-  question: "Which of the following is not true as it relates to the components of a dental x-ray tube?",
-
-  answers: ["The focusing cup has a negative electrostatic charge.",
-            "The anode of the positive end of the x-ray tube is made of tungsten and copper.",
-            "The cathode is the positively charged end of the x-ray tube.",
-            "The collimator is a lead disk with an aperture of various sizes and shapes."],
-  correct: 2, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "The cathode is the negatively charged end of the x-ray tube. The focusing or molybdenum cup has a negative electrostatic charge. The anode of the positive end of the x-ray tube is made of tungsten and copper. The collimator is a lead disk with an aperture of various sizes and shapes." // Fill this in with the explanation for the correct answer.
-},
-//3
-{
-  question: "Which part of a dental film absorbs the x-radiation during x-ray exposure and stores the energy from the radiation?",
-
-  answers: ["Film base",
-            "Adhesive layer",
-            "Silver halide crystals",
-            "Protective gelatin layer"],
-  correct: 2, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "The silver halide crystals in the emulsion absorb the x-radiation during x-ray exposure and store the energy from the radiation. The film base is a flexible piece of polyester plastic. The adhesive layer is a thin layer of adhesive material that covers both sides of the film base. The protective gelatin layer, which suspends the silver halide crystals, is a thin transparent coating placed over the emulsion." // Fill this in with the explanation for the correct answer.
-},
-//4
-{
-  question: "Which intraoral dental x-ray machine component is used to aim and direct the x-ray beam toward the image receptor?",
-
-  answers: ["Yoke",
-            "Control panel",
-            "Extension arm",
-            "Position indicating device"],
-  correct: 3, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "The position indicating device (PID) is used to aim and direct the x-ray beam toward the image receptor. The yoke is the curved portion of the x-ray machine that is connected to the extension arm. The extension arm holds the tubehead and is connected to the main body of the x-ray unit. The control panel is the portion of the x-ray machine that houses the major controls including the line switch, timer, milliamperage and kilovoltage selectors, and exposure button." // Fill this in with the explanation for the correct answer.
-},
-//5
-{
-  question: "When taking an image of a maxillary premolar periapical, where should the mesial edge of the receptor (it will come up to or cover) be placed to obtain the correct image and what should be in the image?",
-
-  answers: ["Center of the central incisor; distal half of the central incisor, lateral incisor, canine, first premolar, mesial portion of the second premolar",
-            "Center of the lateral incisor; distal half of the lateral incisor canine, first premolar, second premolar, mesial portion of the first molar",
-            "Center of the canine; distal half of the canine, first premolar, second premolar, first molar, mesial portion of the second molar",
-            "Center of the first premolar; distal half of the first premolar, second premolar, first molar, second molar, mesial portion of the third molar"],
-  correct: 1, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "When taking a maxillary premolar periapical image, the mesial edge of the receptor will be placed at the center of the canine to get the distal half of the canine, first premolar, second premolar, first molar, and mesial portion of the second molar in the image. Placing the mesial of the receptor at the center of the central incisor or at the center of the lateral incisor will be too far mesial and will most likely overlap the premolar region. Placing the mesial of the receptor at the center of the first premolar will be too far distal and will miss the canine/premolar contact and at least half of the first premolar." // Fill this in with the explanation for the correct answer.
-},
-
-//6
-{
-  question: "When taking an image of the maxillary and mandibular crowns and alveolar crestal bone, where should you place the mesial edge of the receptor (it will come up to or cover) to get the correct image, and what should be in the image?",
-
-  answers: ["Center of maxillary first premolar; distal half of maxillary first premolar, second premolar, first molar, second molar, mesial portion of the third molar",
-            "Center of both first premolars (maxillary and mandibular); distal half of both first premolars, second premolars, first molars, second molars, mesial portion of the third molars",
-            "Center of maxillary second premolar; distal half of maxillary premolar, first molar, second molar, and third molar",
-            "Center of both second premolars (maxillary and mandibular); distal half of both second premolars, first molars, second molars, and third molars"],
-  correct: 3, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "When taking a horizontal molar bitewing, you will need to position the receptor to image the crown and alveolar crestal bone of both the mandibular and maxillary arches. You will need to place the mesial of the receptor at the center of both second premolars (you need to take into consideration occlusion and where both the maxillary and mandibular teeth are positioned); the image should have the distal half of both maxillary and mandibular premolars, first molars, second molars, and third molars in the image. If the teeth are large, you may not get all of the third molars in the image. Placing the receptor to cover the maxillary teeth would be placement for a maxillary periapical image, not a bitewing. Placing the mesial edge of the receptor at the center of both first premolars is too far mesial and may miss the second/third molar contacts." // Fill this in with the explanation for the correct answer.
-},
-//7
-{
-  question: "Which is the name of the sensor used in digital imaging systems?",
-
-  answers: ["CCD (charge-coupled device)",
-            "PID (position indicating device)",
-            "MRI (magnetic resonance imaging)",
-            "TLD (thermoluminescent dosimeter)"],
-  correct: 0, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "A charge-coupled device (CCD) is a solid-state electrical plate used to transmit signals directly into a computer in digital imaging systems. A position indicating device (PID) is a device that guides the direction of the x-ray beam during the exposure of dental radiographs. Magnetic resonance imaging (MRI) is a method used to produce images of the inside of a person\'s body by means of a strong magnetic field. A thermoluminescent dosimeter (TLD) is a device that measures exposure to ionizing radiation." // Fill this in with the explanation for the correct answer.
-},
-//8
-{
-  question: "Which is a vertical angulation error?",
-
-  answers: ["Overlapping",
-            "Blurred image",
-            "Foreshortening",
-            "Herringbone pattern"],
-  correct: 2, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "Foreshortening is a vertical angulation error in which images of the teeth appear too short, resulting from excessive vertical angulation. Overlapping is horizontal angulation. Movement of the patient\'s head would result in a blurred image. A herringbone pattern is the result of the film being placed backward in the mouth." // Fill this in with the explanation for the correct answer.
-},
-//9
-{
-  question: "Which has occurred if there is no image on a film after processing?",
-
-  answers: ["Film not exposed to radiation",
-            "Movement of the patient\'s head",
-            "X-ray beam misses part of the film",
-            "Film placed backward in the mouth"],
-  correct: 0, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "If there is no image on a film after processing, the film has not been exposed to radiation. Movement of the patient\'s head would result in a blurred image. If the x-ray beam misses part of the film, the result is cone cutting. A herringbone pattern is the result of the film being placed backward in the mouth." // Fill this in with the explanation for the correct answer.
-},
-//10
-{
-  question: "Which occurs if a film is underexposed or underdeveloped?",
-
-  answers: ["Light image",
-            "Dark image",
-            "Partial image",
-            "Blurred image"],
-  correct: 0, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "A light image occurs if a film is underexposed or underdeveloped. Overdeveloping or developing solution temperature that is warm will result in a dark image. A partial image is the result of the film not completely immersed or tanks having low solution levels. A blurred image occurs if there is movement of the patient\'s head or the tubehead." // Fill this in with the explanation for the correct answer.
-},
-
-//11
-{
-  question: "Which error results in interproximal spaces overlapping on a radiograph?",
-
-  answers: ["Level angulation",
-            "Vertical angulation",
-            "Horizontal angulation",
-            "Perpendicular angulation"],
-  correct: 2, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "Horizontal angulation results in interproximal spaces overlapping on a radiograph. Overlapping occurs when the PID is angled too far toward the distal or mesial surfaces instead of the interproximal areas. Foreshortening and elongation are caused by vertical angulation errors. When perpendicular angulation is used, the central ray is directed perpendicular to the film and the tooth." // Fill this in with the explanation for the correct answer.
-},
-//12
-{
-  question: "Which adjustment should be made when taking dental images for a patient who is a heavy set gentleman with a larger bone structure?",
-
-  answers: ["Decrease the mA",
-            "Increase exposure time",
-            "Decrease exposure time",
-            "There is no need to make a change to the settings"],
-  correct: 1, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "Oral structures of greater density require an increase in exposure time, resulting in increased density of the image. A decrease in the mA will result in a lighter image because the overall exposure (blackness) of the image is controlled by mA and exposure time. A decreased exposure time lightens the film. If no change is made to the settings, the image will be too light." // Fill this in with the explanation for the correct answer.
-},
-//13
-{
-  question: "Which is a radiolucent restoration?",
-
-  answers: ["Gold",
-            "Acrylic",
-            "Amalgam",
-            "Post and core"],
-  correct: 1, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "Acrylic is a radiolucent restorative material. Gold is a radiopaque restorative material. Amalgam is a radiopaque restorative material. A post and core is a radiopaque restorative material." // Fill this in with the explanation for the correct answer.
-},
-//14
-{
-  question: "Which is the least distance a person exposing radiographs should stand from the x-ray machine if shielding is not available?",
-
-  answers: ["3 feet",
-            "4 feet",
-            "5 feet",
-            "6 feet"],
-  correct: 3, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "A person exposing radiographs needs to stand at least 6 feet from the source of radiation. They also need to be at a 90–135 degree angle to the beam. Three, 4, and 5 feet are all too short a distance from the x-ray machine." // Fill this in with the explanation for the correct answer.
-},
-//15
-{
-  question: "Which radiographic technique error occurs when a partial image is created because the central beam misses the x-ray film?",
-
-  answers: ["Elongation",
-            "Cone cutting",
-            "Foreshortening",
-            "Double exposure"],
-  correct: 1, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "Cone cutting is the radiographic technique error that occurs when a partial image is created because the central beam misses the x-ray film. Elongation is a radiographic technique error that elongates the image of the teeth. Foreshortening is a radiographic technique error, whereby the image of the teeth is shortened. Double exposure is a radiographic technique error in which film is exposed twice." // Fill this in with the explanation for the correct answer.
-},
-
-//16
-{
-  question: "How frequently is a cleaning film sent through the automatic processor?",
-
-  answers: ["Daily",
-            "Weekly",
-            "Monthly",
-            "When chemicals are changed"],
-  correct: 0, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "The cleaning film is sent through the automatic processer each day before the processor is used to develop film. Using the cleaning film at weekly or monthly intervals or when the processor is changed will not keep the rollers clear of debris that may accumulate each day." // Fill this in with the explanation for the correct answer.
-},
-//17
-{
-  question: "Reticulation of a dental radiograph is indicative of__________",
-
-  answers: ["Inadequate fixation",
-            "Excessive exposure",
-            "Moisture contamination of the film packet",
-            "Sudden temperature changes during fixation"],
-  correct: 3, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "Reticulation is produced by sudden temperature changes during processing, particularly from warm solutions to very cold water. Inadequate fixation produces a light milky film. Excessive exposure produces a dark film. Moisture contamination of the film packet will cause deterioration of the film." // Fill this in with the explanation for the correct answer.
-},
-//18
-{
-  question: "Which is the anatomic landmark located in the mandibular premolar area that can be mistaken for a periapical pathology?",
-
-  answers: ["Mental fossa",
-            "Mental foramen",
-            "Mandibular canal",
-            "Submandibular fossa"],
-  correct: 1, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "The mental foramen can be mistaken for a periapical pathology. The mental fossa is a depression on the anterior aspect of the mandible above the mental ridge. The mandibular canal runs obliquely downward and forward in the ramus. The submandibular fossa is an impression on the medial side of the body of the mandible below the mylohyoid line." // Fill this in with the explanation for the correct answer.
-},
-//19
-{
-  question: "Which of the following is a reason for conducting a chart audit?",
-
-  answers: ["Check image quality",
-            "Track number of retakes",
-            "Track reason for retakes and corrections",
-            "All of the above"],
-  correct: 3, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "Chart audits are used to check image quality and accuracy in charting." // Fill this in with the explanation for the correct answer.
-},
-//20
-{
-  question: "The hamular process is observed on intraoral films in a view of the__________",
-
+    rationale: "Silver halide crystals in the emulsion absorb x-radiation and store the energy for image formation."
+  },
+  {
+    question: "Which intraoral dental x-ray machine component is used to aim and direct the x-ray beam toward the image receptor?",
+    answers: ["Yoke",
+              "Control panel",
+              "Extension arm",
+              "Position indicating device"],
+    correct: 3,
+    category: "RHS",
+    rationale: "The position indicating device (PID) directs the x-ray beam toward the image receptor."
+  },
+  {
+    question: "When taking an image of a maxillary premolar periapical, where should the mesial edge of the receptor (it will come up to or cover) be placed to obtain the correct image and what should be in the image?",
+    answers: ["Center of the central incisor; distal half of the central incisor, lateral incisor, canine, first premolar, mesial portion of the second premolar",
+              "Center of the lateral incisor; distal half of the lateral incisor canine, first premolar, second premolar, mesial portion of the first molar",
+              "Center of the canine; distal half of the canine, first premolar, second premolar, first molar, mesial portion of the second molar",
+              "Center of the first premolar; distal half of the first premolar, second premolar, first molar, second molar, mesial portion of the third molar"],
+    correct: 2,
+    category: "RHS",
+    rationale: "The mesial edge should be placed at the center of the canine to capture the premolars and part of the molars in the image."
+  },
+  {
+    question: "When taking an image of the maxillary and mandibular crowns and alveolar crestal bone, where should you place the mesial edge of the receptor (it will come up to or cover) to get the correct image, and what should be in the image?",
+    answers: ["Center of maxillary first premolar; distal half of maxillary first premolar, second premolar, first molar, second molar, mesial portion of the third molar",
+              "Center of both first premolars (maxillary and mandibular); distal half of both first premolars, second premolars, first molars, second molars, mesial portion of the third molars",
+              "Center of maxillary second premolar; distal half of maxillary premolar, first molar, second molar, and third molar",
+              "Center of both second premolars (maxillary and mandibular); distal half of both second premolars, first molars, second molars, and third molars"],
+    correct: 3,
+    category: "RHS",
+    rationale: "For a horizontal molar bitewing, the receptor should be centered on the second premolars to capture the molars and surrounding structures."
+  },
+  
+ {
+    question: "Which is the name of the sensor used in digital imaging systems?",
+    answers: ["CCD (charge-coupled device)",
+              "PID (position indicating device)",
+              "MRI (magnetic resonance imaging)",
+              "TLD (thermoluminescent dosimeter)"],
+    correct: 0,
+    category: "RHS",
+    rationale: "A charge-coupled device (CCD) is a solid-state sensor used in digital imaging systems. PID directs the x-ray beam, MRI is a medical imaging method, and TLD measures radiation exposure."
+  },
+  {
+    question: "Which is a vertical angulation error?",
+    answers: ["Overlapping",
+              "Blurred image",
+              "Foreshortening",
+              "Herringbone pattern"],
+    correct: 2,
+    category: "RHS",
+    rationale: "Foreshortening occurs due to excessive vertical angulation, making teeth appear shorter. Overlapping is a horizontal angulation error, and herringbone occurs when the film is placed backward."
+  },
+  {
+    question: "Which has occurred if there is no image on a film after processing?",
+    answers: ["Film not exposed to radiation",
+              "Movement of the patient's head",
+              "X-ray beam misses part of the film",
+              "Film placed backward in the mouth"],
+    correct: 0,
+    category: "RHS",
+    rationale: "If no image appears, the film was not exposed to radiation. Head movement results in a blurred image, and cone cutting occurs if the beam misses part of the film."
+  },
+  {
+    question: "Which occurs if a film is underexposed or underdeveloped?",
+    answers: ["Light image",
+              "Dark image",
+              "Partial image",
+              "Blurred image"],
+    correct: 0,
+    category: "RHS",
+    rationale: "Underexposure or underdevelopment results in a light image. Overexposure or overdevelopment results in a dark image."
+  },
+  {
+    question: "Which error results in interproximal spaces overlapping on a radiograph?",
+    answers: ["Level angulation",
+              "Vertical angulation",
+              "Horizontal angulation",
+              "Perpendicular angulation"],
+    correct: 2,
+    category: "RHS",
+    rationale: "Horizontal angulation errors cause overlapping of interproximal spaces, while vertical errors result in elongation or foreshortening."
+  },
+  {
+    question: "Which adjustment should be made when taking dental images for a patient who is a heavy-set gentleman with a larger bone structure?",
+    answers: ["Decrease the mA",
+              "Increase exposure time",
+              "Decrease exposure time",
+              "There is no need to make a change to the settings"],
+    correct: 1,
+    category: "RHS",
+    rationale: "Larger bone structures require increased exposure time to ensure proper image density."
+  },
+  {
+    question: "Which is a radiolucent restoration?",
+    answers: ["Gold",
+              "Acrylic",
+              "Amalgam",
+              "Post and core"],
+    correct: 1,
+    category: "RHS",
+    rationale: "Acrylic restorations are radiolucent. Gold, amalgam, and post-and-core restorations are radiopaque."
+  },
+  {
+    question: "Which is the least distance a person exposing radiographs should stand from the x-ray machine if shielding is not available?",
+    answers: ["3 feet",
+              "4 feet",
+              "5 feet",
+              "6 feet"],
+    correct: 3,
+    category: "RHS",
+    rationale: "The operator should stand at least 6 feet away from the x-ray source if shielding is unavailable."
+  },
+  {
+    question: "Which radiographic technique error occurs when a partial image is created because the central beam misses the x-ray film?",
+    answers: ["Elongation",
+              "Cone cutting",
+              "Foreshortening",
+              "Double exposure"],
+    correct: 1,
+    category: "RHS",
+    rationale: "Cone cutting occurs when the x-ray beam fails to cover the entire film, resulting in a partial image."
+  },
+  {
+    question: "How frequently is a cleaning film sent through the automatic processor?",
+    answers: ["Daily",
+              "Weekly",
+              "Monthly",
+              "When chemicals are changed"],
+    correct: 0,
+    category: "RHS",
+    rationale: "A cleaning film should be used daily in the automatic processor to prevent buildup of debris on the rollers."
+  },
+  {
+    question: "Reticulation of a dental radiograph is indicative of __________.",
+    answers: ["Inadequate fixation",
+              "Excessive exposure",
+              "Moisture contamination of the film packet",
+              "Sudden temperature changes during fixation"],
+    correct: 3,
+    category: "RHS",
+    rationale: "Reticulation, a crackling effect on the film, occurs when the film undergoes sudden temperature changes during processing."
+  },
+  {
+    question: "Which is the anatomic landmark located in the mandibular premolar area that can be mistaken for a periapical pathology?",
+    answers: ["Mental fossa",
+              "Mental foramen",
+              "Mandibular canal",
+              "Submandibular fossa"],
+    correct: 1,
+    category: "RHS",
+    rationale: "The mental foramen in the mandibular premolar region can be mistaken for periapical pathology on radiographs."
+  },
+  {
+    question: "Which of the following is a reason for conducting a chart audit?",
+    answers: ["Check image quality",
+              "Track number of retakes",
+              "Track reason for retakes and corrections",
+              "All of the above"],
+    correct: 3,
+    category: "RHS",
+    rationale: "A chart audit helps to check image quality, track retakes, and document reasons for retakes and corrections."
+  },
+  
+ {
+  question: "The hamular process is observed on intraoral films in a view of the __________",
   answers: ["Maxillary molar area",
             "Mandibular molar area",
             "Maxillary premolar area",
             "Mandibular premolar area"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The hamular process is located in the maxillary molar area. It is the inferior, hook-shaped extremity of the medial plate of the pterygoid process. This projection is not located in the maxillary premolar, mandibular premolar, or mandibular molar areas." // Fill this in with the explanation for the correct answer.
+  rationale: "The hamular process is located in the maxillary molar area, specifically the hook-shaped extremity of the medial pterygoid plate. It is not found in the premolar or mandibular areas."
 },
-//21
 {
   question: "You are in charge of taking care of the processing equipment each day. What do you need to do to replenish the automatic processor?",
-
   answers: ["Wait for oxidation to occur prior to replenishing the tanks",
             "Replenish 6 ounces of fixer solution daily",
             "Replenish 3 ounces of developer daily",
             "Replenish both developer and fixer each morning as needed"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Replenishing both fixer and developer will ensure properly developed images; oxidation occurs when chemicals are exposed to air and lose their strength; the specific amount of fixer and developer is determined by frequency of use; manual replenishment is required if processor doesn’t automatically replenish." // Fill this in with the explanation for the correct answer.
+  rationale: "Replenishing both the developer and fixer daily as needed ensures consistent image quality. Specific amounts may vary based on usage."
 },
-//22
 {
   question: "In the paralleling technique, the central ray is at a __________ degree angle to the receptor",
-
   answers: ["60",
             "70",
             "80",
             "90"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "The angle of the central ray to the film in the paralleling technique is 90 degrees. The paralleling technique requires placement of the film parallel to the teeth and positioning of the central ray perpendicular (90 degrees) to the teeth. Film placement at 60, 70, or 80 degrees would not meet the criterion that the film be perpendicular to the teeth." // Fill this in with the explanation for the correct answer.
+  rationale: "In the paralleling technique, the central ray is directed at a 90-degree angle to the receptor to ensure proper imaging."
 },
-//23
-{
-  question: "You have just scanned the dental images. You notice the following image. What do you see in the image? Do you need to take additional images? What do you record?",
-  image: "images/rhs23.jpg",
-  answers: ["The patient has multiple teeth showing germination. Additional images are not necessary. You would record this in the patient’s chart",
-            "There is severe overlap in the image. You will need to retake the image, record the number of images exposed in the patient’s chart, and record the retake, the reason for the retake, and the correction in the retake log",
-            "This image was double exposed, you should also have one unexposed image. You will need to retake both images, record two retakes in the patient chart, and record the two retakes, the reason for the retakes, and the correction in the retake log",
-            "The image is normal, you would just record the number of images taken in the patient chart"],
-  correct: 2, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "This image was double exposed; you should also have one unexposed image. You will need to retake both images, record two retakes in the patient chart, and record the two retakes, the reason for the retakes, and the correction in the retake log. This image is not germination; if it was, additional images would not be necessary. You would record this in your patient’s chart. This image is not overlap; if it was, you would only retake the image if the interproximal areas were not visible in another image. If a retake was exposed, you would record the number of images exposed in the patient’s chart, and record the retake, the reason for the retake, and the correction in the retake log. If the image had been a diagnostic image, you would just record the number of images taken in the patient chart." // Fill this in with the explanation for the correct answer.
-},
-//24
 {
   question: "Which is the correct vertical angulation for the central beam when exposing bitewing images using a bitewing tab?",
-
   answers: ["0 degrees",
             "+10 degrees",
             "+20 degrees",
             "+30 degrees"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "The correct vertical angulation for the central beam when exposing bitewing images using a bitewing tab is +10 degrees. When the film is in the mouth, the maxillary portion of the film is angled at approximately +20 degrees and the mandibular portion of the film is at approximately 0 degrees. The average is +10 degrees. If the angle of the PID was at 0 degrees, the angle would not accommodate the maxillary arch. If the PID was angled at +20 or +30, it would not accommodate the mandibular arch." // Fill this in with the explanation for the correct answer.
+  rationale: "The correct vertical angulation for bitewing images is +10 degrees to compensate for the natural curvature of the maxillary arch."
 },
-//25
 {
   question: "You are performing a quality assurance (QA) check on the phosphor plates using a step wedge. For what are you looking?",
-
   answers: ["Difference in density between the previous QA images and the current QA image for each specific phosphor plate",
             "Difference in density between each of the phosphor plate QA images developed that day",
             "The step wedge is clearly visible on the image",
             "You do not need to expose images to check for quality assurance of phosphor plates; you just need to visually check them for damage"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "You are looking for the difference in density between the baseline QA image and the current QA image for each specific phosphor plate; checking for QA is not accomplished comparing phosphor plate images each day or developing a clearly visible step-wedge; QA includes both comparing the current QA image against the baseline image and visually checking the plates for damage." // Fill this in with the explanation for the correct answer.
+  rationale: "A QA check involves comparing the current image with a baseline image for each phosphor plate to ensure consistent density."
 },
-
-//26
 {
   question: "Which occurred if the apices of the mandibular molar teeth in a periapical radiograph appear to be cut off the image?",
-
   answers: ["excessive vertical angulation",
             "inadequate vertical angulation",
             "excessive horizontal angulation",
             "inadequate horizontal angulation"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "Inadequate vertical angulation results in the apices of the mandibular molar teeth in a periapical radiograph appearing to be cut off in the image on the film. Excessive vertical angulation results in foreshortening of the teeth on the film. Excessive horizontal angulation results in overlapping of the teeth on the film. Inadequate horizontal angulation can result in the primary beam not being angled between the contacts." // Fill this in with the explanation for the correct answer.
+  rationale: "Inadequate vertical angulation causes the apices to be cut off in the radiograph. Excessive angulation can cause foreshortening."
 },
-//27
 {
   question: "You are in charge of quality control and have been instructed to test the quality of each new box of film. What test will be run?",
-
   answers: ["coin test",
             "fresh film",
             "light tight",
             "reference film"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "You will need to check the quality of each box of new using the fresh film test. You will develop an unexposed film. If the film is fresh, it will be clear with a blue tint. The coin test is a quality control test used to determine the adequacy of safelighting in the darkroom. Light tight is securing an area against all sources of white light. Reference image is a radiograph processed under ideal conditions, and then used to compare subsequent images." // Fill this in with the explanation for the correct answer.
+  rationale: "A fresh film test is used to check the quality of a new box of film. The film should appear clear with a blue tint when properly processed."
 },
-//28
 {
   question: "Which is used to determine the amount of radiation reaching the image receptor through each of the increments?",
-
   answers: ["coin test",
             "light tight",
             "step wedge",
             "reference film"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "Step wedge is used to determine the amount of radiation reaching the image receptor through each of the increments. The coin test is a quality control test used to determine the adequacy of safelighting in the darkroom. Light tight is securing an area against all sources of white light. Reference film is a radiograph processed under ideal conditions, and then used to compare subsequent films." // Fill this in with the explanation for the correct answer.
+  rationale: "A step wedge is used to measure the amount of radiation passing through each increment to assess image density."
 },
-//29
 {
-  question: "You are in charge of the supplies. You have just received a large order of film. There is out of date film and film that is ready to expire. Which film should you use first?",
-
+  question: "You are in charge of the supplies. You have just received a large order of film. There is out-of-date film and film that is ready to expire. Which film should you use first?",
   answers: ["film that is ready to expire",
             "film that is expired",
             "new film",
             "the order of use does not matter"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The film that is ready to expire should be used first. You should use film based on the last-in, first-out rule. You should not use expired film. The new film should be the last film used. The order does matter or you will end up with expired film that will need to be disposed of." // Fill this in with the explanation for the correct answer.
+  rationale: "The film that is ready to expire should be used first to avoid waste. Expired film should not be used."
 },
-//30
 {
   question: "A coin test has just been completed. The image of the coin appeared on the film. What if anything will you need to do?",
-
   answers: ["Change the safelight or filter, the light is too dark. If you are using the correct safelight or filter, you will need to move the safelight closer to your workspace and processor",
             "No changes need to be made, the safelight is adequate",
             "You need to change the safelight or filter, the safelight is too bright. If you are using the correct safelight or filter, you will need to move the safelight further away from your workspace and processor",
             "The safelight is not working. You need to replace the safelight"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "The safelight is too bright if an image of a coin appears on a film during a coin test. Either the correct safelight or filter needs to be installed. The image of the coin would not appear if the safelight was too dark, adequate, or not working." // Fill this in with the explanation for the correct answer.
+  rationale: "If the coin image appears on the film, the safelight is too bright and needs adjustment or replacement."
 },
-
-//31
 {
   question: "After processing, fresh film that has been properly stored and protected will appear clear with a slight __________ tint.",
-
   answers: ["pink",
             "blue",
             "white",
             "brown"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "After processing, fresh film that has been properly stored and protected will appear clear with a slight blue tint. Processed fresh film will not have a pink, white, or brown tint." // Fill this in with the explanation for the correct answer.
+  rationale: "Properly processed fresh film should have a slight blue tint, indicating it has been stored and handled correctly."
 },
-//32
 {
   question: "Which is the clearing test used to monitor?",
-
   answers: ["fixer strength",
             "water temperature",
             "developer strength",
             "darkroom lighting safety"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The clearing test is used to monitor fixer strength. The clearing test involves unwrapping films and placing them in the fixer; if films do not clear in 2 minutes, then the fixer strength is not adequate. The water temperature is tested with a thermometer. The developer solution is tested using the step wedge technique. Darkroom lighting safety is done using the safelight test." // Fill this in with the explanation for the correct answer.
+  rationale: "The clearing test monitors fixer strength. If films don't clear within 2 minutes, the fixer strength is inadequate."
 },
-//33
 {
   question: "Factors that affect radiation injury include all of the following except:",
-
   answers: ["type of exposure",
             "how fast the exposure occurred",
             "how much exposure",
             "size of the area exposed"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The type of exposure is not a factor affecting radiation injury. How fast the exposure is (rate of exposure), how much exposure (total dose), and the size of the area exposed are all factors affecting radiation injury. Total dose is the total amount of radiation absorbed. Dose rate is the rate of exposure which is dose/time. Cells do not have time to recover with high-dose rate. The larger the area exposed, the more critical the injury. Cell sensitivity and age also affect radiation injury." // Fill this in with the explanation for the correct answer.
+  rationale: "The type of exposure does not affect radiation injury. Factors include dose, rate of exposure, and size of the area exposed."
 },
-//34
 {
   question: "What is the first thing you should do when implementing quality control procedures in the dental office?",
-
   answers: ["Maintain a monitoring schedule.",
             "Develop an overall plan.",
             "Assign duties for quality assurance procedures to staff members.",
             "Develop a plan for evaluation and correction of problems."],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "The first step in implementing quality control procedures in your dental office is to develop an overall plan. The next thing is to assign duties for quality assurance to various staff members, and then develop a monitoring schedule to include maintenance and calibration of equipment. The monitoring schedule should be maintained and recorded in a log listing all tasks completed, date of performance, and person conducting the test. A plan should be developed for evaluation and correction of problems, and periodic in-service training should be provided to all staff members." // Fill this in with the explanation for the correct answer.
+  rationale: "The first step is to develop an overall plan, followed by assigning duties and maintaining a monitoring schedule."
 },
-//35
 {
-  question: "Regulations regarding dental assistant certification vary from__________",
-
+  question: "Regulations regarding dental assistant certification vary from __________",
   answers: ["year to year",
             "state to state",
             "month to month",
             "county to county"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "Regulations regarding dental assistant certification vary from state to state. Regulations regarding dental assistant certification do not vary from year to year, month to month, and county to county." // Fill this in with the explanation for the correct answer.
+  rationale: "Certification requirements vary from state to state, not by year, month, or county."
 },
-
-//36
 {
   question: "The Consumer-Patient Radiation Health and Safety Act is a __________ law that requires all persons who take dental radiographs be certified.",
-
   answers: ["state",
             "local",
             "county",
             "federal"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "The Consumer-Patient Radiation Health and Safety Act is a federal law that requires all persons who take dental radiographs be certified. States have additional laws regulating radiographic equipment and procedures. Local and county governments are not usually involved with the regulation of radiographic equipment and procedures." // Fill this in with the explanation for the correct answer.
+  rationale: "The Consumer-Patient Radiation Health and Safety Act is a federal law requiring certification for individuals who take dental radiographs."
 },
-//37
 {
   question: "How long are the film and coin exposed when a coin test is conducted?",
-
   answers: ["30 seconds",
             "3 minutes",
             "15 minutes",
             "1 hour"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "The film and coin should be exposed for 3-4 minutes when conducting a coin test. Thirty seconds is too short a time when conducting a coin test. Fifteen minutes and one hour are far too long a time when conducting a coin test." // Fill this in with the explanation for the correct answer.
+  rationale: "The film and coin are exposed for 3-4 minutes during a coin test to assess safelight adequacy."
 },
-//38
 {
   question: "When the step wedge technique is used, if the density on the daily radiograph differs from that on the standard radiograph by more than __________ steps, the developer solution is depleted.",
-
   answers: ["two",
             "three",
             "four",
             "five"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "When the step wedge technique is used, if the density on the daily radiograph differs from that on the standard radiograph by more than two steps, the developer solution is depleted. Three, four, and five steps are too much deviation when using the step wedge technique." // Fill this in with the explanation for the correct answer.
+  rationale: "A density difference of more than two steps indicates that the developer solution is depleted and needs replacement."
 },
-//39
 {
   question: "Velocity is:",
-
   answers: ["number of times a wave crest passes a given point during a specific amount of time",
             "distance from one wave crest to the next wave crest",
             "speed of a given object",
             "amount of force used to propel a given object"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "Velocity is the speed of a given object, in this case an electron. A wavelength is the distance from one wave crest to the next wave crest. Frequency is the number of times a wave crest passes a given point during a specific amount of time. Force propels an object." // Fill this in with the explanation for the correct answer.
+  rationale: "Velocity refers to the speed of an object, such as an electron, not to wave frequency or distance between wave crests."
 },
-//40
 {
   question: "Which effect will exposure to minor amounts of room light have on films being processed in a darkroom?",
-
   answers: ["Films will appear clear.",
             "Films will appear light.",
             "Films will appear black.",
             "Films will appear streaked."],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "Films will appear black if they are exposed to minor amounts of room light while being processed in a darkroom. Films will appear clear if they have not been exposed to radiation. Films will appear light if they have inadequate exposure to radiation. Streaked films can be caused by dirty solutions, dirty film holders or hangers, or incomplete washing." // Fill this in with the explanation for the correct answer.
+  rationale: "Exposure to room light during processing results in blackened films due to overexposure to light."
 },
-
-
-//41
 {
   question: "Which condition will result in a radiographic image that is too light?",
-
   answers: ["inadequate safelight",
             "weak developing solutions",
             "processing solution that is too warm",
             "darkroom door opened during developing"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "Weak developing solutions result in a radiographic image that is too light. Inadequate safelight and processing solution that is too warm results in a radiographic image that is too dark. A darkroom door opened during developing results in a radiographic image that is black." // Fill this in with the explanation for the correct answer.
+  rationale: "Weak developer solution results in underdeveloped, light radiographs."
 },
-//42
 {
   question: "How can acceptable radiographs be produced if the temperature of the developing solution is slightly above normal?",
-
   answers: ["Lengthen time in the wash.",
             "Lengthen the exposure time.",
             "Shorten the time in the fixer.",
             "Shorten the time in the developer."],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Shortening the time in the developer is an acceptable technique to use if the temperature of the developing solution is slightly above normal. Lengthening the time in the wash will have no effect on the radiographic image. Lengthening the exposure time will produce a darker radiographic image. Shortening the time in the fixer will not adjust the image if the temperature of the developing solution is slightly above normal." // Fill this in with the explanation for the correct answer.
+  rationale: "If the developer temperature is too high, shortening the developing time can produce acceptable images."
 },
-//43
 {
   question: "Federal regulations require that round opening collimators restrict the x-ray beam to __________ inches at the patient end of the PID.",
-
   answers: ["1.75",
             "2.75",
             "3.75",
             "4.75"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "Federal regulations require that round opening collimators restrict the x-ray beam to 2.75 inches at the patient end of the PID; 1.75, 3.75, and 4.75 are incorrect answers." // Fill this in with the explanation for the correct answer.
+  rationale: "Federal law requires the x-ray beam to be restricted to 2.75 inches at the patient end of the PID."
 },
-//44
 {
   question: "Rectangular PIDs restrict the x-ray beam to the approximate size of a __________ image receptor.",
-
   answers: ["#1",
             "#2",
             "#3",
             "#4"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "Rectangular PIDs restrict the x-ray beam to the approximate size of a #2 image receptor; a collimator the size of a #1 image receptor is too small an area and would cause a collimator cut on size 2 images; a collimator the size of a #3 or #4 image receptor would cause too much exposure when trying to limit patient exposure." // Fill this in with the explanation for the correct answer.
+  rationale: "Rectangular PIDs restrict the beam to the size of a #2 image receptor, commonly used in bitewing and periapical images."
 },
-//45
 {
   question: "Which of the following is a property of x-rays?",
-
   answers: ["Travel at the speed of sound.",
             "Diverge to a point.",
             "Have a negative charge.",
             "Penetrate matter."],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "X-rays penetrate matter. X-rays travel at the speed of light, diverge from a point, and have negative charge." // Fill this in with the explanation for the correct answer.
+  rationale: "X-rays can penetrate matter, which is a key property that enables their use in diagnostic imaging."
 },
-
-//46
 {
   question: "You have an uncooperative child that you need to expose dental images on. Which of the following would be appropriate to do during an exposure?",
-
   answers: ["Have child sit on parent’s lap and cover both with a lead apron, parent stabilizes receptor holder, if needed.",
             "You stand next to the child and stabilize receptor holder; you have on a lead apron.",
             "You have the child sit on your lap and cover both of you with a lead apron; you stabilize the receptor holder, if needed.",
             "Both a and c"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "An uncooperative child can sit on the parent’s lap. You will need to cover both with a lead apron. The parent can stabilize the receptor holder, if needed, but cannot hold the receptor in the child’s mouth. You, as the operator are NEVER to stand next to the child and stabilize the receptor holder or have the child sit on your lap and stabilize the receptor holder. This is true, even if you have on a lead apron." // Fill this in with the explanation for the correct answer.
+  rationale: "An uncooperative child can sit on the parent’s lap with both covered by a lead apron. The parent may stabilize the receptor holder but must not hold the receptor themselves. Operators must never stabilize the receptor or have the child sit on their lap."
 },
-//47
 {
   question: "The maximum permissible dose (MPD) for oral healthcare professionals is __________ mSv/year.",
-
   answers: ["50",
             "60",
             "70",
             "80"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The maximum permissible dose (MPD) for oral healthcare professionals is 50 mSv/year (millisieverts per year). Sixty, 70, or 80 mSv/year is too high a dose." // Fill this in with the explanation for the correct answer.
+  rationale: "The MPD for oral healthcare professionals is 50 mSv/year."
 },
-//48
 {
   question: "Who is the person responsible for prescribing dental radiographs?",
-
   answers: ["dentist",
             "office manager",
             "dental assistant",
             "dental hygienist"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The dentist is the person responsible for prescribing dental radiographs. By law, the office manager, dental assistant, or dental hygienist may not prescribe dental radiographs." // Fill this in with the explanation for the correct answer.
+  rationale: "Only the dentist is responsible for prescribing dental radiographs."
 },
-//49
 {
   question: "Which type of radiation is the most penetrating beam produced at the target of the anode?",
-
   answers: ["scatter",
             "primary",
             "ancillary",
             "secondary"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "Primary radiation is the most penetrating beam produced at the target of the anode. Scatter radiation is a form of secondary radiation that occurs when an x-ray beam has been deflected from its path by interaction with matter. Ancillary is not a term used in association with types of radiation. Secondary radiation is created when the primary beam interacts with matter." // Fill this in with the explanation for the correct answer.
+  rationale: "Primary radiation is the most penetrating beam produced at the anode."
 },
-//50
 {
   question: "Which is the metal disk with a small opening located inside the position indicating device in the path of the x-ray beam?",
-
   answers: ["transformer",
             "tubehead seal",
             "lead collimator",
             "filter"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "The lead collimator is the metal disk with a small opening located inside the position indicating device in the path of the x-ray beam. The transformer alters the voltage of incoming electrical current. The tubehead seal is made of leaded glass or aluminum; it keeps the oil in the tubehead and acts as a filter to the x-ray beam. The aluminum filter is placed at the entrance to the PID to filter out the long, less penetrating wavelengths." // Fill this in with the explanation for the correct answer.
+  rationale: "The lead collimator is the metal disk with a small opening inside the position indicating device (PID) to restrict the x-ray beam."
 },
-
-//51
 {
   question: "Which are the majority of x-rays produced by dental x-ray machines?",
-
-  answers: ["photo electric",
+  answers: ["photoelectric",
             "coherent scattering",
             "characteristic radiation",
             "Bremsstrahlung radiation"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Bremsstrahlung radiation is produced when high-speed electrons are stopped or slowed down by the tungsten atoms of the dental x-ray tube. Characteristic radiation accounts for only a very small part of the x-rays produced in an x-ray machine. Coherent scattering and photoelectric effect are types of interactions of x-rays with matter." // Fill this in with the explanation for the correct answer.
+  rationale: "Bremsstrahlung radiation makes up the majority of x-rays produced in dental x-ray machines."
 },
-//52
 {
   question: "Which tissue, organ, or cell is the most sensitive to radiation?",
-
   answers: ["bone",
             "muscle",
             "nerve",
             "reproductive"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Reproductive cells are the most sensitive to radiation. Bone has fairly low sensitivity to radiation; muscle and nerve tissue have low sensitivity to radiation." // Fill this in with the explanation for the correct answer.
+  rationale: "Reproductive cells are the most sensitive to radiation."
 },
-//53
 {
   question: "The x-ray room is prepared, and you have seated the patient. Which of the following procedures must you do before putting on your gloves?",
-
   answers: ["Prepare the beam alignment device.",
             "Adjust the headrest.",
             "Place the lead apron on the patient.",
             "Adjust the headrest and place the lead apron on the patient."],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "You should adjust the headrest and place the lead apron on your patient before you put on your gloves. You will prepare the beam alignment device with gloves on." // Fill this in with the explanation for the correct answer.
+  rationale: "You should adjust the headrest and place the lead apron on the patient before putting on gloves."
 },
-//54
 {
   question: "The temperature of the water has been checked in the developer. It is 68°F. For how long will you develop and fix the film?",
-
   answers: ["4 minutes; 8 minutes",
             "4.5 minutes; 9 minutes",
             "5 minutes; 10 minutes",
             "5.5 minutes; 11 minutes"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "At 68 Degrees F, which is considered optimum temperature, film is developed for 5 minutes. Film is then fixed for 10 minutes which is double the development time. Film developed at 68°F for 4 minutes and fixed for 8 minutes or developed for 4.5 minutes and fixed for 9 minutes will be underdeveloped and under fixed. Film developed for 5.5 minutes at 68°F will be overdeveloped." // Fill this in with the explanation for the correct answer.
+  rationale: "At 68°F, the standard development time is 5 minutes, and fixing time is 10 minutes."
 },
-//55
 {
   question: "A film processed under ideal conditions and used to compare subsequent radiographic images is called a __________ film.",
-
   answers: ["fresh",
             "fogged",
             "duplicate",
             "reference"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "A film processed under ideal conditions and used to compare subsequent radiographic images is called a reference film. Fresh film is unexposed film. Fogged film has been improperly stored or exposed to scatter radiation. Duplicate film is used to make a duplicate copy of a dental radiograph." // Fill this in with the explanation for the correct answer.
+  rationale: "A reference film is processed under ideal conditions and used as a baseline for comparison."
 },
-
-//56
 {
   question: "After which year did all newly manufactured dental x-ray machines have to comply with federal regulations?",
-
   answers: ["1944",
             "1954",
             "1964",
             "1974"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "After 1974, all newly manufactured dental x-ray machines had to comply with federal regulations; 1944, 1954, and 1964 are incorrect answers." // Fill this in with the explanation for the correct answer.
+  rationale: "After 1974, all newly manufactured dental x-ray machines had to comply with federal regulations."
 },
-//57
 {
   question: "The x-ray beam is restricted to a diameter of no more than __________ at the surface of the skin.",
-
   answers: ["7 cm",
             "8 cm",
             "9 cm",
             "10 cm"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The x-ray beam is restricted to a diameter of no more than 7 cm at the surface of the skin. Eight, 9, and 10 centimeters is too large an area at the surface of the skin." // Fill this in with the explanation for the correct answer.
+  rationale: "The x-ray beam is restricted to a diameter of no more than 7 cm at the skin surface."
 },
-//58
 {
   question: "Which is the definition for the acronym ALARA?",
-
   answers: ["as little as relatively allowable",
             "as low as reasonably achievable",
             "as likely as rationally attainable",
             "as little as realistically accomplished"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "ALARA is an acronym for as low as reasonably achievable. This is a radiation safety principle for minimizing radiation doses and release of radioactive materials by employing all reasonable methods. As little as relatively allowable, as likely as rationally attainable, and as little as realistically accomplished are incorrect answers." // Fill this in with the explanation for the correct answer.
+  rationale: "ALARA stands for 'as low as reasonably achievable,' which is the guiding principle for radiation safety."
 },
-//59
+
 {
   question: "Dental radiographs are the property of the __________",
-
   answers: ["dentist",
             "patient",
             "insurance company",
             "dentist and the patient"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "By law, dental radiographs are the property of the dentist, not the patient. They are not the property of the insurance company, the patient, or shared by the patient." // Fill this in with the explanation for the correct answer.
+  rationale: "By law, dental radiographs are the property of the dentist, not the patient. They are not the property of the insurance company or shared between the patient and the dentist."
 },
-//60
 {
   question: "Which type of consent is necessary before exposing dental radiographs on a patient?",
-
   answers: ["implied",
             "inferred",
             "indicated",
             "informed"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Informed consent is necessary before exposing dental radiographs on a patient. Informed consent is permission granted with full knowledge of the possible risks and benefits. Implied consent is not adequate consent. Implied consent is consent that is not expressly granted by a person, but rather implicitly by a person\'s actions. Inferred consent and indicated consent are not terms used in reference to consent." // Fill this in with the explanation for the correct answer.
+  rationale: "Informed consent is required before exposing dental radiographs. This is consent with full understanding of the risks and benefits. Implied or inferred consent is not sufficient in this context."
 },
-
-//61
 {
   question: "Which limits the size of the primary beam?",
-
   answers: ["film",
             "filter",
             "collimator",
             "tungsten target"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "The collimator limits the size of the primary beam. The film has no bearing on the size of the primary beam. An x-ray filter is a material placed in front of an x-ray source to reduce the intensity of particular wavelengths from its spectrum and selectively alter the distribution of x-ray wavelengths within a given beam. The tungsten target is a portion of the anode in the x-ray tube that serves as a focal point and converts bombarding electrons into x-ray photons." // Fill this in with the explanation for the correct answer.
+  rationale: "The collimator limits the size of the primary beam. The filter removes longer, less-penetrating wavelengths. The tungsten target and film do not influence the beam's size."
 },
-//62
 {
   question: "Which controls the quantity of an x-ray beam?",
-
   answers: ["cathode",
             "kilovoltage",
             "milliamperes",
             "tungsten target"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "The milliamperes control the quantity of an x-ray beam. The cathode is the negative electrode in the x-ray tube. The kilovoltage is the x-ray tube voltage during an exposure, measured in kilovolts, that controls the quality of the beam. The tungsten target is a focal point in the anode." // Fill this in with the explanation for the correct answer.
+  rationale: "Milliamperes control the quantity of the x-ray beam by determining the number of electrons. Kilovoltage affects the quality, not the quantity."
 },
-//63
 {
   question: "Which is a correct statement regarding the guidelines for prescribing dental radiographs for a pregnant patient according to the American Dental Association (ADA) and the Food and Drug Administration (FDA)?",
-
   answers: ["Radiographs should never be taken on a patient who is pregnant.",
             "Radiographic procedures do not need to be altered because of pregnancy.",
             "Radiographs can be taken if the patient is at least 12 weeks pregnant.",
             "Radiographic procedures require that a maximum of four radiographs be taken."],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "According to the ADA and FDA, radiographic procedures do not need to be altered because of pregnancy. It is incorrect to state that radiographs should never be taken on a patient who is pregnant, that they can be taken only if the pregnant patient is at least 12 weeks pregnant, or require that a maximum of four radiographs be taken." // Fill this in with the explanation for the correct answer.
+  rationale: "According to ADA and FDA guidelines, radiographic procedures do not need to be altered due to pregnancy. The other options are not based on these standards."
 },
-//64
 {
   question: "Which alters the voltage of incoming electrical current?",
-
   answers: ["x-ray tube",
             "transformer",
             "tubehead seal",
             "lead collimator"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "The transformer alters the voltage of incoming electrical current. The x-ray tube is the generating system where x-rays are produced. The tubehead seal keeps the oil in the tubehead and acts as a filter to the x-ray beam. The lead collimator is a metal disk that limits the size of the x-ray beam." // Fill this in with the explanation for the correct answer.
+  rationale: "The transformer alters the voltage of incoming electrical current. The x-ray tube generates the x-rays, while the tubehead seal and collimator manage beam quality and size."
 },
-//65
 {
   question: "Which is the generating system where x-rays are produced?",
-
   answers: ["x-ray tube",
             "transformer",
             "tubehead seal",
             "lead collimator"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The x-ray tube is the generating system where x-rays are produced. The transformer alters the voltage of incoming electrical current. The tubehead seal keeps the oil in the tubehead and acts as a filter to the x-ray beam. The lead collimator is a metal disk that limits the size of the x-ray beam." // Fill this in with the explanation for the correct answer.
+  rationale: "The x-ray tube is the part of the machine where x-rays are produced."
 },
-
-//66
 {
   question: "Which is located in the PID and removes from the beam the x-rays with a longer, nonpenetrating wavelength?",
-
   answers: ["x-ray tube",
             "transformer",
             "lead collimator",
             "aluminum filter"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "The aluminum filter is located in the PID and removes from the beam the x-rays with a longer, nonpenetrating wavelength. The x-ray tube is the generating system where x-rays are produced. The transformer alters the voltage of incoming electrical current. The lead collimator is a metal disk that limits the size of the x-ray beam." // Fill this in with the explanation for the correct answer.
+  rationale: "The aluminum filter removes nonpenetrating, longer-wavelength x-rays from the beam. The lead collimator limits the size of the beam, while the x-ray tube generates the x-rays."
 },
-//67
 {
   question: "Which of the following provides for the development of performance standards for the regulation of radiation emission from an x-ray machine?",
-
   answers: ["National Committee on Radiation Protection and Measurements",
             "Consumer-Patient Radiation Health and Safety Act",
             "Radiation Control and Safety Act",
             "American Dental Association (ADA) Council on Scientific Affairs and the U.S. Department of Health and Human Services, Public Health Service, Food and Drug Administration (FDA)"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "The Radiation Control and Safety Act standardized use of x-ray equipment and provides for the development of performance standards for the regulation of radiation emission from an x-ray machine. The National Committee on Radiation Protection (NCRP) establishes recommendations and measurements as to acceptable levels of exposure to ionizing radiation. Nationally Commissioned Radiation Plan, The Consumer-Patient Radiation Health and Safety Act, regulates education and certification of x-ray equipment operators. The American Dental Association (ADA) Council on Scientific Affairs and the U.S. Department of Health and Human Services, Public Health Service, and Food and Drug Administration (FDA) adopted recommendations for prescribing dental radiographs." // Fill this in with the explanation for the correct answer.
+  rationale: "The Radiation Control and Safety Act provides for the development of performance standards for regulating radiation emissions."
 },
-//68
 {
   question: "The hotter the filament becomes, the more __________ are produced.",
-
   answers: ["atoms",
             "protons",
             "neutrons",
             "electrons"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "The hotter the filament becomes, the more electrons are produced in the process known as thermionic emission. Ionization is the gain or loss of an electron; the rest of the atom, including the protons and neutrons, stay in place." // Fill this in with the explanation for the correct answer.
+  rationale: "As the filament heats up, more electrons are produced in the process called thermionic emission."
 },
-//69
 {
   question: "In the production of x-rays, what percentage is lost to heat?",
-
   answers: ["1%",
             "99%",
             "70%",
             "30%"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "In the production of x-rays, 99% of the energy used is lost to heat, and x-rays come from the remaining 1% or less of the total energy expended. Bremsstrahlung radiation accounts for 70% of the x-rays produced. Thirty percent of the x-rays are absorbed by matter which produces the radiopaque areas of a dental image." // Fill this in with the explanation for the correct answer.
+  rationale: "99% of the energy in x-ray production is lost to heat. Only 1% of the energy is converted to x-rays."
 },
-//70
 {
   question: "Milliamperage controls heating of the__________",
-
   answers: ["anode",
             "cathode",
             "metal housing",
             "aluminum filter"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "Milliamperage controls heating of the cathode. The anode is the positive pole of the x-ray tube. The metal housing is the enclosure that encases the parts of the tubehead. The aluminum filter filters out the nonpenetrating, longer-wavelength x-rays." // Fill this in with the explanation for the correct answer.
+  rationale: "Milliamperage controls the heating of the cathode, which produces electrons."
 },
-
-//71
 {
   question: "The master switch does which of the following?",
-
   answers: ["sends the electrons to the anode.",
             "controls the force.",
             "controls the number of electrons.",
             "heats the tungsten filament."],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Turning the machine on heats the tungsten filament, which causes the release of electrons and formation of the electron cloud. Depressing the exposure control button sends the electrons to the anode. The force of the electrons is controlled by the kV, and the number of electrons is controlled by the mA. Control panel settings control the kV and mA." // Fill this in with the explanation for the correct answer.
+  rationale: "The master switch heats the tungsten filament, which releases electrons. The number of electrons is controlled by milliamperes (mA), and the force is controlled by kilovolts (kV)."
 },
-//72
+
 {
   question: "The purpose of the step-down transformer is to:",
-
   answers: ["increase the voltage from 110–220 volts to 60,000–100,000 volts",
             "decrease the voltage from 110–220 volts to 3–5 volts",
             "cause enough heat to create the electron cloud",
-            "propels electrons to create x-rays"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+            "propel electrons to create x-rays"],
+  correct: 1,
   category: "RHS",
-  rationale: "The step-down transformer decreases the voltage entering the machine from 110–220 volts to 3–5 volts in order for the tungsten filament to warm enough to emit electrons for the electron cloud. The step-up transformer increases the voltage entering the machine from 110–220 volts to 60,000–100,000 volts to provide the kV to send the electron cloud from the cathode to the anode at a speed that would generate x-rays. The filament circuit uses the 3–5 volts to create enough heat to generate the electron cloud. The high voltage circuit propels the electrons to create x-rays." // Fill this in with the explanation for the correct answer.
+  rationale: "The step-down transformer decreases the voltage from 110–220 volts to 3–5 volts to heat the tungsten filament, enabling it to emit electrons and create the electron cloud. The step-up transformer increases the voltage to propel the electrons and generate x-rays."
 },
-//73
 {
   question: "When using the bisecting technique, the angulation of the central ray is __________ degrees to the imaginary bisector.",
-
   answers: ["20",
             "40",
             "70",
             "90"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "When using the bisecting technique, the angulation of the central ray is 90 degrees to the imaginary bisector, creating a perpendicular angle. Twenty, 40, or 70 degrees do not create the perpendicular angle required for the bisecting angle technique." // Fill this in with the explanation for the correct answer.
+  rationale: "In the bisecting technique, the central ray is at a 90-degree angle to the imaginary bisector, creating a perpendicular angle necessary for proper image capture."
 },
-//74
 {
   question: "Which is the purpose of the lead foil in the film packets?",
-
   answers: ["to stop the backscatter radiation",
             "to add cushioning to the film packet",
             "to create a herringbone effect on a developed film",
             "to determine if the film packet is placed backward"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The purpose of the lead foil in the film packets is to stop the backscatter radiation. The purpose is not to add cushioning to the film packet, determine if the film packet is placed backward, or create a herringbone effect on a processed film." // Fill this in with the explanation for the correct answer.
+  rationale: "The lead foil in film packets serves to stop backscatter radiation, preventing radiation from reaching the film a second time and reducing scatter. It does not add cushioning or serve as a marker for backward placement."
 },
-//75
-{
-  question: "You have just completed taking the patient’s dental images and have developed them. You notice a problem with this image. What is the error, and how do you correct it?",
-  image: "images/rhs75.jpg",
-  answers: ["collimator cut off; correctly align film and collimator",
-            "improper film placement; cover the area intended for examination",
-            "overlapped films; allow sufficient time for film to move through processor before adding second film",
-            "film reversal; place correct side of film facing teeth"],
-  correct: 3, // assuming the right answer here, adjust it if not.
-  category: "RHS",
-  rationale: "The error is film reversal, the wrong side of the film is facing the teeth; to correct this, the white side or front side of the film packet needs to be facing the teeth and PID. An image with collimator cut-off will have black straight edges, the shape of the collimator on one or more sides of the image; to correct this, correctly align receptor and collimator; with improper film placement, the correct teeth will not be visible in the image; to correct this, the receptor will need to be placed to cover the area intended for examination; films that are overlapped while processing will appear with lighter or darker areas where the two films overlapped; to prevent this, allow sufficient time for film to move through the processor or make sure they are not in contact on the film rack when manually processed." // Fill this in with the explanation for the correct answer.
-},
-
-//76
 {
   question: "Which describes the use of a filter in a dental x-ray tubehead?",
-
   answers: ["removes low-energy x-rays",
             "removes high-energy x-rays",
             "reduces the size and shape of the beam",
             "stops the radiation from reaching the thyroid gland"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "The use of a filter in a dental x-ray tubehead removes the longer, low-energy x-rays. The shorter, high-energy x-rays create the primary beam, a collimator reduces the size and shape of the beam, and a lead apron prevents the radiation from reaching the thyroid gland." // Fill this in with the explanation for the correct answer.
+  rationale: "The filter in a dental x-ray tubehead removes low-energy, longer-wavelength x-rays, allowing only high-energy, short-wavelength x-rays to form the primary beam. It does not reduce the size of the beam or protect the thyroid gland."
 },
-//77
 {
   question: "Which type of illumination is allowed in the darkroom while a film packet is being opened?",
-
   answers: ["safelight",
             "fluorescent light",
             "incandescent light",
             "no light is allowed in the darkroom"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "A safelight is the only illumination allowed in the darkroom, while a film is being opened. A fluorescent light and incandescent light would be too bright for the darkroom. Without light, it would be too difficult to see to process films in a darkroom." // Fill this in with the explanation for the correct answer.
+  rationale: "A safelight, which emits light at a wavelength that does not affect film, is the only type of illumination allowed in the darkroom while a film packet is being opened."
 },
-//78
 {
   question: "Which cells of the body are least susceptible to x-rays?",
-
   answers: ["bone",
             "oral mucosa",
             "muscle",
             "reproductive cells"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "Muscle tissue is the least susceptible to x-rays. Bone has fairly low susceptibility but is more susceptible than muscle tissue to x-rays. Oral mucosa has fairly high susceptibility. Reproductive cells are the most susceptible to x-rays." // Fill this in with the explanation for the correct answer.
+  rationale: "Muscle tissue is the least susceptible to x-rays. Reproductive cells are the most sensitive, with oral mucosa and bone falling in between."
 },
-//79
 {
   question: "Which does not require a barrier before radiographic procedures?",
-
   answers: ["PID",
             "treatment chair",
             "exposure button",
             "image receptor holding device"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "An image receptor holding device does not require a barrier before radiographic procedures because it is sterilized after use. A PID, dental treatment chair, and exposure button are noncritical items that require a barrier." // Fill this in with the explanation for the correct answer.
+  rationale: "The exposure button does not require a barrier as it does not come into direct contact with the patient. The image receptor holding device requires sterilization after use."
 },
-//80
 {
   question: "Transporting uncovered, processed phosphor storage plate (PSP) films should be done by placing them in __________",
-
   answers: ["a black box",
             "an envelope",
             "a plastic cup",
             "clean dry hands"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "Transporting uncovered, processed phosphor storage plates (PSP) should be done by placing them in a black box to keep the plates from being exposed to light that can erase the image. An envelope, plastic cup, and clean dry hands do not give adequate protection against light exposure." // Fill this in with the explanation for the correct answer.
+  rationale: "Processed PSP plates should be transported in a black box to protect them from light, which could erase the images. Other methods do not provide adequate light protection."
 },
-
-//81
 {
   question: "Which is not an example of PPE (personal protective equipment)?",
-
   answers: ["mask",
             "gloves",
             "thyroid collar",
             "protective eyewear"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "A thyroid collar is an item worn by the patient during exposure of x-rays and is not part of PPE. A mask, gloves, and protective eyewear are worn by the person exposing to x-rays and are considered PPE." // Fill this in with the explanation for the correct answer.
+  rationale: "A thyroid collar is used to protect the patient from radiation and is not considered PPE. PPE includes masks, gloves, and protective eyewear worn by the clinician."
 },
-//82
 {
   question: "Which of the following is classified as a semicritical object?",
-
   answers: ["lead apron",
             "treatment chair",
             "image receptor holder",
             "tubehead support arm"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "An image receptor holder is classified as a semicritical object. Semicritical items are those that contact but do not penetrate mucous membrane. A lead apron, dental treatment chair, and protective eyewear are noncritical items." // Fill this in with the explanation for the correct answer.
+  rationale: "The image receptor holder is classified as semicritical because it contacts mucous membranes. Noncritical items include the lead apron, treatment chair, and tubehead support arm."
 },
-//83
 {
   question: "Which items of PPE (personal protective equipment) should be worn during exposure of intraoral dental radiographs?",
-
   answers: ["treatment gloves",
             "gown, treatment gloves",
             "gown, treatment gloves, protective eyewear",
             "gown, treatment gloves, mask, protective eyewear"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "According to the CDC, treatment gloves must be worn during exposure of intraoral dental radiographs. Other personal protective equipment (PPE) (e.g., protective eyewear, mask, gown) are worn as appropriate if spattering of blood or other body fluids is likely." // Fill this in with the explanation for the correct answer.
+  rationale: "According to CDC guidelines, during intraoral radiographs, the clinician should wear a gown, gloves, protective eyewear, and a mask to minimize exposure to body fluids."
 },
-//84
 {
   question: "Which should be used when opening contaminated dental film packets?",
-
   answers: ["over gloves",
             "utility gloves",
             "clean, dry hands",
             "treatment gloves"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Clean treatment gloves should be used when opening contaminated dental film packets. Utility gloves are worn to disinfect the treatment room. Over gloves are placed over treatment gloves. Clean dry hands would not be used to open contaminated dental film packets." // Fill this in with the explanation for the correct answer.
+  rationale: "Clean treatment gloves should be used to open contaminated dental film packets to prevent cross-contamination."
 },
-//85
 {
   question: "Which should be used when loading opened dental films into the processor?",
-
   answers: ["over gloves",
             "utility gloves",
             "clean dry hands",
             "treatment gloves"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "Clean, dry hands should be used when loading opened dental films into the processor. Over gloves are placed over treatment gloves if needed. Utility gloves are worn to clean and disinfect the treatment room. Treatment gloves should be used when opening contaminated dental film packets." // Fill this in with the explanation for the correct answer.
+  rationale: "Clean, dry hands are used when loading dental films into the processor to avoid contamination of the film processor."
 },
 
-//86
 {
   question: "Which infection control method is required for intraoral digital sensors?",
-
   answers: ["dry heat autoclave",
             "ultrasonic and air dry",
             "wash with soap and water",
             "disinfect and cover with a barrier"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Intraoral digital sensors are disinfected with an intermediate-level disinfectant and covered with a barrier for proper infection control. A dry heat autoclave would destroy an intraoral digital sensor. Ultrasonic and air drying would destroy an intraoral digital sensor and would not disinfect the sensor. Washing with soap and water is not enough disinfection for an intraoral digital sensor, it may also damage it." // Fill this in with the explanation for the correct answer.
+  rationale: "Intraoral digital sensors are disinfected with an intermediate-level disinfectant and covered with a barrier for proper infection control. Dry heat autoclave and ultrasonic cleaning can damage the sensor, and washing with soap and water does not provide sufficient disinfection."
 },
-//87
 {
   question: "Which is a critical item used in radiography?",
-
   answers: ["PSP plates",
             "digital sensors",
             "image receptor holders",
             "none of the above"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "There are no critical items used in radiography. PSP plates, digital sensors, and image receptor holders are all semicritical items." // Fill this in with the explanation for the correct answer.
+  rationale: "There are no critical items used in radiography. PSP plates, digital sensors, and image receptor holders are considered semicritical items because they contact mucous membranes but do not penetrate tissues."
 },
-//88
 {
-  question: "When preparing film without barrier envelops for processing, you should do which of the following?",
-
-  answers: ["Hold tab portion of the black paper wrapping, carefully pull out film by only touching the film edges, and place in the processer.",
-            "Hold tab portion of black paper wrapping and drop the film on the paper towel.",
-            "Open black paper wrapping and pull out the film, and place it in the processer.",
-            "Open black paper wrapping and pull out the film and drop on the paper towel."],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  question: "When preparing film without barrier envelopes for processing, you should do which of the following?",
+  answers: ["Hold the tab portion of the black paper wrapping, carefully pull out the film by only touching the film edges, and place it in the processor.",
+            "Hold the tab portion of the black paper wrapping and drop the film on the paper towel.",
+            "Open the black paper wrapping and pull out the film, then place it in the processor.",
+            "Open the black paper wrapping and pull out the film, and drop it on the paper towel."],
+  correct: 0,
   category: "RHS",
-  rationale: "Film that is not protected with a barrier envelope is contaminated. You will be working with gloved hands that will be contaminated once you have touched the film packet. In order to prevent cross-contamination, you will need to hold the tab portion of the black paper wrapping, being careful not to touch the film, and drop the film onto the paper towel. After all film has been opened, you will remove your gloves and process the film. If you hold the tab portion of the black paper wrapping and carefully pull out the film by only touching the film edges; or open the black paper wrapping, pull out the film, and place it in the processer; or open the black paper wrapping, pull out the film, and drop it on the paper towel before placing it in the processor, you will contaminate the film with your contaminated gloves." // Fill this in with the explanation for the correct answer.
+  rationale: "Film without barrier envelopes should be handled by holding the tab portion of the black paper wrapping, carefully pulling out the film by only touching the edges, and then placing it in the processor. This prevents cross-contamination from the gloved hands, which are contaminated after touching the film packet."
 },
-//89
 {
   question: "Which are single-celled organisms that are classified by their shape?",
-
   answers: ["fungi",
             "viruses",
             "bacteria",
             "parasites"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "Bacteria are single-celled organisms that are classified by their shape. Fungi are yeasts and molds that may be present in the air, soil, or water. Viruses are the smallest microorganisms, visible only through the use of a microscope. Parasites are a group of host-requiring organisms that include external and internal parasites." // Fill this in with the explanation for the correct answer.
+  rationale: "Bacteria are single-celled organisms classified by their shape. Fungi are yeasts and molds, viruses are smaller than bacteria and only visible with a microscope, and parasites are organisms that require a host to live."
 },
-//90
 {
   question: "Which stage of disease progression occurs between the invasion of the body by a pathogenic organism and the appearance of the first symptoms of disease?",
-
   answers: ["acute",
             "prodromal",
             "incubation",
             "convalescent"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "The incubation period is the interval of time required for development, especially the time between invasion of the body by a pathogenic organism and appearance of the first symptoms of disease. The acute stage occurs at the height of the illness. During the prodromal stage, the person is visibly sick and has symptoms. The convalescent phase, also known as recovery, occurs when the infection and the symptoms regress." // Fill this in with the explanation for the correct answer.
+  rationale: "The incubation period is the time between the invasion of the body by a pathogen and the appearance of the first symptoms. The prodromal stage is when symptoms start appearing, the acute stage is the height of the illness, and the convalescent stage is the recovery phase."
 },
-
-//91
 {
   question: "After the exposure of dental radiographs, the lead apron is removed with __________",
-
   answers: ["utility gloves",
             "surgical gloves",
             "clean dry hands",
             "treatment gloves"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "Clean dry hands should be used when removing the lead apron after the exposure of dental radiographs. Utility gloves are worn during the disinfection of the room. Surgical gloves are not used in dental radiography procedures. Treatment gloves are worn during the exposure of dental radiographs." // Fill this in with the explanation for the correct answer.
+  rationale: "Clean dry hands should be used to remove the lead apron after radiographic exposure. Utility gloves are for disinfection tasks, and surgical gloves are not used in radiographic procedures."
 },
-//92
 {
   question: "Which of the following should be used during the exposure of dental radiographs?",
-
   answers: ["utility gloves",
             "surgical gloves",
             "clean dry hands",
             "treatment gloves"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Treatment gloves are worn during the exposure of dental radiographs. Utility gloves are worn during the disinfection of the room. Surgical gloves are not used in dental radiography procedures. Clean dry hands should be used when removing the lead apron after the exposure of dental radiographs." // Fill this in with the explanation for the correct answer.
+  rationale: "Treatment gloves are worn during the exposure of dental radiographs to maintain infection control. Utility gloves are used for room disinfection, and surgical gloves are not necessary for radiographic procedures."
 },
-//93
 {
   question: "All of the following are tuberculocidal except:",
-
   answers: ["sodium hypochlorite",
             "ethanol",
             "iodophor",
             "quaternary ammonia without alcohol"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Quaternary ammonia without alcohol is not tuberculocidal. If alcohol is added, it is tuberculocidal. Sodium hypochlorite, ethanol, and iodophor are tuberculocidal." // Fill this in with the explanation for the correct answer.
+  rationale: "Quaternary ammonia without alcohol is not tuberculocidal. If alcohol is added, it becomes tuberculocidal. Sodium hypochlorite, ethanol, and iodophor are effective against tuberculosis."
 },
-//94
 {
   question: "It is important that you follow standard precautions because you can contract an infectious disease from which of the following surfaces:",
-
   answers: ["exposed receptors",
             "beam alignment device",
             "PID",
             "all of the above"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "You can catch an infectious disease from exposed receptors, beam alignment devices, and PID. You can receive an exposure any time you touch a contaminated surface and you are not protected." // Fill this in with the explanation for the correct answer.
+  rationale: "Standard precautions should be followed because infectious diseases can be contracted from exposed receptors, beam alignment devices, and PIDs."
 },
-//95
 {
   question: "Any contaminated film that is processed emerges from the processor __________",
-
   answers: ["sterilized",
             "disinfected",
             "contaminated",
             "decontaminated"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "Any contaminated film that is processed emerges from the processor contaminated. Contaminated film will not exit the processor sterilized, disinfected, or decontaminated because processing chemicals are not designed to be disinfectants." // Fill this in with the explanation for the correct answer.
+  rationale: "Contaminated films remain contaminated after processing because the chemicals in the processor do not sterilize or disinfect the film."
 },
-
-//96
 {
   question: "Immersing a contaminated exposed film packet in a disinfecting solution may/will __________",
-
   answers: ["lighten the image",
             "darken the image",
             "damage the image",
             "have no effect on the image"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "Immersing a contaminated film packet in a disinfecting solution may damage the image. Only the areas contacted by the solution would be damaged. Lightening or darkening of the entire image would not occur." // Fill this in with the explanation for the correct answer.
+  rationale: "Immersing a contaminated film packet in a disinfecting solution can damage the image. It is not recommended to immerse film packets in disinfectant."
 },
-//97
 {
   question: "Which requires a plastic barrier to maintain infection control during the radiographic procedure?",
-
   answers: ["lead apron",
             "countertop",
             "exposure button",
             "image receptor holding device"],
-  correct: 2, // assuming the right answer here, adjust it if not.
+  correct: 2,
   category: "RHS",
-  rationale: "The exposure button is a noncritical item that requires a barrier device. The lead apron is wiped with a disinfectant between patients, and the countertop is either covered or disinfected. An image receptor holding device does not require placement of a barrier before radiographic procedures because it is sterilized after use." // Fill this in with the explanation for the correct answer.
+  rationale: "The exposure button requires a plastic barrier to maintain infection control. Lead aprons are disinfected between patients, while countertops may be covered or disinfected."
 },
-//98
 {
   question: "Which can be heat sterilized after use?",
-
   answers: ["PSP plates",
             "thyroid collar",
             "digital sensors",
             "image receptor holder"],
-  correct: 3, // assuming the right answer here, adjust it if not.
+  correct: 3,
   category: "RHS",
-  rationale: "The image receptor holder can be heat sterilized after use. Heat sterilization will damage PSP plates and digital sensors. They are disinfected. PSP plates are covered with a barrier envelope, and sensors are with an FDA cleared barrier. The thyroid collar is a noncritical item and only requires disinfection." // Fill this in with the explanation for the correct answer.
+  rationale: "Image receptor holders can be heat sterilized after use. PSP plates and digital sensors are disinfected rather than heat sterilized, as heat can damage them."
 },
-//99
 {
   question: "Which of the following would be used to disinfect the patient treatment area after the radiographic procedure?",
-
   answers: ["utility gloves",
             "surgical gloves",
             "clean, dry hands",
             "treatment gloves"],
-  correct: 0, // assuming the right answer here, adjust it if not.
+  correct: 0,
   category: "RHS",
-  rationale: "Utility gloves are worn during the disinfection of the treatment room. Surgical gloves are not worn during dental radiography procedures. Hands should be clean and dry when removing the lead apron after the exposure of dental radiographs. Treatment gloves are worn while exposing dental radiographs." // Fill this in with the explanation for the correct answer.
+  rationale: "Utility gloves are worn during the disinfection of the treatment room. Surgical gloves are not worn during dental radiography procedures. Clean, dry hands are used when removing the lead apron, and treatment gloves are worn during the exposure of radiographs."
 },
-//100
 {
   question: "Which does not require a barrier during the exposure of dental intraoral radiographs?",
-
   answers: ["PID",
             "film badge",
             "treatment chair",
             "exposure button"],
-  correct: 1, // assuming the right answer here, adjust it if not.
+  correct: 1,
   category: "RHS",
-  rationale: "The film badge worn by a person exposing dental x-rays does not require a barrier; it is not contaminated during the imaging procedure. The PID, treatment chair, and exposure button become contaminated during the procedure and require a barrier." // Fill this in with the explanation for the correct answer.
+  rationale: "The film badge does not require a barrier during exposure, as it is not directly involved in the imaging procedure. The PID, treatment chair, and exposure button all become contaminated and require barriers."
 },
-
-// rhs 3
-
-
-//100
 {
   question: "Films removed from the film packet that have not been in a barrier envelope are processed in a daylight loader with __________",
   answers: ["gloved hands",
@@ -2410,20 +1935,18 @@ let rhsQuestions = [
             "hands with utility gloves"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Films that have not been in a barrier envelope are processed with gloved hands to avoid cross-contamination in the daylight loader."
 },
-//101
 {
   question: "When image receptors are dispensed from the supply area, they should be transported to the radiology room __________.",
   answers: ["on the bracket tray",
-            "in the operator\'s hand",
+            "in the operator's hand",
             "in a paper cup",
             "in the patient chart"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "Image receptors should be transported in a paper cup to prevent cross-contamination. Transporting them in the operator's hand or on the bracket tray may lead to contamination."
 },
-//102
 {
   question: "Which level of disinfectant does the CDC recommend for disinfection of a sensor?",
   answers: ["high-level disinfectant",
@@ -2432,9 +1955,8 @@ let rhsQuestions = [
             "no recommendations are made regarding the disinfectant level"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "The CDC recommends the use of an intermediate-level disinfectant for disinfection of digital sensors to ensure proper infection control."
 },
-//103
 {
   question: "Which best describes the function of a plastic barrier cover for a digital radiography sensor?",
   answers: ["The barrier allows the sensor to be reused easily without disinfection.",
@@ -2443,9 +1965,8 @@ let rhsQuestions = [
             "The barrier protects the sensor from saliva contamination."],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "The barrier cover is used to protect the digital sensor from saliva contamination, maintaining hygiene during dental procedures."
 },
-//104
 {
   question: "Beam alignment devices must be __________.",
   answers: ["sterilized",
@@ -2454,10 +1975,8 @@ let rhsQuestions = [
             "wiped with alcohol between uses"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Beam alignment devices are classified as semicritical items and must be disinfected between patients to prevent cross-contamination."
 },
-
-//105
 {
   question: "How should the receptor be placed for exposing a mandibular occlusal image?",
   answers: ["The image receptor is placed parallel to the long axis of the teeth with the white side facing the lingual surface of the teeth.",
@@ -2466,9 +1985,8 @@ let rhsQuestions = [
             "The image receptor is placed between the occlusal surfaces of the maxillary and mandibular teeth with the white side facing the maxillary teeth."],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "For a mandibular occlusal image, the image receptor should be placed between the occlusal surfaces of the maxillary and mandibular teeth with the white side down, facing the mandibular teeth."
 },
-//106
 {
   question: "Which of the following is not true related to automatic processors?",
   answers: ["Rollers are removed at the end of each week; they are cleaned and soaked over the weekend.",
@@ -2477,9 +1995,8 @@ let rhsQuestions = [
             "Manufacturer’s instructions are followed related to solution usage."],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Rollers are typically cleaned on a routine schedule, but they do not need to be soaked over the weekend. Other statements regarding checking solutions, maintenance schedules, and following manufacturer instructions are true."
 },
-//107
 {
   question: "You are using phosphor plates to take bitewings on a patient. Which of the following does not need to be completed before exposing the images?",
   answers: ["Expose a test image and process in scanner.",
@@ -2488,9 +2005,8 @@ let rhsQuestions = [
             "Check that machine settings are correct for phosphor plates."],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Exposing a test image is not necessary before taking patient images. However, placing the phosphor side correctly in the protective sleeve, checking the plates for damage, and verifying machine settings are important steps."
 },
-//108
 {
   question: "Which statement regarding benefits to automatic processors compared to manual processing is not correct?",
   answers: ["Less time required for processing.",
@@ -2499,10 +2015,8 @@ let rhsQuestions = [
             "There is no need for additional space."],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "A daylight loader is not required for automatic processors, but it may be used for convenience. Other benefits include less time required, controlled time and temperature, and reduced space needs."
 },
-
-//109
 {
   question: "A contact test should be performed regularly using which of the following?",
   answers: ["phosphor plate",
@@ -2511,9 +2025,8 @@ let rhsQuestions = [
             "all of the above"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "A contact test should be performed regularly using phosphor plates, sensors, and screen films to ensure image quality and detect any issues with processing."
 },
-//110
 {
   question: "A step wedge can be used with which of the following?",
   answers: ["film",
@@ -2522,9 +2035,8 @@ let rhsQuestions = [
             "all of the above"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "A step wedge can be used with film, phosphor plates, and digital sensors to test the consistency and quality of images produced by radiographic equipment."
 },
-//111
 {
   question: "When the bisecting technique is used, the imaginary angle that is bisected is formed between the long axis of the tooth and the __________.",
   answers: ["long axis of the PID",
@@ -2533,9 +2045,8 @@ let rhsQuestions = [
             "horizontal axis of the tubehead"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "In the bisecting technique, the imaginary angle is formed between the long axis of the tooth and the plane of the receptor. The central ray is directed at 90 degrees to this bisected angle."
 },
-//112
 {
   question: "What is the most common reason to see a completely clear receptor? The receptor was:",
   answers: ["exposed to light",
@@ -2544,9 +2055,8 @@ let rhsQuestions = [
             "left in the developer too long"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "A completely clear receptor indicates that it was not exposed to x-radiation. If exposed to light or developed backward, there would be other visual distortions."
 },
-//113
 {
   question: "Which of the following pieces of equipment requires heat sterilization before use?",
   answers: ["film",
@@ -2555,9 +2065,8 @@ let rhsQuestions = [
             "beam alignment devices"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "Beam alignment devices are considered semicritical instruments and require heat sterilization between patients. Films, digital sensors, and x-ray tubeheads do not require sterilization."
 },
-//114
 {
   question: "Which component of the x-ray film packet should be recycled?",
   answers: ["developed film",
@@ -2566,10 +2075,8 @@ let rhsQuestions = [
             "outer package wrapping"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Lead foil from x-ray film packets should be recycled because lead is a hazardous material. The developed film, black paper, and outer package wrapping do not require special recycling."
 },
-
-//115
 {
   question: "Commercially available barrier envelopes __________.",
   answers: ["protect the film from damage",
@@ -2578,9 +2085,8 @@ let rhsQuestions = [
             "are made of a material that blocks the passage of electrons"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Barrier envelopes minimize contamination by protecting the film after exposure, reducing the risk of cross-contamination."
 },
-//116
 {
   question: "After each use and before processing, each phosphor plate or dental film must be __________.",
   answers: ["disinfected",
@@ -2589,9 +2095,8 @@ let rhsQuestions = [
             "wiped with alcohol"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Phosphor plates or dental films must be disinfected after use and before processing to prevent contamination."
 },
-//117
 {
   question: "You are reorganizing the office storage areas. Where should you store the boxes of x-ray film?",
   answers: ["on a shelf in the cabinet",
@@ -2600,9 +2105,8 @@ let rhsQuestions = [
             "on a shelf in the x-ray room"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "X-ray films should be stored in a cool, dry area such as a shelf in the cabinet. Storing them in a refrigerator or near chemicals may damage the films."
 },
-//118
 {
   question: "You are preparing to take dental images on a patient. You discussed with your patient what you will be taking and why the images are needed for treatment. The patient has refused the dental images. You explain to the dentist about the patient’s refusal. What should the dentist do?",
   answers: ["Have the patient sign a waiver and begin treatment.",
@@ -2611,9 +2115,8 @@ let rhsQuestions = [
             "Force the patient to have dental images taken."],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "If the patient refuses necessary images, the dentist may refuse treatment because proper diagnosis cannot be made without the required radiographs."
 },
-//119
 {
   question: "What is occurring inside the x-ray tubehead when you increase the kilovoltage setting on the exposure control panel?",
   answers: ["The speed of the electrons decreases from the cathode to the anode.",
@@ -2622,9 +2125,8 @@ let rhsQuestions = [
             "The speed of the photons from anode to cathode is increased."],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Increasing the kilovoltage increases the penetrating power of the x-ray beam, allowing it to penetrate tissues more effectively."
 },
-//120
 {
   question: "Your patient is a large man, on the obese side. What adjustments would you make, if any, to the control panel when exposing dental images?",
   answers: ["Increase the exposure time; leave the kV and the mA the same.",
@@ -2633,9 +2135,8 @@ let rhsQuestions = [
             "You do not need to make any adjustments."],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "To compensate for the increased tissue density in a larger patient, you would increase the exposure time to ensure a clear image."
 },
-//121
 {
   question: "If you want to provide the lowest amount of exposure possible for your patient, which of the following settings should you use?",
   answers: ["70 kV, 6 mA, 0.40 impulses",
@@ -2644,9 +2145,8 @@ let rhsQuestions = [
             "65 kV, 8 mA, 0.60 impulses"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "The setting with the lowest mA and the fewest impulses will provide the lowest exposure for the patient, which is 70 kV, 6 mA, 0.40 impulses."
 },
-//122
 {
   question: "You noticed that the patient moved just as you pressed the exposure button. What effect will that have on the dental image?",
   answers: ["distortion",
@@ -2655,9 +2155,8 @@ let rhsQuestions = [
             "image magnification"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Patient movement during exposure will result in a loss of sharpness in the image, leading to a blurred or unsharp image."
 },
-//123
 {
   question: "If you decreased exposure time, and left the other exposure factors the same, what impact would this have on your dental image?",
   answers: ["The image would be lighter because the density would increase.",
@@ -2666,9 +2165,8 @@ let rhsQuestions = [
             "The image would be darker because the density would decrease."],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "Decreasing exposure time reduces the amount of radiation reaching the receptor, resulting in a lighter image due to decreased density."
 },
-//124
 {
   question: "Which is not considered a critical organ in dental imaging?",
   answers: ["skin",
@@ -2677,10 +2175,8 @@ let rhsQuestions = [
             "bone marrow"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "The pituitary gland is not considered a critical organ in dental imaging. Critical organs include the skin, lens of the eye, and bone marrow due to their sensitivity to radiation."
 },
-
-//125
 {
   question: "If you decreased the mA, and left the other exposure factors the same, what impact would this have on your dental image?",
   answers: ["The image would be lighter because the density would increase.",
@@ -2689,9 +2185,8 @@ let rhsQuestions = [
             "The image would be darker because the density would decrease."],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "Decreasing the mA reduces the amount of radiation produced, which results in a lighter image because of decreased density."
 },
-//126
 {
   question: "Which applies to producing dental images on pregnant patients?",
   answers: ["Dental images should be taken only during the third trimester.",
@@ -2700,9 +2195,8 @@ let rhsQuestions = [
             "Dental images should be taken only during the first trimester."],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "According to guidelines, there is no need to alter the standard dental radiographic procedures for pregnant patients, as protective measures are already in place for all patients."
 },
-//127
 {
   question: "The operator should clean and disinfect any uncovered areas while wearing __________.",
   answers: ["utility gloves",
@@ -2711,20 +2205,18 @@ let rhsQuestions = [
             "nitrile gloves"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Utility gloves should be worn for cleaning and disinfecting surfaces to prevent contamination and for protection against harsh chemicals."
 },
-//128
 {
   question: "Which is true regarding exposure of radiation on the body?",
   answers: ["The direct theory of radiation suggests that toxins form in the body and cause damage.",
             "The direct theory of radiation suggests that radiation damage occurs because of the high water content in the body.",
             "The indirect theory of radiation suggests that ionizing radiation creates the formation of free radicals.",
             "The indirect theory of radiation injury suggests that damage occurs as a result of ionizing radiation hitting critical areas."],
-  correct: 2,
+  correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "The indirect theory of radiation suggests that ionizing radiation creates free radicals, which can then recombine to form toxins that cause cellular damage."
 },
-//129
 {
   question: "If you decreased the distance, and left the exposure factors the same, what impact would this have on your dental image?",
   answers: ["The image would be lighter because the density would increase.",
@@ -2733,10 +2225,8 @@ let rhsQuestions = [
             "The image would be darker because the density would decrease."],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Decreasing the distance between the x-ray source and the image receptor increases the intensity of the radiation, which results in a darker image because of increased density."
 },
-
-//130
 {
   question: "Which of the following is recommended by the CDC?",
   answers: ["immersion of film packets in disinfecting solutions",
@@ -2745,9 +2235,8 @@ let rhsQuestions = [
             "gloves worn by the operator"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "The CDC recommends disinfecting sensors with an EPA-registered intermediate-level disinfectant to ensure proper infection control."
 },
-//131
 {
   question: "You have a new patient. She is 7 years old, and she has her first molars. Which dental images should you take?",
   answers: ["bitewings",
@@ -2756,9 +2245,8 @@ let rhsQuestions = [
             "bitewings and panoramic"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "At age 7, with the eruption of first molars, both bitewing and panoramic images are recommended to assess the child's oral development and overall dental health."
 },
-//132
 {
   question: "Tests for tube drift should be performed at which frequency?",
   answers: ["annually",
@@ -2767,9 +2255,8 @@ let rhsQuestions = [
             "It depends on the volume of dental images exposed"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Tube drift testing should be performed annually to ensure the equipment is functioning properly and the tubehead remains stable during exposures."
 },
-//133
 {
   question: "A fresh film test should be exposed __________.",
   answers: ["whenever developer and fixer solutions are changed",
@@ -2778,9 +2265,8 @@ let rhsQuestions = [
             "once a month"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "A fresh film test should be performed whenever a new box of film is opened to ensure the quality of the film."
 },
-//134
 {
   question: "How often should film cassettes be examined?",
   answers: ["annually",
@@ -2789,10 +2275,8 @@ let rhsQuestions = [
             "it depends on the volume of dental images exposed"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "Film cassettes should be examined regularly based on the volume of dental images exposed to ensure proper functioning and avoid image artifacts."
 },
-
-//135
 {
   question: "The light leak test should be performed at which frequency?",
   answers: ["annually",
@@ -2801,20 +2285,18 @@ let rhsQuestions = [
             "it depends on the volume of dental images exposed"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "The light leak test should be performed annually to ensure that no unwanted light is entering the darkroom, which could affect image quality."
 },
-//136
 {
   question: "Which statement is not correct concerning the exposure sequence for periapical images?",
   answers: ["Anterior images are always exposed before posterior images.",
             "Either anterior or posterior images may be exposed first.",
             "In posterior quadrants, the premolar image is always exposed before the molar image.",
-            "When exposing anterior images, work from the patient\'s right to left in the upper arch, and then work from the left to right in the lower arch."],
+            "When exposing anterior images, work from the patient's right to left in the upper arch, and then work from the left to right in the lower arch."],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Anterior images are always exposed before posterior images to ensure patient comfort and minimize movement during posterior exposures."
 },
-//137
 {
   question: "What is the second compartment that the films will enter in an automatic processor?",
   answers: ["fixer",
@@ -2823,9 +2305,8 @@ let rhsQuestions = [
             "drying fan"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "In an automatic processor, the second compartment is the fixer, which removes unexposed silver halide crystals from the film emulsion."
 },
-//138
 {
   question: "Which is the proper technique to expose a bitewing image on a patient with mandibular tori?",
   answers: ["Place the receptor on the tori.",
@@ -2834,9 +2315,8 @@ let rhsQuestions = [
             "Intraoral placement is not recommended on patients who have mandibular tori."],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "The correct technique for a patient with mandibular tori is to place the receptor between the tori and the tongue to avoid discomfort and ensure a clear image."
 },
-//139
 {
   question: "The thermometer should be placed in which solution of the manual processing tanks?",
   answers: ["fixer",
@@ -2845,20 +2325,26 @@ let rhsQuestions = [
             "water or developer"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "The thermometer should be placed in the developer solution, as the temperature of the developer is critical to producing accurate images."
 },
-//140
+
+
+
+
+
+
+
+
 {
   question: "Which receptor would provide the most protection against radiation exposure for the patient?",
   answers: ["phosphor plate",
             "D-speed film",
             "F-speed film",
             "digital sensor"],
-  correct: 2,
+  correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "Digital sensors provide the most protection against radiation exposure because they require less radiation to produce an image compared to film or phosphor plates."
 },
-//141
 {
   question: "Which of the following statements is true regarding manual film mounting?",
   answers: ["The raised dot side of the film faces the viewer in a labial mounting method.",
@@ -2867,9 +2353,8 @@ let rhsQuestions = [
             "The depressed dot side of the film faces the viewer in the labial mounting method."],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "In the labial mounting method, the raised dot on the film is used to orient the film, facing the viewer as if they were looking at the patient."
 },
-//142
 {
   question: "In which two lengths are PIDs typically available?",
   answers: ["6 and 12 inches",
@@ -2878,20 +2363,18 @@ let rhsQuestions = [
             "12 and 16 inches"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "PIDs are typically available in 8-inch and 16-inch lengths, with the longer PID reducing patient exposure to radiation."
 },
-//143
 {
   question: "Which method is used to stabilize the receptor during exposure of an occlusal image?",
   answers: ["stable bite block",
             "hemostat",
             "patient gently biting on the receptor",
             "bitewing tab"],
-  correct: 2,
+  correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "The patient gently biting on the receptor stabilizes it during occlusal imaging, ensuring that it stays in the correct position for the exposure."
 },
-//144
 {
   question: "If the length of the PID is changed from 8 to 12 inches, how does this affect the intensity of the x-ray beam?",
   answers: ["The resultant beam will be one-half as intense",
@@ -2900,20 +2383,18 @@ let rhsQuestions = [
             "The resultant beam will be four times as intense"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Increasing the PID length from 8 to 12 inches reduces the intensity of the x-ray beam to one-quarter of its original intensity due to the inverse square law."
 },
-//145
 {
-  question: "Which of the following decreases a patient\'s radiation exposure?",
+  question: "Which of the following decreases a patient's radiation exposure?",
   answers: ["use of an 8-inch PID rather than a 16-inch PID",
             "use of a circular collimator in place of a rectangular collimator",
             "use of the bisecting technique instead of the paralleling technique",
             "use of a higher kV setting to achieve the same density"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "Using a higher kV setting allows for a lower overall exposure time, reducing the patient's exposure to radiation while still achieving the same image density."
 },
-//146
 {
   question: "Commercially available barrier envelopes are used to:",
   answers: ["protect the film from saliva",
@@ -2922,9 +2403,8 @@ let rhsQuestions = [
             "minimize contamination in the darkroom"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Barrier envelopes are used to protect the film from contamination, such as saliva, during the imaging process."
 },
-//147
 {
   question: "What is the best way to limit a patient’s radiation exposure?",
   answers: ["Prescribe only what is necessary.",
@@ -2933,10 +2413,8 @@ let rhsQuestions = [
             "Ensure the patient wears a lead apron."],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "The best way to limit radiation exposure is to follow the ALARA principle and prescribe only necessary radiographs."
 },
-
-//148
 {
   question: "Your 5-year-old patient has been coming regularly to the dental office for the last 2 years. The last set of dental images was taken 6 months ago. He has occlusal decay on #A, #B, #I, and #J, and his teeth are in tight contact. The last time he was in, he had restorations placed on teeth #K and #L. When should you next take dental images?",
   answers: ["today’s appointment",
@@ -2945,9 +2423,8 @@ let rhsQuestions = [
             "in 6–18 months, because the guidelines recommend taking them at 1- to 2-year intervals"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Since the patient has active decay and a history of restorations, dental images should be taken today to monitor the progression of the caries and check for any new decay."
 },
-//149
 {
   question: "Your 6-year-old patient has clinical caries and closed proximal contacts. Which of the following dental images should you take?",
   answers: ["posterior bitewings",
@@ -2956,9 +2433,8 @@ let rhsQuestions = [
             "panoramic"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Posterior bitewing images are recommended to check for caries between the teeth and evaluate the health of the supporting bone."
 },
-//150
 {
   question: "Which of the following position indicating devices exposes a patient to more radiation?",
   answers: ["conical",
@@ -2967,9 +2443,8 @@ let rhsQuestions = [
             "circular 16 inch"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "A circular 16-inch PID exposes a patient to more radiation than a rectangular PID due to its larger surface area, which exposes more tissue."
 },
-//151
 {
   question: "Which is not an example of PPE (personal protective equipment)?",
   answers: ["mask",
@@ -2978,11 +2453,8 @@ let rhsQuestions = [
             "protective eyewear"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "The thyroid collar is worn by the patient during radiographs to protect the thyroid gland, but it is not considered PPE for the dental healthcare provider."
 },
-
-
-//152
 {
   question: "Your adult recall patient has no clinical caries and is not at increased risk for caries. He had bitewing images taken 1 year ago. When should you take bitewing images of your patient?",
   answers: ["at this appointment",
@@ -2991,9 +2463,8 @@ let rhsQuestions = [
             "24–36 months from his last bitewing images"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "For adult recall patients without clinical caries or risk factors, bitewing images are recommended every 24–36 months according to guidelines."
 },
-//153
 {
   question: "What is the purpose of a collimator?",
   answers: ["filter out long wavelengths",
@@ -3002,9 +2473,8 @@ let rhsQuestions = [
             "filter out short wavelengths"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "A collimator is used to restrict the size and shape of the x-ray beam, which reduces the patient's exposure to radiation and improves image quality."
 },
-//154
 {
   question: "What is the purpose of the receptor-holding device?",
   answers: ["stabilize receptor position in the mouth and reduce the chance for movement",
@@ -3013,9 +2483,8 @@ let rhsQuestions = [
             "increased patient comfort"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "The receptor-holding device is used to stabilize the receptor in the patient's mouth, reducing movement and ensuring proper positioning during the radiographic exposure."
 },
-//155
 {
   question: "Which device/method provides patients the best protection against radiation exposure?",
   answers: ["long PID",
@@ -3024,9 +2493,8 @@ let rhsQuestions = [
             "sensor instead of a phosphor plate"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "Proper operator technique, including correct positioning and use of protective measures, provides the best protection against radiation exposure for patients."
 },
-//156
 {
   question: "Which type of contrast would best help detect dental caries in a patient?",
   answers: ["low contrast with few shades of gray",
@@ -3035,20 +2503,18 @@ let rhsQuestions = [
             "high contrast with many shades of gray"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "High contrast with few shades of gray is best for detecting dental caries as it provides clear differentiation between decay and healthy tooth structure."
 },
-//157
 {
-  question: "You have placed the sensor in your patient\'s mouth, you have positioned the PID, and you are ready to press the control button. What will exit the PID?",
+  question: "You have placed the sensor in your patient's mouth, you have positioned the PID, and you are ready to press the control button. What will exit the PID?",
   answers: ["Compton scatter",
             "coherent scatter",
             "secondary radiation",
             "primary beam"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "The primary beam is what exits the PID and is responsible for creating the radiographic image."
 },
-//158
 {
   question: "An important way for the operator to avoid primary beam exposure is to:",
   answers: ["stand 4 feet behind the patient",
@@ -3057,20 +2523,18 @@ let rhsQuestions = [
             "wear protective covering"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Positioning oneself at a 90- to 135-degree angle to the primary beam is the safest position to avoid exposure to scattered radiation."
 },
-//159
 {
   question: "You notice that the roots of your maxillary anterior images are consistently too long and seem out of proportion. What is the error, and how should you correct it?",
   answers: ["Foreshortening; the receptor needs to be parallel to the teeth, and the x-ray beam needs to be perpendicular to both.",
             "Magnification; the receptor needs to be parallel to the teeth, and the x-ray beam needs to be perpendicular to both.",
             "Elongation; the receptor needs to be parallel to the teeth, and the x-ray beam needs to be perpendicular to both.",
             "Magnification; the receptor needs to be closer to the tooth, or the target–image receptor distance needs to be increased."],
-  correct: 2,
+  correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "Elongation occurs when the x-ray beam is not perpendicular to the image receptor and the teeth. Correcting this error requires proper angulation."
 },
-//160
 {
   question: "Your last patient was an average-size man. Your next patient is a slender 12-year-old girl. What adjustment would you make, if any, to the control panel when exposing dental images?",
   answers: ["Increase the exposure time; leave the kV and the mA the same.",
@@ -3079,9 +2543,8 @@ let rhsQuestions = [
             "You do not need to make any adjustments."],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "For a smaller, younger patient, the exposure time is typically decreased to account for their smaller size and lower density of tissues."
 },
-//161
 {
   question: "Which of the following components of the tubehead protects the patient by removing long-wavelength, low-energy x-rays?",
   answers: ["tungsten target",
@@ -3090,10 +2553,8 @@ let rhsQuestions = [
             "collimator"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "The filter removes long-wavelength, low-energy x-rays from the beam, which would not contribute to the image and would only increase patient exposure."
 },
-
-//162
 {
   question: "How often should processing solutions be changed?",
   answers: ["biweekly",
@@ -3102,9 +2563,8 @@ let rhsQuestions = [
             "when patient images appear too light"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Processing solutions should be changed every 3–4 weeks to maintain optimal image quality and avoid contamination."
 },
-//163
 {
   question: "Correct solution maintenance for manual film processing includes__________.",
   answers: ["diluting fixer to keep the level at optimal levels",
@@ -3113,20 +2573,18 @@ let rhsQuestions = [
             "changing both developer and fixer at the same time"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "To maintain the best quality of images, both the developer and fixer should be changed simultaneously."
 },
-//164
 {
   question: "Which statement is true concerning the anode?",
   answers: ["It carries a negative charge.",
             "Electrons are generated at the anode.",
             "It converts the bombarding electrons into x-ray photons.",
             "It consists of a tungsten filament in a focusing cup."],
-  correct: 2,
+  correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "The anode converts bombarding electrons into x-ray photons, producing the radiation necessary for imaging."
 },
-//165
 {
   question: "The quality administration procedures within the quality assurance plan should include which of the following basic elements?",
   answers: ["description of the plan with assignment of duties",
@@ -3135,9 +2593,8 @@ let rhsQuestions = [
             "tubehead stability test"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "A thorough quality administration plan includes a description of responsibilities and assignments to ensure tasks are properly managed."
 },
-//166
 {
   question: "Adjusting the chair and headrest, placing the lead apron on a patient, and removing metal objects from the head and neck area of a patient should be completed by the dental professional __________?",
   answers: ["before washing hands, prior to gloving",
@@ -3146,9 +2603,8 @@ let rhsQuestions = [
             "while wearing utility gloves"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "All positioning and adjustments should be made before gloving to ensure that gloves remain sterile for patient protection."
 },
-//167
 {
   question: "The optimal storage temperature for dental film is __________:",
   answers: ["30°–45°F",
@@ -3157,9 +2613,8 @@ let rhsQuestions = [
             "80°–85°F"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "The optimal storage temperature for dental film is between 50° and 70°F to prevent damage to the film and ensure image quality."
 },
-//168
 {
   question: "You are assisting the dental hygienist. She is performing the oral assessment and would like to compare dental images to the probing depths. Which type of contrast would provide the best image for this purpose?",
   answers: ["high contrast; few shades of gray",
@@ -3168,9 +2623,8 @@ let rhsQuestions = [
             "low contrast; many shades of gray"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "Low contrast with many shades of gray provides the best image for comparing dental images to periodontal probing depths, as it allows for more detailed differentiation between tissues."
 },
-//169
 {
   question: "Which statement is correct concerning the use of gloves during a dental imaging procedure?",
   answers: ["Gloves must be washed prior to use to remove powder residue.",
@@ -3179,9 +2633,8 @@ let rhsQuestions = [
             "Gloves must be worn only when contact with saliva is anticipated."],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "New gloves must be worn for each patient to prevent cross-contamination and maintain proper infection control during imaging procedures."
 },
-//170
 {
   question: "Which of the following persons should perform the calibration of dental x-ray machines?",
   answers: ["dentist",
@@ -3190,9 +2643,8 @@ let rhsQuestions = [
             "qualified technician"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "Calibration of dental x-ray machines must be performed by a qualified technician to ensure accuracy and safety."
 },
-//171
 {
   question: "A lead apron is used when performing which of the following?",
   answers: ["panoramic image",
@@ -3201,9 +2653,8 @@ let rhsQuestions = [
             "all of the above"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "A lead apron is used for all types of dental radiographs, including panoramic, full-mouth series, and periapical images, to protect the patient from unnecessary radiation exposure."
 },
-//172
 {
   question: "You are performing a quality assurance test on your stored film. The unexposed, properly stored, fresh film will appear __________ when processed.",
   answers: ["clear with a slight blue tint",
@@ -3212,9 +2663,8 @@ let rhsQuestions = [
             "totally black"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Fresh film, when processed, should appear clear with a slight blue tint, indicating that it has been properly stored and is not expired."
 },
-//173
 {
   question: "Unexposed film that has not been stored properly or is out of date will appear ________ when processed.",
   answers: ["clear with a slight blue tint",
@@ -3223,9 +2673,8 @@ let rhsQuestions = [
             "totally black"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "Film that has been improperly stored or is expired will appear fogged when processed."
 },
-//174
 {
   question: "When functioning properly, a view box will emit a __________.",
   answers: ["uniform, subdued light",
@@ -3234,9 +2683,8 @@ let rhsQuestions = [
             "uniform bright light"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "A properly functioning view box should emit a uniform, subdued light to provide optimal conditions for viewing dental radiographs."
 },
-//175
 {
   question: "Who is responsible for the diagnostic quality of dental images?",
   answers: ["the dental professional exposing the receptors",
@@ -3245,11 +2693,8 @@ let rhsQuestions = [
             "the hazard communication officer"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "The dental professional who is exposing the radiographic receptors is responsible for ensuring the diagnostic quality of the images."
 },
-
-
-//176
 {
   question: "In a dental practice in which many HIV-positive patients are treated, the film rollers in the automatic processor should be __________",
   answers: ["scrubbed with an abrasive cleaner every day",
@@ -3258,9 +2703,8 @@ let rhsQuestions = [
             "treated in the usual accepted manner"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "In dental practices treating HIV-positive patients, the film rollers should be treated in the usual accepted manner as standard precautions apply to all patients."
 },
-//177
 {
   question: "Dental x-ray equipment is classified as __________.",
   answers: ["critical instruments",
@@ -3269,9 +2713,8 @@ let rhsQuestions = [
             "semicritical and noncritical instruments"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "Dental x-ray equipment is considered noncritical as it does not come into contact with mucous membranes or penetrate tissue."
 },
-//178
 {
   question: "Which of the following steps should be followed when exposing a panoramic image?",
   answers: ["Place lead apron with thyroid collar on patient and secure it.",
@@ -3280,9 +2723,8 @@ let rhsQuestions = [
             "Instruct patient to close lips on bite block, to swallow once, then place tongue against roof of mouth, and maintain that position during exposure"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "The patient must close their lips, swallow, and place the tongue against the roof of the mouth to ensure proper image quality during panoramic exposure."
 },
-//179
 {
   question: "Which is a correct statement concerning disinfection procedures for the darkroom?",
   answers: ["Countertops and areas touched by gloved hands must be disinfected.",
@@ -3291,9 +2733,8 @@ let rhsQuestions = [
             "A high-level disinfectant is required to disinfect the area surrounding the processor."],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Countertops and areas touched by gloved hands in the darkroom should be disinfected to prevent cross-contamination."
 },
-//180
 {
   question: "EPA-registered chemical germicides labeled as hospital disinfectants are:",
   answers: ["classified as high-level disinfectants",
@@ -3302,9 +2743,8 @@ let rhsQuestions = [
             "not designated a disinfectant level"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "EPA-registered chemical germicides labeled as hospital disinfectants are classified as low-level disinfectants."
 },
-//181
 {
   question: "Why does digital imaging require less radiation than traditional film-based radiography?",
   answers: ["Sensor is more sensitive to x-radiation.",
@@ -3313,9 +2753,8 @@ let rhsQuestions = [
             "Computer software is designed to eliminate common placement errors."],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Digital sensors are more sensitive to x-radiation, allowing for lower radiation exposure compared to traditional film."
 },
-//182
 {
   question: "Following an exposure, beam alignment devices are __________ using __________ hands.",
   answers: ["disinfected; ungloved",
@@ -3324,9 +2763,8 @@ let rhsQuestions = [
             "prepared for sterilization; gloved"],
   correct: 1,
   category: "RHS",
-  rationale: "#"
+  rationale: "Beam alignment devices are disinfected after exposure using gloved hands to maintain infection control."
 },
-//183
 {
   question: "What is the function of intensifying screens used in extraoral radiography?",
   answers: ["increase sharpness of image",
@@ -3335,9 +2773,8 @@ let rhsQuestions = [
             "decrease patient’s exposure to radiation"],
   correct: 3,
   category: "RHS",
-  rationale: "#"
+  rationale: "Intensifying screens decrease the patient's exposure to radiation by reducing the amount of x-rays needed to produce an image."
 },
-//184
 {
   question: "All of the following are examples of inherent filtration, except:",
   answers: ["aluminum filter",
@@ -3346,20 +2783,19 @@ let rhsQuestions = [
             "tubehead seal"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Inherent filtration refers to materials such as the leaded glass window, insulating oil, and tubehead seal, while the aluminum filter is added filtration."
 },
-//185
+
 {
   question: "Which choice describes infection control protocol for an interrupted dental imaging procedure?",
   answers: ["removing gloves, and upon return, regloving with the same gloves",
-            "donning overgloves, and upon return, removing the over gloves",
+            "donning overgloves, and upon return, removing the overgloves",
             "removing gloves, washing hands, and upon return, washing hands and regloving with new gloves",
             "removing gloves, washing hands, and upon return, washing hands and regloving with the same gloves"],
   correct: 2,
   category: "RHS",
-  rationale: "#"
+  rationale: "If a dental imaging procedure is interrupted, gloves must be removed, hands washed, and upon return, hands must be washed again and new gloves should be worn. Reusing the same gloves compromises infection control."
 },
-//186
 {
   question: "Image receptors that have been removed from barrier envelopes are processed with __________.",
   answers: ["gloved hands",
@@ -3368,7 +2804,2200 @@ let rhsQuestions = [
             "utility gloves"],
   correct: 0,
   category: "RHS",
-  rationale: "#"
+  rationale: "Image receptors that have been removed from barrier envelopes are processed with gloved hands to avoid cross-contamination and maintain infection control during handling."
+},
+
+//1
+{
+  "question": "(1) All ionizing radiations cause damage to living tissues. (2) Although very little radiation is used in dentistry, damage to the cells does occur.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Both statements are true. Ionizing radiation can cause cellular damage, and even small doses used in dentistry can potentially affect cells."
+},
+
+//2
+{
+  "question": "What specific mechanism of radiation injury may result in the formation of hydrogen peroxide when x-ray energy is absorbed by patients?",
+  "answers": [
+    "An ejected high-speed electron may interact with other atoms within absorbing tissues.",
+    "Free radical formation created by the ionization of water may occur.",
+    "Unequal charge distribution may result in negative electrical potential.",
+    "Creation of a magnetic field may cause polarization."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Free radical formation created by the ionization of water can result in the formation of hydrogen peroxide, which can be toxic to cells."
+},
+
+//3
+{
+  "question": "Which of the following statements is true regarding the direct theory of radiation injury?",
+  "answers": [
+    "It involves absorption of an x-ray photon by water within a cell.",
+    "It involves the formation of toxins that damage the cell.",
+    "It involves damage to the critical areas of a cell through direct contact with the x-ray photon.",
+    "It involves the formation of free radicals."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "The direct theory of radiation injury suggests that x-ray photons directly strike critical areas like DNA, causing damage."
+},
+
+//4
+{
+  "question": "The indirect theory proposes that",
+  "answers": [
+    "toxins are created from the formation of free radicals.",
+    "ionizing radiation strikes critical areas within cells.",
+    "direct injuries occur more frequently than indirect injuries.",
+    "changes occur to the deoxyribonucleic acid (DNA) of a cell."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "The indirect theory suggests that free radicals created by ionizing radiation combine to form toxins, causing cell damage."
+},
+
+//5
+{
+  "question": "According to the dose-response curve, when dose and damage are plotted on a graph, a ____________ relationship is seen.",
+  "answers": [
+    "nonlinear, nonthreshold",
+    "linear, nonthreshold",
+    "nonlinear, threshold",
+    "linear, threshold"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "A linear, nonthreshold relationship suggests that any amount of radiation exposure causes some level of damage to tissues."
+},
+
+//6
+{
+  "question": "A nonthreshold dose-response curve suggests that",
+  "answers": [
+    "radiation exposure below the threshold will not damage tissues.",
+    "radiation exposure below the threshold is safe for living tissue.",
+    "radiation exposure above the threshold amount causes some damage to tissues.",
+    "radiation exposure, no matter how small, causes damage to living tissue."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "In a nonthreshold dose-response curve, any exposure to radiation, regardless of dose, is considered to cause damage to living tissue."
+},
+
+//7
+{
+  "question": "Stochastic biologic effects from radiation",
+  "answers": [
+    "are directly related to exposure and effect.",
+    "occur as a result of exposure, but severity is not determined by dose.",
+    "have a dose threshold.",
+    "cause significant damage to cell or cell death."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Stochastic effects occur due to radiation exposure, but the severity of the effects does not depend on the dose received."
+},
+
+//8
+{
+  "question": "Which of the following is an example of stochastic effects?",
+  "answers": [
+    "Erythema",
+    "Cancer",
+    "Hair loss",
+    "Radiation sickness"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Cancer is a stochastic effect because it results from radiation exposure, but the severity is not dependent on the dose."
+},
+
+//9
+{
+  "question": "Your patient was out in the hot, bright sun yesterday. While in the sun she began experiencing pain and noticed her skin had turned bright red. Shortly after arriving home, she began to experience chills, nausea, severe pain, and blistering. Why would your patient experience the symptoms so quickly?",
+  "answers": [
+    "The latent period was decreased by the increased dose and dose rate.",
+    "The latent period was increased by the increased dose and dose rate.",
+    "The latent period was decreased by the increased area of tissue irradiated and the number of sensitive cells.",
+    "The latent period was not affected."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "A higher dose and dose rate decrease the latent period, leading to quicker onset of symptoms like those your patient experienced."
+},
+
+//10
+{
+  "question": "Cellular injuries following the latent period may include (1) cell death, (2) cessation of mitotic activity, and/or (3) abnormal mitotic activity.",
+  "answers": [
+    "1, 2, 3",
+    "1, 2",
+    "1, 3",
+    "1 only"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "After the latent period, cellular injuries may result in cell death, cessation of mitotic activity, or abnormal mitotic activity."
+},
+
+//11
+{
+  "question": "__________ refers to the total amount of radiation that is received or absorbed.",
+  "answers": [
+    "Total dose",
+    "Dose rate",
+    "Amount of tissue irradiated",
+    "Cell sensitivity"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Total dose refers to the overall amount of radiation absorbed by tissues."
+},
+
+//12
+{
+  "question": "(1) More radiation damage takes place with high dose rates (2) because a rapid delivery of radiation does not allow time for cellular damage to be repaired.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Both statements are true. Higher dose rates do not allow cells to repair damage, leading to more tissue damage."
+},
+
+//13
+{
+  "question": "Which types of cells are more sensitive to radiation: (1) rapidly dividing, (2) slowly dividing, (3) young, and/or (4) old?",
+  "answers": [
+    "1 and 3",
+    "1 and 4",
+    "2 and 3",
+    "2 and 4"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Cells that divide rapidly and are young are more sensitive to radiation."
+},
+
+//14
+{
+  "question": "Which of the following is associated with long-term radiation effects?",
+  "answers": [
+    "Symptoms include diarrhea, hair loss, and hemorrhage.",
+    "Small amounts of radiation absorbed over a long period.",
+    "Acute radiation syndrome.",
+    "The injury period in the sequence of radiation injury is seen within minutes, days, or weeks of radiation exposure."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Long-term radiation effects result from small amounts of radiation absorbed over extended periods."
+},
+
+//15
+{
+  "question": "Which of the following is a sign or symptom of acute radiation syndrome (ARS)?",
+  "answers": [
+    "Genetic defects",
+    "Birth abnormalities",
+    "Hair loss",
+    "Cancer"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Hair loss is one of the symptoms of acute radiation syndrome, which occurs after exposure to high doses of radiation."
+},
+
+//16
+{
+  "question": "Which of the following statements is true of somatic effects of irradiation?",
+  "answers": [
+    "Changes are not transmitted to future generations.",
+    "Changes are in the genetic cells of the individual.",
+    "Mutations occur that affect the health of offspring.",
+    "Damage cannot be repaired."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Somatic effects affect the irradiated individual, but these changes are not passed on to future generations."
+},
+
+//17
+{
+  "question": "Which of the following cells would be the most sensitive to x-rays?",
+  "answers": [
+    "Nerve",
+    "Bone",
+    "Muscle",
+    "Blood"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Blood cells are among the most sensitive to x-rays because they divide rapidly and have a high mitotic rate."
+},
+
+//18
+{
+  "question": "Which of the following is the least sensitive to x-rays?",
+  "answers": [
+    "Bone marrow",
+    "Salivary glands",
+    "Lymphoid tissue",
+    "Intestines"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Salivary glands are less sensitive to radiation compared to other tissues such as bone marrow and intestines."
+},
+
+//19
+{
+  "question": "Precautions should be taken during dental imaging procedures to which of the following critical organs in the head and neck region? (1) skin, (2) thyroid gland, (3) lens of the eye, and (4) bone marrow",
+  "answers": [
+    "1, 2, 3, 4",
+    "1, 2, 3",
+    "1, 2, 4",
+    "2, 4"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Precautions should be taken to protect the skin, thyroid gland, and lens of the eye during dental imaging."
+},
+
+//20
+{
+  "question": "The traditional unit of dose is called",
+  "answers": [
+    "the roentgen (R).",
+    "the radiation absorbed dose (rad).",
+    "the roentgen equivalent in man (rem).",
+    "the gray (Gy)."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "The traditional unit of dose is the radiation absorbed dose (rad)."
+},
+//21
+{
+  "question": "One gray is equivalent to ______ rad(s).",
+  "answers": [
+    "1",
+    "10",
+    "100",
+    "1000"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "One gray is equivalent to 100 rads. The gray is the SI unit for measuring absorbed radiation dose."
+},
+
+//22
+{
+  "question": "The SI equivalent of the rem is",
+  "answers": [
+    "the rad.",
+    "the gray.",
+    "the sievert.",
+    "the roentgen."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "The sievert (Sv) is the SI equivalent of the rem, used for measuring radiation dose equivalent."
+},
+
+//23
+{
+  "question": "You could be exposed to each of these radiation sources in your daily activities. Which of these sources is human-made?",
+  "answers": [
+    "Radon gas",
+    "Atomic fallout",
+    "Terrestrial radiation",
+    "Radioactive potassium"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Atomic fallout is a human-made source of radiation, while radon gas, terrestrial radiation, and radioactive potassium are natural sources."
+},
+
+//24
+{
+  "question": "Uranium is an example of __________ radiation.",
+  "answers": [
+    "terrestrial",
+    "cosmic",
+    "artificial",
+    "internal"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Uranium is an example of terrestrial radiation, which comes from radioactive materials in the Earth's crust."
+},
+
+//25
+{
+  "question": "__________ is/are the single largest contributor to artificial radiation exposure (0.00053 Sv/year).",
+  "answers": [
+    "Consumer products",
+    "Medical radiation",
+    "Fallout from atomic weapons",
+    "The nuclear fuel cycle"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Medical radiation, including x-rays and radiation therapy, is the largest contributor to artificial radiation exposure."
+},
+
+//26
+{
+  "question": "Which of the following statements is true of the average dose of background radiation received by an individual in the United States?",
+  "answers": [
+    "The average dose of background radiation a person living in the United States receives each year is 6.2 mSv.",
+    "Geographic areas at higher elevations are associated with increased amounts of cosmic radiation.",
+    "Geographic areas that contain more radioactive materials are associated with increased amounts of cosmic radiation.",
+    "A wood home has a higher natural radiation level than a brick home."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Higher elevations are associated with increased cosmic radiation. Background radiation averages around 3.1 mSv per year (excluding medical sources), and brick homes have a slightly higher natural radiation level than wood homes."
+},
+
+//27
+{
+  "question": "The potential risk of dental radiography inducing a fatal cancer in an individual is about _________ the risk of a person developing cancer spontaneously.",
+  "answers": [
+    "1/10",
+    "1/100",
+    "1/1000",
+    "1/1,000,000"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "The risk of dental radiography inducing a fatal cancer is about 1 in 1,000,000, which is much lower than the spontaneous risk of cancer."
+},
+
+//28
+{
+  "question": "A 1 in 1 million risk of a fatal outcome is associated with which of the following activities?",
+  "answers": [
+    "Riding 10 miles on a bike",
+    "Riding 300 miles in an auto",
+    "Riding 1000 miles in an airplane",
+    "All three of the above activities"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "A 1 in 1 million risk of a fatal outcome is associated with riding 10 miles on a bike, 300 miles in an auto, or 1000 miles in an airplane."
+},
+
+//29
+{
+  "question": "Risk estimates suggest (1) that death is more likely to occur from common activities than from dental imaging procedures and (2) that cancer is much more likely to be unrelated to dental imaging radiation exposure.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Both statements are true. The risk of death from everyday activities is higher than from dental imaging procedures, and most cancers are unrelated to dental imaging radiation."
+},
+
+//30
+{
+  "question": "The use of F-speed film instead of D-speed film reduces the absorbed dose by ____%.",
+  "answers": [
+    "10",
+    "25",
+    "50",
+    "60"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "The use of F-speed film reduces radiation exposure by up to 60% compared to D-speed film."
+},
+
+//31
+{
+  "question": "Your patient is concerned about radiation exposure. Which of the following explanations would you give to your patient to help calm her concerns?",
+  "answers": [
+    "I will be using a digital sensor; this will reduce x-ray exposure by 30% over the use of conventional film.",
+    "I am using this collimator attachment, which will decrease the x-ray dose you receive by 60% to 70%.",
+    "I will be using the bisecting technique for receptor placement, which will reduce exposure.",
+    "A sign of excessive radiation exposure to the skin is reddening or erythema. I would have to take more than 30 exposures using film, not digital, during a 14-day period to cause reddening. I will only be taking 20 digital x-rays."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Using a collimator can reduce a patient's x-ray dose by 60% to 70%, which helps alleviate concerns about radiation exposure."
+},
+
+//32
+{
+  "question": "Which of the following combinations will result in the lowest absorbed dose for the patient from a 20-film series of dental radiographs?",
+  "answers": [
+    "Round collimation with digital sensor",
+    "Rectangular collimation with digital sensor",
+    "Round collimation with F-speed film",
+    "Rectangular collimation with F-speed film"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Rectangular collimation with a digital sensor provides the lowest absorbed dose to the patient by minimizing scatter radiation."
+},
+
+//33
+{
+  "question": "Your patient is receiving radiation treatments for breast cancer. She reports having a burning sore throat and great difficulty swallowing. Which stage of the radiation injury sequence is your patient in?",
+  "answers": [
+    "Injury",
+    "Recovery",
+    "Latent",
+    "Cumulative effects"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "The patient is in the injury stage, where symptoms of radiation exposure, such as burning and difficulty swallowing, are experienced."
+},
+
+//34
+{
+  "question": "Your patient is concerned about being exposed to dental x-rays. Which of the following could you tell your patient to alleviate her fears?",
+  "answers": [
+    "We take x-rays once a year, it is safe, and that is all your insurance will pay for.",
+    "Your risk of getting cancer from dental x-rays is only 2 times greater than getting cancer spontaneously.",
+    "The risks from dental imaging are not significantly greater than the risks of other everyday activities in modern life.",
+    "Three fourths of the radiation exposure you will have throughout your life will come from background radiation."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Telling the patient that the risks from dental imaging are comparable to other everyday activities can help reduce fear of radiation exposure."
+},
+
+//35
+{
+  "question": "Explain to your patient the steps, in order, in the formation of hydrogen peroxide, a toxin that will cause damage to living tissues.",
+  "answers": [
+    "1. Free radicals combine\n2. Free radical formation\n3. Cellular dysfunction and biologic damage\n4. X-ray photons are absorbed by water",
+    "4. X-ray photons are absorbed by water\n2. Free radical formation\n1. Free radicals combine\n3. Cellular dysfunction and biologic damage",
+    "2. Free radical formation\n1. Free radicals combine\n4. X-ray photons are absorbed by water\n3. Cellular dysfunction and biologic damage",
+    "2. Free radical formation\n4. X-ray photons are absorbed by water\n1. Free radicals combine\n3. Cellular dysfunction and biologic damage"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "The process begins with x-ray photons being absorbed by water, leading to free radical formation, combination of free radicals, and eventual cellular damage."
+},
+
+//36
+{
+  "question": "The bombing at Nagasaki and Hiroshima took place in 1945; an increase in the incidence of cancer was noted in 1956. Which effects apply to the cancer incidence?",
+  "answers": [
+    "Short-term, somatic",
+    "Long-term, somatic",
+    "Short-term, genetic",
+    "Long-term, genetic"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "The cancer increase noted in 1956 is an example of long-term, somatic effects of radiation."
+},
+//1
+{
+  "question": "Which of the following should you do prior to taking x-rays to protect your patient from radiation exposure?",
+  "answers": [
+    "Proper film processing",
+    "Proper prescribing of radiographs",
+    "A lead apron",
+    "A thyroid collar"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Proper prescribing of radiographs reduces unnecessary radiation exposure to patients."
+},
+
+//2
+{
+  "question": "The “Guidelines for Prescribing Dental Radiographs” state that",
+  "answers": [
+    "Dentulous adult recall patients at increased risk for caries should have posterior bite-wing examinations at 12- to 24-month intervals.",
+    "X-rays are not taken on patients who are pregnant unless absolutely necessary.",
+    "Edentulous adults should have posterior bite-wing examinations at 12- to 36-month intervals.",
+    "Dentulous adult recall patients who are not at increased risk for caries should have posterior bite-wing examinations at 24- to 36-month intervals."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Dentulous adult recall patients who are not at increased risk for caries should have posterior bite-wing examinations at 24- to 36-month intervals."
+},
+
+//3
+{
+  "question": "Inherent filtration in the dental x-ray tubehead",
+  "answers": [
+    "Includes filtration that takes place when the primary beam passes through the glass window of the x-ray tube, the insulating oil, and the tubehead seal.",
+    "Includes the placement of aluminum discs in the path of the x-ray beam between the collimator and the tubehead seal.",
+    "Alone meets the standards regulated by state and federal law.",
+    "Is equivalent to approximately 5.0 mm of aluminum."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Inherent filtration includes the filtration provided by the x-ray tubehead components such as the glass window, insulating oil, and tubehead seal."
+},
+
+//4
+{
+  "question": "Added filtration in the dental x-ray tubehead",
+  "answers": [
+    "Refers to the placement of tungsten discs in the path of the x-ray beam between the collimator and the tubehead seal.",
+    "Filters out shorter-wavelength x-rays from the x-ray beam.",
+    "Results in a lower-energy beam.",
+    "Results in a more penetrating useful beam."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Added filtration removes lower-energy x-rays, resulting in a more penetrating and useful beam."
+},
+
+//5
+{
+  "question": "State and federal laws require that dental x-ray machines operating above 70 kVp have a minimum total (inherent plus added filtration) of ____ mm of aluminum filtration.",
+  "answers": [
+    "1.5",
+    "2.0",
+    "2.5",
+    "5.0"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Dental x-ray machines operating above 70 kVp require a minimum total filtration of 2.5 mm of aluminum."
+},
+
+//6
+{
+  "question": "The collimator ____________.",
+  "answers": [
+    "Is always round",
+    "Restricts the size and shape of the x-ray beam",
+    "Is a solid piece of aluminum",
+    "Is fitted within the copper stem beneath the molybdenum cup"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "The collimator restricts the size and shape of the x-ray beam, reducing patient exposure."
+},
+
+//7
+{
+  "question": "A circular collimator produces a cone-shaped beam that is __________ inch(es) in diameter.",
+  "answers": [
+    "<1",
+    "1.25",
+    "2.75",
+    "5.0"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "A circular collimator produces a cone-shaped beam with a diameter of 2.75 inches."
+},
+
+//8
+{
+  "question": "A rectangular collimator",
+  "answers": [
+    "Restricts the beam 3 times more than a circular collimator.",
+    "Restricts the beam less than a circular collimator.",
+    "Decreases patient exposure considerably.",
+    "Is considerably larger than a size 2 intraoral receptor."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "A rectangular collimator reduces patient exposure by limiting the beam to a smaller area."
+},
+
+//9
+{
+  "question": "Which of the following types of position-indicating devices (PIDs) produce excess scatter radiation?",
+  "answers": [
+    "Rectangular",
+    "Conical",
+    "Round",
+    "Square"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Conical PIDs are known to produce excess scatter radiation and are not recommended."
+},
+
+//10
+{
+  "question": "Which type of PID would be most effective in reducing patient exposure?",
+  "answers": [
+    "Conical",
+    "A 16-inch round PID",
+    "An 8-inch rectangular PID",
+    "A 16-inch rectangular PID"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "A 16-inch rectangular PID is the most effective in reducing patient exposure due to its focused beam."
+},
+
+//11
+{
+  "question": "The thyroid collar",
+  "answers": [
+    "Is recommended for all intraoral exposures.",
+    "Is recommended for all extraoral exposures.",
+    "Is placed over the patient’s chest and lap and extends to protect the thyroid.",
+    "Is recommended for both intraoral and extraoral exposures."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "The thyroid collar is recommended for all intraoral exposures to protect the thyroid gland."
+},
+
+//12
+{
+  "question": "The lead apron",
+  "answers": [
+    "Is recommended for intraoral exposures.",
+    "Is not recommended for extraoral exposures.",
+    "Is an option; use is not mandated by any state or federal law.",
+    "Is used to protect the thyroid gland."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "The lead apron is recommended for all intraoral exposures to protect the patient from scatter radiation."
+},
+
+//13
+{
+  "question": "____-speed film is currently the fastest intraoral film available.",
+  "answers": [
+    "D",
+    "E",
+    "F",
+    "G"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "F-speed film is currently the fastest intraoral film available, reducing patient exposure to radiation."
+},
+
+//14
+{
+  "question": "On some dental x-ray machines, only the ____________ can be altered; the other parameters are preset by the manufacturer.",
+  "answers": [
+    "Kilovoltage",
+    "Exposure time",
+    "PID length",
+    "Milliamperage"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "On some machines, only the exposure time can be adjusted, while other factors are preset."
+},
+
+//15
+{
+  "question": "Which of the following can you do after x-ray receptor exposure to reduce(s) the amount of x-radiation your patient receives?",
+  "answers": [
+    "Proper placement of the lead apron",
+    "Proper image retrieval",
+    "Proper instrument technique",
+    "Selecting proper exposure settings"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Selecting proper exposure settings can reduce the amount of x-radiation a patient receives."
+},
+
+//16
+{
+  "question": "The primary dictum of operator protection guidelines is that the operator must",
+  "answers": [
+    "Remain in the room with the patient while the receptor is being exposed.",
+    "Avoid the primary beam.",
+    "Hold the receptor in the patient’s mouth with their own finger.",
+    "Hold the tubehead during x-ray exposure."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Operators must avoid the primary beam at all times for safety."
+},
+
+//17
+{
+  "question": "In order to avoid the primary beam while taking dental images, you should stand at a ____-degree to ____-degree angle to the beam.",
+  "answers": [
+    "0; 45",
+    "45; 90",
+    "90; 135",
+    "135; 180"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Standing at a 90- to 135-degree angle to the beam minimizes exposure to the primary beam."
+},
+
+//18
+{
+  "question": "Radiation monitoring can be used to protect the dental radiographer and includes monitoring of",
+  "answers": [
+    "Equipment but not personnel.",
+    "Personnel but not equipment.",
+    "Both equipment and personnel.",
+    "Drywall for residual radiation"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Radiation monitoring includes both equipment and personnel to ensure safety."
+},
+
+//19
+{
+  "question": "A film badge",
+  "answers": [
+    "Is worn at waist level by the patient.",
+    "Is worn at waist level by the operator.",
+    "Is clipped to the shirt pocket of the operator.",
+    "Is clipped to the shirt pocket of the patient."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "A film badge is worn at waist level by the operator to monitor radiation exposure."
+},
+
+//20
+{
+  "question": "(1) Radiation legislation varies greatly from state to state. (2) For example, in some states a dental radiographer must successfully complete a radiation safety examination before he or she may expose dental x-rays.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Both statements are true as radiation safety laws and certifications vary by state."
+},
+
+//21
+{
+  "question": "According to the current recommendations of the National Council on Radiation Protection and Measurements, the current MPD for occupationally exposed persons is ___________/year.",
+  "answers": [
+    "5.0 mSv",
+    "50 mSv",
+    "500 mSv",
+    "5000 mSv"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "The current maximum permissible dose (MPD) for occupationally exposed persons is 50 mSv/year."
+},
+
+//22
+{
+  "question": "According to the current recommendations of the National Council on Radiation Protection and Measurements, the current MPD for an occupationally exposed pregnant woman is the equivalent of",
+  "answers": [
+    "50 mSv/year.",
+    "0.05 Sv per month.",
+    "0.5 mSv/month.",
+    "0.01 mSv/month."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "The MPD for an occupationally exposed pregnant woman is 0.5 mSv/month."
+},
+
+//23
+{
+  "question": "The acronym for the maximum dose equivalent that a body is permitted to receive within a specific period is the",
+  "answers": [
+    "MPD—maximum permissible dose",
+    "MPD—maximum possible dose",
+    "MAD—maximum accumulated dose",
+    "MAD—maximum allowed dose"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "MPD stands for maximum permissible dose, which is the highest dose allowed in a given period."
+},
+
+//24
+{
+  "question": "The ALARA concept states that all radiation must be kept",
+  "answers": [
+    "As long as readily achievable.",
+    "As low as reasonably allowable.",
+    "As low as reasonably achievable.",
+    "As long as reliably achievable."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "ALARA stands for 'As Low As Reasonably Achievable,' a safety principle in radiation exposure."
+},
+
+//25
+{
+  "question": "You are in charge of monitoring the film badges. Film badges are checked on a quarterly basis. Your co-worker is 4 months pregnant. The badge registered 5.0 Sv for the previous quarter. Based on the National Council on Radiation Protection and Measurements (NCRP), what information should you give the dentist?",
+  "answers": [
+    "The reading is well below the allowable limit. Nothing needs to be done.",
+    "The reading is at the allowable limit. Nothing needs to be done.",
+    "The reading is at the allowable limit. She has reached her maximum dosage and cannot have any more exposure during the pregnancy.",
+    "She has exceeded her maximum dosage and cannot have any more exposure during the pregnancy."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "A reading of 5.0 Sv exceeds the allowable dose for pregnant women, and further exposure should be avoided."
+},
+
+//26
+{
+  "question": "You are 36 years old. What is your cumulative occupational dose recommended by the National Council on Radiation Protection and Measurements (NCRP)?",
+  "answers": [
+    "360 millirems",
+    "360 mSv",
+    "180 millirems",
+    "180 mSv"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "The cumulative dose for occupational exposure is calculated as age in years times 10 mSv, so for a 36-year-old, the recommended dose is 360 mSv."
+},
+
+//27
+{
+  "question": "Your patient is a 5-year-old boy who you have been seeing since he was 3 years old. He is always eating candy and drinking cola beverages. Six months ago he had A, J, and T restored. One year ago he had B, I, and L restored. His dental insurance has coverage for one set of four bite-wing images once per calendar year. Which of the following should you do regarding taking radiographs?",
+  "answers": [
+    "Take bite-wing images today.",
+    "Insurance covers bite-wings once a year, take the dental images in 6 months.",
+    "Re-evaluate in 1 year for the need for dental images.",
+    "Dental images are taken every 2 years."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Due to the patient’s history of caries, bite-wing images should be taken today."
+},
+
+//28
+{
+  "question": "Your next patient is a 35-year-old man who you have been seeing for the past 10 years. The only treatment he has needed since coming to the dental practice has been his 6-month “prophys.” He has no periodontal issues and is on a 6-month recall cycle. You last took four bite-wing images 1 year ago. Which of the following should you do?",
+  "answers": [
+    "Take bite-wings during this appointment.",
+    "Take the images in 6 months.",
+    "Take the images in 1 to 2 years.",
+    "No images will be needed for 5 years."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Based on the patient's low risk and lack of caries, bite-wings should be taken in 1 to 2 years."
+},
+//1
+{
+  "question": "In dental radiography, the term ________ is used to describe the mean energy or penetrating ability of the x-ray beam.",
+  "answers": [
+    "Quality",
+    "Quantity",
+    "Intensity",
+    "Wavelength"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Quality refers to the mean energy or penetrating ability of the x-ray beam."
+},
+
+//2
+{
+  "question": "Which of the following statements is true of wavelength in reference to radiation?",
+  "answers": [
+    "X-rays with shorter wavelength have less penetrating power.",
+    "X-rays with longer wavelength have less penetrating power.",
+    "X-rays with longer wavelength are less likely to be absorbed by matter.",
+    "Milliamperage controls the wavelength and energy of the x-ray beam."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "X-rays with longer wavelengths have less penetrating power."
+},
+
+//3
+{
+  "question": "____________ is a measurement of force that refers to the potential difference between two electrical charges.",
+  "answers": [
+    "Exposure time",
+    "Wavelength",
+    "Voltage",
+    "Ampere"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Voltage measures the potential difference between two electrical charges."
+},
+
+//4
+{
+  "question": "When the kilovoltage is increased",
+  "answers": [
+    "Electrons move from the anode to the cathode with more speed.",
+    "Photons move from the anode to the cathode with more speed.",
+    "Electrons move from the cathode to the anode with more speed.",
+    "Photons move from the cathode to the anode with more speed."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "When kilovoltage increases, electrons move from the cathode to the anode with more speed, creating a higher energy x-ray beam."
+},
+
+//5
+{
+  "question": "Which of the following statements is true of the use of voltage in dental x-ray equipment?",
+  "answers": [
+    "Dental x-ray equipment requires the use of 3 to 5 volts for the production of x-rays.",
+    "Dental x-ray equipment requires the use of less than 60 kilovolts for the production of x-rays.",
+    "Dental x-ray equipment uses more than 70 kilovolts for the production of x-rays.",
+    "Dental x-ray equipment requires the use of 60 to 70 kilovolts for the production of x-rays."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Dental x-ray equipment typically uses 60 to 70 kilovolts for the production of x-rays."
+},
+
+//6
+{
+  "question": "When contrasted with the use of 70 kV for dental x-rays, the use of 60 kV produces",
+  "answers": [
+    "More penetrating dental x-rays with longer wavelength.",
+    "Less penetrating dental x-rays with longer wavelength.",
+    "More penetrating dental x-rays with shorter wavelength.",
+    "Less penetrating dental x-rays with shorter wavelength."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Using 60 kV produces less penetrating dental x-rays with longer wavelengths."
+},
+
+//7
+{
+  "question": "The kV represents",
+  "answers": [
+    "The mean x-ray tube voltage.",
+    "The mean filament voltage.",
+    "The maximum or peak voltage of an alternating current.",
+    "The maximum or peak voltage of a direct current."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "kV represents the maximum or peak voltage of an alternating current."
+},
+
+//8
+{
+  "question": "When kilovolt is increased, a",
+  "answers": [
+    "Lower energy x-ray beam with increased penetrating ability results.",
+    "Lower energy x-ray beam with decreased penetrating ability results.",
+    "Higher energy x-ray beam with increased penetrating ability results.",
+    "Higher energy x-ray beam with decreased penetrating ability results."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "An increase in kilovolts results in a higher energy x-ray beam with increased penetrating ability."
+},
+
+//9
+{
+  "question": "(1) Density is the overall darkness or blackness of a dental image. (2) When the kilovoltage is increased while other exposure factors remain constant, the resultant image exhibits a decreased density and appears lighter.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "The first statement is true; however, increasing kilovoltage increases density, resulting in a darker image."
+},
+
+//10
+{
+  "question": "When lower kilovoltage settings are used, an image with ____ will result.",
+  "answers": [
+    "High contrast",
+    "Low contrast",
+    "Many shades of gray",
+    "There is no change in contrast"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Lower kilovoltage settings produce an image with high contrast."
+},
+
+//11
+{
+  "question": "An image with 'low' contrast",
+  "answers": [
+    "Is useful for the detection of periodontal or periapical disease and has many shades of gray.",
+    "Is useful for the detection and progression of dental caries and has many shades of gray.",
+    "Is useful for the detection of periodontal or periapical disease and has many black and white areas.",
+    "Is useful for the detection and progression of dental caries and has many black and white areas."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Low contrast images with many shades of gray are useful for detecting periodontal or periapical disease."
+},
+
+//12
+{
+  "question": "Exposure time is measured in",
+  "answers": [
+    "kV.",
+    "Milliamperage.",
+    "Density.",
+    "Hundredths of a second."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Exposure time is measured in hundredths of a second for precision in dental imaging."
+},
+
+//13
+{
+  "question": "The quantity of the x-rays produced is controlled by",
+  "answers": [
+    "Voltage.",
+    "Kilovoltage.",
+    "Kilovoltage peak.",
+    "Milliamperage."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Milliamperage controls the quantity of x-rays produced."
+},
+
+//14
+{
+  "question": "Amperage regulates the _________ of electrons produced at the cathode filament.",
+  "answers": [
+    "Quality",
+    "Quantity",
+    "Speed",
+    "Power"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Amperage regulates the quantity of electrons produced at the cathode filament."
+},
+
+//15
+{
+  "question": "In regard to increasing density",
+  "answers": [
+    "An increase in either kV or mA will increase density.",
+    "An increase in kV will increase density, but an increase in mA will not increase density.",
+    "An increase in mA will increase density, but an increase in kV will not increase density.",
+    "Neither an increase in kV nor an increase in mA will increase density."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "An increase in either kilovoltage or milliamperage will increase the density of the image."
+},
+
+//16
+{
+  "question": "Which of the following changes will increase x-ray beam intensity?",
+  "answers": [
+    "Decreasing the kilovoltage",
+    "Decreasing the milliamperage",
+    "Decreasing the exposure time",
+    "Decreasing the source-to-film distance"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Decreasing the source-to-film distance increases x-ray beam intensity by reducing the distance over which the beam spreads."
+},
+
+//17
+{
+  "question": "According to the inverse square law, the intensity of radiation is __________ proportional to the ______________ from the source of radiation.",
+  "answers": [
+    "Directly; distance",
+    "Directly; square of the distance",
+    "Inversely; distance",
+    "Inversely; square of the distance"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "The inverse square law states that radiation intensity is inversely proportional to the square of the distance from the source."
+},
+
+//18
+{
+  "question": "According to the inverse square law, if the length of the PID is halved, the resultant beam is ___________ as intense.",
+  "answers": [
+    "Four times",
+    "Twice",
+    "Half",
+    "One quarter"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "If the length of the PID is halved, the resultant beam is twice as intense according to the inverse square law."
+},
+
+//19
+{
+  "question": "Aluminum filters are used to remove _______-energy, ________ wavelength x-rays.",
+  "answers": [
+    "Low; longer",
+    "High; longer",
+    "Low; shorter",
+    "High; shorter"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Aluminum filters remove low-energy, longer-wavelength x-rays to reduce patient exposure to radiation."
+},
+
+//20
+{
+  "question": "Aluminum filters",
+  "answers": [
+    "Remove more penetrating x-rays from the beam.",
+    "Decrease the mean penetrating ability of the x-ray beam.",
+    "Remove high-energy x-rays from the beam.",
+    "Reduce the intensity of the x-ray beam."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Aluminum filters reduce the intensity of the x-ray beam by removing low-energy x-rays."
+},
+
+//21
+{
+  "question": "You have been using a dental x-ray machine that has an 8-inch PID. Your new machine has a 16-inch PID. Given that all exposure factors remain the same, according to the inverse square law, the resultant beam would be ___________ as intense.",
+  "answers": [
+    "Four times",
+    "Twice",
+    "Half",
+    "One quarter"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "According to the inverse square law, a 16-inch PID produces a beam one quarter as intense as an 8-inch PID."
+},
+
+//22
+{
+  "question": "(1) As kilovoltage, milliamperage, and time increase, x-ray beam intensity decreases. (2) As distance and filtration increase, the intensity of the x-ray beam increases.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Both statements are false; increases in kilovoltage, milliamperage, and time increase beam intensity, while increased distance and filtration reduce it."
+},
+
+//23
+{
+  "question": "You have taken your first dental image on your patient. The contrast is high and you are looking for periodontal disease. You are using a DC machine and you have control of your settings. You have a 60- to 70-kV range and a 6- to 8-mA range. You had the kV set at 60, the mA set at 7, and the exposure time set at 6/100 of a second. While leaving all other settings the same, which setting would you adjust to create better contrast for detecting periodontal disease?",
+  "answers": [
+    "Increase kV to 70.",
+    "Increase mA to 8.",
+    "Decrease mA to 6.",
+    "Increase time to 7/100."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Increasing the kV to 70 will create lower contrast, which is better for detecting periodontal disease."
+},
+
+//24
+{
+  "question": "You are going to take dental images on your patient. He is larger than average. What machine setting adjustment should you make prior to taking dental images?",
+  "answers": [
+    "Increase kV.",
+    "Increase mA.",
+    "Increase exposure time.",
+    "You don’t need to make any adjustments."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Increasing the exposure time is a common adjustment for larger patients to ensure the x-ray penetrates properly."
+},
+//1
+{
+  "question": "Which of the following areas would appear the most radiopaque on a dental image?",
+  "answers": [
+    "Composite",
+    "Amalgam",
+    "Air space",
+    "Enamel"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Amalgam appears the most radiopaque because it is a dense metal, blocking more x-rays."
+},
+
+//2
+{
+  "question": "Density is defined as",
+  "answers": [
+    "A radiopaque image.",
+    "A radiolucent image.",
+    "The overall blackness or darkness of an image.",
+    "The difference in degrees of blackness between adjacent areas on a dental image."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Density refers to the overall blackness or darkness of a dental image."
+},
+
+//3
+{
+  "question": "You are showing your patient a bite-wing image. Your patient points to a portion of the tooth that is the most radiopaque and wants to know what it is. What portion of the tooth is your patient pointing to?",
+  "answers": [
+    "The enamel",
+    "The pulp",
+    "The dentin",
+    "The periodontal ligament space"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "The enamel is the most radiopaque part of the tooth due to its density."
+},
+
+//4
+{
+  "question": "Radiolucent refers to that portion of a dental image that is",
+  "answers": [
+    "Black.",
+    "White.",
+    "Contains the tooth.",
+    "Within the plastic base."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Radiolucent areas appear black on a dental image because they allow x-rays to pass through."
+},
+
+//5
+{
+  "question": "If the milliamperage is increased, the receptor density ________, and the image appears _________.",
+  "answers": [
+    "Increases; lighter",
+    "Increases; darker",
+    "Decreases; darker",
+    "Decreases; lighter"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Increasing milliamperage increases the number of x-rays produced, which increases density, making the image darker."
+},
+
+//6
+{
+  "question": "If the operating kilovoltage is increased, the receptor density ____ because the average energy of the x-rays is raised.",
+  "answers": [
+    "Increases",
+    "Decreases",
+    "Remains the same",
+    "Is divided by two"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Increasing kilovoltage increases the energy of x-rays, which raises receptor density."
+},
+
+//7
+{
+  "question": "You have to retake a dental image on your patient because the image is too light and is undiagnostic. Which of the following could you change to produce an image with increased density?",
+  "answers": [
+    "Increasing the exposure time",
+    "Increasing the subject thickness",
+    "Decreasing the milliamperage",
+    "Decreasing the operating kilovoltage"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Increasing the exposure time allows more x-rays to reach the receptor, increasing density."
+},
+
+//8
+{
+  "question": "The teeth on your patient’s images appear very radiopaque and the periodontium and tissue appear very radiolucent. Your patient’s dental image has",
+  "answers": [
+    "High density.",
+    "Low density.",
+    "Low contrast.",
+    "High contrast."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "The image has high contrast, with distinct radiopaque and radiolucent areas."
+},
+
+//9
+{
+  "question": "A dental image that has ______________ is said to have high contrast.",
+  "answers": [
+    "A very dark overall appearance",
+    "A very light overall appearance",
+    "Many shades of gray",
+    "Very dark areas and very light areas"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "High contrast images have very dark areas and very light areas with fewer shades of gray."
+},
+
+//10
+{
+  "question": "An increase in ___________ temperature will result in a film with increased contrast.",
+  "answers": [
+    "Development",
+    "Water bath",
+    "Fixer",
+    "Room"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Increasing the development temperature enhances contrast by speeding up chemical reactions."
+},
+
+//11
+{
+  "question": "The range of useful densities seen on a dental image is termed the",
+  "answers": [
+    "Film contrast.",
+    "Subject contrast.",
+    "Scale of contrast.",
+    "Kilovoltage peak."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "The scale of contrast refers to the range of densities on a dental image."
+},
+
+//12
+{
+  "question": "A stepwedge will reveal that images taken at a lower kV will have __________ than images taken at a higher kV.",
+  "answers": [
+    "More shades of gray",
+    "Higher contrast",
+    "Lower contrast",
+    "Both A and C"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Lower kV produces images with higher contrast (fewer shades of gray)."
+},
+
+//13
+{
+  "question": "The typical stepwedge is constructed of",
+  "answers": [
+    "Aluminum.",
+    "Steel.",
+    "Wood.",
+    "Copper."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "A stepwedge is typically made of aluminum to demonstrate density and contrast in images."
+},
+
+//14
+{
+  "question": "A stepwedge will reveal that images taken at a higher kV will have _____________ versus images taken at a lower kV.",
+  "answers": [
+    "Long-scale contrast",
+    "High contrast",
+    "Only two densities",
+    "Many areas of black and white"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Higher kV results in long-scale contrast with many shades of gray."
+},
+
+//15
+{
+  "question": "The geometric characteristic of _____________ refers to an image that appears larger than the actual size of the object it represents.",
+  "answers": [
+    "Magnification",
+    "Distortion",
+    "Sharpness",
+    "Parallax"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Magnification refers to the enlargement of an image compared to the object’s actual size."
+},
+
+//16
+{
+  "question": "Which of the following influencing factors would degrade sharpness?",
+  "answers": [
+    "1. Smaller silver halide crystal size",
+    "2. Larger silver halide crystal size",
+    "3. Smaller focal spot",
+    "4. Larger focal spot"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Larger silver halide crystals and larger focal spots degrade sharpness."
+},
+
+//17
+{
+  "question": "The primary factor that limits the size of the tungsten target is",
+  "answers": [
+    "The cost of the materials.",
+    "Heat production.",
+    "The limited kinetic energy of the electrons.",
+    "The limited kinetic energy of the photons."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Heat production is the primary factor that limits the size of the tungsten target."
+},
+
+//18
+{
+  "question": "Which of the following factors would improve image sharpness?",
+  "answers": [
+    "Larger focal spot",
+    "Larger crystal size in the film",
+    "Smaller crystal size in the film",
+    "Patient movement during x-ray exposure"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Smaller crystal size improves sharpness by reducing image graininess."
+},
+
+//19
+{
+  "question": "In order to use the paralleling technique when taking periapical images on your patient, you will need to place the receptor approximately an inch from the teeth. Which of the following will you need to do to decrease image magnification?",
+  "answers": [
+    "Increase target-receptor distance.",
+    "Decrease target-receptor distance.",
+    "Decrease source to object distance.",
+    "There is no change in magnification; therefore, no changes need to be made."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Increasing the target-receptor distance reduces magnification in the paralleling technique."
+},
+
+//20
+{
+  "question": "A longer position-indicating device (PID) results in",
+  "answers": [
+    "An increased target-receptor distance.",
+    "A more divergent x-ray beam.",
+    "More image magnification than when a shorter PID is used.",
+    "An increased object-receptor distance."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "A longer PID increases the target-receptor distance, reducing magnification."
+},
+
+//21
+{
+  "question": "To minimize dimensional distortion, the object and receptor must be _____________ one another.",
+  "answers": [
+    "Perpendicular to",
+    "Parallel to",
+    "At a 45-degree angle to",
+    "More than the length of the PID apart from"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Parallel alignment of the object and receptor minimizes dimensional distortion."
+},
+
+//22
+{
+  "question": "You are taking dental images on your patient. You have directed the position indicating device (PID) perpendicular to the tooth and the receptor. Which of the following would you minimize by doing this?",
+  "answers": [
+    "Sharpness",
+    "Grain size",
+    "Focal spot size",
+    "Dimensional distortion"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Directing the PID perpendicular to the tooth and receptor minimizes dimensional distortion."
+},
+//1
+{
+  "question": "The Consumer-Patient Radiation Health and Safety Act",
+  "answers": [
+    "1. Outlines requirements for the safe use of dental x-ray equipment. 2. Establishes guidelines for the proper maintenance of x-ray equipment. 3. Requires persons who take dental images to be properly trained and certified.",
+    "1, 2",
+    "2, 3",
+    "1, 3"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "The Consumer-Patient Radiation Health and Safety Act outlines requirements for safe use, maintenance, and certification for dental x-ray operators."
+},
+
+//2
+{
+  "question": "The Consumer-Patient Radiation Health and Safety Act is a ________ law.",
+  "answers": [
+    "Federal",
+    "State",
+    "County",
+    "City"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "The Consumer-Patient Radiation Health and Safety Act is a federal law."
+},
+
+//3
+{
+  "question": "The process of informing the patient about the particulars of exposing dental images is termed",
+  "answers": [
+    "A treatment alternative.",
+    "Disclosure.",
+    "Self-determination.",
+    "Behavior modification."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Disclosure refers to the process of informing the patient about the details of dental image exposure."
+},
+
+//4
+{
+  "question": "Informed consent",
+  "answers": [
+    "Must be in language that the patient can readily understand.",
+    "Does not require that patients have their questions answered before x-ray exposure.",
+    "Is waived if the patient is a minor.",
+    "Does not require that patients receive enough information to make informed choices."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Informed consent must be in language the patient can understand and must include the opportunity to ask questions."
+},
+
+//5
+{
+  "question": "If the patient is a minor, informed consent",
+  "answers": [
+    "Is waived.",
+    "May still be obtained from the patient.",
+    "Must be obtained from the parent.",
+    "Must be obtained from a legal guardian."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "If the patient is a minor, informed consent must be obtained from a legal guardian."
+},
+
+//6
+{
+  "question": "Generally, there are ____ elements to informed consent.",
+  "answers": [
+    "Two",
+    "Three",
+    "Four",
+    "Six"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "There are generally six elements to informed consent: purpose, risks, benefits, alternatives, opportunity for questions, and permission."
+},
+
+//7
+{
+  "question": "If you take dental images on your patient before getting his informed consent, your patient can legally claim",
+  "answers": [
+    "Conflict of interest.",
+    "Statute of limitations.",
+    "Malpractice or negligence.",
+    "Disclosure."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Taking images without informed consent can result in a claim of malpractice or negligence."
+},
+
+//8
+{
+  "question": "Which of the following constitutes a person who can provide legal informed consent?",
+  "answers": [
+    "An individual under the influence of drugs or alcohol",
+    "An adult (over the age of 18) who is of sound mind",
+    "An individual who under duress has consented to the treatment",
+    "An individual who received an incomplete description of the proposed treatment"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Only an adult who is of sound mind can provide legal informed consent."
+},
+
+//9
+{
+  "question": "The trend in dental negligence or malpractice actions has historically been to sue the supervising dentist alone. However, cases exist in which the dentist and the dental auxiliary have both been sued for the actions of the dental auxiliary.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Both statements are true; legal actions may involve both the dentist and the dental auxiliary."
+},
+
+//10
+{
+  "question": "The standard of care can be defined as the quality of care that is provided by dental practitioners in _______ locality under _________________ conditions.",
+  "answers": [
+    "Any; similar or very different",
+    "A similar; the same or similar",
+    "Any; the same or similar",
+    "A similar; similar or very different"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "The standard of care is defined as the care a similar practitioner would provide under similar conditions."
+},
+
+//11
+{
+  "question": "Which of the following statements is true of the statute of limitations?",
+  "answers": [
+    "1. It often begins when the patient discovers or should have discovered that an injury has occurred as a result of dental negligence. 2. It is the time period during which a patient may bring a malpractice action. 3. It may not begin until years after the dental negligence occurred.",
+    "1, 3",
+    "1, 2",
+    "2, 3"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "All statements are true; the statute of limitations often begins when the injury is discovered and can be years after the negligence occurred."
+},
+
+//12
+{
+  "question": "Which of the following statements is true of dental images and the patient’s dental record?",
+  "answers": [
+    "Dental images may be discarded when outdated.",
+    "It is advised to keep patient dental images in a file separate from patient charts.",
+    "The dental record must include documentation of the number and type of dental images exposed.",
+    "Dental images are an optional rather than integral part of the dental record."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Dental records must include documentation of the number and type of images exposed."
+},
+
+//13
+{
+  "question": "You have entered a wrong entry in the dental record. Which of the following should you do?",
+  "answers": [
+    "Erase the entry and write in the correct entry.",
+    "Block out the original entry and write the correct entry next to the original entry.",
+    "Cover the original entry with white-out and write the new entry in over the White-out.",
+    "Draw a single line through the incorrect entry, initial it, write in the correct entry."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "The correct way to correct an entry is to draw a single line through it, initial it, and write the correct entry."
+},
+
+//14
+{
+  "question": "It is appropriate for any dental professional to discuss a patient’s care with",
+  "answers": [
+    "1. Another patient. 2. Office staff members who are not involved in the treatment of the patient. 3. Another dentist involved in the patient’s care. 4. A physician with whom care is shared.",
+    "1, 2, 3",
+    "1, 2",
+    "3, 4"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "It is appropriate to discuss a patient's care with another dentist involved in the patient’s care and a physician with whom care is shared."
+},
+
+//15
+{
+  "question": "Your patient wants her original set of radiographs. She claims they are hers because she paid for them. Which of the following would be the best reply?",
+  "answers": [
+    "Since you paid for them they belong to you.",
+    "If your insurance company paid for them, they belong to the insurance company. They will have to release them to you.",
+    "You will have to sign a waiver before I can release them to you.",
+    "Legally they are the property of the dentist even though you or the insurance company pays for them."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Radiographs are the legal property of the dentist, even though the patient or insurance company paid for them."
+},
+
+//16
+{
+  "question": "Your former patient has moved and would like his records including the original radiographs sent to his new dentist. Which of the following should you do?",
+  "answers": [
+    "Forward the original radiographs to the new dentist.",
+    "Make a duplicate copy to send to the new dentist unless the patient signs a release to send the originals.",
+    "Copy the original films, send the original films, and keep the duplicate set.",
+    "Keep the original films and send the new dentist a duplicate set."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "The dentist should retain the original films and send a duplicate set to the new dentist."
+},
+
+//17
+{
+  "question": "When a patient refuses dental images the dentist has deemed are necessary for treatment planning, the dentist should refuse to treat the patient; however, the patient could sign a release form that would allow the dentist to continue with the patient’s treatment.",
+  "answers": [
+    "Both parts of the statement are true.",
+    "Both parts of the statements are false.",
+    "The first part of the statement is true; the second part of the statement is false.",
+    "The first part of the statement is false; the second part of the statement is true."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "The dentist should refuse to treat a patient if necessary dental images are refused. Signing a waiver does not eliminate the dentist’s liability."
+},
+
+//1
+{
+  "question": "Infection control is critical in your dental operatory because pathogens can be transmitted easily through which of the following? 1. Your patient to you. 2. You to your patient. 3. From one patient to another patient.",
+  "answers": [
+    "1, 2, 3",
+    "1, 3",
+    "2, 3",
+    "1, 2"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Pathogens can be transmitted in all directions in the dental operatory: from patient to operator, operator to patient, and between patients."
+},
+
+//2
+{
+  "question": "Pathogens are",
+  "answers": [
+    "Any microorganisms.",
+    "Bacteria but not viruses.",
+    "Viruses but not bacteria.",
+    "Microorganisms capable of causing disease."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Pathogens are defined as microorganisms capable of causing disease."
+},
+
+//3
+{
+  "question": "Which of the following viruses may be present in oral secretions? 1. Coronavirus (COVID-19) 2. Hepatitis B virus 3. Herpes simplex virus 4. Human immunodeficiency virus",
+  "answers": [
+    "1, 2, 3, 4",
+    "2, 3, 4",
+    "1, 2, 3",
+    "2, 4"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "All of these viruses can be present in oral secretions, requiring stringent infection control measures."
+},
+
+//4
+{
+  "question": "Another term for infection control is __________, which means the absence of pathogens, or disease-causing microorganisms.",
+  "answers": [
+    "Antiseptic",
+    "Antibiotic",
+    "Antiinfective",
+    "Asepsis"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Asepsis refers to the absence of pathogens or disease-causing microorganisms."
+},
+
+//5
+{
+  "question": "Antiseptic is",
+  "answers": [
+    "The absence of pathogens, or disease-causing microorganisms.",
+    "A substance that inhibits the growth of bacteria.",
+    "The use of a chemical or physical procedure to inhibit or destroy pathogens.",
+    "The act of sterilizing."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "An antiseptic is a substance that inhibits the growth of bacteria."
+},
+
+//6
+{
+  "question": "(1) Highly resistant bacterial and mycotic (fungal) spores are not killed during disinfection procedures; (2) however, highly resistant bacterial and mycotic spores are killed during sterilization.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Disinfection does not kill resistant spores, while sterilization does."
+},
+
+//7
+{
+  "question": "Recommendations concerning gloves would fall under which of the following categories of infection control practices that directly relate to dental imaging procedures?",
+  "answers": [
+    "Personal protective equipment",
+    "Hand hygiene and care of hands",
+    "Sterilization and disinfection of instruments",
+    "Cleaning and disinfection of dental unit and environmental surfaces"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Glove use falls under personal protective equipment (PPE) recommendations."
+},
+
+//8
+{
+  "question": "What is important for you to remember about your protective clothing?",
+  "answers": [
+    "Select clothing that prevents skin and mucous membrane exposure to blood or other bodily fluids.",
+    "You can re-wear your protective clothing a second day if it is not visibly soiled.",
+    "You can wear your protective clothing home.",
+    "Disposable protective clothing is required."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Protective clothing must prevent exposure to blood or other bodily fluids."
+},
+
+//9
+{
+  "question": "Which of the following is true regarding your usage of disposable medical gloves?",
+  "answers": [
+    "You may rewash your gloves between patients until they show visible damage.",
+    "You can use nonsterile gloves for examinations and nonsurgical procedures.",
+    "You do not need to wash your hands before gloving.",
+    "You do not need to wash your hands between patients."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Nonsterile gloves are acceptable for nonsurgical procedures, but hand washing is required before and after each use."
+},
+
+//10
+{
+  "question": "Under which of the following conditions must you wear your mask and safety glasses?",
+  "answers": [
+    "Only during surgical procedures",
+    "Whenever the high-speed handpiece is used",
+    "Whenever spatter and aerosolized sprays of blood and saliva are likely",
+    "If desired"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Masks and safety glasses should be worn whenever spatter or aerosolized sprays are likely."
+},
+
+//11
+{
+  "question": "Critical instruments are defined as instruments",
+  "answers": [
+    "That are used to penetrate soft tissue or bone.",
+    "That contact but do not penetrate soft tissue.",
+    "That contact but do not penetrate bone.",
+    "Or devices that do not come in contact with mucous membranes."
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Critical instruments penetrate soft tissue or bone."
+},
+
+//12
+{
+  "question": "In dental imaging, no __________________ are used.",
+  "answers": [
+    "Critical instruments",
+    "Semicritical instruments",
+    "Noncritical instruments",
+    "1, 2, 3"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Dental imaging does not involve the use of critical instruments."
+},
+
+//13
+{
+  "question": "Which of the following is considered to be a semicritical instrument?",
+  "answers": [
+    "The exposure button",
+    "The x-ray control panel",
+    "The lead apron",
+    "Beam alignment devices"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Beam alignment devices are classified as semicritical instruments."
+},
+
+//14
+{
+  "question": "Which of the following can be used for cleaning and disinfection of the dental unit and environmental surfaces?",
+  "answers": [
+    "Bleach-free disinfectant wipes",
+    "EPA-registered chemical germicides that are labeled as hospital disinfectants",
+    "EPA-registered chlorine-containing compounds labeled as both hospital disinfectants and tuberculocidals",
+    "Dishwashing liquid and water"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "EPA-registered chemical germicides labeled as hospital disinfectants are recommended for cleaning and disinfection."
+},
+
+//15
+{
+  "question": "Which of the following should you do to prepare your treatment room prior to taking a dental image?",
+  "answers": [
+    "Wipe with a germicide.",
+    "Follow manufacturer’s instructions for infection control procedures.",
+    "Sterilize critical instruments.",
+    "Wipe with a low-level disinfectant."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "The manufacturer's instructions for infection control should be followed to properly prepare the treatment room."
+},
+
+//16
+{
+  "question": "Covering exposed surfaces with disposable materials ____________ adequate protection ____________ the need for surface cleaning and disinfection between patients.",
+  "answers": [
+    "Provides; while eliminating",
+    "Provides; but does not eliminate",
+    "Does not provide; but does eliminate",
+    "Neither provides; nor eliminates"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Covering exposed surfaces with disposable materials provides protection but does not eliminate the need for cleaning and disinfection between patients."
+},
+
+//17
+{
+  "question": "Which of the following surfaces on the x-ray machine must be covered or disinfected? 1. Control panel 2. Exposure button 3. Tubehead 4. Position-indicating device (PID)",
+  "answers": [
+    "1, 2, 3, 4",
+    "1, 2, 3",
+    "2, 3, 4",
+    "2 only"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "All listed surfaces (control panel, exposure button, tubehead, PID) must be covered or disinfected between patients."
+},
+
+//18
+{
+  "question": "Commercially available plastic barrier envelopes",
+  "answers": [
+    "Seal the film itself within the film packet.",
+    "Minimize contamination after exposure of the film.",
+    "Are made of a material that blocks the passage of photons.",
+    "Are made of a material that blocks the passage of electrons."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Plastic barrier envelopes minimize contamination after the film has been exposed."
+},
+
+//19
+{
+  "question": "Preparation of supplies and equipment involves sterilizing which of the following items?",
+  "answers": [
+    "Film",
+    "Beam alignment devices",
+    "Lead apron",
+    "PID"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Beam alignment devices must be sterilized between uses."
+},
+
+//20
+{
+  "question": "After seating the patient, the radiographer must complete which of the following procedures before washing the hands and putting on gloves? 1. Chair adjustment 2. Headrest adjustment 3. Placement of the lead apron",
+  "answers": [
+    "1, 2, 3",
+    "1, 2",
+    "2, 3",
+    "3 only"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Chair and headrest adjustment and lead apron placement should be done before hand washing and gloving."
+},
+
+//21
+{
+  "question": "Which of the following items should be removed by the patient during preparation for dental image procedures? 1. Eyeglasses 2. Dentures 3. Chewing gum",
+  "answers": [
+    "1, 2, 3",
+    "2, 3",
+    "1, 3",
+    "2 only"
+  ],
+  "correct": 0,
+  "category": "RHS",
+  "rationale": "Patients should remove eyeglasses, dentures, and chewing gum to avoid interference with dental imaging procedures."
+},
+
+//22
+{
+  "question": "Preparation of the dental radiographer should include",
+  "answers": [
+    "Removing film-holding devices before hand washing.",
+    "Removing film-holding devices after hand washing but before placing gloves.",
+    "Mandatory use of a surgical mask and protective eyewear.",
+    "Optional use of a surgical mask and protective eyewear."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Mandatory use of surgical masks and protective eyewear is necessary to prevent exposure to aerosols and spatter."
+},
+
+//23
+{
+  "question": "Exposed receptors should ________ dried and then placed in a _________________ for transport to the darkroom for processing.",
+  "answers": [
+    "Not be; gloved hand",
+    "Be; gloved hand",
+    "Not be; disposable container",
+    "Be; disposable container"
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Exposed receptors should be dried and placed in a disposable container for safe transport to the darkroom."
+},
+
+//24
+{
+  "question": "When handling film with barrier envelopes, the barrier envelopes are opened with __________ hands and the films unwrapped with ______________ hands.",
+  "answers": [
+    "Gloved; gloved",
+    "Gloved; nongloved",
+    "Nongloved; gloved",
+    "Nongloved; nongloved"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "Barrier envelopes are opened with gloved hands, and the films are unwrapped with nongloved hands to prevent contamination."
+},
+
+//25
+{
+  "question": "When handling film with barrier envelopes, the films are unwrapped with _________ hands, and when handling film without barrier envelopes, the films are unwrapped with _____________ hands.",
+  "answers": [
+    "Gloved; gloved",
+    "Gloved; nongloved",
+    "Nongloved; gloved",
+    "Nongloved; nongloved"
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "When using barrier envelopes, gloved hands unwrap the film, while nongloved hands are used for unwrapping films without barrier envelopes."
+},
+
+//26
+{
+  "question": "(1) The contaminated barriers should be removed while the dental radiographer is wearing gloves. (2) The barriers should be disposed of after the patient has left the room.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "Barriers should be removed with gloves, but they are typically disposed of before the patient leaves."
+},
+
+//27
+{
+  "question": "(1) Contaminated film is placed in a disposable container that is carried to the processor with gloved hands. (2) The film should be developed after the patient has been dismissed from the radiology area.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "The film is carried to the processor with gloved hands, but it is not necessary to wait for the patient to leave before developing."
+},
+
+//28
+{
+  "question": "(1) Digital sensors can be disinfected, sterilized, placed in cold sterilization, or be placed in barriers. (2) When using barriers, disinfect the sensor, cover both the sensor and the wire connection with a plastic barrier, and then cover with a finger cot to provide added protection.",
+  "answers": [
+    "Both statements are true.",
+    "Both statements are false.",
+    "The first statement is true; the second statement is false.",
+    "The first statement is false; the second statement is true."
+  ],
+  "correct": 3,
+  "category": "RHS",
+  "rationale": "Digital sensors cannot be sterilized but should be covered with barriers."
+},
+
+//29
+{
+  "question": "There are three conditions that must be present for an infection to occur. Which of the following conditions is a necessary component for an infection to occur?",
+  "answers": [
+    "Small amounts of the infectious disease with low infectivity",
+    "A host that is not vulnerable to infection",
+    "A way for the infectious disease to enter the host",
+    "An aseptic environment"
+  ],
+  "correct": 2,
+  "category": "RHS",
+  "rationale": "A way for the infectious disease to enter the host is one of the necessary components for infection."
+},
+
+//30
+{
+  "question": "Which of the following should you do first when using a daylight loader for film processing?",
+  "answers": [
+    "Put on gloves.",
+    "Place a new paper cup and gloves in the daylight loader compartment.",
+    "Put the container with contaminated films next to the new paper cup in the daylight loader.",
+    "Close the daylight loader lid, and push hands through openings of daylight loader."
+  ],
+  "correct": 1,
+  "category": "RHS",
+  "rationale": "The first step is placing a new paper cup and gloves in the daylight loader compartment before processing."
 }
 
 
@@ -3380,39 +5009,20 @@ let rhsQuestions = [
 
 
 
+ 
+ 
 
-
-	
-	
-
-
-
-
+ 
+  
 
 
 
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-];
+  
+  
+  
+  
+  
+  
+  ]
