@@ -3,81 +3,6 @@
 <head>
   <title>Radiation Health and Safety Exam</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Center the "Begin" button */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    #beginButton {
-      padding: 20px 40px;
-      font-size: 24px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    #beginButton:hover {
-      background-color: #0056b3;
-    }
-
-    /* Hide other containers initially */
-    .hidden {
-      display: none;
-    }
-
-    /* Styling for question and score containers */
-    .question-container, .score-container {
-      text-align: center;
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .button-container {
-      margin: 10px 0;
-    }
-
-    .button-container button {
-      padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .button-container button:hover {
-      opacity: 0.8;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    table, th, td {
-      border: 1px solid black;
-    }
-
-    th, td {
-      padding: 10px;
-      text-align: left;
-    }
-  </style>
 </head>
 <body>
   <button id="beginButton">Begin</button>
@@ -88,14 +13,57 @@
   
   <div id="score-container" class="score-container hidden">
     <div id="numbers-container" style="display: block;">
-      Correct: <span id="correct" style="color:green;">0</span> /
-      Incorrect: <span id="incorrect" style="color:red;">0</span>
-      <div id="percentage-correct"></div>
+      <span id="correct" style="color:green;">0</span> |
+      <span id="incorrect" style="color:red;">0</span>
+      <div id="percentage-correct"></div><hr>
     </div>
     <div id="total-questions"></div> <!-- Display current question number -->
   </div>
 
   <!-- Only include the RHS Questions script -->
+  <script>
+  // Function to create ripple effect
+  function createRipple(event) {
+    const button = event.currentTarget;
+
+    // Remove existing ripple if any
+    const existingRipple = button.getElementsByClassName('ripple')[0];
+    if (existingRipple) {
+      existingRipple.remove();
+    }
+
+    // Create span for ripple
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+
+    // Get button's position and size
+    const rect = button.getBoundingClientRect();
+
+    // Calculate position for ripple
+    const size = Math.max(button.clientWidth, button.clientHeight);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
+
+    // Add ripple to button
+    button.appendChild(ripple);
+
+    // Trigger animation by adding the 'ripple' class
+    // Not needed as it's already added
+
+    // Remove ripple after animation
+    ripple.addEventListener('animationend', () => {
+      ripple.remove();
+    });
+  }
+
+  // Attach event listeners to all buttons
+  document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', createRipple);
+  });
+</script>
+
+
   <script src="rhsQuestions.js"></script>
   <script src="main.js"></script>
 </body>
