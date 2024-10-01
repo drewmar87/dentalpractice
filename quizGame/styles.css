@@ -1,13 +1,17 @@
+/* --- Existing General Styles --- */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #f5f5f5; /* Consistent background */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  height: 100vh; /* Full viewport height */
+  margin: 0;
 }
 
+/* Title */
 #quiz-title {
   text-align: center;
   font-family: 'Georgia', serif;
@@ -16,50 +20,162 @@ body {
   margin-bottom: 30px;
 }
 
-.question-container {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+/* Containers */
+.question-container,
+.score-container {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04),
+              0 0 10px rgba(0, 0, 0, 0.1);
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-  width: 800px; /* specify the width */
-  margin: auto; /* center the element */
-}
-
-.score-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
   text-align: center;
-  font-size: 24px;
-  padding-top: 0px;
-}
-
-button {
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
-  background-color: #9370DB;
-  color: white;
-  font-size: 16px; /* larger font size */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5); /* box shadow */
-  font-weight: bold; /* bolder text */
-  width: 50%; 
-  box-sizing: border-box; 
-}
-
-.question-container {
   display: flex;
   flex-direction: column;
-  align-items: stretch; 
+  align-items: stretch;
+  box-sizing: border-box;
 }
 
-button:hover {
-  background-color: #8A2BE2;
+/* --- Updated Button Styles Start Here --- */
+/* Modern Button Styles with Blue and Grey Gradients */
+button,
+.button-container button {
+  position: relative; /* Required for ripple effect positioning */
+  overflow: hidden; /* Clips the ripple within the button */
+  border: none;
+  border-radius: 25px; /* Increased border-radius for a more modern look */
+  padding: 12px 30px; /* Enhanced padding */
+  margin-top: 15px; /* Increased top margin for spacing */
+  cursor: pointer;
+  font-size: 16px; /* Increased font size for readability */
+  font-weight: 600; /* Semi-bold for better visibility */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
+  text-transform: uppercase; /* Uppercase text for a sleek appearance */
+  letter-spacing: 1px; /* Slight letter spacing */
+  transition: all 0.3s ease; /* Smooth transitions */
+  background: linear-gradient(135deg, #007BFF, #6C757D); /* Blue to Grey gradient */
+  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
 }
 
+/* Ripple Effect Styles */
+button::after,
+.button-container button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4); /* White ripple color with transparency */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease;
+}
+
+/* Ripple Animation Keyframes */
+@keyframes ripple-effect {
+  from {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Apply animation to ripple */
+.ripple::after {
+  animation: ripple-effect 0.6s linear;
+}
+
+/* Active State for Ripple */
+button.ripple::after,
+.button-container button.ripple::after {
+  width: 200px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Hover Effects for Buttons */
+button:hover,
+.button-container button:hover {
+  transform: translateY(-3px); /* Slight upward movement */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  background: linear-gradient(135deg, #6C757D, #007BFF); /* Reversed gradient on hover */
+}
+
+/* Active State Enhancements */
+button:active,
+.button-container button:active {
+  transform: scale(0.98); /* Slightly reduce size to simulate pressing */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Softer shadow */
+}
+
+/* Focus States for Accessibility */
+button:focus,
+.button-container button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Focus ring */
+}
+
+/* Specific Begin Button */
+#beginButton {
+  padding: 15px 50px; /* Larger padding for prominence */
+  font-size: 20px; /* Larger font size */
+  background: linear-gradient(135deg, #007BFF, #6C757D); /* Blue to Grey gradient */
+}
+
+#beginButton:hover {
+  background: linear-gradient(135deg, #6C757D, #007BFF); /* Reversed gradient on hover */
+}
+/* --- Updated Button Styles End Here --- */
+
+/* --- Correct and Incorrect Answer Styles --- */
+
+.correct {
+  background: #28a745 !important; /* Green */
+  color: #ffffff !important;
+  border: none !important;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.incorrect {
+  background: #dc3545 !important; /* Red */
+  color: #ffffff !important;
+  border: none !important;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  margin: 10px 0;
+}
+
+.button-container button {
+  flex: 1; /* Equal width buttons */
+  max-width: 500px; /* Optional max width */
+  margin: 0; /* Remove top margin */
+}
+
+/* Table Styles */
 table {
   border-collapse: collapse;
   margin-bottom: 20px;
-  width: 100%;
+  width: 100%; /* Adjusted globally */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   overflow: hidden;
@@ -79,35 +195,141 @@ th {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-.button-container {
-  display: flex;
-  justify-content: center;
+
+/* Specific table in numbers-container */
+.numbers-container table {
+  width: auto; /* Adjust width as needed */
+  max-width: 600px; /* Or another suitable width */
+  margin: 0 auto; /* Center the table */
 }
 
-.your-answer {
-  background-color: #fdd; /* Change to your desired color */
-}
-
-.correct-answer {
-  background-color: #dfd; /* Change to your desired color */
-}
-
-.question-container img {
-  display: flex;
-  max-width: auto; 
-  height: 250px;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Image Containers */
 .img-container {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-.img-container img {
-  max-width: auto;
+.img-container img,
+.question-container img {
   height: 250px;
+  max-width: 100%; /* Responsive images */
+  object-fit: contain; /* Maintain aspect ratio */
 }
 
+/* Answer Styles */
+.your-answer {
+  background-color: #fdd; /* Customize as needed */
+}
+
+.correct-answer {
+  background-color: #dfd; /* Customize as needed */
+}
+
+/* Score Container Specifics */
+.score-container {
+  font-size: 24px;
+  padding: 20px;
+  width: auto;
+  height: auto;
+}
+
+/* --- Ripple Animation Styles --- */
+@keyframes ripple-effect {
+  from {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple::after {
+  animation: ripple-effect 0.6s linear;
+}
+/* --- Modern Rationale Table Styles --- */
+
+.rationale-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rationale-table th,
+.rationale-table td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+.rationale-table th {
+  background-color: #4b9cd3;
+  color: #ffffff;
+  font-size: 1.1em;
+}
+
+.rationale-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.rationale-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.rationale-table td.correct {
+  background-color: #28a745;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.rationale-table td.incorrect {
+  background-color: #dc3545;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.rationale-table td img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* Optional: Add some transition for smooth color changes */
+.rationale-table th,
+.rationale-table td {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* --- Additional Enhancements --- */
+
+/* Smooth hover effect for table rows */
+.rationale-table tr {
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive Image Styling */
+.img-container img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Responsive Table */
+@media (max-width: 600px) {
+  .rationale-table th,
+  .rationale-table td {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+
+  .button-container button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
