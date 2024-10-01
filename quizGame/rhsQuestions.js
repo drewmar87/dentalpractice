@@ -3283,18 +3283,7 @@ let rhsQuestions = [
 },
 
 //35
-{
-  "question": "Explain to your patient the steps, in order, in the formation of hydrogen peroxide, a toxin that will cause damage to living tissues.",
-  "answers": [
-    "1. Free radicals combine\n2. Free radical formation\n3. Cellular dysfunction and biologic damage\n4. X-ray photons are absorbed by water",
-    "4. X-ray photons are absorbed by water\n2. Free radical formation\n1. Free radicals combine\n3. Cellular dysfunction and biologic damage",
-    "2. Free radical formation\n1. Free radicals combine\n4. X-ray photons are absorbed by water\n3. Cellular dysfunction and biologic damage",
-    "2. Free radical formation\n4. X-ray photons are absorbed by water\n1. Free radicals combine\n3. Cellular dysfunction and biologic damage"
-  ],
-  "correct": 1,
-  "category": "RHS",
-  "rationale": "The process begins with x-ray photons being absorbed by water, leading to free radical formation, combination of free radicals, and eventual cellular damage."
-},
+
 
 //36
 {
@@ -4246,18 +4235,7 @@ let rhsQuestions = [
 },
 
 //16
-{
-  "question": "Which of the following influencing factors would degrade sharpness?",
-  "answers": [
-    "1. Smaller silver halide crystal size",
-    "2. Larger silver halide crystal size",
-    "3. Smaller focal spot",
-    "4. Larger focal spot"
-  ],
-  "correct": 3,
-  "category": "RHS",
-  "rationale": "Larger silver halide crystals and larger focal spots degrade sharpness."
-},
+
 
 //17
 {
@@ -4343,18 +4321,7 @@ let rhsQuestions = [
   "rationale": "Directing the PID perpendicular to the tooth and receptor minimizes dimensional distortion."
 },
 //1
-{
-  "question": "The Consumer-Patient Radiation Health and Safety Act",
-  "answers": [
-    "1. Outlines requirements for the safe use of dental x-ray equipment. 2. Establishes guidelines for the proper maintenance of x-ray equipment. 3. Requires persons who take dental images to be properly trained and certified.",
-    "1, 2",
-    "2, 3",
-    "1, 3"
-  ],
-  "correct": 0,
-  "category": "RHS",
-  "rationale": "The Consumer-Patient Radiation Health and Safety Act outlines requirements for safe use, maintenance, and certification for dental x-ray operators."
-},
+
 
 //2
 {
@@ -4483,18 +4450,6 @@ let rhsQuestions = [
 },
 
 //11
-{
-  "question": "Which of the following statements is true of the statute of limitations?",
-  "answers": [
-    "1. It often begins when the patient discovers or should have discovered that an injury has occurred as a result of dental negligence. 2. It is the time period during which a patient may bring a malpractice action. 3. It may not begin until years after the dental negligence occurred.",
-    "1, 3",
-    "1, 2",
-    "2, 3"
-  ],
-  "correct": 0,
-  "category": "RHS",
-  "rationale": "All statements are true; the statute of limitations often begins when the injury is discovered and can be years after the negligence occurred."
-},
 
 //12
 {
