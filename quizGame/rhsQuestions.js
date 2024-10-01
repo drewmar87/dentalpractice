@@ -4525,18 +4525,7 @@ let rhsQuestions = [
 },
 
 //14
-{
-  "question": "It is appropriate for any dental professional to discuss a patient’s care with",
-  "answers": [
-    "1. Another patient. 2. Office staff members who are not involved in the treatment of the patient. 3. Another dentist involved in the patient’s care. 4. A physician with whom care is shared.",
-    "1, 2, 3",
-    "1, 2",
-    "3, 4"
-  ],
-  "correct": 3,
-  "category": "RHS",
-  "rationale": "It is appropriate to discuss a patient's care with another dentist involved in the patient’s care and a physician with whom care is shared."
-},
+
 
 //15
 {
