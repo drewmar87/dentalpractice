@@ -793,16 +793,6 @@ let rhsQuestions = [
     rationale: "Individual states regulate who is allowed to expose dental images, setting specific certification requirements."
   },
   {
-    question: "You are destroying old patient records. How do you dispose of the dental radiographs?",
-    answers: ["As regulated waste",
-              "As hazardous waste",
-              "As normal office waste",
-              "Have them collected by an approved waste removal service"],
-    correct: 2,
-    category: "RHS",
-    rationale: "Processed dental film can be disposed of in regular office waste."
-  },
-  {
     question: "Which interaction with x-rays causes the radiopaque areas on a dental image?",
     answers: ["Compton’s scatter",
               "Photoelectric effect",
@@ -1973,9 +1963,9 @@ let rhsQuestions = [
             "disinfected",
             "decontaminated",
             "wiped with alcohol between uses"],
-  correct: 1,
+  correct: 0,
   category: "RHS",
-  rationale: "Beam alignment devices are classified as semicritical items and must be disinfected between patients to prevent cross-contamination."
+  rationale: "Beam alignment devices are classified as semicritical items and must be sterilized between patients to prevent cross-contamination."
 },
 {
   question: "How should the receptor be placed for exposing a mandibular occlusal image?",
@@ -2213,7 +2203,7 @@ let rhsQuestions = [
             "The direct theory of radiation suggests that radiation damage occurs because of the high water content in the body.",
             "The indirect theory of radiation suggests that ionizing radiation creates the formation of free radicals.",
             "The indirect theory of radiation injury suggests that damage occurs as a result of ionizing radiation hitting critical areas."],
-  correct: 3,
+  correct: 2,
   category: "RHS",
   rationale: "The indirect theory of radiation suggests that ionizing radiation creates free radicals, which can then recombine to form toxins that cause cellular damage."
 },
@@ -2371,7 +2361,7 @@ let rhsQuestions = [
             "hemostat",
             "patient gently biting on the receptor",
             "bitewing tab"],
-  correct: 3,
+  correct: 2,
   category: "RHS",
   rationale: "The patient gently biting on the receptor stabilizes it during occlusal imaging, ensuring that it stays in the correct position for the exposure."
 },
@@ -2441,9 +2431,9 @@ let rhsQuestions = [
             "rectangular 8 inch",
             "circular 8 inch",
             "circular 16 inch"],
-  correct: 3,
+  correct: 0,
   category: "RHS",
-  rationale: "A circular 16-inch PID exposes a patient to more radiation than a rectangular PID due to its larger surface area, which exposes more tissue."
+  rationale: "While conical PIDs are no longer in use, historically, they did result in higher radiation exposure than the other options. Therefore, if conical PIDs were still in use, they would expose the patient to the most radiation​"
 },
 {
   question: "Which is not an example of PPE (personal protective equipment)?",
@@ -2531,7 +2521,7 @@ let rhsQuestions = [
             "Magnification; the receptor needs to be parallel to the teeth, and the x-ray beam needs to be perpendicular to both.",
             "Elongation; the receptor needs to be parallel to the teeth, and the x-ray beam needs to be perpendicular to both.",
             "Magnification; the receptor needs to be closer to the tooth, or the target–image receptor distance needs to be increased."],
-  correct: 3,
+  correct: 2,
   category: "RHS",
   rationale: "Elongation occurs when the x-ray beam is not perpendicular to the image receptor and the teeth. Correcting this error requires proper angulation."
 },
@@ -2581,7 +2571,7 @@ let rhsQuestions = [
             "Electrons are generated at the anode.",
             "It converts the bombarding electrons into x-ray photons.",
             "It consists of a tungsten filament in a focusing cup."],
-  correct: 3,
+  correct: 2,
   category: "RHS",
   rationale: "The anode converts bombarding electrons into x-ray photons, producing the radiation necessary for imaging."
 },
@@ -2736,16 +2726,6 @@ let rhsQuestions = [
   rationale: "Countertops and areas touched by gloved hands in the darkroom should be disinfected to prevent cross-contamination."
 },
 {
-  question: "EPA-registered chemical germicides labeled as hospital disinfectants are:",
-  answers: ["classified as high-level disinfectants",
-            "classified as intermediate-level disinfectants",
-            "classified as low-level disinfectants",
-            "not designated a disinfectant level"],
-  correct: 2,
-  category: "RHS",
-  rationale: "EPA-registered chemical germicides labeled as hospital disinfectants are classified as low-level disinfectants."
-},
-{
   question: "Why does digital imaging require less radiation than traditional film-based radiography?",
   answers: ["Sensor is more sensitive to x-radiation.",
             "Images are instantly viewed on the computer.",
@@ -2761,9 +2741,9 @@ let rhsQuestions = [
             "disinfected; gloved",
             "prepared for sterilization; ungloved",
             "prepared for sterilization; gloved"],
-  correct: 1,
+  correct: 3,
   category: "RHS",
-  rationale: "Beam alignment devices are disinfected after exposure using gloved hands to maintain infection control."
+  rationale: "Beam alignment devices are prepared for sterilized after exposure using gloved hands to maintain infection control."
 },
 {
   question: "What is the function of intensifying screens used in extraoral radiography?",
