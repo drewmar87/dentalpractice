@@ -161,30 +161,33 @@
         }
         .quadrant h3 { margin: 0 0 10px; font-size: 1em; text-align: center; }
 
-        /* --- MODIFIED TOOTH GRID --- */
         .tooth-grid {
             display: grid; /* USE GRID */
             grid-template-columns: repeat(8, minmax(0, 1fr)); /* 8 equal, shrinkable columns */
             gap: 4px; /* Reduced gap */
             width: 100%;
             box-sizing: border-box;
-            /* REMOVED: overflow-x: auto; */
-            /* REMOVED: justify-content */
-            /* REMOVED: padding-bottom */
         }
         .tooth {
             border-right: 1px dotted #aaa;
             padding-right: 5px; /* Reduced padding */
             box-sizing: border-box;
-            /* REMOVED: flex-shrink: 0; */
             min-width: 0; /* Allow shrinking with grid */
             overflow: hidden; /* Hide overflow within tooth if surfaces are too big */
         }
-        .tooth:last-child {
+         /* Remove right border from the last tooth in the grid (which is visually the midline tooth for Right quads) */
+        .quadrant[data-quadrant-name='Upper Right'] .tooth:last-child,
+        .quadrant[data-quadrant-name='Lower Right'] .tooth:last-child {
              border-right: none;
              padding-right: 0;
         }
-        /* --- END MODIFIED SECTION --- */
+         /* Remove right border from the first tooth in the grid (which is visually the midline tooth for Left quads) */
+         /* Actually, the dotted line should separate teeth, so last-child border removal is likely enough if logic correct */
+         .tooth:last-child { /* Keep this rule general for simplicity unless specific overrides needed */
+              border-right: none;
+              padding-right: 0;
+         }
+
 
         .tooth label { display: block; font-size: 0.9em; font-weight: bold; color: #333; margin-bottom: 4px; text-align: center; white-space: nowrap;}
         .surface-grid {
@@ -216,7 +219,7 @@
         /* Active states for comparison buttons */
         .action-button.active-compare-f1 { background-color: rgba(255, 0, 0, 0.4); color: white; border: 1px solid rgba(200, 0, 0, 0.6); }
         .action-button.active-compare-f2 { background-color: rgba(128, 0, 128, 0.4); color: white; border: 1px solid rgba(100, 0, 100, 0.6); }
-        .action-button.active-compare-both { background-color: rgba(255, 0, 0, 0.4); color: white; border: 1px solid rgba(200, 0, 0, 0.6); } /* Same style for 'both' for now */
+        .action-button.active-compare-both { background-color: rgba(255, 0, 0, 0.4); color: white; border: 1px solid rgba(200, 0, 0, 0.6); }
 
         /* Comparison Controls Area */
         #comparison-controls {
@@ -234,7 +237,7 @@
 
         /* Styles for Hiding/Showing Faculty 2 */
         #faculty2-container { display: none; } #faculty2-container.visible { display: block; }
-        .f2-compare-button { display: none; } .f2-compare-button.visible { display: inline-block; } /* Use inline-block */
+        .f2-compare-button { display: none; } .f2-compare-button.visible { display: inline-block; }
 
         /* Hide controls when printing PDF */
         @media print {
@@ -242,9 +245,8 @@
             body { margin: 0; }
             .container-scaler { width: 100%; max-width: none; padding: 0; margin: 0;}
             .chart-container { border: none; padding: 5px; margin-bottom: 10px; }
-            .quadrant { border: 1px solid #ccc; overflow: visible; } /* Ensure quadrant doesn't clip in print */
+            .quadrant { border: 1px solid #ccc; overflow: visible; }
             .chart-layout { gap: 5px; grid-template-columns: 1fr 1fr; }
-            /* Ensure tooth grid doesn't shrink too much in print if needed */
             .tooth-grid { grid-template-columns: repeat(8, auto); gap: 2px;}
             .tooth { padding-right: 2px; }
         }
@@ -254,25 +256,15 @@
 
          /* Responsive adjustments */
         @media (max-width: 800px) {
-             .chart-layout {
-                 grid-template-columns: 1fr; /* Stack quadrants */
-             }
-             #patient-info {
-                 flex-direction: column; /* Stack patient info */
-                 align-items: stretch; /* Stretch items */
-                 width: 90%;
-             }
-             #patient-info > div { /* Stack label/input vertically inside */
-                 flex-direction: column;
-                 align-items: flex-start;
-                 width: 100%;
-             }
+             .chart-layout { grid-template-columns: 1fr; }
+             #patient-info { flex-direction: column; align-items: stretch; width: 90%; }
+             #patient-info > div { flex-direction: column; align-items: flex-start; width: 100%; }
              #patient-info label { margin-bottom: 3px; }
              #patient-info input { width: 100%; box-sizing: border-box;}
         }
         @media (max-width: 480px) {
-            .toggle-btn, .action-button { min-width: 120px; padding: 6px 10px; font-size: 0.85em;} /* Smaller buttons on phone */
-            .surface { width: 25px; height: 25px; font-size: 1em;} /* Slightly smaller surfaces */
+            .toggle-btn, .action-button { min-width: 120px; padding: 6px 10px; font-size: 0.85em;}
+            .surface { width: 25px; height: 25px; font-size: 1em;}
             .surface-grid { grid-template-columns: 25px 2px 25px; grid-template-rows: 25px 25px 25px;}
             .tooth label { font-size: 0.8em;}
             .quadrant { padding: 5px; }
@@ -284,7 +276,8 @@
 </head>
 <body>
 
-    <!-- NEW: Main Title -->
+    <!-- (HTML Body remains exactly the same as before) -->
+        <!-- NEW: Main Title -->
     <h1 class="main-title">Calculus Detection Chart</h1>
 
     <!-- NEW: Patient Info Section -->
@@ -346,6 +339,7 @@
 
     </div><!-- End Scaler -->
 
+
     <script>
         // Wrap entire script in an IIFE
         (function() {
@@ -354,21 +348,20 @@
             const { jsPDF } = window.jspdf;
 
             // --- Constants and Configuration ---
-            const SYMBOLS = ["", "L", "M", "S"]; // Light, Moderate, Severe
-            // --- ADJUSTED QUADRANT ORDER AND NUMBERING ---
+                        const SYMBOLS = ["", "│", "○", "●"]; // None, Light(Line), Moderate(Open Circle), Severe(Filled Circle) // Light, Moderate, Severe
             const QUADRANT_ORDER = ['Upper Right', 'Upper Left', 'Lower Right', 'Lower Left']; // Standard visual order
+            // --- ADJUSTED QUADRANT NUMBERING FOR VISUAL LAYOUT ---
             const QUADRANTS = {
-                 // Reversed array for visual layout (8 distal -> 1 midline)
-                 'Upper Right': [8, 7, 6, 5, 4, 3, 2, 1],
-                 // Standard order (9 midline -> 16 distal)
+                 // Distal (1) to Midline (8) - Left-to-Right visually in grid
+                 'Upper Right': [1, 2, 3, 4, 5, 6, 7, 8],
+                 // Midline (9) to Distal (16) - Left-to-Right visually in grid
                  'Upper Left': [9, 10, 11, 12, 13, 14, 15, 16],
-                  // Standard order (25 distal -> 32 midline) - Check if standard charts show 32 on left or right of quadrant
-                 // Let's assume standard view: 32 midline left, 25 distal right
-                 'Lower Right': [25, 26, 27, 28, 29, 30, 31, 32], // Keeping this order for now, review visually
-                 // Reversed array for visual layout (24 distal -> 17 midline)
-                 'Lower Left': [24, 23, 22, 21, 20, 19, 18, 17]
+                 // Distal (32) to Midline (25) - Left-to-Right visually in grid
+                 'Lower Right': [32, 31, 30, 29, 28, 27, 26, 25],
+                 // Midline (17) to Distal (24) - Left-to-Right visually in grid
+                 'Lower Left': [17, 18, 19, 20, 21, 22, 23, 24]
             };
-             // Match grid position to QUADRANT_ORDER
+             // Match grid position to QUADRANT_ORDER (UR=TopLeft, UL=TopRight, LR=BottomLeft, LL=BottomRight grid cells)
              const QUADRANT_POS = {
                  'Upper Right': { row: 1, col: 1 }, 'Upper Left': { row: 1, col: 2 },
                  'Lower Right': { row: 2, col: 1 }, 'Lower Left': { row: 2, col: 2 }
@@ -376,8 +369,7 @@
 
             const SURFACES = ['M', 'D', 'B', 'L']; // Mesial, Distal, Buccal, Lingual
             const CHART_IDS = ['student', 'faculty1', 'faculty2'];
-            // Flatten all quadrant arrays, sort numerically to ensure 1-32 are covered
-             const ALL_TOOTH_NUMBERS = [...new Set([].concat(...Object.values(QUADRANTS)))].sort((a, b) => a - b);
+            const ALL_TOOTH_NUMBERS = [...new Set([].concat(...Object.values(QUADRANTS)))].sort((a, b) => a - b);
             const UNLOCK_CODE = "12345";
             const PDF_TITLE = "Calculus Detection Chart";
 
@@ -396,7 +388,7 @@
                 toggleF2Div: null
             };
 
-            // --- Core Functions ---
+            // --- Core Functions (No changes needed from previous version below this point) ---
 
             function initializeState() {
                 areChartsLocked = false;
@@ -410,13 +402,9 @@
                         });
                     });
                 });
-                 // Set default date
                  if(domElements.chartDateInput && !domElements.chartDateInput.value) {
                      try {
-                        const today = new Date();
-                        const year = today.getFullYear();
-                        const month = String(today.getMonth() + 1).padStart(2, '0');
-                        const day = String(today.getDate()).padStart(2, '0');
+                        const today = new Date(); const year = today.getFullYear(); const month = String(today.getMonth() + 1).padStart(2, '0'); const day = String(today.getDate()).padStart(2, '0');
                         domElements.chartDateInput.value = `${year}-${month}-${day}`;
                      } catch(e) { console.warn("Could not set default date."); }
                  }
@@ -426,10 +414,7 @@
                  const cellSelector = `.surface[data-chart-id="${chartId}"][data-tooth-num="${toothNum}"][data-surface="${surface}"]`;
                  const chartLayout = domElements.chartLayouts[chartId];
                  const cell = chartLayout ? chartLayout.querySelector(cellSelector) : null;
-                 if (!cell) return;
-                 const data = chartData[chartId]?.[toothNum]?.[surface];
-                 if (!data) return;
-
+                 if (!cell) return; const data = chartData[chartId]?.[toothNum]?.[surface]; if (!data) return;
                  cell.textContent = SYMBOLS[data.calc] || "";
                  cell.classList.remove('supra', 'sub', 'both', 'plaque', 'diff-faculty1', 'diff-faculty2');
                  if (data.calc > 0 && data.calcType) cell.classList.add(data.calcType);
@@ -437,86 +422,33 @@
              }
 
              function createToggleButtons(chartId, toggleAreaElement) {
-                 if (!toggleAreaElement) return;
-                 toggleAreaElement.innerHTML = '';
-
-                 const createButton = (mode, text, isPlaque = false) => {
-                     const btn = document.createElement('button');
-                     btn.className = `toggle-btn ${mode}`;
-                     btn.textContent = text;
-                     btn.type = 'button';
-                     btn.addEventListener('click', () => handleModeChange(chartId, mode, toggleAreaElement, isPlaque));
-                     return btn;
-                 };
-
-                 const supraBtn = createButton('supra', 'Supra');
-                 const subBtn = createButton('sub', 'Sub');
-                 const bothBtn = createButton('both', 'Both');
-                 const plaqueBtn = createButton('plaque', 'Plaque', true);
-
+                 if (!toggleAreaElement) return; toggleAreaElement.innerHTML = '';
+                 const createButton = (mode, text, isPlaque = false) => { const btn = document.createElement('button'); btn.className = `toggle-btn ${mode}`; btn.textContent = text; btn.type = 'button'; btn.addEventListener('click', () => handleModeChange(chartId, mode, toggleAreaElement, isPlaque)); return btn; };
+                 const supraBtn = createButton('supra', 'Supra'); const subBtn = createButton('sub', 'Sub'); const bothBtn = createButton('both', 'Both'); const plaqueBtn = createButton('plaque', 'Plaque', true);
                  toggleAreaElement.append(supraBtn, subBtn, bothBtn, plaqueBtn);
-
                  const currentMode = chartModes[chartId];
-                 if (currentMode.plaqueMode) {
-                     plaqueBtn.classList.add('active');
-                 } else {
-                     const activeCalcButton = toggleAreaElement.querySelector(`.toggle-btn.${currentMode.currentLoc}`);
-                     if (activeCalcButton) activeCalcButton.classList.add('active');
-                      else { supraBtn.classList.add('active'); chartModes[chartId].currentLoc = 'supra'; } // Default fallback
-                 }
+                 if (currentMode.plaqueMode) plaqueBtn.classList.add('active');
+                 else { const activeCalcButton = toggleAreaElement.querySelector(`.toggle-btn.${currentMode.currentLoc}`); if (activeCalcButton) activeCalcButton.classList.add('active'); else { supraBtn.classList.add('active'); chartModes[chartId].currentLoc = 'supra'; } }
              }
 
             function handleModeChange(chartId, mode, toggleAreaElement, isPlaque = false) {
-                if (areChartsLocked) return;
-                const currentChartMode = chartModes[chartId];
-                const buttons = toggleAreaElement.querySelectorAll('.toggle-btn');
-                buttons.forEach(btn => btn.classList.remove('active'));
-                const clickedButton = toggleAreaElement.querySelector(`.toggle-btn.${mode}`);
-
-                if (isPlaque) {
-                    currentChartMode.plaqueMode = !currentChartMode.plaqueMode;
-                    if (currentChartMode.plaqueMode) clickedButton.classList.add('active');
-                    else {
-                        const calcButton = toggleAreaElement.querySelector(`.toggle-btn.${currentChartMode.currentLoc}`);
-                        if (calcButton) calcButton.classList.add('active');
-                    }
-                } else {
-                    currentChartMode.plaqueMode = false;
-                    currentChartMode.currentLoc = mode;
-                    clickedButton.classList.add('active');
-                }
+                if (areChartsLocked) return; const currentChartMode = chartModes[chartId]; const buttons = toggleAreaElement.querySelectorAll('.toggle-btn'); buttons.forEach(btn => btn.classList.remove('active')); const clickedButton = toggleAreaElement.querySelector(`.toggle-btn.${mode}`);
+                if (isPlaque) { currentChartMode.plaqueMode = !currentChartMode.plaqueMode; if (currentChartMode.plaqueMode) clickedButton.classList.add('active'); else { const calcButton = toggleAreaElement.querySelector(`.toggle-btn.${currentChartMode.currentLoc}`); if (calcButton) calcButton.classList.add('active'); } }
+                else { currentChartMode.plaqueMode = false; currentChartMode.currentLoc = mode; clickedButton.classList.add('active'); }
             }
 
             function createChartElements(chartId, chartLayoutElement) {
-                if (!chartLayoutElement) return;
-                chartLayoutElement.innerHTML = '';
-
+                if (!chartLayoutElement) return; chartLayoutElement.innerHTML = '';
                 QUADRANT_ORDER.forEach(quadrantName => {
-                    const pos = QUADRANT_POS[quadrantName];
-                    const quadDiv = document.createElement('div');
-                    quadDiv.className = 'quadrant';
-                     // Optional: Add data attribute for specific styling if needed later
-                     // quadDiv.dataset.quadrantName = quadrantName;
-                     if (pos) { // Apply grid positioning from QUADRANT_POS
-                         quadDiv.style.gridColumn = pos.col;
-                         quadDiv.style.gridRow = pos.row;
-                     }
-
+                    const pos = QUADRANT_POS[quadrantName]; const quadDiv = document.createElement('div'); quadDiv.className = 'quadrant';
+                    quadDiv.dataset.quadrantName = quadrantName; // Add data attribute for specific CSS rules if needed
+                    if (pos) { quadDiv.style.gridColumn = pos.col; quadDiv.style.gridRow = pos.row; }
                     const h3 = document.createElement('h3'); h3.textContent = quadrantName; quadDiv.append(h3);
-                    const toothGridDiv = document.createElement('div'); toothGridDiv.className = 'tooth-grid';
-                    const teethNumbers = QUADRANTS[quadrantName];
-                    if (!teethNumbers) return;
-
-                    // Teeth are created left-to-right based on the order in the teethNumbers array
+                    const toothGridDiv = document.createElement('div'); toothGridDiv.className = 'tooth-grid'; const teethNumbers = QUADRANTS[quadrantName]; if (!teethNumbers) return;
                     teethNumbers.forEach(num => {
-                        const toothDiv = document.createElement('div'); toothDiv.className = 'tooth';
-                        const label = document.createElement('label'); label.textContent = num; toothDiv.append(label);
+                        const toothDiv = document.createElement('div'); toothDiv.className = 'tooth'; const label = document.createElement('label'); label.textContent = num; toothDiv.append(label);
                         const surfaceGridDiv = document.createElement('div'); surfaceGridDiv.className = 'surface-grid';
-                        SURFACES.forEach(s => {
-                            const cell = document.createElement('div'); cell.className = 'surface';
-                            cell.dataset.chartId = chartId; cell.dataset.toothNum = num; cell.dataset.surface = s;
-                            cell.addEventListener('click', handleSurfaceClick); surfaceGridDiv.append(cell);
-                        });
+                        SURFACES.forEach(s => { const cell = document.createElement('div'); cell.className = 'surface'; cell.dataset.chartId = chartId; cell.dataset.toothNum = num; cell.dataset.surface = s; cell.addEventListener('click', handleSurfaceClick); surfaceGridDiv.append(cell); });
                         toothDiv.append(surfaceGridDiv); toothGridDiv.append(toothDiv);
                     });
                     quadDiv.append(toothGridDiv); chartLayoutElement.append(quadDiv);
@@ -524,204 +456,71 @@
             }
 
             function handleSurfaceClick(event) {
-                if (areChartsLocked) return;
-                const cell = event.currentTarget;
-                const { chartId, toothNum, surface } = cell.dataset;
-                if (!chartData[chartId]?.[toothNum]?.[surface]) return;
-
-                const mode = chartModes[chartId];
-                const data = chartData[chartId][toothNum][surface];
-
-                if (mode.plaqueMode) {
-                    data.plaque = !data.plaque;
-                } else {
-                    data.calc = (data.calc + 1) % SYMBOLS.length;
-                    data.calcType = (data.calc > 0) ? mode.currentLoc : null;
-                }
-                updateCellUI(chartId, toothNum, surface);
-                if (chartId === 'student') cell.classList.remove('diff-faculty1', 'diff-faculty2');
+                if (areChartsLocked) return; const cell = event.currentTarget; const { chartId, toothNum, surface } = cell.dataset; if (!chartData[chartId]?.[toothNum]?.[surface]) return;
+                const mode = chartModes[chartId]; const data = chartData[chartId][toothNum][surface];
+                if (mode.plaqueMode) data.plaque = !data.plaque;
+                else { data.calc = (data.calc + 1) % SYMBOLS.length; data.calcType = (data.calc > 0) ? mode.currentLoc : null; }
+                updateCellUI(chartId, toothNum, surface); if (chartId === 'student') cell.classList.remove('diff-faculty1', 'diff-faculty2');
             }
 
             function clearComparisonHighlights() {
-                if (!domElements.studentChartLayout) return;
-                const surfacesToClear = domElements.studentChartLayout.querySelectorAll('.surface.diff-faculty1, .surface.diff-faculty2');
-                surfacesToClear.forEach(cell => cell.classList.remove('diff-faculty1', 'diff-faculty2'));
-                domElements.compareF1Btn?.classList.remove('active-compare-f1');
-                domElements.compareF2Btn?.classList.remove('active-compare-f2');
-                domElements.compareBothBtn?.classList.remove('active-compare-both');
+                if (!domElements.studentChartLayout) return; const surfacesToClear = domElements.studentChartLayout.querySelectorAll('.surface.diff-faculty1, .surface.diff-faculty2'); surfacesToClear.forEach(cell => cell.classList.remove('diff-faculty1', 'diff-faculty2'));
+                domElements.compareF1Btn?.classList.remove('active-compare-f1'); domElements.compareF2Btn?.classList.remove('active-compare-f2'); domElements.compareBothBtn?.classList.remove('active-compare-both');
             }
 
             function runComparison(compareF1, compareF2) {
-                clearComparisonHighlights();
-                if (!domElements.studentChartLayout) return;
-                const faculty2Visible = domElements.faculty2Container?.classList.contains('visible');
-                let hasDifferences = false;
-
-                ALL_TOOTH_NUMBERS.forEach(toothNum => {
-                    SURFACES.forEach(surface => {
-                        const studentState = chartData.student?.[toothNum]?.[surface]; if (!studentState) return;
-                        let isDiffF1 = false, isDiffF2 = false;
-
-                        if (compareF1 && chartData.faculty1?.[toothNum]?.[surface]) {
-                            const f1State = chartData.faculty1[toothNum][surface];
-                            if (studentState.calc !== f1State.calc || studentState.calcType !== f1State.calcType || studentState.plaque !== f1State.plaque) isDiffF1 = true;
-                        }
-                        if (compareF2 && faculty2Visible && chartData.faculty2?.[toothNum]?.[surface]) {
-                            const f2State = chartData.faculty2[toothNum][surface];
-                             if (studentState.calc !== f2State.calc || studentState.calcType !== f2State.calcType || studentState.plaque !== f2State.plaque) isDiffF2 = true;
-                        }
-
-                        const cellSelector = `.surface[data-chart-id="student"][data-tooth-num="${toothNum}"][data-surface="${surface}"]`;
-                        const cell = domElements.studentChartLayout.querySelector(cellSelector);
-                        if (cell) {
-                            if (isDiffF1) { cell.classList.add('diff-faculty1'); hasDifferences = true; }
-                            if (isDiffF2) { cell.classList.add('diff-faculty2'); hasDifferences = true; }
-                        }
-                    });
-                });
-
-                 if (compareF1 && compareF2 && faculty2Visible) domElements.compareBothBtn?.classList.add('active-compare-both');
-                 else if (compareF1) domElements.compareF1Btn?.classList.add('active-compare-f1');
-                 else if (compareF2 && faculty2Visible) domElements.compareF2Btn?.classList.add('active-compare-f2');
-                 if (!hasDifferences) console.log("No differences found.");
+                clearComparisonHighlights(); if (!domElements.studentChartLayout) return; const faculty2Visible = domElements.faculty2Container?.classList.contains('visible'); let hasDifferences = false;
+                ALL_TOOTH_NUMBERS.forEach(toothNum => { SURFACES.forEach(surface => {
+                        const studentState = chartData.student?.[toothNum]?.[surface]; if (!studentState) return; let isDiffF1 = false, isDiffF2 = false;
+                        if (compareF1 && chartData.faculty1?.[toothNum]?.[surface]) { const f1State = chartData.faculty1[toothNum][surface]; if (studentState.calc !== f1State.calc || studentState.calcType !== f1State.calcType || studentState.plaque !== f1State.plaque) isDiffF1 = true; }
+                        if (compareF2 && faculty2Visible && chartData.faculty2?.[toothNum]?.[surface]) { const f2State = chartData.faculty2[toothNum][surface]; if (studentState.calc !== f2State.calc || studentState.calcType !== f2State.calcType || studentState.plaque !== f2State.plaque) isDiffF2 = true; }
+                        const cellSelector = `.surface[data-chart-id="student"][data-tooth-num="${toothNum}"][data-surface="${surface}"]`; const cell = domElements.studentChartLayout.querySelector(cellSelector);
+                        if (cell) { if (isDiffF1) { cell.classList.add('diff-faculty1'); hasDifferences = true; } if (isDiffF2) { cell.classList.add('diff-faculty2'); hasDifferences = true; } } }); });
+                 if (compareF1 && compareF2 && faculty2Visible) domElements.compareBothBtn?.classList.add('active-compare-both'); else if (compareF1) domElements.compareF1Btn?.classList.add('active-compare-f1'); else if (compareF2 && faculty2Visible) domElements.compareF2Btn?.classList.add('active-compare-f2'); if (!hasDifferences) console.log("No differences found.");
             }
 
             async function generatePdf() {
-                 if (!domElements.pdfButton || areChartsLocked) {
-                     if(areChartsLocked) alert("Cannot generate PDF while charts are locked."); return;
-                 }
-                 domElements.pdfButton.textContent = 'Generating PDF...';
-                 domElements.pdfButton.disabled = true;
-                 domElements.lockChartBtn.disabled = true;
-                 document.body.classList.add('pdf-generating');
-                 const patientId = domElements.patientIdInput?.value || 'N/A';
-                 let chartDate = domElements.chartDateInput?.value || 'N/A';
-
+                 if (!domElements.pdfButton || areChartsLocked) { if(areChartsLocked) alert("Cannot generate PDF while charts are locked."); return; }
+                 domElements.pdfButton.textContent = 'Generating PDF...'; domElements.pdfButton.disabled = true; domElements.lockChartBtn.disabled = true; document.body.classList.add('pdf-generating');
+                 const patientId = domElements.patientIdInput?.value || 'N/A'; let chartDate = domElements.chartDateInput?.value || 'N/A';
                  try {
-                     const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
-                     const pdfWidth = pdf.internal.pageSize.getWidth();
-                     const pdfHeight = pdf.internal.pageSize.getHeight();
-                     const margin = 30; let currentY = margin;
-
-                     // Add Header
-                     pdf.setFontSize(16); pdf.setFont(undefined, 'bold');
-                     pdf.text(PDF_TITLE, pdfWidth / 2, currentY, { align: 'center' }); currentY += 20;
-                     pdf.setFontSize(10); pdf.setFont(undefined, 'normal');
-                     pdf.text(`Patient ID: ${patientId}`, margin, currentY);
-                     pdf.text(`Date: ${chartDate}`, pdfWidth - margin, currentY, { align: 'right' }); currentY += 25;
-
-                     async function addChartToPdf(chartContainerId, title) {
-                         const element = document.getElementById(chartContainerId);
-                         if (!element || (chartContainerId === 'faculty2-container' && !element.classList.contains('visible'))) return false;
-                         const estElementHeight = element.offsetHeight * 0.75;
-                         if (currentY + estElementHeight + 30 > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header again if needed */ }
-                         pdf.setFontSize(12); pdf.setFont(undefined, 'bold'); pdf.text(title, margin, currentY); currentY += 15;
-                         try {
-                            const canvas = await html2canvas(element, { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff' });
-                            const imgData = canvas.toDataURL('image/png'); const imgProps = pdf.getImageProperties(imgData);
-                            const imgWidth = pdfWidth - 2 * margin; const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
-                            if (currentY + imgHeight > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header/title again */ }
-                            pdf.addImage(imgData, 'PNG', margin, currentY, imgWidth, imgHeight); currentY += imgHeight + 20; return true;
-                         } catch (canvasError) { console.error(`html2canvas failed for ${chartContainerId}:`, canvasError); return false; }
-                     }
-                     await addChartToPdf('student-container', 'Student Chart');
-                     await addChartToPdf('faculty1-container', 'Faculty Check 1');
-                     await addChartToPdf('faculty2-container', 'Faculty Check 2');
-                     const filename = `${PDF_TITLE.replace(/\s+/g, '_')}_${patientId}_${chartDate}.pdf`;
-                     pdf.save(filename);
+                     const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' }); const pdfWidth = pdf.internal.pageSize.getWidth(); const pdfHeight = pdf.internal.pageSize.getHeight(); const margin = 30; let currentY = margin;
+                     pdf.setFontSize(16); pdf.setFont(undefined, 'bold'); pdf.text(PDF_TITLE, pdfWidth / 2, currentY, { align: 'center' }); currentY += 20; pdf.setFontSize(10); pdf.setFont(undefined, 'normal'); pdf.text(`Patient ID: ${patientId}`, margin, currentY); pdf.text(`Date: ${chartDate}`, pdfWidth - margin, currentY, { align: 'right' }); currentY += 25;
+                     async function addChartToPdf(chartContainerId, title) { /* ... PDF chart adding logic remains the same ... */ const element = document.getElementById(chartContainerId); if (!element || (chartContainerId === 'faculty2-container' && !element.classList.contains('visible'))) return false; const estElementHeight = element.offsetHeight * 0.75; if (currentY + estElementHeight + 30 > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header again if needed */ } pdf.setFontSize(12); pdf.setFont(undefined, 'bold'); pdf.text(title, margin, currentY); currentY += 15; try { const canvas = await html2canvas(element, { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff' }); const imgData = canvas.toDataURL('image/png'); const imgProps = pdf.getImageProperties(imgData); const imgWidth = pdfWidth - 2 * margin; const imgHeight = (imgProps.height * imgWidth) / imgProps.width; if (currentY + imgHeight > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header/title again */ } pdf.addImage(imgData, 'PNG', margin, currentY, imgWidth, imgHeight); currentY += imgHeight + 20; return true; } catch (canvasError) { console.error(`html2canvas failed for ${chartContainerId}:`, canvasError); return false; } }
+                     await addChartToPdf('student-container', 'Student Chart'); await addChartToPdf('faculty1-container', 'Faculty Check 1'); await addChartToPdf('faculty2-container', 'Faculty Check 2');
+                     const filename = `${PDF_TITLE.replace(/\s+/g, '_')}_${patientId}_${chartDate}.pdf`; pdf.save(filename);
                  } catch (error) { console.error("Error generating PDF:", error); alert("Error generating PDF."); }
-                 finally {
-                     domElements.pdfButton.textContent = 'Download Chart as PDF';
-                     if (!areChartsLocked) { domElements.pdfButton.disabled = false; domElements.lockChartBtn.disabled = false; }
-                     document.body.classList.remove('pdf-generating');
-                 }
+                 finally { domElements.pdfButton.textContent = 'Download Chart as PDF'; if (!areChartsLocked) { domElements.pdfButton.disabled = false; domElements.lockChartBtn.disabled = false; } document.body.classList.remove('pdf-generating'); }
             }
 
             function lockAllCharts() {
-                if (!domElements.lockChartBtn) return; areChartsLocked = true;
-                CHART_IDS.forEach(id => { const container = domElements.chartContainers[id]; if (container && (id !== 'faculty2' || container.classList.contains('visible'))) container.classList.add('locked'); });
-                domElements.patientInfoContainer?.classList.add('locked');
-                if (domElements.patientIdInput) domElements.patientIdInput.readOnly = true; if (domElements.chartDateInput) domElements.chartDateInput.readOnly = true;
-                domElements.lockChartBtn.textContent = 'Unlock Charts'; domElements.lockChartBtn.disabled = false;
-                domElements.pdfButton.disabled = true; domElements.compareF1Btn.disabled = true; domElements.compareF2Btn.disabled = true;
-                domElements.compareBothBtn.disabled = true; domElements.clearCompareBtn.disabled = true; domElements.toggleF2Btn.disabled = true;
-                console.log("Charts LOCKED.");
+                if (!domElements.lockChartBtn) return; areChartsLocked = true; CHART_IDS.forEach(id => { const container = domElements.chartContainers[id]; if (container && (id !== 'faculty2' || container.classList.contains('visible'))) container.classList.add('locked'); }); domElements.patientInfoContainer?.classList.add('locked'); if (domElements.patientIdInput) domElements.patientIdInput.readOnly = true; if (domElements.chartDateInput) domElements.chartDateInput.readOnly = true; domElements.lockChartBtn.textContent = 'Unlock Charts'; domElements.lockChartBtn.disabled = false; domElements.pdfButton.disabled = true; domElements.compareF1Btn.disabled = true; domElements.compareF2Btn.disabled = true; domElements.compareBothBtn.disabled = true; domElements.clearCompareBtn.disabled = true; domElements.toggleF2Btn.disabled = true; console.log("Charts LOCKED.");
             }
 
             function unlockAllCharts() {
-                 if (!domElements.lockChartBtn) return; const enteredCode = prompt("Enter unlock code:"); if (enteredCode === null) return;
-                 if (enteredCode === UNLOCK_CODE) {
-                    areChartsLocked = false;
-                    CHART_IDS.forEach(id => domElements.chartContainers[id]?.classList.remove('locked'));
-                    domElements.patientInfoContainer?.classList.remove('locked');
-                    if (domElements.patientIdInput) domElements.patientIdInput.readOnly = false; if (domElements.chartDateInput) domElements.chartDateInput.readOnly = false;
-                    domElements.lockChartBtn.textContent = 'Lock Charts'; domElements.lockChartBtn.disabled = false;
-                    domElements.pdfButton.disabled = false; domElements.compareF1Btn.disabled = false; domElements.compareF2Btn.disabled = false;
-                    domElements.compareBothBtn.disabled = false; domElements.clearCompareBtn.disabled = false; domElements.toggleF2Btn.disabled = false;
-                    console.log("Charts UNLOCKED.");
-                 } else alert("Incorrect code.");
+                 if (!domElements.lockChartBtn) return; const enteredCode = prompt("Enter unlock code:"); if (enteredCode === null) return; if (enteredCode === UNLOCK_CODE) { areChartsLocked = false; CHART_IDS.forEach(id => domElements.chartContainers[id]?.classList.remove('locked')); domElements.patientInfoContainer?.classList.remove('locked'); if (domElements.patientIdInput) domElements.patientIdInput.readOnly = false; if (domElements.chartDateInput) domElements.chartDateInput.readOnly = false; domElements.lockChartBtn.textContent = 'Lock Charts'; domElements.lockChartBtn.disabled = false; domElements.pdfButton.disabled = false; domElements.compareF1Btn.disabled = false; domElements.compareF2Btn.disabled = false; domElements.compareBothBtn.disabled = false; domElements.clearCompareBtn.disabled = false; domElements.toggleF2Btn.disabled = false; console.log("Charts UNLOCKED."); } else alert("Incorrect code.");
             }
 
             function cacheDomElements() {
-                CHART_IDS.forEach(id => {
-                    domElements.chartContainers[id] = document.getElementById(`${id}-container`);
-                    domElements.toggleAreas[id] = document.getElementById(`${id}-toggle-area`);
-                    domElements.chartLayouts[id] = document.getElementById(`${id}-chart`);
-                });
-                domElements.compareF1Btn = document.getElementById('compare-f1-btn'); domElements.compareF2Btn = document.getElementById('compare-f2-btn');
-                domElements.compareBothBtn = document.getElementById('compare-both-btn'); domElements.clearCompareBtn = document.getElementById('clear-compare-btn');
-                domElements.toggleF2Btn = document.getElementById('toggle-f2-btn'); domElements.faculty2Container = document.getElementById('faculty2-container');
-                domElements.f2CompareButtons = document.querySelectorAll('.f2-compare-button'); domElements.pdfButton = document.getElementById('download-pdf-btn');
-                domElements.lockChartBtn = document.getElementById('lock-chart-btn'); domElements.studentChartLayout = document.getElementById('student-chart');
-                domElements.patientInfoContainer = document.getElementById('patient-info'); domElements.patientIdInput = document.getElementById('patient-id');
-                domElements.chartDateInput = document.getElementById('chart-date'); domElements.toggleF2Div = document.getElementById('toggle-f2-div');
+                CHART_IDS.forEach(id => { domElements.chartContainers[id] = document.getElementById(`${id}-container`); domElements.toggleAreas[id] = document.getElementById(`${id}-toggle-area`); domElements.chartLayouts[id] = document.getElementById(`${id}-chart`); }); domElements.compareF1Btn = document.getElementById('compare-f1-btn'); domElements.compareF2Btn = document.getElementById('compare-f2-btn'); domElements.compareBothBtn = document.getElementById('compare-both-btn'); domElements.clearCompareBtn = document.getElementById('clear-compare-btn'); domElements.toggleF2Btn = document.getElementById('toggle-f2-btn'); domElements.faculty2Container = document.getElementById('faculty2-container'); domElements.f2CompareButtons = document.querySelectorAll('.f2-compare-button'); domElements.pdfButton = document.getElementById('download-pdf-btn'); domElements.lockChartBtn = document.getElementById('lock-chart-btn'); domElements.studentChartLayout = document.getElementById('student-chart'); domElements.patientInfoContainer = document.getElementById('patient-info'); domElements.patientIdInput = document.getElementById('patient-id'); domElements.chartDateInput = document.getElementById('chart-date'); domElements.toggleF2Div = document.getElementById('toggle-f2-div');
             }
 
              function setupChartUI() {
-                CHART_IDS.forEach(id => {
-                    createToggleButtons(id, domElements.toggleAreas[id]); createChartElements(id, domElements.chartLayouts[id]);
-                    if (chartData[id]) { ALL_TOOTH_NUMBERS.forEach(toothNum => SURFACES.forEach(surface => { if (chartData[id][toothNum]?.[surface]) updateCellUI(id, toothNum, surface); })); }
-                });
-                const isInitiallyLocked = areChartsLocked;
-                if (domElements.lockChartBtn) { domElements.lockChartBtn.textContent = isInitiallyLocked ? 'Unlock Charts' : 'Lock Charts'; domElements.lockChartBtn.disabled = false; }
-                 CHART_IDS.forEach(id => domElements.chartContainers[id]?.classList.toggle('locked', isInitiallyLocked));
-                 domElements.patientInfoContainer?.classList.toggle('locked', isInitiallyLocked);
-                 if(domElements.patientIdInput) domElements.patientIdInput.readOnly = isInitiallyLocked; if(domElements.chartDateInput) domElements.chartDateInput.readOnly = isInitiallyLocked;
-                 domElements.pdfButton.disabled = isInitiallyLocked; domElements.compareF1Btn.disabled = isInitiallyLocked; domElements.compareF2Btn.disabled = isInitiallyLocked;
-                 domElements.compareBothBtn.disabled = isInitiallyLocked; domElements.clearCompareBtn.disabled = isInitiallyLocked; domElements.toggleF2Btn.disabled = isInitiallyLocked;
+                CHART_IDS.forEach(id => { createToggleButtons(id, domElements.toggleAreas[id]); createChartElements(id, domElements.chartLayouts[id]); if (chartData[id]) { ALL_TOOTH_NUMBERS.forEach(toothNum => SURFACES.forEach(surface => { if (chartData[id][toothNum]?.[surface]) updateCellUI(id, toothNum, surface); })); } }); const isInitiallyLocked = areChartsLocked; if (domElements.lockChartBtn) { domElements.lockChartBtn.textContent = isInitiallyLocked ? 'Unlock Charts' : 'Lock Charts'; domElements.lockChartBtn.disabled = false; } CHART_IDS.forEach(id => domElements.chartContainers[id]?.classList.toggle('locked', isInitiallyLocked)); domElements.patientInfoContainer?.classList.toggle('locked', isInitiallyLocked); if(domElements.patientIdInput) domElements.patientIdInput.readOnly = isInitiallyLocked; if(domElements.chartDateInput) domElements.chartDateInput.readOnly = isInitiallyLocked; domElements.pdfButton.disabled = isInitiallyLocked; domElements.compareF1Btn.disabled = isInitiallyLocked; domElements.compareF2Btn.disabled = isInitiallyLocked; domElements.compareBothBtn.disabled = isInitiallyLocked; domElements.clearCompareBtn.disabled = isInitiallyLocked; domElements.toggleF2Btn.disabled = isInitiallyLocked;
             }
 
             function setupComparisonControls() {
-                 if (!domElements.compareF1Btn || !domElements.compareF2Btn || !domElements.compareBothBtn || !domElements.clearCompareBtn) return;
-                domElements.compareF1Btn.addEventListener('click', () => { if (!areChartsLocked) runComparison(true, false); });
-                domElements.compareF2Btn.addEventListener('click', () => { if (!areChartsLocked) { if (domElements.faculty2Container?.classList.contains('visible')) runComparison(false, true); else alert("Show Faculty Check 2 chart first."); } });
-                 domElements.compareBothBtn.addEventListener('click', () => { if (!areChartsLocked) { if (domElements.faculty2Container?.classList.contains('visible')) runComparison(true, true); else alert("Show Faculty Check 2 chart first."); } });
-                domElements.clearCompareBtn.addEventListener('click', () => { if (!areChartsLocked) clearComparisonHighlights(); });
+                 if (!domElements.compareF1Btn || !domElements.compareF2Btn || !domElements.compareBothBtn || !domElements.clearCompareBtn) return; domElements.compareF1Btn.addEventListener('click', () => { if (!areChartsLocked) runComparison(true, false); }); domElements.compareF2Btn.addEventListener('click', () => { if (!areChartsLocked) { if (domElements.faculty2Container?.classList.contains('visible')) runComparison(false, true); else alert("Show Faculty Check 2 chart first."); } }); domElements.compareBothBtn.addEventListener('click', () => { if (!areChartsLocked) { if (domElements.faculty2Container?.classList.contains('visible')) runComparison(true, true); else alert("Show Faculty Check 2 chart first."); } }); domElements.clearCompareBtn.addEventListener('click', () => { if (!areChartsLocked) clearComparisonHighlights(); });
             }
 
             function setupFaculty2Toggle() {
-                if (!domElements.toggleF2Btn || !domElements.faculty2Container || !domElements.f2CompareButtons) { if(domElements.toggleF2Div) domElements.toggleF2Div.style.display = 'none'; return; }
-                domElements.toggleF2Btn.addEventListener('click', () => {
-                     if (areChartsLocked) return;
-                    const f2Container = domElements.faculty2Container; const f2Buttons = domElements.f2CompareButtons; const toggleBtn = domElements.toggleF2Btn;
-                    f2Container.classList.toggle('visible'); const isVisible = f2Container.classList.contains('visible');
-                    f2Buttons.forEach(btn => btn.classList.toggle('visible', isVisible));
-                    toggleBtn.textContent = isVisible ? 'Hide Faculty Check 2' : 'Show Faculty Check 2';
-                    if (!isVisible) {
-                        const f2Active = domElements.compareF2Btn?.classList.contains('active-compare-f2'); const bothActive = domElements.compareBothBtn?.classList.contains('active-compare-both');
-                        if (f2Active || bothActive) { if (domElements.compareF1Btn?.classList.contains('active-compare-f1') || bothActive) runComparison(true, false); else clearComparisonHighlights(); }
-                         domElements.compareF2Btn?.classList.remove('active-compare-f2'); domElements.compareBothBtn?.classList.remove('active-compare-both');
-                    }
-                });
+                if (!domElements.toggleF2Btn || !domElements.faculty2Container || !domElements.f2CompareButtons) { if(domElements.toggleF2Div) domElements.toggleF2Div.style.display = 'none'; return; } domElements.toggleF2Btn.addEventListener('click', () => { if (areChartsLocked) return; const f2Container = domElements.faculty2Container; const f2Buttons = domElements.f2CompareButtons; const toggleBtn = domElements.toggleF2Btn; f2Container.classList.toggle('visible'); const isVisible = f2Container.classList.contains('visible'); f2Buttons.forEach(btn => btn.classList.toggle('visible', isVisible)); toggleBtn.textContent = isVisible ? 'Hide Faculty Check 2' : 'Show Faculty Check 2'; if (!isVisible) { const f2Active = domElements.compareF2Btn?.classList.contains('active-compare-f2'); const bothActive = domElements.compareBothBtn?.classList.contains('active-compare-both'); if (f2Active || bothActive) { if (domElements.compareF1Btn?.classList.contains('active-compare-f1') || bothActive) runComparison(true, false); else clearComparisonHighlights(); } domElements.compareF2Btn?.classList.remove('active-compare-f2'); domElements.compareBothBtn?.classList.remove('active-compare-both'); } });
             }
 
             function setupPdfButton() { if (!domElements.pdfButton) return; domElements.pdfButton.addEventListener('click', generatePdf); }
             function setupLockUnlockButton() { if (!domElements.lockChartBtn) return; domElements.lockChartBtn.addEventListener('click', () => { if (areChartsLocked) unlockAllCharts(); else lockAllCharts(); }); }
 
-            function init() {
-                cacheDomElements(); initializeState(); setupChartUI(); setupComparisonControls(); setupFaculty2Toggle(); setupPdfButton(); setupLockUnlockButton();
-                console.log("Initialization complete. All Tooth Numbers:", ALL_TOOTH_NUMBERS); // Log all numbers being handled
-            }
+            function init() { cacheDomElements(); initializeState(); setupChartUI(); setupComparisonControls(); setupFaculty2Toggle(); setupPdfButton(); setupLockUnlockButton(); console.log("Initialization complete."); }
             document.addEventListener('DOMContentLoaded', init);
         })();
     </script>
