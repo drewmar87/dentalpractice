@@ -83,15 +83,22 @@
 
         .container-scaler {
             display: block;
-            max-width: 1400px;
+            max-width: 1400px; /* Keep max width */
             width: 95%;
         }
         h1, h2 { margin-bottom: 15px; margin-top: 0; }
+
+        /* --- START SCALING CHANGES --- */
         .chart-layout {
             display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto;
-            gap: 20px; justify-items: center; align-items: start;
+            gap: 1.5em; /* Use em for gap relative to font-size */
+            justify-items: center; align-items: start;
             width: fit-content; margin: 10px auto 0 auto;
+            /* BASE FONT SIZE FOR SCALING - Adjust base value as needed */
+            font-size: 15px; /* This will be adjusted by media queries */
         }
+        /* --- END SCALING CHANGES --- */
+
 
         /* Toggle buttons */
         .toggle-area { display: flex; justify-content: center; gap: 15px; margin: 10px 0; }
@@ -120,27 +127,79 @@
         .action-button:disabled { cursor: not-allowed; opacity: 0.6; }
 
 
-        /* Quadrant, Tooth, Surface Grid */
-        .quadrant { border: 1px solid #ccc; border-radius: 8px; padding: 10px; background: #f9f9f9; box-sizing: border-box; width: 100%; }
-        .quadrant h3 { margin: 0 0 10px; font-size: 1em; text-align: center; }
-        .tooth-grid { display: flex; gap: 10px; justify-content: center; }
-        .tooth { border-right: 1px dotted #aaa; padding-right: 10px; }
-        .tooth:last-child { border-right: none; padding-right: 0; }
-        .tooth label { display: block; font-size: 1em; font-weight: bold; color: #333; margin-bottom: 6px; text-align: center; }
+        /* --- START SCALING CHANGES --- */
+        /* Quadrant, Tooth, Surface Grid - Use em units */
+        .quadrant {
+           border: 1px solid #ccc;
+           border-radius: 0.5em; /* Relative border-radius */
+           padding: 0.7em;       /* Relative padding */
+           background: #f9f9f9;
+           box-sizing: border-box;
+           width: 100%; /* Quadrant takes full width of its grid column */
+        }
+        .quadrant h3 {
+           margin: 0 0 0.7em;  /* Relative margin */
+           font-size: 1.1em;   /* Font size relative to chart-layout */
+           text-align: center;
+        }
+        .tooth-grid {
+           display: flex;
+           gap: 0.7em;         /* Relative gap */
+           justify-content: center;
+           flex-wrap: wrap; /* Allow teeth to wrap on very small screens if needed */
+        }
+        .tooth {
+           border-right: 1px dotted #aaa;
+           padding-right: 0.7em; /* Relative padding */
+           /* Remove fixed padding from last-child as flex gap handles spacing */
+        }
+        .tooth:last-child {
+           border-right: none;
+           padding-right: 0;
+        }
+        .tooth label {
+           display: block;
+           font-size: 1em; /* Relative font size */
+           font-weight: bold;
+           color: #333;
+           margin-bottom: 0.4em; /* Relative margin */
+           text-align: center;
+        }
         .surface-grid {
-            display: grid; grid-template-columns: 30px 2px 30px; grid-template-rows: 30px 30px 30px;
-            grid-template-areas: ". L ." "M . D" ". B .";
-            row-gap: 2px; column-gap: 0px; justify-items: center; align-items: center;
+            display: grid;
+            /* Define grid based on surface size (2em) + small gap */
+            grid-template-columns: 2em 0.15em 2em; /* Approx 30px 2px 30px if base is 15px */
+            grid-template-rows: 2em 2em 2em;       /* Approx 30px 30px 30px */
+            grid-template-areas:
+                ". L ."
+                "M . D"
+                ". B .";
+            row-gap: 0.15em;    /* Small relative gap */
+            column-gap: 0px; /* Keep column gap at 0 for M/D */
+            justify-items: center;
+            align-items: center;
         }
         .surface {
-            width: 30px; height: 30px; border: 1px solid #888; border-radius: 4px;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 1.2em; user-select: none;
-            box-sizing: border-box; background-color: #fff; transition: background-color 0.2s, border 0.2s, opacity 0.3s;
+            width: 2em;        /* Width relative to chart-layout font-size */
+            height: 2em;       /* Height relative to chart-layout font-size */
+            border: 1px solid #888;
+            border-radius: 0.25em; /* Relative radius */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            /* Adjust symbol size relative to surface size if needed, or keep relative to chart-layout */
+            font-size: 1.2em; /* Symbol size relative to chart-layout font-size (1.2 * 15px = 18px) */
+            user-select: none;
+            box-sizing: border-box;
+            background-color: #fff;
+            transition: background-color 0.2s, border 0.2s, opacity 0.3s;
             -webkit-print-color-adjust: exact !important; color-adjust: exact !important;
         }
         .surface[data-surface="M"] { grid-area: M; } .surface[data-surface="D"] { grid-area: D; }
         .surface[data-surface="B"] { grid-area: B; } .surface[data-surface="L"] { grid-area: L; }
+        /* --- END SCALING CHANGES --- */
+
 
         /* State Colors/Styles */
         .surface.supra { background-color: rgba(0, 128, 0, 0.2); } .surface.sub { background-color: rgba(0, 0, 255, 0.2); }
@@ -175,9 +234,96 @@
         .pdf-generating #toggle-f2-btn {
              display: none !important;
         }
+
+        /* --- START SCALING CHANGES: MEDIA QUERIES --- */
+        /* --- Responsive Scaling Media Queries --- */
+
+        /* Adjust base font size for scaling chart elements */
+        @media (max-width: 1400px) {
+          .chart-layout {
+            font-size: 14px; /* Slightly smaller */
+          }
+        }
+
+        @media (max-width: 1200px) {
+          .chart-layout {
+            font-size: 13px;
+          }
+        }
+
+        @media (max-width: 992px) { /* Tablet */
+          .chart-layout {
+            font-size: 12px;
+            gap: 1.2em; /* Slightly reduce gap between quadrants */
+          }
+          .tooth-grid {
+              gap: 0.6em; /* Reduce gap between teeth */
+          }
+        }
+
+        @media (max-width: 768px) { /* Small Tablet / Large Phone */
+           .chart-layout {
+            font-size: 10px;
+            gap: 1em;
+            grid-template-columns: 1fr; /* Stack quadrants vertically */
+            grid-template-rows: auto auto auto auto; /* Explicit rows for stacking */
+            width: 90%; /* Allow layout to take more width */
+          }
+          /* Re-assign grid positions for vertical stacking */
+          .chart-layout .quadrant[style*="grid-column: 1"][style*="grid-row: 1"] { /* UR */
+              grid-column: 1; grid-row: 1;
+          }
+          .chart-layout .quadrant[style*="grid-column: 2"][style*="grid-row: 1"] { /* UL */
+               grid-column: 1; grid-row: 2;
+          }
+           .chart-layout .quadrant[style*="grid-column: 1"][style*="grid-row: 2"] { /* LR */
+               grid-column: 1; grid-row: 3;
+          }
+           .chart-layout .quadrant[style*="grid-column: 2"][style*="grid-row: 2"] { /* LL */
+               grid-column: 1; grid-row: 4;
+          }
+          .tooth-grid {
+              gap: 0.5em;
+          }
+          .surface-grid {
+              /* Ensure grid doesn't get too squished if needed */
+              min-width: 4.15em; /* 2em + 0.15em + 2em */
+          }
+        }
+
+        @media (max-width: 576px) { /* Phone */
+          .chart-layout {
+            font-size: 9px; /* Even smaller */
+            gap: 0.8em;
+            width: 95%;
+          }
+           .tooth-grid {
+              gap: 0.4em;
+          }
+          .tooth {
+              padding-right: 0.4em; /* Adjust padding */
+          }
+           .surface {
+               font-size: 1.1em; /* Reduce symbol size slightly if needed */
+           }
+        }
+
+        @media (max-width: 420px) { /* Very Small Phone */
+          .chart-layout {
+            font-size: 8px;
+          }
+          .tooth-grid {
+              gap: 0.3em; /* Further reduce gap */
+          }
+           .tooth {
+              padding-right: 0.3em;
+          }
+        }
+        /* --- END SCALING CHANGES: MEDIA QUERIES --- */
+
     </style>
 </head>
-<body>
+<body> <!-- Body tag starts here, rest of HTML (divs, script) follows -->
 
     <!-- NEW: Main Title -->
     <h1 class="main-title">Calculus Detection Chart</h1>
