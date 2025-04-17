@@ -283,7 +283,7 @@
     <!-- NEW: Patient Info Section -->
     <div id="patient-info">
         <div> <!-- Wrap label/input pairs -->
-            <label for="patient-id">Patient ID:</label>
+            <label for="patient-id">Ch #:</label>
             <input type="text" id="patient-id" name="patient-id">
         </div>
         <div>
@@ -353,13 +353,13 @@
             // --- ADJUSTED QUADRANT NUMBERING FOR VISUAL LAYOUT ---
             const QUADRANTS = {
                  // Distal (1) to Midline (8) - Left-to-Right visually in grid
-                 'Upper Right': [1, 2, 3, 4, 5, 6, 7, 8],
+                 'Upper Right': [1, 2, 3, 4-A, 5-B, 6-C, 7-D, 8-E],
                  // Midline (9) to Distal (16) - Left-to-Right visually in grid
-                 'Upper Left': [9, 10, 11, 12, 13, 14, 15, 16],
+                 'Upper Left': [9-F, 10-G, 11-H, 12-I, 13-J, 14, 15, 16],
                  // Distal (32) to Midline (25) - Left-to-Right visually in grid
-                 'Lower Right': [32, 31, 30, 29, 28, 27, 26, 25],
+                 'Lower Right': [32, 31, 30, 29-T, 28-S, 27-R, 26-Q, 25-P],
                  // Midline (17) to Distal (24) - Left-to-Right visually in grid
-                 'Lower Left': [17, 18, 19, 20, 21, 22, 23, 24]
+                 'Lower Left': [17, 18, 19, 20-K, 21-L, 22-M, 23-N, 24-O]
             };
              // Match grid position to QUADRANT_ORDER (UR=TopLeft, UL=TopRight, LR=BottomLeft, LL=BottomRight grid cells)
              const QUADRANT_POS = {
