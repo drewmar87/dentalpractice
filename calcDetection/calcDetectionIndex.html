@@ -276,8 +276,7 @@
 </head>
 <body>
 
-    <!-- (HTML Body remains exactly the same as before) -->
-        <!-- NEW: Main Title -->
+    <!-- NEW: Main Title -->
     <h1 class="main-title">Calculus Detection Chart</h1>
 
     <!-- NEW: Patient Info Section -->
@@ -307,7 +306,7 @@
             <button id="compare-f1-btn" class="action-button">Compare Faculty 1</button>
             <button id="compare-f2-btn" class="f2-compare-button action-button">Compare Faculty 2</button>
             <button id="compare-both-btn" class="f2-compare-button action-button">Compare Both</button>
-            <button id="clear-compare-btn" class="action-button">Clear Comparison Highlights</button>
+            <button id="clear-compare-btn" class="action-button">Clear Comparison</button>
         </div>
 
         <!-- PDF Download & Lock Controls -->
@@ -348,7 +347,7 @@
             const { jsPDF } = window.jspdf;
 
             // --- Constants and Configuration ---
-                        const SYMBOLS = ["", "│", "○", "●"]; // None, Light(Line), Moderate(Open Circle), Severe(Filled Circle) // Light, Moderate, Severe
+            const SYMBOLS = ["", "│", "○", "●"]; // None, Light(Line), Moderate(Open Circle), Severe(Filled Circle) // Light, Moderate, Severe
             const QUADRANT_ORDER = ['Upper Right', 'Upper Left', 'Lower Right', 'Lower Left']; // Standard visual order
             // --- ADJUSTED QUADRANT NUMBERING FOR VISUAL LAYOUT ---
             const QUADRANTS = {
@@ -359,7 +358,7 @@
                  // Distal (32) to Midline (25) - Left-to-Right visually in grid
                  'Lower Right': [32, 31, 30, 29, 28, 27, 26, 25],
                  // Midline (17) to Distal (24) - Left-to-Right visually in grid
-                 'Lower Left': [17, 18, 19, 20, 21, 22, 23, 24]
+                 'Lower Left': [24, 23, 22, 21, 20, 19, 18, 17]
             };
              // Match grid position to QUADRANT_ORDER (UR=TopLeft, UL=TopRight, LR=BottomLeft, LL=BottomRight grid cells)
              const QUADRANT_POS = {
@@ -372,6 +371,16 @@
             const ALL_TOOTH_NUMBERS = [...new Set([].concat(...Object.values(QUADRANTS)))].sort((a, b) => a - b);
             const UNLOCK_CODE = "12345";
             const PDF_TITLE = "Calculus Detection Chart";
+
+            // --- NEW: Primary Tooth Mapping ---
+            const PRIMARY_TOOTH_MAP = {
+                '4': 'A', '5': 'B', '6': 'C', '7': 'D', '8': 'E',       // Upper Right Primary
+                '9': 'F', '10': 'G', '11': 'H', '12': 'I', '13': 'J',     // Upper Left Primary
+                '20': 'K', '21': 'L', '22': 'M', '23': 'N', '24': 'O',    // Lower Left Primary
+                '25': 'P', '26': 'Q', '27': 'R', '28': 'S', '29': 'T'     // Lower Right Primary (Note: numbers 25-29 correspond to T-P)
+            };
+            // --- End NEW ---
+
 
             // --- State Variables ---
             let chartData = {};
@@ -388,7 +397,7 @@
                 toggleF2Div: null
             };
 
-            // --- Core Functions (No changes needed from previous version below this point) ---
+            // --- Core Functions ---
 
             function initializeState() {
                 areChartsLocked = false;
@@ -437,23 +446,64 @@
                 else { currentChartMode.plaqueMode = false; currentChartMode.currentLoc = mode; clickedButton.classList.add('active'); }
             }
 
+            // --- MODIFIED FUNCTION createChartElements ---
             function createChartElements(chartId, chartLayoutElement) {
-                if (!chartLayoutElement) return; chartLayoutElement.innerHTML = '';
+                if (!chartLayoutElement) return;
+                chartLayoutElement.innerHTML = '';
                 QUADRANT_ORDER.forEach(quadrantName => {
-                    const pos = QUADRANT_POS[quadrantName]; const quadDiv = document.createElement('div'); quadDiv.className = 'quadrant';
+                    const pos = QUADRANT_POS[quadrantName];
+                    const quadDiv = document.createElement('div');
+                    quadDiv.className = 'quadrant';
                     quadDiv.dataset.quadrantName = quadrantName; // Add data attribute for specific CSS rules if needed
-                    if (pos) { quadDiv.style.gridColumn = pos.col; quadDiv.style.gridRow = pos.row; }
-                    const h3 = document.createElement('h3'); h3.textContent = quadrantName; quadDiv.append(h3);
-                    const toothGridDiv = document.createElement('div'); toothGridDiv.className = 'tooth-grid'; const teethNumbers = QUADRANTS[quadrantName]; if (!teethNumbers) return;
+                    if (pos) {
+                        quadDiv.style.gridColumn = pos.col;
+                        quadDiv.style.gridRow = pos.row;
+                    }
+                    const h3 = document.createElement('h3');
+                    h3.textContent = quadrantName;
+                    quadDiv.append(h3);
+
+                    const toothGridDiv = document.createElement('div');
+                    toothGridDiv.className = 'tooth-grid';
+                    const teethNumbers = QUADRANTS[quadrantName];
+                    if (!teethNumbers) return;
+
                     teethNumbers.forEach(num => {
-                        const toothDiv = document.createElement('div'); toothDiv.className = 'tooth'; const label = document.createElement('label'); label.textContent = num; toothDiv.append(label);
-                        const surfaceGridDiv = document.createElement('div'); surfaceGridDiv.className = 'surface-grid';
-                        SURFACES.forEach(s => { const cell = document.createElement('div'); cell.className = 'surface'; cell.dataset.chartId = chartId; cell.dataset.toothNum = num; cell.dataset.surface = s; cell.addEventListener('click', handleSurfaceClick); surfaceGridDiv.append(cell); });
-                        toothDiv.append(surfaceGridDiv); toothGridDiv.append(toothDiv);
+                        const toothDiv = document.createElement('div');
+                        toothDiv.className = 'tooth';
+                        const label = document.createElement('label');
+
+                        // --- MODIFIED LABEL LOGIC ---
+                        const primaryLetter = PRIMARY_TOOTH_MAP[String(num)]; // Look up the primary letter
+                        if (primaryLetter) {
+                            label.textContent = `${num}-${primaryLetter}`; // Format as "Universal-Primary"
+                        } else {
+                            label.textContent = num; // Default to just the Universal number
+                        }
+                        // --- END MODIFIED LABEL LOGIC ---
+
+                        toothDiv.append(label);
+
+                        const surfaceGridDiv = document.createElement('div');
+                        surfaceGridDiv.className = 'surface-grid';
+                        SURFACES.forEach(s => {
+                            const cell = document.createElement('div');
+                            cell.className = 'surface';
+                            cell.dataset.chartId = chartId;
+                            cell.dataset.toothNum = num; // IMPORTANT: data-tooth-num still uses the Universal number
+                            cell.dataset.surface = s;
+                            cell.addEventListener('click', handleSurfaceClick);
+                            surfaceGridDiv.append(cell);
+                        });
+                        toothDiv.append(surfaceGridDiv);
+                        toothGridDiv.append(toothDiv);
                     });
-                    quadDiv.append(toothGridDiv); chartLayoutElement.append(quadDiv);
+                    quadDiv.append(toothGridDiv);
+                    chartLayoutElement.append(quadDiv);
                 });
             }
+            // --- END MODIFIED FUNCTION createChartElements ---
+
 
             function handleSurfaceClick(event) {
                 if (areChartsLocked) return; const cell = event.currentTarget; const { chartId, toothNum, surface } = cell.dataset; if (!chartData[chartId]?.[toothNum]?.[surface]) return;
@@ -486,7 +536,7 @@
                  try {
                      const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' }); const pdfWidth = pdf.internal.pageSize.getWidth(); const pdfHeight = pdf.internal.pageSize.getHeight(); const margin = 30; let currentY = margin;
                      pdf.setFontSize(16); pdf.setFont(undefined, 'bold'); pdf.text(PDF_TITLE, pdfWidth / 2, currentY, { align: 'center' }); currentY += 20; pdf.setFontSize(10); pdf.setFont(undefined, 'normal'); pdf.text(`Patient ID: ${patientId}`, margin, currentY); pdf.text(`Date: ${chartDate}`, pdfWidth - margin, currentY, { align: 'right' }); currentY += 25;
-                     async function addChartToPdf(chartContainerId, title) { /* ... PDF chart adding logic remains the same ... */ const element = document.getElementById(chartContainerId); if (!element || (chartContainerId === 'faculty2-container' && !element.classList.contains('visible'))) return false; const estElementHeight = element.offsetHeight * 0.75; if (currentY + estElementHeight + 30 > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header again if needed */ } pdf.setFontSize(12); pdf.setFont(undefined, 'bold'); pdf.text(title, margin, currentY); currentY += 15; try { const canvas = await html2canvas(element, { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff' }); const imgData = canvas.toDataURL('image/png'); const imgProps = pdf.getImageProperties(imgData); const imgWidth = pdfWidth - 2 * margin; const imgHeight = (imgProps.height * imgWidth) / imgProps.width; if (currentY + imgHeight > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header/title again */ } pdf.addImage(imgData, 'PNG', margin, currentY, imgWidth, imgHeight); currentY += imgHeight + 20; return true; } catch (canvasError) { console.error(`html2canvas failed for ${chartContainerId}:`, canvasError); return false; } }
+                     async function addChartToPdf(chartContainerId, title) { const element = document.getElementById(chartContainerId); if (!element || (chartContainerId === 'faculty2-container' && !element.classList.contains('visible'))) return false; const estElementHeight = element.offsetHeight * 0.75; if (currentY + estElementHeight + 30 > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header again if needed */ } pdf.setFontSize(12); pdf.setFont(undefined, 'bold'); pdf.text(title, margin, currentY); currentY += 15; try { const canvas = await html2canvas(element, { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff' }); const imgData = canvas.toDataURL('image/png'); const imgProps = pdf.getImageProperties(imgData); const imgWidth = pdfWidth - 2 * margin; const imgHeight = (imgProps.height * imgWidth) / imgProps.width; if (currentY + imgHeight > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header/title again */ } pdf.addImage(imgData, 'PNG', margin, currentY, imgWidth, imgHeight); currentY += imgHeight + 20; return true; } catch (canvasError) { console.error(`html2canvas failed for ${chartContainerId}:`, canvasError); return false; } }
                      await addChartToPdf('student-container', 'Student Chart'); await addChartToPdf('faculty1-container', 'Faculty Check 1'); await addChartToPdf('faculty2-container', 'Faculty Check 2');
                      const filename = `${PDF_TITLE.replace(/\s+/g, '_')}_${patientId}_${chartDate}.pdf`; pdf.save(filename);
                  } catch (error) { console.error("Error generating PDF:", error); alert("Error generating PDF."); }
