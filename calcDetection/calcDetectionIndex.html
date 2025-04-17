@@ -16,6 +16,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+	transform: scale(0.90);
         }
         .main-title { /* Style for the new title */
             font-size: 1.8em;
@@ -235,46 +236,6 @@
              display: none !important;
         }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 1024px) { /* Adjust breakpoint */
-    .chart-layout {
-        /* Scale the entire grid down */
-        transform: scale(0.85); /* Adjust scale factor (0.8 = 80%) */
-        transform-origin: top center; /* Scale from the top center */
-        /* Scaling doesn't remove original space, might need margin adjust */
-        /* margin-bottom: -80px; */ /* Example: Pull content below up if needed */
-    }
-
-    /* You might need to adjust the container holding it */
-    .chart-container {
-        /* overflow-x: hidden; */ /* Prevent accidental scrollbars if scaling isn't perfect */
-    }
-
-     /* Adjust other elements if needed */
-     .main-title { font-size: 1.6em; }
-     #patient-info { flex-direction: column; gap: 10px; align-items: flex-start; } /* Stack patient info */
-}
-
- @media (max-width: 768px) { /* Further scaling for smaller screens */
-     .chart-layout {
-         transform: scale(0.75); /* Scale down more */
-         /* margin-bottom: -120px; */ /* Adjust negative margin if needed */
-     }
-      .main-title { font-size: 1.4em; }
-      h2 { font-size: 1.1em; }
-      .toggle-area {
-          flex-wrap: wrap; /* Allow toggle buttons to wrap */
-          gap: 8px;
-      }
-      .toggle-btn {
-           padding: 6px 12px;
-           font-size: 0.9em;
-      }
-      .action-button {
-          padding: 6px 12px;
-          font-size: 0.85em;
-      }
- }
 
     </style>
 </head>
