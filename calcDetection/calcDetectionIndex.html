@@ -514,10 +514,10 @@
         <!-- END Legend Container -->
 		 <div id="comparison-controls">
         <!-- PDF Download & Lock Controls -->
-         
+
              <button id="download-pdf-btn" class="action-button">Download Chart as PDF</button>
              <button id="lock-chart-btn" class="action-button">Lock Charts</button>
-         
+
         </div>
 
         <!-- Student Chart Area -->
@@ -997,7 +997,8 @@
                         // Compare with Faculty 1 if requested and data exists
                         if (compareF1 && chartData.faculty1?.[toothNum]?.[surface]) {
                             const f1State = chartData.faculty1[toothNum][surface];
-                            if (studentState.calc !== f1State.calc || studentState.calcType !== f1State.calcType || studentState.plaque !== f1State.plaque) {
+                            // ONLY COMPARE CALCULUS SEVERITY AND TYPE, IGNORE PLAQUE
+                            if (studentState.calc !== f1State.calc || studentState.calcType !== f1State.calcType) {
                                 isDiffF1 = true;
                             }
                         }
@@ -1005,7 +1006,8 @@
                         // Compare with Faculty 2 if requested, visible, and data exists
                         if (compareF2 && faculty2Visible && chartData.faculty2?.[toothNum]?.[surface]) {
                             const f2State = chartData.faculty2[toothNum][surface];
-                            if (studentState.calc !== f2State.calc || studentState.calcType !== f2State.calcType || studentState.plaque !== f2State.plaque) {
+                             // ONLY COMPARE CALCULUS SEVERITY AND TYPE, IGNORE PLAQUE
+                            if (studentState.calc !== f2State.calc || studentState.calcType !== f2State.calcType) {
                                 isDiffF2 = true;
                             }
                         }
@@ -1054,8 +1056,8 @@
                         // Must have data in BOTH Faculty 1 and Faculty 2 to compare
                         if (!f1State || !f2State) return;
 
-                        // Compare calc, calcType, and plaque
-                        if (f1State.calc !== f2State.calc || f1State.calcType !== f2State.calcType || f1State.plaque !== f2State.plaque) {
+                        // ONLY COMPARE CALCULUS SEVERITY AND TYPE, IGNORE PLAQUE
+                        if (f1State.calc !== f2State.calc || f1State.calcType !== f2State.calcType) {
                             // Difference found! Highlight the corresponding cell on the Faculty 2 chart.
                             const cellSelector = `.surface[data-chart-id="faculty2"][data-tooth-num="${toothNum}"][data-surface="${surface}"]`;
                             const cell = domElements.faculty2ChartLayout.querySelector(cellSelector);
