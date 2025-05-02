@@ -58,7 +58,9 @@
             transition: background-color 0.3s, border-color 0.3s;
             min-width: 100px; /* Give inputs a minimum size */
         }
-        #patient-info.locked input {
+         /* Style for *any* input within a locked parent */
+        .locked input[type="text"],
+        .locked input[type="date"] {
             background-color: #e9e9e9;
             cursor: not-allowed;
             border-color: #bbb;
@@ -69,6 +71,94 @@
              border-color: #999;
              background-color: #f0f0f0;
         }
+
+        /* Legend Styles */
+        #legend-container {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #fdfdfd;
+            width: 50%;
+            box-sizing: border-box;
+            max-width: 1400px; /* Match container-scaler max-width */
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* Added margin auto to center the block */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #legend-container h2 {
+             margin-top: 0;
+             margin-bottom: 0;
+             text-align: center;
+        }
+
+        /* Flex container for the two columns */
+        .legend-content {
+             display: flex;
+             gap: 30px; /* Space between columns */
+             flex-wrap: wrap; /* Allow columns to stack on small screens */
+             justify-content: center; /* Center columns when they wrap */
+        }
+
+         /* Styles for each column */
+        .legend-column {
+             flex: 1; /* Allow columns to grow and shrink */
+             min-width: 280px; /* Minimum width before wrapping */
+             max-width: 600px; /* Prevent columns from getting too wide */
+             display: flex;
+             flex-direction: column;
+             gap: 8px; /* Space between items within a column - single row items now */
+        }
+
+        /* legend-section is removed, now each item is a direct child of column */
+        .legend-section {
+             /* These styles are mostly removed as items are direct children */
+             display: none; /* Hide old section divs */
+        }
+
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+            color: #333;
+            flex-shrink: 0;
+             min-width: 100px;
+        }
+        .legend-visual {
+            width: 25px;
+            height: 25px;
+            border: 1px solid #888;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            box-sizing: border-box;
+             background-color: #fff;
+             -webkit-print-color-adjust: exact !important; color-adjust: exact !important;
+        }
+
+        /* Legend item specific styles */
+        /* .legend-symbol .legend-visual is removed */
+         /* Style for the "No Calculus" empty box */
+         .legend-visual-empty { background-color: #eee; border: 1px solid #ccc; }
+
+
+        .legend-color-supra { background-color: rgba(0, 128, 0, 0.2); }
+        .legend-color-sub { background-color: rgba(0, 0, 255, 0.2); }
+        .legend-highlight-plaque { border: 3px solid #ff80ab !important; background-color: #fff;}
+
+        .legend-diff-faculty1 { background-color: rgba(255, 0, 0, 0.4); border: 1px solid #888;}
+        .legend-diff-faculty2 { background-color: rgba(128, 0, 128, 0.4); border: 1px solid #888;}
+        /* Updated color for F1 vs F2 Diff to Orange */
+        .legend-diff-f1-f2 { background-color: rgba(255, 165, 0, 0.4); border: 1px solid #888;}
+
 
         .chart-container {
             margin-bottom: 40px;
@@ -98,6 +188,33 @@
             margin-right: auto;
         }
         h1, h2 { margin-bottom: 15px; margin-top: 0; }
+
+        /* Styles for the Name Input below the chart title */
+        .chart-name-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px; /* Space below this section */
+            max-width: 400px; /* Prevent from being too wide */
+            margin-left: auto;
+            margin-right: auto;
+        }
+         .chart-name-input label {
+             font-weight: bold;
+             color: #555;
+             white-space: nowrap;
+         }
+         .chart-name-input input[type="text"] {
+             padding: 5px 8px;
+             border: 1px solid #ccc;
+             border-radius: 4px;
+             transition: background-color 0.3s, border-color 0.3s;
+             flex-grow: 1; /* Allow input to take available space */
+             min-width: 100px; /* Prevent it from becoming too small */
+         }
+
+
         .chart-layout {
             display: grid;
              /* Adjust minmax if needed, ensures quadrants don't get too small */
@@ -127,7 +244,6 @@
         .toggle-btn:hover { background-color: #ddd; }
         .toggle-btn:active { transform: scale(0.98); }
         .toggle-btn.active.supra { background-color: #4caf50; color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .toggle-btn.active.both { background-color: #ff9800; color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         .toggle-btn.active.sub { background-color: #2196f3; color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         .toggle-btn.active.plaque { background-color: #ff80ab; color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
 
@@ -177,16 +293,13 @@
         }
          /* Remove right border from the last tooth in the grid (which is visually the midline tooth for Right quads) */
         .quadrant[data-quadrant-name='Upper Right'] .tooth:last-child,
-        .quadrant[data-quadrant-name='Lower Right'] .tooth:last-child {
+        .quadrant[data-quadrant-name='Lower Right'] .tooth:last-child,
+        .quadrant[data-quadrant-name='Upper Left'] .tooth:last-child,
+        .quadrant[data-quadrant-name='Lower Left'] .tooth:last-child
+        {
              border-right: none;
              padding-right: 0;
         }
-         /* Remove right border from the first tooth in the grid (which is visually the midline tooth for Left quads) */
-         /* Actually, the dotted line should separate teeth, so last-child border removal is likely enough if logic correct */
-         .tooth:last-child { /* Keep this rule general for simplicity unless specific overrides needed */
-              border-right: none;
-              padding-right: 0;
-         }
 
 
         .tooth label { display: block; font-size: 0.9em; font-weight: bold; color: #333; margin-bottom: 4px; text-align: center; white-space: nowrap;}
@@ -210,20 +323,27 @@
 
         /* State Colors/Styles */
         .surface.supra { background-color: rgba(0, 128, 0, 0.2); } .surface.sub { background-color: rgba(0, 0, 255, 0.2); }
-        .surface.both { background-color: rgba(255, 165, 0, 0.2); } .surface.plaque { border: 3px solid #ff80ab !important; }
+        .surface.plaque { border: 3px solid #ff80ab !important; }
 
         /* Comparison Highlight Styles */
-        .surface.diff-faculty2 { background-color: rgba(128, 0, 128, 0.4) !important; }
+        /* Highlight on Student chart when different from F1 (red) */
         .surface.diff-faculty1 { background-color: rgba(255, 0, 0, 0.4) !important; }
+        /* Highlight on Student chart when different from F2 (purple) */
+        .surface.diff-faculty2 { background-color: rgba(128, 0, 128, 0.4) !important; }
+        /* Highlight on Faculty 2 chart when different from F1 (orange) */
+        .surface.diff-f1-f2 { background-color: rgba(255, 165, 0, 0.4) !important; }
+
 
         /* Active states for comparison buttons */
         .action-button.active-compare-f1 { background-color: rgba(255, 0, 0, 0.4); color: white; border: 1px solid rgba(200, 0, 0, 0.6); }
         .action-button.active-compare-f2 { background-color: rgba(128, 0, 128, 0.4); color: white; border: 1px solid rgba(100, 0, 100, 0.6); }
-        .action-button.active-compare-both { background-color: rgba(255, 0, 0, 0.4); color: white; border: 1px solid rgba(200, 0, 0, 0.6); }
+        /* Active state for F1 vs F2 comparison button (orange) */
+         .action-button.active-compare-f1-f2 { background-color: rgba(255, 165, 0, 0.4); color: white; border: 1px solid rgba(200, 130, 0, 0.6); }
+
 
         /* Comparison Controls Area */
         #comparison-controls {
-            text-align: center; margin: 20px auto; max-width: 90%; padding: 15px;
+            text-align: center; margin: 20px auto; max-width: 50%; padding: 15px;
             border: 1px dashed #ccc; border-radius: 8px;
             display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
             box-sizing: border-box;
@@ -237,22 +357,26 @@
 
         /* Styles for Hiding/Showing Faculty 2 */
         #faculty2-container { display: none; } #faculty2-container.visible { display: block; }
+        /* Modify f2-compare-button visibility to include the new button */
         .f2-compare-button { display: none; } .f2-compare-button.visible { display: inline-block; }
 
-        /* Hide controls when printing PDF */
-        @media print {
-            .main-title, #patient-info, #comparison-controls, #pdf-controls, #toggle-f2-div { display: none !important; }
-            body { margin: 0; }
-            .container-scaler { width: 100%; max-width: none; padding: 0; margin: 0;}
-            .chart-container { border: none; padding: 5px; margin-bottom: 10px; }
-            .quadrant { border: 1px solid #ccc; overflow: visible; }
-            .chart-layout { gap: 5px; grid-template-columns: 1fr 1fr; }
-            .tooth-grid { grid-template-columns: repeat(8, auto); gap: 2px;}
-            .tooth { padding-right: 2px; }
+
+        /* Hide controls, name inputs, and chart titles when generating PDF via html2canvas */
+        .pdf-generating .main-title,
+        .pdf-generating #patient-info,
+        .pdf-generating #comparison-controls,
+        .pdf-generating #pdf-controls,
+        .pdf-generating #toggle-f2-div,
+        .pdf-generating .chart-name-input,
+        .pdf-generating .chart-container h2 {
+            display: none !important;
         }
 
-        .pdf-generating .main-title, .pdf-generating #patient-info, .pdf-generating #comparison-controls,
-        .pdf-generating #pdf-controls, .pdf-generating #toggle-f2-div { display: none !important; }
+        /* Ensure Legend is visible when generating PDF */
+        .pdf-generating #legend-container {
+             display: flex !important; /* Override the display: none from general hiding rules */
+        }
+
 
          /* Responsive adjustments */
         @media (max-width: 800px) {
@@ -261,6 +385,13 @@
              #patient-info > div { flex-direction: column; align-items: flex-start; width: 100%; }
              #patient-info label { margin-bottom: 3px; }
              #patient-info input { width: 100%; box-sizing: border-box;}
+             .chart-name-input { width: 90%; max-width: none; flex-direction: column; align-items: flex-start; gap: 5px;}
+             .chart-name-input input[type="text"] { width: 100%; }
+              /* Stack legend columns on small screens */
+              .legend-content { flex-direction: column; gap: 15px; }
+              .legend-column { min-width: auto; max-width: none; width: 100%; gap: 8px;} /* Adjust gap within stacked column */
+              .legend-item { font-size: 0.9em; }
+              .legend-visual { width: 22px; height: 22px; font-size: 1.1em;}
         }
         @media (max-width: 480px) {
             .toggle-btn, .action-button { min-width: 120px; padding: 6px 10px; font-size: 0.85em;}
@@ -270,18 +401,49 @@
             .quadrant { padding: 5px; }
             .tooth-grid { gap: 2px; }
             .tooth { padding-right: 2px;}
+             .legend-item { font-size: 0.8em; min-width: 80px;}
+             .legend-visual { width: 18px; height: 18px; font-size: 1em;}
+        }
+
+         /* Print Styles (separate from pdf-generating class for browser print vs jsPDF) */
+        @media print {
+            .main-title, #patient-info, #comparison-controls, #pdf-controls, #toggle-f2-div, .chart-name-input, .chart-container h2 { display: none !important; }
+            body { margin: 0; }
+            .container-scaler { width: 100%; max-width: none; padding: 0; margin: 0;}
+            .chart-container { border: none; padding: 5px; margin-bottom: 10px; }
+            .quadrant { border: 1px solid #ccc; overflow: visible; }
+            .chart-layout { gap: 5px; grid-template-columns: 1fr 1fr; }
+            .tooth-grid { grid-template-columns: repeat(8, auto); gap: 2px;}
+            .tooth { padding-right: 2px; }
+             /* Ensure colors are printed */
+            .surface.supra, .surface.sub, .surface.plaque,
+            .surface.diff-faculty1, .surface.diff-faculty2, .surface.diff-f1-f2 {
+                 -webkit-print-color-adjust: exact !important;
+                 color-adjust: exact !important;
+            }
+            /* Ensure button active colors are printed - might not be needed as buttons are hidden */
+             .toggle-btn.active.supra, .toggle-btn.active.sub, .toggle-btn.active.plaque {
+                 -webkit-print-color-adjust: exact !important;
+                 color-adjust: exact !important;
+            }
+             /* Ensure legend is visible when printing */
+             #legend-container { display: flex !important; margin-bottom: 10px; flex-direction: column; gap: 8px;}
+             #legend-container h2 { text-align: left; margin-bottom: 5px; }
+             .legend-content { flex-direction: row; gap: 15px 30px; flex-wrap: wrap; justify-content: flex-start;}
+             .legend-column { flex: 1; min-width: 250px; max-width: none; width: auto; gap: 6px;} /* Adjust gap within column */
+             .legend-item { font-size: 0.9em; min-width: 120px; }
+             .legend-visual { width: 22px; height: 22px; font-size: 1.1em;}
+             .legend-visual-empty { background-color: #eee !important; border: 1px solid #ccc !important;}
         }
 
     </style>
 </head>
 <body>
 
-    <!-- NEW: Main Title -->
     <h1 class="main-title">Calculus Detection Chart</h1>
 
-    <!-- NEW: Patient Info Section -->
     <div id="patient-info">
-        <div> <!-- Wrap label/input pairs -->
+        <div>
             <label for="patient-id">Ch #:</label>
             <input type="text" id="patient-id" name="patient-id">
         </div>
@@ -291,35 +453,105 @@
         </div>
     </div>
 
-
     <div class="container-scaler">
+
+        <!-- Legend Container -->
+        <div id="legend-container">
+            <h2>Legend</h2>
+            <div class="legend-content">
+                <div class="legend-column">
+                     <!-- Calculus Severity -->
+                    <div class="legend-item">
+                        <div class="legend-visual legend-visual-empty"></div>
+                        <span>No Calculus</span>
+                    </div>
+                     <!-- Plaque Moved Here -->
+                     <div class="legend-item">
+                        <div class="legend-visual legend-highlight-plaque"></div>
+                        <span>Plaque Present</span>
+                    </div>
+                     <div class="legend-item">
+                        <div class="legend-visual">│</div>
+                        <span>Light Calculus</span>
+                    </div>
+                     <div class="legend-item">
+                        <div class="legend-visual">○</div>
+                        <span>Moderate Calculus</span>
+                    </div>
+                     <div class="legend-item">
+                        <div class="legend-visual">●</div>
+                        <span>Heavy Calculus</span>
+                    </div>
+                </div>
+                <div class="legend-column">
+                      <!-- Calculus Type -->
+                     <div class="legend-item">
+                        <div class="legend-visual legend-color-supra"></div>
+                        <span>Supragingival</span>
+                    </div>
+                     <div class="legend-item">
+                        <div class="legend-visual legend-color-sub"></div>
+                        <span>Subgingival</span>
+                    </div>
+                      <!-- Differences -->
+                     <div class="legend-item">
+                        <div class="legend-visual legend-diff-faculty1"></div>
+                        <span>Student vs Faculty 1</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-visual legend-diff-faculty2"></div>
+                        <span>Student vs Faculty 2</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-visual legend-diff-f1-f2"></div>
+                        <span>Faculty 1 vs Faculty 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Legend Container -->
+		 <div id="comparison-controls">
+        <!-- PDF Download & Lock Controls -->
+         
+             <button id="download-pdf-btn" class="action-button">Download Chart as PDF</button>
+             <button id="lock-chart-btn" class="action-button">Lock Charts</button>
+         
+        </div>
 
         <!-- Student Chart Area -->
         <div class="chart-container" id="student-container">
             <h2>Student Chart</h2>
-            <div class="toggle-area" id="student-toggle-area"></div>
+            <div class="chart-name-input">
+                <label for="student-name">Name:</label>
+                <input type="text" id="student-name" name="student-name">
+            </div>
+            <div class="toggle-area" id="student-toggle-area">
+                 <!-- Toggle buttons will be added here by JavaScript -->
+            </div>
             <div class="chart-layout" id="student-chart"></div>
         </div>
 
         <!-- Comparison Controls Area -->
         <div id="comparison-controls">
-            <button id="compare-f1-btn" class="action-button">Compare Faculty 1</button>
-            <button id="compare-f2-btn" class="f2-compare-button action-button">Compare Faculty 2</button>
-            <button id="compare-both-btn" class="f2-compare-button action-button">Compare Both</button>
-            <button id="clear-compare-btn" class="action-button">Clear Comparison</button>
+            <button id="compare-f1-btn" class="action-button">Compare Student & F1</button>
+            <button id="compare-f2-btn" class="f2-compare-button action-button">Compare Student & F2</button>
+             <button id="compare-f1-f2-btn" class="f2-compare-button action-button">Compare Faculty 1 & 2</button>
         </div>
 
-        <!-- PDF Download & Lock Controls -->
-         <div id="pdf-controls">
-             <button id="download-pdf-btn" class="action-button">Download Chart as PDF</button>
-             <button id="lock-chart-btn" class="action-button">Lock Charts</button>
-         </div>
+
+
 
 
         <!-- Faculty Check 1 Chart Area -->
         <div class="chart-container" id="faculty1-container">
             <h2>Faculty Check 1</h2>
-            <div class="toggle-area" id="faculty1-toggle-area"></div>
+            <div class="chart-name-input">
+                <label for="faculty1-name">Name:</label>
+                <input type="text" id="faculty1-name" name="faculty1-name">
+            </div>
+            <div class="toggle-area" id="faculty1-toggle-area">
+                <!-- Toggle buttons will be added here by JavaScript -->
+            </div>
             <div class="chart-layout" id="faculty1-chart"></div>
         </div>
 
@@ -332,7 +564,13 @@
         <!-- Faculty Check 2 Chart Area (Initially hidden via CSS) -->
         <div class="chart-container" id="faculty2-container">
             <h2>Faculty Check 2</h2>
-            <div class="toggle-area" id="faculty2-toggle-area"></div>
+            <div class="chart-name-input">
+                <label for="faculty2-name">Name:</label>
+                <input type="text" id="faculty2-name" name="faculty2-name">
+            </div>
+             <div class="toggle-area" id="faculty2-toggle-area">
+                 <!-- Toggle buttons will be added here by JavaScript -->
+            </div>
             <div class="chart-layout" id="faculty2-chart"></div>
         </div>
 
@@ -344,23 +582,20 @@
         (function() {
             'use strict';
 
+            // --- External Libraries ---
             const { jsPDF } = window.jspdf;
 
             // --- Constants and Configuration ---
-            const SYMBOLS = ["", "│", "○", "●"]; // None, Light(Line), Moderate(Open Circle), Severe(Filled Circle) // Light, Moderate, Severe
-            const QUADRANT_ORDER = ['Upper Right', 'Upper Left', 'Lower Right', 'Lower Left']; // Standard visual order
-            // --- ADJUSTED QUADRANT NUMBERING FOR VISUAL LAYOUT ---
+            const SYMBOLS = ["", "│", "○", "●"]; // None, Light(Line), Moderate(Open Circle), Severe(Filled Circle)
+            const QUADRANT_ORDER = ['Upper Right', 'Upper Left', 'Lower Right', 'Lower Left']; // Standard visual order for layout
             const QUADRANTS = {
-                 // Distal (1) to Midline (8) - Left-to-Right visually in grid
+                 // Universal numbers in visual order for each quadrant's grid (L-to-R)
                  'Upper Right': [1, 2, 3, 4, 5, 6, 7, 8],
-                 // Midline (9) to Distal (16) - Left-to-Right visually in grid
                  'Upper Left': [9, 10, 11, 12, 13, 14, 15, 16],
-                 // Distal (32) to Midline (25) - Left-to-Right visually in grid
-                 'Lower Right': [32, 31, 30, 29, 28, 27, 26, 25],
-                 // Midline (17) to Distal (24) - Left-to-Right visually in grid
+                 'Lower Right': [32, 31, 30, 29, 28, 27, 26, 25], // Reversed for grid layout
                  'Lower Left': [24, 23, 22, 21, 20, 19, 18, 17]
             };
-             // Match grid position to QUADRANT_ORDER (UR=TopLeft, UL=TopRight, LR=BottomLeft, LL=BottomRight grid cells)
+             // Grid position for each quadrant container
              const QUADRANT_POS = {
                  'Upper Right': { row: 1, col: 1 }, 'Upper Left': { row: 1, col: 2 },
                  'Lower Right': { row: 2, col: 1 }, 'Lower Left': { row: 2, col: 2 }
@@ -368,211 +603,1043 @@
 
             const SURFACES = ['M', 'D', 'B', 'L']; // Mesial, Distal, Buccal, Lingual
             const CHART_IDS = ['student', 'faculty1', 'faculty2'];
+            // Get all unique tooth numbers sorted, for iteration
             const ALL_TOOTH_NUMBERS = [...new Set([].concat(...Object.values(QUADRANTS)))].sort((a, b) => a - b);
-            const UNLOCK_CODE = "12345";
+            const UNLOCK_CODE = "12345"; // Replace with a secure code if needed
             const PDF_TITLE = "Calculus Detection Chart";
 
-            // --- NEW: Primary Tooth Mapping ---
+            // --- Primary Tooth Mapping ---
+            // Maps Universal number (permanent) to Primary letter
             const PRIMARY_TOOTH_MAP = {
-                '4': 'A', '5': 'B', '6': 'C', '7': 'D', '8': 'E',       // Upper Right Primary
-                '9': 'F', '10': 'G', '11': 'H', '12': 'I', '13': 'J',     // Upper Left Primary
-                '20': 'K', '21': 'L', '22': 'M', '23': 'N', '24': 'O',    // Lower Left Primary
-                '25': 'P', '26': 'Q', '27': 'R', '28': 'S', '29': 'T'     // Lower Right Primary (Note: numbers 25-29 correspond to T-P)
+                '4': 'A', '5': 'B', '6': 'C', '7': 'D', '8': 'E',
+                '9': 'F', '10': 'G', '11': 'H', '12': 'I', '13': 'J',
+                '20': 'K', '21': 'L', '22': 'M', '23': 'N', '24': 'O',
+                '25': 'P', '26': 'Q', '27': 'R', '28': 'S', '29': 'T'
             };
-            // --- End NEW ---
-
 
             // --- State Variables ---
+            // Stores charting data (calc severity, plaque status, calc type)
             let chartData = {};
+            // Stores current active toggle mode and plaque status for each chart
             let chartModes = {};
+            // Flag to indicate if charts are locked
             let areChartsLocked = false;
 
             // --- DOM Element Cache ---
+            // Stores references to key DOM elements for performance and readability
             const domElements = {
                 chartContainers: {}, toggleAreas: {}, chartLayouts: {},
-                compareF1Btn: null, compareF2Btn: null, compareBothBtn: null, clearCompareBtn: null,
-                toggleF2Btn: null, faculty2Container: null, f2CompareButtons: null,
-                pdfButton: null, lockChartBtn: null, studentChartLayout: null,
+                studentNameInput: null, faculty1NameInput: null, faculty2NameInput: null,
+
+                compareF1Btn: null, compareF2Btn: null,
+                compareF1F2Btn: null, // Button for F1 vs F2 comparison
+                toggleF2Btn: null, faculty2Container: null,
+                f2CompareButtons: null, // NodeList of buttons that show/hide with F2 container
+                pdfButton: null, lockChartBtn: null,
+                studentChartLayout: null, faculty2ChartLayout: null, // Specific layouts needed for comparison/PDF
                 patientInfoContainer: null, patientIdInput: null, chartDateInput: null,
-                toggleF2Div: null
+                toggleF2Div: null, // Container for the F2 toggle button
+                 legendContainer: null // Cache legend container
             };
 
             // --- Core Functions ---
 
+            /**
+             * Initializes the state variables for chart data and modes.
+             * Called on page load if no saved data is loaded.
+             */
             function initializeState() {
                 areChartsLocked = false;
                 CHART_IDS.forEach(chartId => {
                     chartData[chartId] = {};
-                    chartModes[chartId] = { currentLoc: 'supra', plaqueMode: false };
+                    chartModes[chartId] = { currentLoc: 'supra', plaqueMode: false }; // Default mode is Supra
                     ALL_TOOTH_NUMBERS.forEach(toothNum => {
                         chartData[chartId][toothNum] = {};
                         SURFACES.forEach(surface => {
-                             chartData[chartId][toothNum][surface] = { calc: 0, plaque: false, calcType: null };
+                            chartData[chartId][toothNum][surface] = { calc: 0, plaque: false, calcType: null };
                         });
                     });
                 });
+
+                // Set default date if date input is empty
                  if(domElements.chartDateInput && !domElements.chartDateInput.value) {
                      try {
-                        const today = new Date(); const year = today.getFullYear(); const month = String(today.getMonth() + 1).padStart(2, '0'); const day = String(today.getDate()).padStart(2, '0');
+                        const today = new Date();
+                        const year = today.getFullYear();
+                        const month = String(today.getMonth() + 1).padStart(2, '0');
+                        const day = String(today.getDate()).padStart(2, '0');
                         domElements.chartDateInput.value = `${year}-${month}-${day}`;
-                     } catch(e) { console.warn("Could not set default date."); }
+                     } catch(e) { console.warn("Could not set default date.", e); }
                  }
             }
 
+             /**
+              * Updates the visual state of a single surface cell based on its data.
+              * Note: This function does *not* remove comparison highlight classes,
+              * as those are managed separately by the comparison logic.
+              * @param {string} chartId - The ID of the chart ('student', 'faculty1', 'faculty2').
+              * @param {number} toothNum - The universal tooth number.
+              * @param {string} surface - The surface identifier ('M', 'D', 'B', 'L').
+              */
              function updateCellUI(chartId, toothNum, surface) {
                  const cellSelector = `.surface[data-chart-id="${chartId}"][data-tooth-num="${toothNum}"][data-surface="${surface}"]`;
                  const chartLayout = domElements.chartLayouts[chartId];
                  const cell = chartLayout ? chartLayout.querySelector(cellSelector) : null;
-                 if (!cell) return; const data = chartData[chartId]?.[toothNum]?.[surface]; if (!data) return;
+
+                 if (!cell) return; // Exit if element not found
+
+                 const data = chartData[chartId]?.[toothNum]?.[surface];
+                 if (!data) {
+                     console.warn(`No data found for ${chartId}, Tooth ${toothNum}, Surface ${surface}`);
+                     return; // Exit if data not found
+                 }
+
+                 // Update text content (severity symbol)
                  cell.textContent = SYMBOLS[data.calc] || "";
-                 cell.classList.remove('supra', 'sub', 'both', 'plaque', 'diff-faculty1', 'diff-faculty2');
-                 if (data.calc > 0 && data.calcType) cell.classList.add(data.calcType);
-                 if (data.plaque) cell.classList.add('plaque');
+
+                 // Remove existing state classes (but NOT comparison diff classes)
+                 cell.classList.remove('supra', 'sub', 'plaque');
+
+                 // Add current state classes
+                 if (data.calc > 0 && (data.calcType === 'supra' || data.calcType === 'sub')) {
+                     cell.classList.add(data.calcType);
+                 }
+                 if (data.plaque) {
+                     cell.classList.add('plaque');
+                 }
              }
 
-             function createToggleButtons(chartId, toggleAreaElement) {
-                 if (!toggleAreaElement) return; toggleAreaElement.innerHTML = '';
-                 const createButton = (mode, text, isPlaque = false) => { const btn = document.createElement('button'); btn.className = `toggle-btn ${mode}`; btn.textContent = text; btn.type = 'button'; btn.addEventListener('click', () => handleModeChange(chartId, mode, toggleAreaElement, isPlaque)); return btn; };
-                 const supraBtn = createButton('supra', 'Supra'); const subBtn = createButton('sub', 'Sub'); const bothBtn = createButton('both', 'Both'); const plaqueBtn = createButton('plaque', 'Plaque', true);
-                 toggleAreaElement.append(supraBtn, subBtn, bothBtn, plaqueBtn);
-                 const currentMode = chartModes[chartId];
-                 if (currentMode.plaqueMode) plaqueBtn.classList.add('active');
-                 else { const activeCalcButton = toggleAreaElement.querySelector(`.toggle-btn.${currentMode.currentLoc}`); if (activeCalcButton) activeCalcButton.classList.add('active'); else { supraBtn.classList.add('active'); chartModes[chartId].currentLoc = 'supra'; } }
-             }
+            /**
+             * Event handler for clicking on a tooth surface.
+             * Toggles state (calc severity or plaque) based on current chart mode.
+             * Also clears relevant comparison highlights on the modified cell and related comparison buttons.
+             * @param {MouseEvent} event - The click event.
+             */
+            function handleSurfaceClick(event) {
+                if (areChartsLocked) return; // Do nothing if charts are locked
 
-            function handleModeChange(chartId, mode, toggleAreaElement, isPlaque = false) {
-                if (areChartsLocked) return; const currentChartMode = chartModes[chartId]; const buttons = toggleAreaElement.querySelectorAll('.toggle-btn'); buttons.forEach(btn => btn.classList.remove('active')); const clickedButton = toggleAreaElement.querySelector(`.toggle-btn.${mode}`);
-                if (isPlaque) { currentChartMode.plaqueMode = !currentChartMode.plaqueMode; if (currentChartMode.plaqueMode) clickedButton.classList.add('active'); else { const calcButton = toggleAreaElement.querySelector(`.toggle-btn.${currentChartMode.currentLoc}`); if (calcButton) calcButton.classList.add('active'); } }
-                else { currentChartMode.plaqueMode = false; currentChartMode.currentLoc = mode; clickedButton.classList.add('active'); }
+                const cell = event.currentTarget;
+                const { chartId, toothNum, surface } = cell.dataset;
+
+                if (!chartData[chartId]?.[toothNum]?.[surface]) {
+                    console.error(`Data for ${chartId}, Tooth ${toothNum}, Surface ${surface} not found.`);
+                    return;
+                }
+
+                const mode = chartModes[chartId];
+                const data = chartData[chartId][toothNum][surface];
+
+                if (mode.plaqueMode) {
+                    // Toggle plaque state
+                    data.plaque = !data.plaque;
+                } else {
+                    // Cycle through calculus severity levels (0, 1, 2, 3)
+                    data.calc = (data.calc + 1) % SYMBOLS.length;
+
+                    // Update calcType based on the currently selected mode ('supra' or 'sub')
+                    // If severity is 0, calcType is null. Otherwise, it's the current mode.
+                    data.calcType = (data.calc > 0) ? mode.currentLoc : null;
+                }
+
+                // Update the base UI for the clicked cell
+                updateCellUI(chartId, toothNum, surface);
+
+                // Clear comparison highlights on the specific cell that was modified
+                // and deactivate relevant comparison buttons.
+                if (chartId === 'student') {
+                     cell.classList.remove('diff-faculty1', 'diff-faculty2');
+                     // If student chart is modified, clear all comparison button active states
+                     // and all existing highlights on student chart.
+                     clearStudentComparisonHighlights(); // Clears student diff highlights
+                     deactivateAllComparisonButtons(); // Clears all comparison button active states
+                } else if (chartId === 'faculty2') {
+                     cell.classList.remove('diff-f1-f2');
+                      // If faculty 2 chart is modified, clear F1 vs F2 button active state and diffs on F2.
+                     clearF1F2ComparisonHighlights(); // Clears F1/F2 diffs on F2 AND the button state
+                }
+                 // Modifying faculty1 does not automatically clear any highlight or button state.
             }
 
-            // --- MODIFIED FUNCTION createChartElements ---
+
+             /**
+              * Creates the toggle buttons for a specific chart (Supra, Sub, Plaque).
+              * @param {string} chartId - The ID of the chart.
+              * @param {HTMLElement} toggleAreaElement - The container for the buttons.
+              */
+             function setupToggleButtons(chartId, toggleAreaElement) {
+                 if (!toggleAreaElement) return;
+                 toggleAreaElement.innerHTML = ''; // Clear existing buttons
+
+                 const createButton = (mode, text, isPlaque = false) => {
+                     const btn = document.createElement('button');
+                     btn.className = `toggle-btn ${mode}`;
+                     btn.textContent = text;
+                     btn.type = 'button'; // Good practice for buttons inside forms
+                     btn.addEventListener('click', () => handleModeChange(chartId, mode, toggleAreaElement, isPlaque));
+                     return btn;
+                 };
+
+                 const supraBtn = createButton('supra', 'Supra');
+                 const subBtn = createButton('sub', 'Sub');
+                 const plaqueBtn = createButton('plaque', 'Plaque', true); // true indicates it's a plaque toggle
+
+                 toggleAreaElement.append(supraBtn, subBtn, plaqueBtn);
+
+                 // Set initial active state based on current mode
+                 const currentMode = chartModes[chartId];
+                 if (currentMode.plaqueMode) {
+                     plaqueBtn.classList.add('active');
+                 } else {
+                    const activeCalcButton = toggleAreaElement.querySelector(`.toggle-btn.${currentMode.currentLoc}`);
+                    if (activeCalcButton) {
+                        activeCalcButton.classList.add('active');
+                    } else {
+                        // Should not happen if state is initialized correctly, but defensive
+                        supraBtn.classList.add('active');
+                        chartModes[chartId].currentLoc = 'supra';
+                    }
+                 }
+             }
+
+            /**
+             * Handles the logic when a mode toggle button is clicked.
+             * Sets the current charting mode for the specified chart.
+             * @param {string} chartId - The ID of the chart.
+             * @param {string} mode - The mode being activated ('supra', 'sub', or 'plaque').
+             * @param {HTMLElement} toggleAreaElement - The container holding the buttons.
+             * @param {boolean} isPlaque - True if the button is for toggling plaque mode.
+             */
+            function handleModeChange(chartId, mode, toggleAreaElement, isPlaque = false) {
+                if (areChartsLocked) return; // Do nothing if charts are locked
+
+                const currentChartMode = chartModes[chartId];
+                const buttons = toggleAreaElement.querySelectorAll('.toggle-btn');
+
+                if (isPlaque) {
+                    // Toggle plaque mode ON/OFF
+                    currentChartMode.plaqueMode = !currentChartMode.plaqueMode;
+
+                    if (currentChartMode.plaqueMode) {
+                        // Activate Plaque button, deactivate calc buttons
+                        buttons.forEach(btn => btn.classList.remove('active'));
+                        toggleAreaElement.querySelector(`.toggle-btn.plaque`)?.classList.add('active');
+                    } else {
+                        // Deactivate Plaque button, reactivate the last selected calc button
+                        toggleAreaElement.querySelector(`.toggle-btn.plaque`)?.classList.remove('active');
+                        const calcButton = toggleAreaElement.querySelector(`.toggle-btn.${currentChartMode.currentLoc}`);
+                         // Fallback to supra if somehow no calc mode was set
+                        if (calcButton) { calcButton.classList.add('active'); }
+                         else { toggleAreaElement.querySelector('.toggle-btn.supra')?.classList.add('active'); chartModes[chartId].currentLoc = 'supra'; }
+                    }
+                } else {
+                    /*
+                      Changing calculus mode ('supra' or 'sub')
+                      Clicking the same active calculus button does nothing unless plaque is active.
+                      If you want clicking the active calc button to turn off calc charting for that chart,
+                      you'd need to modify this block. Current logic keeps it in that mode until another is selected.
+                    */
+                     if (currentChartMode.currentLoc === mode && !currentChartMode.plaqueMode) {
+                         // Clicking the already active calculus button while not in plaque mode
+                         // does not change the state, so no action needed.
+                         return;
+                     }
+
+                    currentChartMode.plaqueMode = false; // Turn off plaque mode
+                    currentChartMode.currentLoc = mode; // Set the new calculus mode ('supra' or 'sub')
+
+                    // Deactivate all buttons, then activate the clicked one
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    toggleAreaElement.querySelector(`.toggle-btn.${mode}`)?.classList.add('active');
+                }
+            }
+
+
+            /**
+             * Creates the HTML structure for a single chart (quadrants, teeth, surfaces).
+             * @param {string} chartId - The ID of the chart.
+             * @param {HTMLElement} chartLayoutElement - The container for the chart layout grid.
+             */
             function createChartElements(chartId, chartLayoutElement) {
                 if (!chartLayoutElement) return;
-                chartLayoutElement.innerHTML = '';
+                chartLayoutElement.innerHTML = ''; // Clear existing content
+
+                // Ensure chartLayoutElement is a grid container as per CSS
+                chartLayoutElement.style.display = 'grid';
+
                 QUADRANT_ORDER.forEach(quadrantName => {
                     const pos = QUADRANT_POS[quadrantName];
                     const quadDiv = document.createElement('div');
                     quadDiv.className = 'quadrant';
-                    quadDiv.dataset.quadrantName = quadrantName; // Add data attribute for specific CSS rules if needed
+                    quadDiv.dataset.quadrantName = quadrantName;
+
+                    /* Apply grid positioning to the quadrant container.
+                       Note: If chartLayoutElement is the grid, these styles apply to the
+                       quadrant divs as grid items within chartLayoutElement.
+                       If the toothGridDiv was the grid, these would apply there.
+                       Current CSS sets chart-layout as the grid.
+                    */
                     if (pos) {
                         quadDiv.style.gridColumn = pos.col;
                         quadDiv.style.gridRow = pos.row;
                     }
+
                     const h3 = document.createElement('h3');
                     h3.textContent = quadrantName;
                     quadDiv.append(h3);
 
                     const toothGridDiv = document.createElement('div');
-                    toothGridDiv.className = 'tooth-grid';
+                    toothGridDiv.className = 'tooth-grid'; // This div contains the 8 teeth
+
                     const teethNumbers = QUADRANTS[quadrantName];
                     if (!teethNumbers) return;
 
                     teethNumbers.forEach(num => {
                         const toothDiv = document.createElement('div');
-                        toothDiv.className = 'tooth';
+                        toothDiv.className = 'tooth'; // This div contains the tooth label and surface grid
+
                         const label = document.createElement('label');
-
-                        // --- MODIFIED LABEL LOGIC ---
-                        const primaryLetter = PRIMARY_TOOTH_MAP[String(num)]; // Look up the primary letter
-                        if (primaryLetter) {
-                            label.textContent = `${num}-${primaryLetter}`; // Format as "Universal-Primary"
-                        } else {
-                            label.textContent = num; // Default to just the Universal number
-                        }
-                        // --- END MODIFIED LABEL LOGIC ---
-
+                        const primaryLetter = PRIMARY_TOOTH_MAP[String(num)];
+                        label.textContent = primaryLetter ? `${num} (${primaryLetter})` : String(num);
                         toothDiv.append(label);
 
                         const surfaceGridDiv = document.createElement('div');
-                        surfaceGridDiv.className = 'surface-grid';
+                        surfaceGridDiv.className = 'surface-grid'; // This div contains the M, D, B, L surfaces
+
                         SURFACES.forEach(s => {
                             const cell = document.createElement('div');
                             cell.className = 'surface';
                             cell.dataset.chartId = chartId;
-                            cell.dataset.toothNum = num; // IMPORTANT: data-tooth-num still uses the Universal number
+                            cell.dataset.toothNum = num;
                             cell.dataset.surface = s;
+                            // Attach the event listener here
                             cell.addEventListener('click', handleSurfaceClick);
                             surfaceGridDiv.append(cell);
                         });
-                        toothDiv.append(surfaceGridDiv);
-                        toothGridDiv.append(toothDiv);
+
+                        toothDiv.append(surfaceGridDiv); // Add surface grid to tooth div
+                        toothGridDiv.append(toothDiv); // Add tooth div to tooth grid div
                     });
-                    quadDiv.append(toothGridDiv);
-                    chartLayoutElement.append(quadDiv);
+
+                    quadDiv.append(toothGridDiv); // Add tooth grid div to quadrant div
+                    chartLayoutElement.append(quadDiv); // Add quadrant div to chart layout container
                 });
             }
-            // --- END MODIFIED FUNCTION createChartElements ---
 
 
-            function handleSurfaceClick(event) {
-                if (areChartsLocked) return; const cell = event.currentTarget; const { chartId, toothNum, surface } = cell.dataset; if (!chartData[chartId]?.[toothNum]?.[surface]) return;
-                const mode = chartModes[chartId]; const data = chartData[chartId][toothNum][surface];
-                if (mode.plaqueMode) data.plaque = !data.plaque;
-                else { data.calc = (data.calc + 1) % SYMBOLS.length; data.calcType = (data.calc > 0) ? mode.currentLoc : null; }
-                updateCellUI(chartId, toothNum, surface); if (chartId === 'student') cell.classList.remove('diff-faculty1', 'diff-faculty2');
+            /**
+             * Clears comparison highlights only on the Student chart.
+             * Removes 'diff-faculty1' and 'diff-faculty2' classes.
+             */
+            function clearStudentComparisonHighlights() {
+                 if (!domElements.studentChartLayout) return;
+                 const studentSurfacesToClear = domElements.studentChartLayout.querySelectorAll('.surface.diff-faculty1, .surface.diff-faculty2');
+                 studentSurfacesToClear.forEach(cell => cell.classList.remove('diff-faculty1', 'diff-faculty2'));
             }
 
-            function clearComparisonHighlights() {
-                if (!domElements.studentChartLayout) return; const surfacesToClear = domElements.studentChartLayout.querySelectorAll('.surface.diff-faculty1, .surface.diff-faculty2'); surfacesToClear.forEach(cell => cell.classList.remove('diff-faculty1', 'diff-faculty2'));
-                domElements.compareF1Btn?.classList.remove('active-compare-f1'); domElements.compareF2Btn?.classList.remove('active-compare-f2'); domElements.compareBothBtn?.classList.remove('active-compare-both');
+            /**
+             * Clears comparison highlights only on the Faculty 2 chart.
+             * Removes 'diff-f1-f2' class.
+             */
+             function clearF1F2ComparisonHighlights() {
+                 if (!domElements.faculty2ChartLayout) return;
+                 const f2SurfacesToClear = domElements.faculty2ChartLayout.querySelectorAll('.surface.diff-f1-f2');
+                 f2SurfacesToClear.forEach(cell => cell.classList.remove('diff-f1-f2'));
+             }
+
+            /**
+             * Deactivates ALL comparison buttons.
+             */
+             function deactivateAllComparisonButtons() {
+                 domElements.compareF1Btn?.classList.remove('active-compare-f1');
+                 domElements.compareF2Btn?.classList.remove('active-compare-f2');
+                 domElements.compareF1F2Btn?.classList.remove('active-compare-f1-f2');
+             }
+
+            /**
+             * Clears ALL comparison highlights from ALL charts and deactivates ALL comparison buttons.
+             */
+            function clearAllComparisonHighlights() {
+                 clearStudentComparisonHighlights(); // This clears student diff highlights
+                 clearF1F2ComparisonHighlights();   // This clears F1/F2 diffs on F2
+                 deactivateAllComparisonButtons(); // Deactivates all buttons
             }
 
-            function runComparison(compareF1, compareF2) {
-                clearComparisonHighlights(); if (!domElements.studentChartLayout) return; const faculty2Visible = domElements.faculty2Container?.classList.contains('visible'); let hasDifferences = false;
-                ALL_TOOTH_NUMBERS.forEach(toothNum => { SURFACES.forEach(surface => {
-                        const studentState = chartData.student?.[toothNum]?.[surface]; if (!studentState) return; let isDiffF1 = false, isDiffF2 = false;
-                        if (compareF1 && chartData.faculty1?.[toothNum]?.[surface]) { const f1State = chartData.faculty1[toothNum][surface]; if (studentState.calc !== f1State.calc || studentState.calcType !== f1State.calcType || studentState.plaque !== f1State.plaque) isDiffF1 = true; }
-                        if (compareF2 && faculty2Visible && chartData.faculty2?.[toothNum]?.[surface]) { const f2State = chartData.faculty2[toothNum][surface]; if (studentState.calc !== f2State.calc || studentState.calcType !== f2State.calcType || studentState.plaque !== f2State.plaque) isDiffF2 = true; }
-                        const cellSelector = `.surface[data-chart-id="student"][data-tooth-num="${toothNum}"][data-surface="${surface}"]`; const cell = domElements.studentChartLayout.querySelector(cellSelector);
-                        if (cell) { if (isDiffF1) { cell.classList.add('diff-faculty1'); hasDifferences = true; } if (isDiffF2) { cell.classList.add('diff-faculty2'); hasDifferences = true; } } }); });
-                 if (compareF1 && compareF2 && faculty2Visible) domElements.compareBothBtn?.classList.add('active-compare-both'); else if (compareF1) domElements.compareF1Btn?.classList.add('active-compare-f1'); else if (compareF2 && faculty2Visible) domElements.compareF2Btn?.classList.add('active-compare-f2'); if (!hasDifferences) console.log("No differences found.");
+
+            /**
+             * Compares the Student chart data against Faculty 1 and/or Faculty 2.
+             * Adds highlight classes ('diff-faculty1', 'diff-faculty2') to the Student chart surfaces.
+             * Does NOT clear highlights or button states; assumes caller handles this.
+             * @param {boolean} compareF1 - True to compare against Faculty 1.
+             * @param {boolean} compareF2 - True to compare against Faculty 2.
+             * @returns {boolean} True if the comparison logic was executed, false if prerequisite failed (e.g. F2 hidden).
+             */
+            function runStudentComparison(compareF1, compareF2) {
+                const faculty2Visible = domElements.faculty2Container?.classList.contains('visible');
+
+                // Check F2 visibility if requested
+                 if (compareF2 && !faculty2Visible) {
+                     alert("Show Faculty Check 2 chart first to compare Student & Faculty 2.");
+                     return false; // Indicate comparison was not fully run
+                 }
+
+                let hasDifferences = false; // Track differences found on the student chart
+
+                ALL_TOOTH_NUMBERS.forEach(toothNum => {
+                    SURFACES.forEach(surface => {
+                        const studentState = chartData.student?.[toothNum]?.[surface];
+                        // Must have student data to compare from student chart
+                        if (!studentState) return;
+
+                        let isDiffF1 = false, isDiffF2 = false;
+
+                        // Compare with Faculty 1 if requested and data exists
+                        if (compareF1 && chartData.faculty1?.[toothNum]?.[surface]) {
+                            const f1State = chartData.faculty1[toothNum][surface];
+                            if (studentState.calc !== f1State.calc || studentState.calcType !== f1State.calcType || studentState.plaque !== f1State.plaque) {
+                                isDiffF1 = true;
+                            }
+                        }
+
+                        // Compare with Faculty 2 if requested, visible, and data exists
+                        if (compareF2 && faculty2Visible && chartData.faculty2?.[toothNum]?.[surface]) {
+                            const f2State = chartData.faculty2[toothNum][surface];
+                            if (studentState.calc !== f2State.calc || studentState.calcType !== f2State.calcType || studentState.plaque !== f2State.plaque) {
+                                isDiffF2 = true;
+                            }
+                        }
+
+                        // Apply highlight classes to the Student chart cell
+                        const cellSelector = `.surface[data-chart-id="student"][data-tooth-num="${toothNum}"][data-surface="${surface}"]`;
+                        const cell = domElements.studentChartLayout.querySelector(cellSelector);
+
+                        if (cell) {
+                            if (isDiffF1) {
+                                cell.classList.add('diff-faculty1');
+                                hasDifferences = true;
+                            }
+                            if (isDiffF2) {
+                                cell.classList.add('diff-faculty2');
+                                hasDifferences = true;
+                            }
+                        }
+                    });
+                });
+
+                 if (!hasDifferences) console.log("No differences found on Student Chart.");
+                 return true; // Indicate comparison was run (even if no diffs)
             }
 
+             /**
+              * Compares the Faculty 1 chart data against Faculty 2.
+              * Adds the highlight class ('diff-f1-f2') to the Faculty 2 chart surfaces.
+              * Does NOT clear highlights or button states; assumes caller handles this.
+              * @returns {boolean} True if the comparison logic was executed, false if prerequisite failed (e.g. F2 hidden).
+              */
+            function runF1vsF2Comparison() {
+                const faculty2Visible = domElements.faculty2Container?.classList.contains('visible');
+                if (!faculty2Visible) {
+                    alert("Show Faculty Check 2 chart first to compare Faculty 1 & 2.");
+                    return false; // Indicate comparison was not fully run
+                }
+
+                let hasDifferences = false; // Track differences found
+
+                ALL_TOOTH_NUMBERS.forEach(toothNum => {
+                    SURFACES.forEach(surface => {
+                        const f1State = chartData.faculty1?.[toothNum]?.[surface];
+                        const f2State = chartData.faculty2?.[toothNum]?.[surface];
+
+                        // Must have data in BOTH Faculty 1 and Faculty 2 to compare
+                        if (!f1State || !f2State) return;
+
+                        // Compare calc, calcType, and plaque
+                        if (f1State.calc !== f2State.calc || f1State.calcType !== f2State.calcType || f1State.plaque !== f2State.plaque) {
+                            // Difference found! Highlight the corresponding cell on the Faculty 2 chart.
+                            const cellSelector = `.surface[data-chart-id="faculty2"][data-tooth-num="${toothNum}"][data-surface="${surface}"]`;
+                            const cell = domElements.faculty2ChartLayout.querySelector(cellSelector);
+                            if (cell) {
+                                cell.classList.add('diff-f1-f2'); // Apply the new highlight class
+                                hasDifferences = true;
+                            }
+                        }
+                    });
+                });
+
+                if (!hasDifferences) console.log("No differences found between Faculty 1 and Faculty 2.");
+                return true; // Indicate comparison was run (even if no diffs)
+            }
+
+
+             /**
+              * Generates and downloads the PDF document.
+              * Captures legend and chart layouts using html2canvas and adds info/titles using jsPDF.
+              */
             async function generatePdf() {
-                 if (!domElements.pdfButton || areChartsLocked) { if(areChartsLocked) alert("Cannot generate PDF while charts are locked."); return; }
-                 domElements.pdfButton.textContent = 'Generating PDF...'; domElements.pdfButton.disabled = true; domElements.lockChartBtn.disabled = true; document.body.classList.add('pdf-generating');
-                 const patientId = domElements.patientIdInput?.value || 'N/A'; let chartDate = domElements.chartDateInput?.value || 'N/A';
+                 /* IMPORTANT: Before capturing elements with html2canvas, ensure
+                    that the CSS which hides controls and shows elements for printing
+                    is applied. This is done by adding the 'pdf-generating' class
+                    to the body, which is then targeted by the CSS.
+                 */
+
+                 // Check button state - it should NOT be disabled by the lock function anymore
+                 // but it *is* disabled *during* generation.
+                 if (!domElements.pdfButton || domElements.pdfButton.disabled) {
+                    // This check now only prevents double-clicks while *currently* generating
+                     console.log("PDF generation already in progress or button disabled by generation.");
+                     return;
+                 }
+
+                 // Disable button and add generating class for feedback
+                 domElements.pdfButton.textContent = 'Generating PDF...';
+                 domElements.pdfButton.disabled = true;
+                 // Lock button state remains unchanged by PDF generation
+                 // if(domElements.lockChartBtn) domElements.lockChartBtn.disabled = true; // KEEP LOCK BUTTON CLICKABLE DURING PDF GEN
+
+                 // Add class to hide UI elements NOT needed in the PDF capture
+                 document.body.classList.add('pdf-generating');
+
+
+                 // Get Patient Info and Names
+                 const patientId = domElements.patientIdInput?.value || 'N/A';
+                 let chartDate = domElements.chartDateInput?.value || 'N/A';
+                 chartDate = chartDate.replace(/[^a-zA-Z0-9]/g, '-'); // Sanitize date for filename
+
+                 const studentName = domElements.studentNameInput?.value || 'N/A';
+                 const faculty1Name = domElements.faculty1NameInput?.value || 'N/A';
+                 const faculty2Name = domElements.faculty2NameInput?.value || 'N/A';
+
+
                  try {
-                     const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' }); const pdfWidth = pdf.internal.pageSize.getWidth(); const pdfHeight = pdf.internal.pageSize.getHeight(); const margin = 30; let currentY = margin;
-                     pdf.setFontSize(16); pdf.setFont(undefined, 'bold'); pdf.text(PDF_TITLE, pdfWidth / 2, currentY, { align: 'center' }); currentY += 20; pdf.setFontSize(10); pdf.setFont(undefined, 'normal'); pdf.text(`Patient ID: ${patientId}`, margin, currentY); pdf.text(`Date: ${chartDate}`, pdfWidth - margin, currentY, { align: 'right' }); currentY += 25;
-                     async function addChartToPdf(chartContainerId, title) { const element = document.getElementById(chartContainerId); if (!element || (chartContainerId === 'faculty2-container' && !element.classList.contains('visible'))) return false; const estElementHeight = element.offsetHeight * 0.75; if (currentY + estElementHeight + 30 > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header again if needed */ } pdf.setFontSize(12); pdf.setFont(undefined, 'bold'); pdf.text(title, margin, currentY); currentY += 15; try { const canvas = await html2canvas(element, { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff' }); const imgData = canvas.toDataURL('image/png'); const imgProps = pdf.getImageProperties(imgData); const imgWidth = pdfWidth - 2 * margin; const imgHeight = (imgProps.height * imgWidth) / imgProps.width; if (currentY + imgHeight > pdfHeight - margin) { pdf.addPage(); currentY = margin; /* Add header/title again */ } pdf.addImage(imgData, 'PNG', margin, currentY, imgWidth, imgHeight); currentY += imgHeight + 20; return true; } catch (canvasError) { console.error(`html2canvas failed for ${chartContainerId}:`, canvasError); return false; } }
-                     await addChartToPdf('student-container', 'Student Chart'); await addChartToPdf('faculty1-container', 'Faculty Check 1'); await addChartToPdf('faculty2-container', 'Faculty Check 2');
-                     const filename = `${PDF_TITLE.replace(/\s+/g, '_')}_${patientId}_${chartDate}.pdf`; pdf.save(filename);
-                 } catch (error) { console.error("Error generating PDF:", error); alert("Error generating PDF."); }
-                 finally { domElements.pdfButton.textContent = 'Download Chart as PDF'; if (!areChartsLocked) { domElements.pdfButton.disabled = false; domElements.lockChartBtn.disabled = false; } document.body.classList.remove('pdf-generating'); }
+                     const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+                     const pdfWidth = pdf.internal.pageSize.getWidth();
+                     const pdfHeight = pdf.internal.pageSize.getHeight();
+                     const margin = 30;
+                     let currentY = margin;
+
+                     // Add Global Header (Title, Patient ID, Date)
+                     pdf.setFontSize(16); pdf.setFont(undefined, 'bold');
+                     pdf.text(PDF_TITLE, pdfWidth / 2, currentY, { align: 'center' });
+                     currentY += 20;
+                     pdf.setFontSize(10); pdf.setFont(undefined, 'normal');
+                     pdf.text(`Chart #: ${patientId}`, margin, currentY);
+                     pdf.text(`Date: ${chartDate}`, pdfWidth - margin, currentY, { align: 'right' });
+                     currentY += 25; // Space after global header
+
+
+                     // Add Legend to PDF (Capture as image)
+                     if (domElements.legendContainer) {
+                         try {
+                             const canvas = await html2canvas(domElements.legendContainer, {
+                                 scale: 2,
+                                 useCORS: true,
+                                 logging: false,
+                                 backgroundColor: '#ffffff'
+                             });
+                             const imgData = canvas.toDataURL('image/png');
+                             const imgProps = pdf.getImageProperties(imgData);
+                             const imgWidth = pdfWidth - 2 * margin;
+                             const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+                             // Check if legend fits on current page
+                             if (currentY + imgHeight + 20 > pdfHeight - margin) {
+                                pdf.addPage();
+                                currentY = margin;
+                                 // Add header again on new page if page break happens before legend
+                                pdf.setFontSize(16); pdf.setFont(undefined, 'bold');
+                                pdf.text(PDF_TITLE, pdfWidth / 2, currentY, { align: 'center' });
+                                currentY += 20;
+                                pdf.setFontSize(10); pdf.setFont(undefined, 'normal');
+                                pdf.text(`Chart #: ${patientId}`, margin, currentY);
+                                pdf.text(`Date: ${chartDate}`, pdfWidth - margin, currentY, { align: 'right' });
+                                currentY += 25;
+                             }
+                             pdf.addImage(imgData, 'PNG', margin, currentY, imgWidth, imgHeight);
+                             currentY += imgHeight + 20; // Space after image
+                         } catch (legendCanvasError) {
+                              console.error("html2canvas failed for legend:", legendCanvasError);
+                              pdf.setFontSize(10); pdf.setFont(undefined, 'normal'); pdf.setTextColor(255, 0, 0);
+                              pdf.text(`[Error rendering Legend]`, margin, currentY); currentY += 15; pdf.setTextColor(0, 0, 0);
+                         }
+                     }
+
+
+                     /**
+                      * Adds a single chart section (title, name, and rendered chart layout) to the PDF.
+                      * Handles page breaks if necessary.
+                      * @param {string} chartContainerId - The ID of the chart's main container (for visibility check).
+                      * @param {string} chartLayoutId - The ID of the div containing the quadrants/teeth (to be rendered).
+                      * @param {string} title - The title for the chart section (e.g., "Student Chart").
+                      * @param {string} name - The name associated with the chart (e.g., Student Name).
+                      * @returns {Promise<boolean>} Resolves true if the section was added, false if skipped (e.g., F2 hidden).
+                      */
+                     async function addChartSectionToPdf(chartContainerId, chartLayoutId, title, name) {
+                         const containerElement = document.getElementById(chartContainerId);
+                         const chartLayoutElement = document.getElementById(chartLayoutId);
+
+                         // Skip if element doesn't exist or it's F2 and not visible
+                         if (!containerElement || !chartLayoutElement || (chartContainerId === 'faculty2-container' && !containerElement.classList.contains('visible'))) {
+                             return false;
+                         }
+
+                         // Estimate height for the chart layout element (html2canvas target)
+                         // This is an estimate; actual height can vary. Adjust factor if needed.
+                         const estElementHeight = chartLayoutElement.offsetHeight * 0.75;
+
+                         const spaceForTitleAndName = 15; /* Approximate height for the text line */
+                         const spaceAfterChart = 20;
+                         const requiredSpace = spaceForTitleAndName + estElementHeight + spaceAfterChart;
+
+
+                         // Check if a new page is needed *before* adding title/name/image
+                         if (currentY + requiredSpace > pdfHeight - margin) {
+                             pdf.addPage();
+                             currentY = margin; // Start at top margin of new page
+                              // Add Global Header again on new page for context
+                             pdf.setFontSize(16); pdf.setFont(undefined, 'bold');
+                             pdf.text(PDF_TITLE, pdfWidth / 2, currentY, { align: 'center' });
+                             currentY += 20;
+                             pdf.setFontSize(10); pdf.setFont(undefined, 'normal');
+                             pdf.text(`Chart #: ${patientId}`, margin, currentY);
+                             pdf.text(`Date: ${chartDate}`, pdfWidth - margin, currentY, { align: 'right' });
+                             currentY += 25;
+                             // Now add the title/name line at the top of the new page section
+                             pdf.setFontSize(12); pdf.setFont(undefined, 'bold');
+                             pdf.text(title, margin, currentY);
+                             pdf.setFontSize(10); pdf.setFont(undefined, 'normal'); // Reset font for name
+                             if (name && name !== 'N/A') {
+                                  pdf.text(`Name: ${name}`, pdfWidth - margin, currentY, { align: 'right' });
+                             }
+                             currentY += spaceForTitleAndName; // Move Y cursor down after the title/name line
+
+                         } else {
+                              /* If no page break, add the title/name line in the remaining space */
+                             pdf.setFontSize(12); pdf.setFont(undefined, 'bold');
+                             pdf.text(title, margin, currentY);
+                             pdf.setFontSize(10); pdf.setFont(undefined, 'normal'); // Reset font for name
+                             if (name && name !== 'N/A') {
+                                  pdf.text(`Name: ${name}`, pdfWidth - margin, currentY, { align: 'right' });
+                             }
+                             currentY += spaceForTitleAndName; // Move Y cursor down after the title/name line
+                         }
+
+
+                         try {
+                             // Use html2canvas to capture ONLY the chart layout element
+                             const canvas = await html2canvas(chartLayoutElement, {
+                                 scale: 2, // Increase scale for better resolution
+                                 useCORS: true, // Important if loading external images/fonts
+                                 logging: false, // Disable html2canvas logging
+                                 backgroundColor: '#ffffff' /* Set a background color (important if element has transparent parts) */
+                             });
+
+                             const imgData = canvas.toDataURL('image/png');
+                             const imgProps = pdf.getImageProperties(imgData);
+                             const imgWidth = pdfWidth - 2 * margin; // Fit image within page margins
+                             const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+                             // Add the captured image to the PDF
+                             pdf.addImage(imgData, 'PNG', margin, currentY, imgWidth, imgHeight);
+                             currentY += imgHeight + spaceAfterChart; // Move Y cursor down after the image + space
+                             return true; // Indicate success
+                         } catch (canvasError) {
+                             console.error(`html2canvas failed for ${chartLayoutId}:`, canvasError);
+                             // Add error text placeholder if rendering failed
+                             pdf.setFontSize(10);
+                             pdf.setFont(undefined, 'normal');
+                             pdf.setTextColor(255, 0, 0); // Red color
+                             pdf.text(`[Error rendering chart for ${title}]`, margin, currentY);
+                             currentY += 15;
+                             pdf.setTextColor(0, 0, 0); // Reset color
+                             return false; // Indicate failure for this section
+                         }
+                     }
+
+                     // Add charts to PDF in order, passing the layout ID and name
+                     await addChartSectionToPdf('student-container', 'student-chart', 'Student Chart', studentName);
+                     await addChartSectionToPdf('faculty1-container', 'faculty1-chart', 'Faculty Check 1', faculty1Name);
+                     await addChartSectionToPdf('faculty2-container', 'faculty2-chart', 'Faculty Check 2', faculty2Name); // This checks F2 visibility internally
+
+                     // Final save operation
+                     const filename = `${PDF_TITLE.replace(/\s+/g, '_')}_${patientId}_${chartDate}.pdf`;
+                     pdf.save(filename);
+
+                 } catch (error) {
+                     console.error("Error generating PDF:", error);
+                     alert("Error generating PDF.");
+                 } finally {
+                     // Reset button text and re-enable button
+                     domElements.pdfButton.textContent = 'Download Chart as PDF';
+                     domElements.pdfButton.disabled = false;
+                      // REMOVE the class that hides UI elements for PDF capture
+                     document.body.classList.remove('pdf-generating');
+                 }
             }
 
+
+            /**
+             * Locks all charts and associated inputs, disables most controls.
+             */
             function lockAllCharts() {
-                if (!domElements.lockChartBtn) return; areChartsLocked = true; CHART_IDS.forEach(id => { const container = domElements.chartContainers[id]; if (container && (id !== 'faculty2' || container.classList.contains('visible'))) container.classList.add('locked'); }); domElements.patientInfoContainer?.classList.add('locked'); if (domElements.patientIdInput) domElements.patientIdInput.readOnly = true; if (domElements.chartDateInput) domElements.chartDateInput.readOnly = true; domElements.lockChartBtn.textContent = 'Unlock Charts'; domElements.lockChartBtn.disabled = false; domElements.pdfButton.disabled = true; domElements.compareF1Btn.disabled = true; domElements.compareF2Btn.disabled = true; domElements.compareBothBtn.disabled = true; domElements.clearCompareBtn.disabled = true; domElements.toggleF2Btn.disabled = true; console.log("Charts LOCKED.");
+                if (!domElements.lockChartBtn || areChartsLocked) return; // Prevent double locking
+
+                // Clear any active comparison highlights before locking the UI
+                clearAllComparisonHighlights();
+
+                areChartsLocked = true;
+
+                // Add 'locked' class to containers and inputs
+                CHART_IDS.forEach(id => {
+                    const container = domElements.chartContainers[id];
+                     // Apply locked class to container if it exists (F2 only if visible)
+                    if (container && (id !== 'faculty2' || container.classList.contains('visible'))) {
+                         container.classList.add('locked');
+                    }
+                });
+                domElements.patientInfoContainer?.classList.add('locked');
+
+                // Set inputs to read-only
+                if (domElements.patientIdInput) domElements.patientIdInput.readOnly = true;
+                if (domElements.chartDateInput) domElements.chartDateInput.readOnly = true;
+                if (domElements.studentNameInput) domElements.studentNameInput.readOnly = true;
+                if (domElements.faculty1NameInput) domElements.faculty1NameInput.readOnly = true;
+                 // F2 name input readOnly state always follows global lock state
+                if (domElements.faculty2NameInput) domElements.faculty2NameInput.readOnly = true;
+
+
+                // Update lock button text and state
+                domElements.lockChartBtn.textContent = 'Unlock Charts';
+                /* The lock button itself remains enabled to allow unlocking */
+
+                // Disable other interactive elements (but NOT the PDF download button)
+                // if(domElements.pdfButton) domElements.pdfButton.disabled = true; // REMOVED: Keep PDF button enabled
+                if(domElements.compareF1Btn) domElements.compareF1Btn.disabled = true;
+                if(domElements.compareF2Btn) domElements.compareF2Btn.disabled = true;
+                if(domElements.compareF1F2Btn) domElements.compareF1F2Btn.disabled = true; // Disable F1/F2 button
+                if(domElements.toggleF2Btn) domElements.toggleF2Btn.disabled = true;
+
+                console.log("Charts LOCKED.");
             }
 
+            /**
+             * Unlocks all charts and inputs after confirming with a code.
+             * Re-enables controls.
+             */
             function unlockAllCharts() {
-                 if (!domElements.lockChartBtn) return; const enteredCode = prompt("Enter unlock code:"); if (enteredCode === null) return; if (enteredCode === UNLOCK_CODE) { areChartsLocked = false; CHART_IDS.forEach(id => domElements.chartContainers[id]?.classList.remove('locked')); domElements.patientInfoContainer?.classList.remove('locked'); if (domElements.patientIdInput) domElements.patientIdInput.readOnly = false; if (domElements.chartDateInput) domElements.chartDateInput.readOnly = false; domElements.lockChartBtn.textContent = 'Lock Charts'; domElements.lockChartBtn.disabled = false; domElements.pdfButton.disabled = false; domElements.compareF1Btn.disabled = false; domElements.compareF2Btn.disabled = false; domElements.compareBothBtn.disabled = false; domElements.clearCompareBtn.disabled = false; domElements.toggleF2Btn.disabled = false; console.log("Charts UNLOCKED."); } else alert("Incorrect code.");
+                 if (!domElements.lockChartBtn || !areChartsLocked) return; // Prevent double unlocking or unlocking when not locked
+
+                 const enteredCode = prompt("Enter unlock code:");
+
+                 if (enteredCode === null) { // User cancelled the prompt
+                     console.log("Unlock cancelled.");
+                     return;
+                 }
+
+                 if (enteredCode === UNLOCK_CODE) {
+                    areChartsLocked = false;
+
+                    // Remove 'locked' class from containers and inputs
+                    CHART_IDS.forEach(id => domElements.chartContainers[id]?.classList.remove('locked'));
+                    domElements.patientInfoContainer?.classList.remove('locked');
+
+                    // Remove read-only from inputs
+                    if (domElements.patientIdInput) domElements.patientIdInput.readOnly = false;
+                    if (domElements.chartDateInput) domElements.chartDateInput.readOnly = false;
+                    if (domElements.studentNameInput) domElements.studentNameInput.readOnly = false;
+                    if (domElements.faculty1NameInput) domElements.faculty1NameInput.readOnly = false;
+                     // F2 name input readOnly state always follows global lock state
+                    if (domElements.faculty2NameInput) domElements.faculty2NameInput.readOnly = false;
+
+
+                    // Update lock button text and state
+                    domElements.lockChartBtn.textContent = 'Lock Charts';
+                    /* The lock button itself remains enabled */
+
+                    // Re-enable other interactive elements (including the PDF button)
+                    if(domElements.pdfButton) domElements.pdfButton.disabled = false; // ENSURE PDF button is re-enabled
+                    if(domElements.compareF1Btn) domElements.compareF1Btn.disabled = false;
+                    if(domElements.compareF2Btn) domElements.compareF2Btn.disabled = false;
+                    if(domElements.compareF1F2Btn) domElements.compareF1F2Btn.disabled = false; // Enable F1/F2 button
+                    if(domElements.toggleF2Btn) domElements.toggleF2Btn.disabled = false;
+
+
+                    console.log("Charts UNLOCKED.");
+                 } else {
+                     alert("Incorrect code.");
+                     console.log("Incorrect unlock code entered.");
+                     // Charts remain locked if code is incorrect
+                 }
             }
 
+            /**
+             * Caches references to important DOM elements into the domElements object.
+             * Should be called once after the DOM is loaded.
+             */
             function cacheDomElements() {
-                CHART_IDS.forEach(id => { domElements.chartContainers[id] = document.getElementById(`${id}-container`); domElements.toggleAreas[id] = document.getElementById(`${id}-toggle-area`); domElements.chartLayouts[id] = document.getElementById(`${id}-chart`); }); domElements.compareF1Btn = document.getElementById('compare-f1-btn'); domElements.compareF2Btn = document.getElementById('compare-f2-btn'); domElements.compareBothBtn = document.getElementById('compare-both-btn'); domElements.clearCompareBtn = document.getElementById('clear-compare-btn'); domElements.toggleF2Btn = document.getElementById('toggle-f2-btn'); domElements.faculty2Container = document.getElementById('faculty2-container'); domElements.f2CompareButtons = document.querySelectorAll('.f2-compare-button'); domElements.pdfButton = document.getElementById('download-pdf-btn'); domElements.lockChartBtn = document.getElementById('lock-chart-btn'); domElements.studentChartLayout = document.getElementById('student-chart'); domElements.patientInfoContainer = document.getElementById('patient-info'); domElements.patientIdInput = document.getElementById('patient-id'); domElements.chartDateInput = document.getElementById('chart-date'); domElements.toggleF2Div = document.getElementById('toggle-f2-div');
+                CHART_IDS.forEach(id => {
+                    domElements.chartContainers[id] = document.getElementById(`${id}-container`);
+                    domElements.toggleAreas[id] = document.getElementById(`${id}-toggle-area`);
+                    domElements.chartLayouts[id] = document.getElementById(`${id}-chart`);
+                });
+
+                domElements.studentNameInput = document.getElementById('student-name');
+                domElements.faculty1NameInput = document.getElementById('faculty1-name');
+                domElements.faculty2NameInput = document.getElementById('faculty2-name');
+
+                domElements.compareF1Btn = document.getElementById('compare-f1-btn');
+                domElements.compareF2Btn = document.getElementById('compare-f2-btn');
+                domElements.compareF1F2Btn = document.getElementById('compare-f1-f2-btn');
+
+                domElements.toggleF2Btn = document.getElementById('toggle-f2-btn');
+                domElements.faculty2Container = document.getElementById('faculty2-container');
+                 // Select all buttons that are toggled with the F2 container visibility
+                domElements.f2CompareButtons = document.querySelectorAll('.f2-compare-button');
+
+                domElements.pdfButton = document.getElementById('download-pdf-btn');
+                domElements.lockChartBtn = document.getElementById('lock-chart-btn');
+
+                 // Cache specific chart layouts needed for comparison targeting or html2canvas
+                domElements.studentChartLayout = document.getElementById('student-chart');
+                domElements.faculty2ChartLayout = document.getElementById('faculty2-chart');
+
+                domElements.patientInfoContainer = document.getElementById('patient-info');
+                domElements.patientIdInput = document.getElementById('patient-id');
+                domElements.chartDateInput = document.getElementById('chart-date');
+
+                domElements.toggleF2Div = document.getElementById('toggle-f2-div'); // Cache the parent div too
+                 domElements.legendContainer = document.getElementById('legend-container'); // Cache legend container
             }
 
+             /**
+              * Sets up the initial UI state by creating chart elements, toggle buttons,
+              * and applying initial locked/F2 visibility styles.
+              */
              function setupChartUI() {
-                CHART_IDS.forEach(id => { createToggleButtons(id, domElements.toggleAreas[id]); createChartElements(id, domElements.chartLayouts[id]); if (chartData[id]) { ALL_TOOTH_NUMBERS.forEach(toothNum => SURFACES.forEach(surface => { if (chartData[id][toothNum]?.[surface]) updateCellUI(id, toothNum, surface); })); } }); const isInitiallyLocked = areChartsLocked; if (domElements.lockChartBtn) { domElements.lockChartBtn.textContent = isInitiallyLocked ? 'Unlock Charts' : 'Lock Charts'; domElements.lockChartBtn.disabled = false; } CHART_IDS.forEach(id => domElements.chartContainers[id]?.classList.toggle('locked', isInitiallyLocked)); domElements.patientInfoContainer?.classList.toggle('locked', isInitiallyLocked); if(domElements.patientIdInput) domElements.patientIdInput.readOnly = isInitiallyLocked; if(domElements.chartDateInput) domElements.chartDateInput.readOnly = isInitiallyLocked; domElements.pdfButton.disabled = isInitiallyLocked; domElements.compareF1Btn.disabled = isInitiallyLocked; domElements.compareF2Btn.disabled = isInitiallyLocked; domElements.compareBothBtn.disabled = isInitiallyLocked; domElements.clearCompareBtn.disabled = isInitiallyLocked; domElements.toggleF2Btn.disabled = isInitiallyLocked;
-            }
+                CHART_IDS.forEach(id => {
+                    // Create toggle buttons for each chart's toggle area
+                    setupToggleButtons(id, domElements.toggleAreas[id]);
+                    // Create the main chart layout structure (quadrants, teeth, surfaces)
+                    createChartElements(id, domElements.chartLayouts[id]);
+                     // Update UI based on any pre-existing data (useful if loading from storage)
+                    if (chartData[id]) {
+                        ALL_TOOTH_NUMBERS.forEach(toothNum =>
+                            SURFACES.forEach(surface => {
+                                if (chartData[id][toothNum]?.[surface]) {
+                                    updateCellUI(id, toothNum, surface);
+                                }
+                            })
+                        );
+                    }
+                });
 
+                // Apply initial lock state styles and input readOnly properties
+                const isInitiallyLocked = areChartsLocked;
+                 // Button text handled in lock/unlock functions, but set initial state
+                 if (domElements.lockChartBtn) {
+                     domElements.lockChartBtn.textContent = isInitiallyLocked ? 'Unlock Charts' : 'Lock Charts';
+                     domElements.lockChartBtn.disabled = false; // The lock button is always clickable
+                 }
+
+                 // Apply 'locked' class to relevant containers based on initial state
+                 CHART_IDS.forEach(id => {
+                     const container = domElements.chartContainers[id];
+                      // F2 container only gets locked class initially if it's visible AND charts are locked
+                     if (container && (id !== 'faculty2' || container.classList.contains('visible'))) {
+                         container.classList.toggle('locked', isInitiallyLocked);
+                     }
+                 });
+                 domElements.patientInfoContainer?.classList.toggle('locked', isInitiallyLocked);
+
+                 // Set inputs readOnly based on initial lock state
+                 if(domElements.patientIdInput) domElements.patientIdInput.readOnly = isInitiallyLocked;
+                 if(domElements.chartDateInput) domElements.chartDateInput.readOnly = isInitiallyLocked;
+                 if(domElements.studentNameInput) domElements.studentNameInput.readOnly = isInitiallyLocked;
+                 if(domElements.faculty1NameInput) domElements.faculty1NameInput.readOnly = isInitiallyLocked;
+                 if(domElements.faculty2NameInput) domElements.faculty2NameInput.readOnly = isInitiallyLocked; // F2 name input readOnly follows global lock state
+
+
+                 // Disable/enable action buttons based on initial lock state
+                 if(domElements.pdfButton) domElements.pdfButton.disabled = false; // PDF button always starts enabled, lock won't disable it
+                 if(domElements.compareF1Btn) domElements.compareF1Btn.disabled = isInitiallyLocked;
+                 if(domElements.compareF2Btn) domElements.compareF2Btn.disabled = isInitiallyLocked;
+                 if(domElements.compareF1F2Btn) domElements.compareF1F2Btn.disabled = isInitiallyLocked;
+                 if(domElements.toggleF2Btn) domElements.toggleF2Btn.disabled = isInitiallyLocked;
+
+                 // Handle initial F2 visibility state for its container and buttons
+                 const isInitiallyF2Visible = domElements.faculty2Container?.classList.contains('visible') || false;
+                 domElements.f2CompareButtons.forEach(btn => btn.classList.toggle('visible', isInitiallyF2Visible));
+                 if(domElements.toggleF2Btn) {
+                      domElements.toggleF2Btn.textContent = isInitiallyF2Visible ? 'Hide Faculty Check 2' : 'Show Faculty Check 2';
+                 }
+             }
+
+            /**
+             * Sets up event listeners for the comparison control buttons.
+             * Implements the toggle behavior.
+             */
             function setupComparisonControls() {
-                 if (!domElements.compareF1Btn || !domElements.compareF2Btn || !domElements.compareBothBtn || !domElements.clearCompareBtn) return; domElements.compareF1Btn.addEventListener('click', () => { if (!areChartsLocked) runComparison(true, false); }); domElements.compareF2Btn.addEventListener('click', () => { if (!areChartsLocked) { if (domElements.faculty2Container?.classList.contains('visible')) runComparison(false, true); else alert("Show Faculty Check 2 chart first."); } }); domElements.compareBothBtn.addEventListener('click', () => { if (!areChartsLocked) { if (domElements.faculty2Container?.classList.contains('visible')) runComparison(true, true); else alert("Show Faculty Check 2 chart first."); } }); domElements.clearCompareBtn.addEventListener('click', () => { if (!areChartsLocked) clearComparisonHighlights(); });
+                 // Check if all necessary comparison buttons exist
+                 if (!domElements.compareF1Btn || !domElements.compareF2Btn || !domElements.compareF1F2Btn) {
+                     console.warn("Comparison buttons not found, skipping setup.");
+                     return;
+                 }
+
+                 // Function to handle a click on any comparison button
+                 const handleCompareButtonClick = (button, comparisonType) => {
+                     if (areChartsLocked) return; // Do nothing if locked
+
+                     // Determine if this button is currently active
+                     let isActive = false;
+                     if (button === domElements.compareF1Btn && button.classList.contains('active-compare-f1')) isActive = true;
+                     else if (button === domElements.compareF2Btn && button.classList.contains('active-compare-f2')) isActive = true;
+                     else if (button === domElements.compareF1F2Btn && button.classList.contains('active-compare-f1-f2')) isActive = true;
+
+
+                     // Always clear any *existing* comparison state first (highlights and active buttons)
+                     clearAllComparisonHighlights();
+
+                     // If the button *was not* active before clearing (meaning the user wants to START this comparison)
+                     if (!isActive) {
+                         let comparisonWasRun = false;
+                         if (comparisonType === 'compare-f1') {
+                             comparisonWasRun = runStudentComparison(true, false);
+                         } else if (comparisonType === 'compare-f2') {
+                             comparisonWasRun = runStudentComparison(false, true);
+                         } else if (comparisonType === 'compare-f1-f2') {
+                             comparisonWasRun = runF1vsF2Comparison();
+                         }
+
+                         // If the comparison logic successfully ran (e.g., F2 was visible if needed)
+                         if (comparisonWasRun) {
+                             // Set the clicked button to active state
+                             if (comparisonType === 'compare-f1') button.classList.add('active-compare-f1');
+                             else if (comparisonType === 'compare-f2') button.classList.add('active-compare-f2');
+                             else if (comparisonType === 'compare-f1-f2') button.classList.add('active-compare-f1-f2');
+                         }
+                         // If comparisonWasRun is false, it means the alert was shown
+                         // (like F2 is hidden), and the button should NOT become active.
+                     }
+                     /* If isActive was true, clicking it performed the toggle-off (clear) action,
+                        which was handled by clearAllComparisonHighlights(). No further action needed.
+                        The button's active class was removed as part of the clear function.
+                     */
+                 };
+
+                 // Add the common click handler to each button
+                 domElements.compareF1Btn.addEventListener('click', () => {
+                     handleCompareButtonClick(domElements.compareF1Btn, 'compare-f1');
+                 });
+
+                 domElements.compareF2Btn.addEventListener('click', () => {
+                     handleCompareButtonClick(domElements.compareF2Btn, 'compare-f2');
+                 });
+
+                 domElements.compareF1F2Btn.addEventListener('click', () => {
+                     handleCompareButtonClick(domElements.compareF1F2Btn, 'compare-f1-f2');
+                 });
             }
 
+            /**
+             * Sets up the event listener for the Faculty 2 toggle button.
+             * Handles showing/hiding the F2 container and related comparison buttons.
+             */
             function setupFaculty2Toggle() {
-                if (!domElements.toggleF2Btn || !domElements.faculty2Container || !domElements.f2CompareButtons) { if(domElements.toggleF2Div) domElements.toggleF2Div.style.display = 'none'; return; } domElements.toggleF2Btn.addEventListener('click', () => { if (areChartsLocked) return; const f2Container = domElements.faculty2Container; const f2Buttons = domElements.f2CompareButtons; const toggleBtn = domElements.toggleF2Btn; f2Container.classList.toggle('visible'); const isVisible = f2Container.classList.contains('visible'); f2Buttons.forEach(btn => btn.classList.toggle('visible', isVisible)); toggleBtn.textContent = isVisible ? 'Hide Faculty Check 2' : 'Show Faculty Check 2'; if (!isVisible) { const f2Active = domElements.compareF2Btn?.classList.contains('active-compare-f2'); const bothActive = domElements.compareBothBtn?.classList.contains('active-compare-both'); if (f2Active || bothActive) { if (domElements.compareF1Btn?.classList.contains('active-compare-f1') || bothActive) runComparison(true, false); else clearComparisonHighlights(); } domElements.compareF2Btn?.classList.remove('active-compare-f2'); domElements.compareBothBtn?.classList.remove('active-compare-both'); } });
+                 // Check if all necessary F2 related elements exist
+                if (!domElements.toggleF2Btn || !domElements.faculty2Container || !domElements.f2CompareButtons || !domElements.faculty2NameInput) {
+                    // If elements are missing, hide the toggle button container
+                    if(domElements.toggleF2Div) domElements.toggleF2Div.style.display = 'none';
+                    console.warn("Faculty 2 toggle elements not found, skipping setup.");
+                    return;
+                }
+
+                domElements.toggleF2Btn.addEventListener('click', () => {
+                    if (areChartsLocked) return; // Prevent toggling if locked
+
+                    const f2Container = domElements.faculty2Container;
+                    const f2Buttons = domElements.f2CompareButtons; // NodeList
+                    const toggleBtn = domElements.toggleF2Btn;
+
+                    f2Container.classList.toggle('visible');
+                    const isVisible = f2Container.classList.contains('visible');
+
+                    // Toggle visibility class for F2 comparison buttons
+                    f2Buttons.forEach(btn => btn.classList.toggle('visible', isVisible));
+
+                    // Update toggle button text
+                    toggleBtn.textContent = isVisible ? 'Hide Faculty Check 2' : 'Show Faculty Check 2';
+
+                    // If hiding Faculty 2, clear any active comparison highlights involving F2
+                    // Hiding F2 invalidates comparisons involving it, so clear everything.
+                    if (!isVisible) {
+                         clearAllComparisonHighlights();
+                    }
+                     // When showing F2, apply 'locked' class if charts are globally locked
+                    else { // isVisible is true
+                        if (areChartsLocked) {
+                            domElements.faculty2Container?.classList.add('locked');
+                             // Also ensure its name input is readOnly if locked
+                             if (domElements.faculty2NameInput) domElements.faculty2NameInput.readOnly = true; // Redundant due to lockAllCharts, but defensive
+                        } else {
+                            // If unlocking and showing, ensure F2 name input is NOT readOnly
+                             if (domElements.faculty2NameInput) domElements.faculty2NameInput.readOnly = false; // Redundant, but defensive
+                        }
+                    }
+                });
             }
 
-            function setupPdfButton() { if (!domElements.pdfButton) return; domElements.pdfButton.addEventListener('click', generatePdf); }
-            function setupLockUnlockButton() { if (!domElements.lockChartBtn) return; domElements.lockChartBtn.addEventListener('click', () => { if (areChartsLocked) unlockAllCharts(); else lockAllCharts(); }); }
 
-            function init() { cacheDomElements(); initializeState(); setupChartUI(); setupComparisonControls(); setupFaculty2Toggle(); setupPdfButton(); setupLockUnlockButton(); console.log("Initialization complete."); }
+            /**
+             * Sets up the event listener for the PDF download button.
+             */
+            function setupPdfButton() {
+                if (!domElements.pdfButton) {
+                     console.warn("PDF button not found, skipping setup.");
+                     return;
+                 }
+                domElements.pdfButton.addEventListener('click', generatePdf);
+            }
+
+            /**
+             * Sets up the event listener for the Lock/Unlock button.
+             * Triggers locking or unlocking charts.
+             */
+            function setupLockUnlockButton() {
+                 if (!domElements.lockChartBtn) {
+                     console.warn("Lock button not found, skipping setup.");
+                     return;
+                 }
+                domElements.lockChartBtn.addEventListener('click', () => {
+                    if (areChartsLocked) {
+                        unlockAllCharts();
+                    } else {
+                        lockAllCharts(); // lockAllCharts now includes clearing comparisons
+                    }
+                });
+            }
+
+            function init() {
+                // 1. Cache references to DOM elements
+                cacheDomElements();
+
+                // 2. Initialize application state (or load from storage)
+                // If implementing load: const loaded = loadChartData(); if (!loaded) { initializeState(); }
+                initializeState();
+
+                // 3. Setup the user interface (create chart elements, buttons)
+                setupChartUI(); // This also applies initial lock/visibility states and fills data if loaded
+
+                // 4. Setup event listeners for controls
+                setupComparisonControls(); // This now handles toggling and clearing internally
+                setupFaculty2Toggle(); // This now clears all comparisons when F2 is hidden
+                setupPdfButton();
+                setupLockUnlockButton(); // This now includes clearing comparisons before locking
+
+                console.log("Calculus Chart Application Initialized.");
+            }
+
+            // Run the init function when the DOM is fully loaded
             document.addEventListener('DOMContentLoaded', init);
-        })();
+
+        })(); // End IIFE
     </script>
 
 </body>
